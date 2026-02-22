@@ -965,6 +965,7 @@ gsap.to('.hero-bg::before', {
 
 <script>
 (function(){
+  if (window._avaChatInit) return; window._avaChatInit = true;
   var ENDPOINT = "https://tourmaline-gingersnap-264df5.netlify.app/.netlify/functions/chat";
   var messages = [];
   var messagesEl = document.getElementById("avaMessages");
