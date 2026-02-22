@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Credentials & secrets
+*.json
+*.env
+.env*
+*credentials*
+*token*
+*secret*
+
+# Logs
+*.log
