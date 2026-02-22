@@ -84,7 +84,51 @@
     .city-list { gap: 8px; }
     .city-link { font-size: 12px; padding: 5px 10px; }
   }
+
+  /* ─── BRAINTECH OVERRIDE — must be last ─── */
+  html body h1, html body h2, html body h3,
+  html body h4, html body h5, html body h6,
+  html body .section-title, html body .svc h3,
+  html body .why-card h4, html body .cta-box h2,
+  html body .stat-num { color: #ffffff !important; }
+  html body h1 .grad {
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    background: linear-gradient(135deg, #818cf8, #a78bfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  html body .faq-q { color: #ffffff !important; }
+
+  /* ─── FAQ SECTION ─── */
+  .faq-section { padding: 80px 48px; max-width: 1100px; margin: 0 auto; }
+  .faq-list { margin-top: 40px; display: flex; flex-direction: column; gap: 16px; }
+  .faq-item { background: var(--navy2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .faq-q { width: 100%; text-align: left; background: none; border: none; padding: 22px 24px; font-size: 16px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .faq-q .arrow { font-size: 18px; transition: transform 0.25s; flex-shrink: 0; }
+  .faq-q[aria-expanded="true"] .arrow { transform: rotate(180deg); }
+  .faq-a { display: none; padding: 0 24px 22px; font-size: 14px; color: var(--gray); line-height: 1.7; }
+  .faq-a.open { display: block; }
+  @media (max-width: 640px) {
+    .faq-section { padding: 56px 20px; }
+    .faq-q { font-size: 15px; padding: 18px 18px; }
+    .faq-a { padding: 0 18px 18px; }
+  }
+
+
+  /* ── HubSpot form overrides ── */
+  .hs-form-wrap { margin-top: 28px; text-align: left; }
+  .hs-form-wrap .hs-form fieldset { max-width: 100% !important; }
+  .hs-form-wrap .hs-input { width: 100% !important; background: rgba(255,255,255,0.06) !important; border: 1px solid rgba(255,255,255,0.15) !important; border-radius: 8px !important; padding: 10px 14px !important; color: #e2e8f0 !important; font-size: 14px !important; box-sizing: border-box !important; }
+  .hs-form-wrap .hs-input::placeholder { color: #64748b !important; }
+  .hs-form-wrap .hs-button { background: linear-gradient(135deg,#6366f1,#818cf8) !important; border: none !important; border-radius: 8px !important; padding: 12px 28px !important; color: #fff !important; font-weight: 700 !important; font-size: 15px !important; cursor: pointer !important; width: 100% !important; margin-top: 4px !important; }
+  .hs-form-wrap .hs-button:hover { opacity: 0.85 !important; }
+  .hs-form-wrap label { color: #94a3b8 !important; font-size: 13px !important; margin-bottom: 4px !important; display: block !important; }
+  .hs-form-wrap .hs-error-msgs { color: #f87171 !important; font-size: 12px !important; list-style: none !important; padding: 0 !important; margin-top: 4px !important; }
+  .hs-form-wrap .submitted-message { color: #10b981 !important; font-weight: 600 !important; font-size: 16px !important; text-align: center !important; padding: 24px 0 !important; }
+
 </style>
+<link rel="canonical" href="https://avadigitalagency.com/bolingbrook-digital-marketing-agency/">
 </head>
 <body>
 
@@ -98,7 +142,7 @@
   <div class="city-badge">📍 Bolingbrook, Illinois</div>
   <h1>AI-Powered Digital Marketing<br>in <span class="grad">Bolingbrook, IL</span></h1>
   <p class="hero-sub">We help Bolingbrook businesses build automated client acquisition systems — outbound email, LinkedIn outreach, Google Ads, and AI-powered SEO. You close deals. We fill your pipeline.</p>
-  <a href="#cta" class="btn-primary">Book a Free Strategy Call →</a>
+  
 </div>
 
 <div class="stats">
@@ -106,6 +150,17 @@
   <div class="stat"><div class="stat-num">153</div><div class="stat-label">Calls Booked</div></div>
   <div class="stat"><div class="stat-num">45</div><div class="stat-label">Day Coverage Cycle</div></div>
   <div class="stat"><div class="stat-num">$15<span class="a">–25</span></div><div class="stat-label">Per Qualified Call</div></div>
+<!-- HubSpot Form -->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<div class="hs-form-wrap" id="hs-form-target"></div>
+<script>
+  hbspt.forms.create({
+    portalId: "23976882",
+    formId: "ab597dec-2f39-43fd-9fb2-194e4e8080ae",
+    region: "na1",
+    target: "#hs-form-target"
+  });
+</script>
 </div>
 <div class="glow"></div>
 
@@ -189,10 +244,138 @@
 </section>
 
 <div class="glow"></div>
+
+<div class="glow"></div>
+<div class="faq-section" id="faq">
+  <div class="section-tag">FAQ</div>
+  <h2 class="section-title">Common questions about<br>digital marketing in Bolingbrook</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        Do you work with businesses in Bolingbrook, Illinois?
+        <span class="arrow">▾</span>
+      </button>
+      <div class="faq-a">Yes — Bolingbrook is one of our core service markets. We work with businesses across Illinois and have built client acquisition systems for companies in Bolingbrook in industries including healthcare, professional services, home services, and B2B tech. We understand the local competitive landscape and what it takes to stand out.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        How much does digital marketing cost for a Bolingbrook business?
+        <span class="arrow">▾</span>
+      </button>
+      <div class="faq-a">It depends on what you need and how fast you want to grow. Every engagement we do is scoped to the business — there's no one-size-fits-all package. The best starting point is a free strategy call where we look at your current situation, identify the highest-leverage channels, and tell you exactly what it would take to hit your goals. No pressure, no fluff.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        How long does SEO take to show results in Bolingbrook?
+        <span class="arrow">▾</span>
+      </button>
+      <div class="faq-a">For most Bolingbrook businesses, you'll start seeing measurable movement in search rankings within 60–90 days, with meaningful traffic gains at 3–6 months. Geo SEO for local Bolingbrook searches tends to move faster than national campaigns because the competition is more defined. We track rankings weekly and report monthly so you always know where things stand.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        What makes Ava Digital different from other marketing agencies?
+        <span class="arrow">▾</span>
+      </button>
+      <div class="faq-a">We're built around AI-powered systems, not manual execution. That means faster execution, lower costs, and better data. Most agencies are selling you hours — we're selling you outcomes. Everything we build is designed to run automatically: automated outreach sequences, AI-qualified leads, real-time ad optimization. You get enterprise-level infrastructure at a fraction of what you'd pay a traditional agency or in-house team.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        What industries do you serve in Bolingbrook?
+        <span class="arrow">▾</span>
+      </button>
+      <div class="faq-a">We work with B2B companies, healthcare practices, professional services firms, home services businesses, and e-commerce brands in Bolingbrook and across Illinois. Our strongest results have been in businesses where the sales cycle is relationship-driven and high-value — where better lead quality directly translates to revenue. If you're not sure if we're a fit, book a call — we'll tell you honestly.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var expanded = this.getAttribute('aria-expanded')==='true';
+    document.querySelectorAll('.faq-q').forEach(function(b){
+      b.setAttribute('aria-expanded','false');
+      b.nextElementSibling.classList.remove('open');
+    });
+    if(!expanded){
+      this.setAttribute('aria-expanded','true');
+      this.nextElementSibling.classList.add('open');
+    }
+  });
+});
+</script>
+
 <footer>
   <a href="https://avadigitalagency.com/" class="footer-logo">ava <span>digital</span></a>
   <div class="footer-copy">© 2026 Ava Digital Agency · Bolingbrook, IL · vik@avadigitalagency.com</div>
 </footer>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you work with businesses in Bolingbrook, Illinois?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — Bolingbrook is one of our core service markets. We work with businesses across Illinois and have built client acquisition systems for companies in Bolingbrook in industries including healthcare, professional services, home services, and B2B tech. We understand the local competitive landscape and what it takes to stand out."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does digital marketing cost for a Bolingbrook business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on what you need and how fast you want to grow. Every engagement we do is scoped to the business — there's no one-size-fits-all package. The best starting point is a free strategy call where we look at your current situation, identify the highest-leverage channels, and tell you exactly what it would take to hit your goals. No pressure, no fluff."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does SEO take to show results in Bolingbrook?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most Bolingbrook businesses, you'll start seeing measurable movement in search rankings within 60–90 days, with meaningful traffic gains at 3–6 months. Geo SEO for local Bolingbrook searches tends to move faster than national campaigns because the competition is more defined. We track rankings weekly and report monthly so you always know where things stand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Ava Digital different from other marketing agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We're built around AI-powered systems, not manual execution. That means faster execution, lower costs, and better data. Most agencies are selling you hours — we're selling you outcomes. Everything we build is designed to run automatically: automated outreach sequences, AI-qualified leads, real-time ad optimization. You get enterprise-level infrastructure at a fraction of what you'd pay a traditional agency or in-house team."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What industries do you serve in Bolingbrook?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We work with B2B companies, healthcare practices, professional services firms, home services businesses, and e-commerce brands in Bolingbrook and across Illinois. Our strongest results have been in businesses where the sales cycle is relationship-driven and high-value — where better lead quality directly translates to revenue. If you're not sure if we're a fit, book a call — we'll tell you honestly."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Ava Digital Agency",
+  "url": "https://avadigitalagency.com/bolingbrook-digital-marketing-agency/",
+  "description": "AI-powered digital marketing agency serving Bolingbrook, Illinois.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bolingbrook",
+    "addressRegion": "IL",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Bolingbrook",
+    "addressRegion": "IL"
+  }
+}
+</script>
 </body>
 </html>

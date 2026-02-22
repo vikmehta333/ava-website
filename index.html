@@ -494,6 +494,18 @@ footer {
   .ava-send svg { width: 16px; height: 16px; fill: white; }
   .ava-footer { text-align: center; padding: 8px; font-size: 11px; color: #1e293b; }
 
+
+  /* ── HubSpot form overrides ── */
+  .hs-form-wrap { margin-top: 28px; text-align: left; }
+  .hs-form-wrap .hs-form fieldset { max-width: 100% !important; }
+  .hs-form-wrap .hs-input { width: 100% !important; background: rgba(255,255,255,0.06) !important; border: 1px solid rgba(255,255,255,0.15) !important; border-radius: 8px !important; padding: 10px 14px !important; color: #e2e8f0 !important; font-size: 14px !important; box-sizing: border-box !important; }
+  .hs-form-wrap .hs-input::placeholder { color: #64748b !important; }
+  .hs-form-wrap .hs-button { background: linear-gradient(135deg,#6366f1,#818cf8) !important; border: none !important; border-radius: 8px !important; padding: 12px 28px !important; color: #fff !important; font-weight: 700 !important; font-size: 15px !important; cursor: pointer !important; width: 100% !important; margin-top: 4px !important; }
+  .hs-form-wrap .hs-button:hover { opacity: 0.85 !important; }
+  .hs-form-wrap label { color: #94a3b8 !important; font-size: 13px !important; margin-bottom: 4px !important; display: block !important; }
+  .hs-form-wrap .hs-error-msgs { color: #f87171 !important; font-size: 12px !important; list-style: none !important; padding: 0 !important; margin-top: 4px !important; }
+  .hs-form-wrap .submitted-message { color: #10b981 !important; font-weight: 600 !important; font-size: 16px !important; text-align: center !important; padding: 24px 0 !important; }
+
 </style>
 </head>
 <body>
@@ -540,7 +552,17 @@ footer {
       <span class="typewriter-wrapper"><span id="typewriter"></span><span id="typewriter-cursor"></span></span>
     </p>
     <div class="hero-ctas" id="hero-ctas">
-      <a href="#contact" class="btn-primary">Get Your Free Audit →</a>
+      <!-- HubSpot Form -->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<div class="hs-form-wrap" id="hs-form-target"></div>
+<script>
+  hbspt.forms.create({
+    portalId: "23976882",
+    formId: "ab597dec-2f39-43fd-9fb2-194e4e8080ae",
+    region: "na1",
+    target: "#hs-form-target"
+  });
+</script>
       <a href="#results" class="btn-ghost">See Our Results</a>
     </div>
     <div class="hero-stats" id="hero-stats">
