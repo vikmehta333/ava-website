@@ -279,12 +279,13 @@ section { padding: 100px 48px; }
 .service-card {
   background: var(--navy3); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 36px 32px;
-  transition: all 0.3s ease; cursor: default; position: relative; overflow: hidden;
+  transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden;
 }
 .service-card::before {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(135deg, var(--glow), transparent);
   opacity: 0; transition: opacity 0.3s;
+  pointer-events: none; /* don't block clicks on child links */
 }
 .service-card:hover { border-color: var(--border2); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(99,102,241,0.15); }
 .service-card:hover::before { opacity: 1; }
@@ -301,6 +302,7 @@ section { padding: 100px 48px; }
   font-size: 13px; font-weight: 600; color: var(--accent2);
   display: flex; align-items: center; gap: 6px;
   transition: gap 0.2s;
+  position: relative; z-index: 2; /* sit above ::before overlay */
 }
 .service-card:hover .service-link, a.service-link { gap: 10px; }
 
@@ -972,6 +974,16 @@ document.querySelectorAll('.stats-bar, .hero-stats').forEach(el => counterObserv
 gsap.to('.hero-bg::before', {
   scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 },
   y: 80, opacity: 0.3
+});
+
+// ===== MAKE FULL SERVICE CARD CLICKABLE =====
+document.querySelectorAll('.service-card').forEach(function(card) {
+  var link = card.querySelector('.service-link');
+  if (link && link.href) {
+    card.addEventListener('click', function(e) {
+      if (!e.target.closest('a')) window.location.href = link.href;
+    });
+  }
 });
 </script>
 
