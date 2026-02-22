@@ -22,6 +22,7 @@ p, li, span, a { color: inherit; }
 
 /* ===== RESET & VARIABLES ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { background: #080d1a; } /* iOS overscroll area fix */
 :root {
   --navy: #080d1a;
   --navy2: #0d1424;
@@ -496,7 +497,11 @@ footer {
 
 
   /* ── HubSpot contact form (CTA section) ── */
-  #hs-contact-form .hs-form fieldset { max-width: 100% !important; }
+  /* Transparent wrapper — kills the default white/gray background box */
+  #hs-contact-form,
+  #hs-contact-form .hs-form,
+  #hs-contact-form form { background: transparent !important; }
+  #hs-contact-form .hs-form fieldset { max-width: 100% !important; background: transparent !important; }
   #hs-contact-form .hs-form .hs-form-field { margin-bottom: 14px !important; }
   #hs-contact-form .hs-input { width: 100% !important; background: rgba(255,255,255,0.08) !important; border: 1px solid rgba(255,255,255,0.15) !important; border-radius: 8px !important; padding: 12px 16px !important; color: #e2e8f0 !important; font-size: 15px !important; box-sizing: border-box !important; }
   #hs-contact-form .hs-input:focus { border-color: rgba(99,102,241,0.6) !important; outline: none !important; }
@@ -506,6 +511,11 @@ footer {
   #hs-contact-form .hs-error-msgs { color: #f87171 !important; font-size: 12px !important; list-style: none !important; padding: 0 !important; margin: 4px 0 0 !important; }
   #hs-contact-form .submitted-message { color: #10b981 !important; font-weight: 700 !important; font-size: 18px !important; text-align: center !important; padding: 32px 0 !important; }
   #hs-contact-form .hs-richtext { display: none !important; }
+  /* ── Suppress WP/WooCommerce injected elements after footer ── */
+  .widget_shopping_cart_live_region { display: none !important; }
+  #wpadminbar { display: none !important; }
+  /* ── Kill any stray elements appended after our footer ── */
+  footer ~ div:not(#mobile-menu):not(.mobile-menu) { display: none !important; }
 
 </style>
 </head>
