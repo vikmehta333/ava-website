@@ -212,8 +212,7 @@ nav.scrolled { padding: 12px 48px; background: rgba(8,13,26,0.97); }
 
 /* Floating cards */
 .hero-visual {
-  position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
-  z-index: 1; display: flex; flex-direction: column; gap: 16px;
+  position: relative; z-index: 1; flex: 1; min-width: 0; max-width: 540px;
 }
 .float-card {
   background: rgba(13,20,36,0.9); border: 1px solid var(--border);
@@ -408,7 +407,7 @@ footer {
 @media (max-width: 1024px) {
   nav { padding: 16px 32px; }
   .hero { padding: 120px 32px 80px; }
-  .hero-visual { display: none; }
+  .hero-visual { max-width: 100%; }
   section { padding: 80px 32px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .stats-bar-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
@@ -446,6 +445,53 @@ footer {
   .cities-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-badge { font-size: 12px; }
 }
+
+  /* ── AVA CHAT WIDGET ── */
+  .ava-chat-wrap {
+    width: 100%; max-width: 540px;
+    background: rgba(17, 24, 39, 0.85);
+    border: 1px solid rgba(99,102,241,0.3);
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 0 60px rgba(99,102,241,0.15), 0 24px 48px rgba(0,0,0,0.4);
+    backdrop-filter: blur(16px);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  }
+  .ava-chat-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.07);
+    background: rgba(99,102,241,0.08);
+  }
+  .ava-avatar { width: 36px; height: 36px; background: linear-gradient(135deg, #6366f1, #a78bfa); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .ava-header-name { font-size: 14px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
+  .ava-status-dot { width: 7px; height: 7px; background: #10b981; border-radius: 50%; display: inline-block; animation: pulse-dot 2s infinite; }
+  @keyframes pulse-dot { 0%,100%{opacity:1}50%{opacity:.4} }
+  .ava-header-sub { font-size: 11px; color: #64748b; margin-top: 1px; }
+  .ava-messages { height: 280px; overflow-y: auto; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; scroll-behavior: smooth; }
+  .ava-messages::-webkit-scrollbar { width: 3px; }
+  .ava-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+  .ava-msg { display: flex; gap: 8px; max-width: 90%; animation: msg-in 0.2s ease; }
+  @keyframes msg-in { from{opacity:0;transform:translateY(5px)} to{opacity:1;transform:translateY(0)} }
+  .ava-msg.user { align-self: flex-end; flex-direction: row-reverse; }
+  .ava-msg.ava  { align-self: flex-start; }
+  .ava-msg-avatar { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+  .ava-msg.ava .ava-msg-avatar { background: linear-gradient(135deg, #6366f1, #a78bfa); }
+  .ava-msg.user .ava-msg-avatar { background: rgba(255,255,255,0.1); color: #94a3b8; font-size: 10px; }
+  .ava-bubble { padding: 9px 13px; border-radius: 13px; font-size: 13px; line-height: 1.55; }
+  .ava-msg.ava .ava-bubble { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); color: #e2e8f0; border-bottom-left-radius: 3px; }
+  .ava-msg.user .ava-bubble { background: linear-gradient(135deg, #6366f1, #818cf8); color: #fff; border-bottom-right-radius: 3px; }
+  .ava-typing { display: flex; gap: 4px; padding: 10px 13px; }
+  .ava-typing span { width: 5px; height: 5px; background: #6366f1; border-radius: 50%; animation: bounce 1.2s infinite; }
+  .ava-typing span:nth-child(2){animation-delay:.2s} .ava-typing span:nth-child(3){animation-delay:.4s}
+  @keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+  .ava-input-row { display: flex; gap: 8px; padding: 12px 16px; border-top: 1px solid rgba(255,255,255,0.07); background: rgba(0,0,0,0.15); }
+  .ava-input { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 9px; padding: 9px 13px; font-size: 13px; color: #e2e8f0; outline: none; font-family: inherit; transition: border-color .2s; resize: none; min-height: 40px; max-height: 100px; }
+  .ava-input::placeholder { color: #475569; }
+  .ava-input:focus { border-color: rgba(99,102,241,.5); }
+  .ava-send { width: 40px; height: 40px; background: linear-gradient(135deg,#6366f1,#818cf8); border: none; border-radius: 9px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: opacity .2s,transform .15s; align-self: flex-end; }
+  .ava-send:hover{opacity:.85;transform:scale(1.05)} .ava-send:disabled{opacity:.4;cursor:not-allowed;transform:none}
+  .ava-send svg { width: 16px; height: 16px; fill: white; }
+  .ava-footer { text-align: center; padding: 8px; font-size: 11px; color: #1e293b; }
+
 </style>
 </head>
 <body>
@@ -512,20 +558,22 @@ footer {
   </div>
   <!-- Floating cards (hidden on mobile via CSS) -->
   <div class="hero-visual">
-    <div class="float-card">
-      <div class="float-card-label">Monthly Calls Booked</div>
-      <div class="float-card-value green">+47</div>
-      <div class="float-card-sub">LinkedIn Outreach Campaign</div>
-    </div>
-    <div class="float-card">
-      <div class="float-card-label">Google Ads CPA</div>
-      <div class="float-card-value">$30.11</div>
-      <div class="float-card-sub">Healthcare Client · Naperville</div>
-    </div>
-    <div class="float-card">
-      <div class="float-card-label">Organic Traffic Growth</div>
-      <div class="float-card-value green">+212%</div>
-      <div class="float-card-sub">Geo SEO · 25 IL Cities</div>
+    <div class="ava-chat-wrap" id="avaChatWidget">
+      <div class="ava-chat-header">
+        <div class="ava-avatar">✦</div>
+        <div>
+          <div class="ava-header-name">Ava AI <span class="ava-status-dot"></span></div>
+          <div class="ava-header-sub">Marketing advisor · Replies instantly</div>
+        </div>
+      </div>
+      <div class="ava-messages" id="avaMessages"></div>
+      <div class="ava-input-row">
+        <textarea class="ava-input" id="avaInput" placeholder="Ask me anything about growing your business..." rows="1"></textarea>
+        <button class="ava-send" id="avaSendBtn" aria-label="Send">
+          <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+      <div class="ava-footer">Powered by Ava Digital AI</div>
     </div>
   </div>
 </section>
@@ -890,5 +938,64 @@ gsap.to('.hero-bg::before', {
   y: 80, opacity: 0.3
 });
 </script>
+
+<script>
+(function(){
+  var ENDPOINT = "https://YOUR-SITE.netlify.app/.netlify/functions/chat";
+  var messages = [];
+  var messagesEl = document.getElementById("avaMessages");
+  var inputEl    = document.getElementById("avaInput");
+  var sendBtn    = document.getElementById("avaSendBtn");
+  if (!messagesEl) return;
+  var isLoading = false;
+
+  function addMsg(role, text) {
+    messages.push({ role: role, content: text });
+    renderMsg(role, text);
+  }
+  function renderMsg(role, text) {
+    var isAva = role === "assistant";
+    var wrap = document.createElement("div");
+    wrap.className = "ava-msg " + (isAva ? "ava" : "user");
+    var av = document.createElement("div"); av.className = "ava-msg-avatar"; av.textContent = isAva ? "✦" : "You";
+    var b  = document.createElement("div"); b.className = "ava-bubble"; b.textContent = text;
+    wrap.appendChild(av); wrap.appendChild(b);
+    messagesEl.appendChild(wrap);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+  function showTyping() {
+    var wrap = document.createElement("div"); wrap.className = "ava-msg ava"; wrap.id = "avaTyping";
+    var av = document.createElement("div"); av.className = "ava-msg-avatar"; av.textContent = "✦";
+    var b  = document.createElement("div"); b.className = "ava-bubble ava-typing"; b.innerHTML = "<span></span><span></span><span></span>";
+    wrap.appendChild(av); wrap.appendChild(b); messagesEl.appendChild(wrap);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+  function hideTyping() { var el = document.getElementById("avaTyping"); if (el) el.remove(); }
+  function setLoading(s) { isLoading = s; sendBtn.disabled = s; inputEl.disabled = s; }
+
+  async function send() {
+    var text = inputEl.value.trim();
+    if (!text || isLoading) return;
+    inputEl.value = ""; inputEl.style.height = "auto";
+    addMsg("user", text); setLoading(true); showTyping();
+    try {
+      var res  = await fetch(ENDPOINT, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({messages: messages}) });
+      var data = await res.json();
+      hideTyping();
+      addMsg("assistant", data.reply || "Something went wrong — try again.");
+    } catch(e) {
+      hideTyping();
+      addMsg("assistant", "I'm having trouble connecting. Reach out at avadigitalagency.com.");
+    }
+    setLoading(false); inputEl.focus();
+  }
+
+  inputEl.addEventListener("input", function(){ this.style.height="auto"; this.style.height=Math.min(this.scrollHeight,100)+"px"; });
+  inputEl.addEventListener("keydown", function(e){ if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send();} });
+  sendBtn.addEventListener("click", send);
+  addMsg("assistant", "Hey! I'm Ava — an AI marketing advisor. Tell me about your business and I'll tell you what's actually holding back your growth.");
+})();
+</script>
+
 </body>
 </html>
