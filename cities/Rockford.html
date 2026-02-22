@@ -116,16 +116,30 @@
   }
 
 
-  /* ── HubSpot form overrides ── */
-  .hs-form-wrap { margin-top: 28px; text-align: left; }
-  .hs-form-wrap .hs-form fieldset { max-width: 100% !important; }
-  .hs-form-wrap .hs-input { width: 100% !important; background: rgba(255,255,255,0.06) !important; border: 1px solid rgba(255,255,255,0.15) !important; border-radius: 8px !important; padding: 10px 14px !important; color: #e2e8f0 !important; font-size: 14px !important; box-sizing: border-box !important; }
-  .hs-form-wrap .hs-input::placeholder { color: #64748b !important; }
-  .hs-form-wrap .hs-button { background: linear-gradient(135deg,#6366f1,#818cf8) !important; border: none !important; border-radius: 8px !important; padding: 12px 28px !important; color: #fff !important; font-weight: 700 !important; font-size: 15px !important; cursor: pointer !important; width: 100% !important; margin-top: 4px !important; }
-  .hs-form-wrap .hs-button:hover { opacity: 0.85 !important; }
-  .hs-form-wrap label { color: #94a3b8 !important; font-size: 13px !important; margin-bottom: 4px !important; display: block !important; }
-  .hs-form-wrap .hs-error-msgs { color: #f87171 !important; font-size: 12px !important; list-style: none !important; padding: 0 !important; margin-top: 4px !important; }
-  .hs-form-wrap .submitted-message { color: #10b981 !important; font-weight: 600 !important; font-size: 16px !important; text-align: center !important; padding: 24px 0 !important; }
+  /* ─── CTA SECTION ─── */
+  .cta-section-wrap { padding: 80px 48px; max-width: 1100px; margin: 0 auto; }
+  .cta-inner { background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(167,139,250,0.06)); border: 1px solid rgba(99,102,241,0.25); border-radius: 20px; padding: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .cta-left h2 { font-size: 38px; font-weight: 800; letter-spacing: -1px; line-height: 1.15; margin-bottom: 16px; }
+  .cta-left p { font-size: 16px; color: var(--gray); line-height: 1.7; }
+  .cta-left .trust-items { margin-top: 24px; display: flex; flex-direction: column; gap: 8px; }
+  .cta-left .trust-item { font-size: 13px; color: #64748b; display: flex; align-items: center; gap: 8px; }
+  .cta-left .trust-item::before { content: "✓"; color: #10b981; font-weight: 700; }
+  /* HubSpot overrides */
+  #hs-cta-form .hs-form fieldset { max-width: 100% !important; }
+  #hs-cta-form .hs-form .hs-form-field { margin-bottom: 14px !important; }
+  #hs-cta-form .hs-input { width: 100% !important; background: rgba(255,255,255,0.06) !important; border: 1px solid rgba(255,255,255,0.12) !important; border-radius: 8px !important; padding: 11px 14px !important; color: #e2e8f0 !important; font-size: 14px !important; box-sizing: border-box !important; }
+  #hs-cta-form .hs-input:focus { border-color: rgba(99,102,241,0.5) !important; outline: none !important; }
+  #hs-cta-form label { color: #94a3b8 !important; font-size: 12px !important; font-weight: 600 !important; letter-spacing: 0.5px !important; text-transform: uppercase !important; margin-bottom: 6px !important; display: block !important; }
+  #hs-cta-form .hs-button { background: linear-gradient(135deg,#6366f1,#818cf8) !important; border: none !important; border-radius: 8px !important; padding: 13px 28px !important; color: #fff !important; font-weight: 700 !important; font-size: 15px !important; cursor: pointer !important; width: 100% !important; margin-top: 8px !important; transition: opacity .2s !important; }
+  #hs-cta-form .hs-button:hover { opacity: .85 !important; }
+  #hs-cta-form .hs-error-msgs { color: #f87171 !important; font-size: 12px !important; list-style: none !important; padding: 0 !important; margin: 4px 0 0 !important; }
+  #hs-cta-form .submitted-message { color: #10b981 !important; font-weight: 600 !important; font-size: 16px !important; text-align: center !important; padding: 32px 0 !important; }
+  #hs-cta-form .hs-richtext { display: none !important; }
+  @media (max-width: 768px) {
+    .cta-inner { grid-template-columns: 1fr; gap: 32px; padding: 36px 24px; }
+    .cta-left h2 { font-size: 28px; }
+    .cta-section-wrap { padding: 56px 20px; }
+  }
 
 </style>
 <link rel="canonical" href="https://avadigitalagency.com/rockford-digital-marketing-agency/">
@@ -150,17 +164,6 @@
   <div class="stat"><div class="stat-num">153</div><div class="stat-label">Calls Booked</div></div>
   <div class="stat"><div class="stat-num">45</div><div class="stat-label">Day Coverage Cycle</div></div>
   <div class="stat"><div class="stat-num">$15<span class="a">–25</span></div><div class="stat-label">Per Qualified Call</div></div>
-<!-- HubSpot Form -->
-<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-<div class="hs-form-wrap" id="hs-form-target"></div>
-<script>
-  hbspt.forms.create({
-    portalId: "23976882",
-    formId: "ab597dec-2f39-43fd-9fb2-194e4e8080ae",
-    region: "na1",
-    target: "#hs-form-target"
-  });
-</script>
 </div>
 <div class="glow"></div>
 
@@ -228,11 +231,31 @@
 </div>
 
 <section id="cta">
-  <div class="cta-box">
-    <h2>Ready to grow in Rockford?</h2>
-    <p>Book a free 20-minute strategy call. We'll map your Rockford market, show you the pipeline potential, and walk you through exactly what we'd build.</p>
-    <a href="mailto:vik@avadigitalagency.com?subject=Strategy Call - Rockford IL" class="btn-primary" style="font-size:16px; padding:16px 36px;">Book Your Free Strategy Call →</a>
+<div class="cta-section-wrap">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <h2>Ready to grow in Rockford?</h2>
+      <p>Book a free 20-minute strategy call. We'll map your market, show you the pipeline opportunity, and walk through exactly what we'd build for your business.</p>
+      <div class="trust-items">
+        <div class="trust-item">Free — no obligation, no pitch deck</div>
+        <div class="trust-item">We'll do a live audit of your current setup</div>
+        <div class="trust-item">You'll leave with a clear action plan</div>
+      </div>
+    </div>
+    <div class="cta-right">
+      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<div id="hs-cta-form"></div>
+<script>
+  hbspt.forms.create({
+    portalId: "23976882",
+    formId: "ab597dec-2f39-43fd-9fb2-194e4e8080ae",
+    region: "na1",
+    target: "#hs-cta-form"
+  });
+</script>
+    </div>
   </div>
+</div>
 </section>
 
 <section>
