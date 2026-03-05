@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Ava Digital Agency - Naperville, IL</title>
+  <meta name="description" content="Meet the team behind Ava Digital Agency. We're Naperville's premier AI-powered digital marketing agency helping local businesses grow.">
+  <link rel="canonical" href="https://avadigitalagency.com/about">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Ava Digital Agency">
+  <meta property="og:description" content="Meet the team behind Naperville's premier AI-powered digital marketing agency.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://avadigitalagency.com/about">
+  
+  <!-- JSON-LD AboutPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Ava Digital Agency",
+    "description": "Learn about Ava Digital Agency, Naperville's premier AI-powered digital marketing agency.",
+    "url": "https://avadigitalagency.com/about",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Ava Digital Agency",
+      "founder": {
+        "@type": "Person",
+        "name": "Vik Mehta"
+      },
+      "foundingDate": "2023",
+      "description": "Ava Digital Agency is an AI-powered digital marketing agency based in Naperville, Illinois, serving businesses throughout the Chicago metropolitan area.",
+      "areaServed": "Chicago metropolitan area",
+      "numberOfEmployees": "5-10"
+    }
+  }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    header { background: #1a1a2e; color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+    header .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #00d4ff; text-decoration: none; }
+    nav a { color: white; text-decoration: none; margin-left: 2rem; transition: color 0.3s; }
+    nav a:hover { color: #00d4ff; }
+    .page-header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 4rem 0; text-align: center; }
+    .page-header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .page-header p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    
+    .about-section { padding: 4rem 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-content h2 { font-size: 2rem; margin-bottom: 1.5rem; color: #1a1a2e; }
+    .about-content p { margin-bottom: 1rem; font-size: 1.1rem; }
+    .about-image { background: linear-gradient(135deg, #00d4ff 0%, #1a1a2e 100%); border-radius: 10px; height: 400px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; }
+    
+    .values { background: #f8f9fa; padding: 4rem 0; }
+    .values h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; }
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .value-card { background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .value-card .icon { font-size: 3rem; margin-bottom: 1rem; }
+    .value-card h3 { margin-bottom: 0.5rem; color: #1a1a2e; }
+    
+    .team { padding: 4rem 0; }
+    .team h2 { text-align: center; font-size: 2rem; margin-bottom: 1rem; }
+    .team-intro { text-align: center; max-width: 600px; margin: 0 auto 3rem; color: #666; }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .team-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .team-card:hover { transform: translateY(-5px); }
+    .team-photo { height: 280px; background: linear-gradient(135deg, #1a1a2e 0%, #00d4ff 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem; }
+    .team-info { padding: 1.5rem; }
+    .team-info h3 { font-size: 1.3rem; margin-bottom: 0.25rem; color: #1a1a2e; }
+    .team-info .role { color: #00d4ff; font-weight: 600; margin-bottom: 1rem; }
+    .team-info p { color: #666; font-size: 0.95rem; }
+    .team-info .social { margin-top: 1rem; }
+    .team-info .social a { color: #1a1a2e; margin-right: 1rem; text-decoration: none; }
+    
+    .cta { background: #1a1a2e; color: white; padding: 4rem 0; text-align: center; }
+    .cta h2 { font-size: 2rem; margin-bottom: 1rem; }
+    .btn { display: inline-block; padding: 1rem 2rem; background: #00d4ff; color: #1a1a2e; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 1rem; transition: transform 0.3s; }
+    .btn:hover { transform: translateY(-2px); }
+    
+    footer { background: #0f0f1a; color: white; padding: 2rem 0; text-align: center; }
+    footer a { color: #00d4ff; }
+    
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      nav a { margin-left: 1rem; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="logo">Ava Digital Agency</a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>About Ava Digital Agency</h1>
+      <p>We're a team of digital marketing experts and AI enthusiasts passionate about helping Naperville businesses thrive in the digital age.</p>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2>Our Story</h2>
+          <p>Founded in 2023 in the heart of Naperville, Ava Digital Agency was born from a simple observation: local businesses were being left behind in the AI revolution while big corporations dominated the digital landscape.</p>
+          <p>We set out to change that. By combining cutting-edge AI technology with proven marketing strategies, we've helped over 50 local businesses across the Chicago suburbs increase their online visibility, generate qualified leads, and grow their revenue.</p>
+          <p>What makes us different? We don't just implement cookie-cutter solutions. We take the time to understand your business, your customers, and your goals—then build custom AI-powered systems that work 24/7 to bring you results.</p>
+        </div>
+        <div class="about-image">
+          <span>🏢 Ava Digital HQ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values">
+    <div class="container">
+      <h2>Our Core Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="icon">🤝</div>
+          <h3>Partnership First</h3>
+          <p>We see ourselves as an extension of your team, not just another vendor. Your success is our success.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">⚡</div>
+          <h3>Innovation Driven</h3>
+          <p>We stay ahead of the curve, constantly testing and implementing the latest AI and marketing technologies.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">📊</div>
+          <h3>Data Backed</h3>
+          <p>Every decision we make is grounded in data and analytics. No guesswork, just proven strategies.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">🎯</div>
+          <h3>Results Focused</h3>
+          <p>We measure success by your bottom line. Traffic and likes are nice, but revenue growth is what matters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team">
+    <div class="container">
+      <h2>Meet the Team</h2>
+      <p class="team-intro">The passionate experts behind Ava Digital Agency's success stories.</p>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-photo">👨‍💼</div>
+          <div class="team-info">
+            <h3>Vik Mehta</h3>
+            <div class="role">Founder & CEO</div>
+            <p>Vik founded Ava Digital Agency with a vision to democratize AI-powered marketing for local businesses. With a background in software engineering and digital strategy, he leads the team in developing innovative solutions that drive real results.</p>
+            <div class="social">
+              <a href="#">LinkedIn</a>
+              <a href="#">Twitter</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-photo">👩‍💻</div>
+          <div class="team-info">
+            <h3>Sarah Chen</h3>
+            <div class="role">Head of SEO</div>
+            <p>Sarah is an SEO veteran with 8+ years of experience helping businesses dominate local search results. She combines technical expertise with creative content strategies to drive organic traffic and qualified leads.</p>
+            <div class="social">
+              <a href="#">LinkedIn</a>
+              <a href="#">Twitter</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-photo">👨‍🎨</div>
+          <div class="team-info">
+            <h3>Marcus Johnson</h3>
+            <div class="role">Creative Director</div>
+            <p>Marcus brings brands to life through compelling visual design and user experience. His work ensures every touchpoint—from websites to ads—converts visitors into customers.</p>
+            <div class="social">
+              <a href="#">LinkedIn</a>
+              <a href="#">Dribbble</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-photo">👩‍🔬</div>
+          <div class="team-info">
+            <h3>Emily Rodriguez</h3>
+            <div class="role">AI & Automation Lead</div>
+            <p>Emily is our AI whisperer, building intelligent chatbots and automation systems that work 24/7. She has a master's in Machine Learning and is passionate about making AI accessible to small businesses.</p>
+            <div class="social">
+              <a href="#">LinkedIn</a>
+              <a href="#">GitHub</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-photo">👨‍📈</div>
+          <div class="team-info">
+            <h3>David Park</h3>
+            <div class="role">PPC & Paid Media Manager</div>
+            <p>David is a Google Ads certified specialist who has managed over $2M in ad spend. He knows how to stretch every dollar to maximize ROI and minimize wasted spend.</p>
+            <div class="social">
+              <a href="#">LinkedIn</a>
+              <a href="#">Twitter</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-photo">👩‍💼</div>
+          <div class="team-info">
+            <h3>Jennifer Walsh</h3>
+            <div class="role">Client Success Manager</div>
+            <p>Jennifer ensures every client receives white-glove service. She's your main point of contact, keeping projects on track and making sure you're always in the loop.</p>
+            <div class="social">
+              <a href="#">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Work With Us?</h2>
+      <p>Let's discuss how Ava Digital Agency can help grow your business.</p>
+      <a href="/contact" class="btn">Schedule a Free Consultation</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Ava Digital Agency. All rights reserved.</p>
+      <p>Serving Naperville, Aurora, Wheaton, and the entire Chicago metropolitan area.</p>
+      <p><a href="mailto:glen@avadigitalagency.com">glen@avadigitalagency.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>

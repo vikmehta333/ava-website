@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Ava Digital Agency - Digital Marketing Insights</title>
+  <meta name="description" content="Expert digital marketing tips, SEO strategies, and AI insights from Ava Digital Agency. Learn how to grow your Naperville business online.">
+  <link rel="canonical" href="https://avadigitalagency.com/blog">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ava Digital Agency Blog">
+  <meta property="og:description" content="Expert digital marketing tips and AI insights for Naperville businesses.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://avadigitalagency.com/blog">
+  
+  <!-- JSON-LD Blog Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Ava Digital Agency Blog",
+    "description": "Expert digital marketing tips, SEO strategies, and AI insights for local businesses.",
+    "url": "https://avadigitalagency.com/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ava Digital Agency",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://avadigitalagency.com/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    header { background: #1a1a2e; color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+    header .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #00d4ff; text-decoration: none; }
+    nav a { color: white; text-decoration: none; margin-left: 2rem; transition: color 0.3s; }
+    nav a:hover { color: #00d4ff; }
+    
+    .page-header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 4rem 0; text-align: center; }
+    .page-header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .page-header p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    
+    .blog-section { padding: 4rem 0; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+    
+    .blog-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; text-decoration: none; color: inherit; display: block; }
+    .blog-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+    .blog-image { height: 200px; background: linear-gradient(135deg, #1a1a2e 0%, #00d4ff 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; }
+    .blog-content { padding: 1.5rem; }
+    .blog-meta { display: flex; gap: 1rem; margin-bottom: 0.75rem; font-size: 0.85rem; color: #666; }
+    .blog-category { color: #00d4ff; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px; }
+    .blog-card h2 { font-size: 1.4rem; margin-bottom: 0.75rem; color: #1a1a2e; line-height: 1.3; }
+    .blog-card p { color: #666; font-size: 0.95rem; line-height: 1.6; }
+    .read-more { display: inline-flex; align-items: center; gap: 0.5rem; color: #00d4ff; font-weight: 600; margin-top: 1rem; }
+    
+    .sidebar { margin-top: 3rem; }
+    .sidebar-section { background: #f8f9fa; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; }
+    .sidebar-section h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a2e; }
+    .sidebar-section ul { list-style: none; }
+    .sidebar-section li { margin-bottom: 0.5rem; }
+    .sidebar-section a { color: #333; text-decoration: none; }
+    .sidebar-section a:hover { color: #00d4ff; }
+    .tag { display: inline-block; background: #e9ecef; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin: 0.25rem; }
+    .tag:hover { background: #00d4ff; color: white; }
+    
+    .newsletter { background: #1a1a2e; color: white; padding: 3rem 0; margin-top: 2rem; }
+    .newsletter .container { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .newsletter h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+    .newsletter p { opacity: 0.9; margin-bottom: 1.5rem; }
+    .newsletter-form { display: flex; gap: 0.5rem; }
+    .newsletter-form input { flex: 1; padding: 0.75rem 1rem; border: none; border-radius: 5px; font-size: 1rem; }
+    .newsletter-form button { padding: 0.75rem 1.5rem; background: #00d4ff; color: #1a1a2e; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+    .newsletter-form button:hover { background: #00bcd4; }
+    
+    footer { background: #0f0f1a; color: white; padding: 2rem 0; text-align: center; }
+    footer a { color: #00d4ff; }
+    
+    @media (max-width: 768px) {
+      .newsletter .container { grid-template-columns: 1fr; }
+      nav a { margin-left: 1rem; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="logo">Ava Digital Agency</a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Digital Marketing Insights</h1>
+      <p>Expert tips, strategies, and AI insights to help your Naperville business thrive online.</p>
+    </div>
+  </section>
+
+  <section class="blog-section">
+    <div class="container">
+      <div class="blog-grid">
+        <!-- Featured Post -->
+        <a href="/blog/how-to-rank-your-naperville-business-on-google" class="blog-card">
+          <div class="blog-image">🔍</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">SEO</span>
+              <span>March 5, 2025</span>
+              <span>8 min read</span>
+            </div>
+            <h2>How to Rank Your Naperville Business on Google</h2>
+            <p>Learn the proven strategies local businesses use to dominate Google search results in Naperville and the Chicago suburbs. From Google Business Profile optimization to local link building.</p>
+            <span class="read-more">Read Article →</span>
+          </div>
+        </a>
+
+        <!-- Placeholder for future posts -->
+        <div class="blog-card" style="opacity: 0.6;">
+          <div class="blog-image" style="background: linear-gradient(135deg, #666 0%, #999 100%);">🤖</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">AI</span>
+              <span>Coming Soon</span>
+            </div>
+            <h2>How AI Chatbots Can Transform Your Customer Service</h2>
+            <p>Discover how small businesses are using AI chatbots to provide 24/7 support, qualify leads, and book appointments automatically.</p>
+          </div>
+        </div>
+
+        <div class="blog-card" style="opacity: 0.6;">
+          <div class="blog-image" style="background: linear-gradient(135deg, #666 0%, #999 100%);">📱</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Social Media</span>
+              <span>Coming Soon</span>
+            </div>
+            <h2>Social Media Marketing for Local Businesses in 2025</h2>
+            <p>The platforms, strategies, and content types that are driving real results for Naperville businesses right now.</p>
+          </div>
+        </div>
+
+        <div class="blog-card" style="opacity: 0.6;">
+          <div class="blog-image" style="background: linear-gradient(135deg, #666 0%, #999 100%);">💰</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">PPC</span>
+              <span>Coming Soon</span>
+            </div>
+            <h2>Google Ads for Local Businesses: A Complete Guide</h2>
+            <p>Everything you need to know to run profitable Google Ads campaigns that bring in qualified local customers.</p>
+          </div>
+        </div>
+
+        <div class="blog-card" style="opacity: 0.6;">
+          <div class="blog-image" style="background: linear-gradient(135deg, #666 0%, #999 100%);">📧</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Email Marketing</span>
+              <span>Coming Soon</span>
+            </div>
+            <h2>Email Marketing Strategies That Actually Convert</h2>
+            <p>Build relationships and drive sales with email campaigns that your subscribers actually want to open.</p>
+          </div>
+        </div>
+
+        <div class="blog-card" style="opacity: 0.6;">
+          <div class="blog-image" style="background: linear-gradient(135deg, #666 0%, #999 100%);">🌐</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Web Design</span>
+              <span>Coming Soon</span>
+            </div>
+            <h2>Website Design Trends for Local Businesses in 2025</h2>
+            <p>What makes a website convert visitors into customers? We break down the design elements that matter most.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="#">SEO (1)</a></li>
+            <li><a href="#">AI & Automation (1)</a></li>
+            <li><a href="#">Social Media (1)</a></li>
+            <li><a href="#">PPC Advertising (1)</a></li>
+            <li><a href="#">Email Marketing (1)</a></li>
+            <li><a href="#">Web Design (1)</a></li>
+          </ul>
+        </div>
+        
+        <div class="sidebar-section">
+          <h3>Popular Tags</h3>
+          <a href="#" class="tag">Local SEO</a>
+          <a href="#" class="tag">Google Business Profile</a>
+          <a href="#" class="tag">AI</a>
+          <a href="#" class="tag">Lead Generation</a>
+          <a href="#" class="tag">Naperville</a>
+          <a href="#" class="tag">Small Business</a>
+          <a href="#" class="tag">Marketing Automation</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="container">
+      <div>
+        <h2>Get Marketing Tips Delivered to Your Inbox</h2>
+        <p>Join 500+ Naperville business owners receiving weekly insights on SEO, AI, and digital marketing.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Ava Digital Agency. All rights reserved.</p>
+      <p>Serving Naperville, Aurora, Wheaton, and the entire Chicago metropolitan area.</p>
+      <p><a href="mailto:glen@avadigitalagency.com">glen@avadigitalagency.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
