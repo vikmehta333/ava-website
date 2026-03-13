@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Marketing Automation Services | Ava Digital Agency Naperville</title>
+    <meta name="description" content="Transform your marketing with AI automation. Ava Digital Agency helps Naperville businesses automate content, SEO, email, and social media with intelligent AI agents.">
+    <link rel="canonical" href="https://avadigitalagency.com/services/ai-marketing-automation">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "AI Marketing Automation Services",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Ava Digital Agency",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Naperville",
+                "addressRegion": "IL",
+                "addressCountry": "US"
+            }
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Naperville"
+        },
+        "description": "AI-powered marketing automation services for small businesses including content creation, SEO optimization, email marketing, and social media management.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+        
+        /* Navigation */
+        .nav { background: white; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: #1a5f7a; text-decoration: none; }
+        .nav-logo span { color: #e8751a; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: #333; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: #1a5f7a; }
+        .nav-links a.active { color: #e8751a; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%); color: white; padding: 5rem 1rem; text-align: center; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; line-height: 1.2; }
+        .hero p { font-size: 1.25rem; opacity: 0.95; max-width: 700px; margin: 0 auto 2rem; }
+        .hero-badges { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+        .hero-badge { background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; }
+        
+        /* CTA Button */
+        .btn-primary { display: inline-block; background: #e8751a; color: white; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(232,117,26,0.3); }
+        .btn-secondary { display: inline-block; background: white; color: #1a5f7a; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid #1a5f7a; transition: all 0.2s; }
+        .btn-secondary:hover { background: #1a5f7a; color: white; }
+        
+        /* Section Styles */
+        .section { padding: 4rem 1rem; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 2.2rem; color: #1a5f7a; margin-bottom: 1rem; }
+        .section-title p { color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        
+        /* What We Do */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .service-card { background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .service-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .service-card h3 { color: #1a5f7a; font-size: 1.3rem; margin-bottom: 0.75rem; }
+        .service-card p { color: #555; margin-bottom: 1rem; }
+        .service-features { list-style: none; }
+        .service-features li { padding: 0.4rem 0; color: #666; display: flex; align-items: center; gap: 0.5rem; }
+        .service-features li:before { content: "✓"; color: #159895; font-weight: bold; }
+        
+        /* How It Works */
+        .process-section { background: #f8f9fa; }
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .process-step { text-align: center; padding: 2rem; }
+        .step-number { width: 60px; height: 60px; background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1.5rem; }
+        .process-step h3 { color: #1a5f7a; margin-bottom: 0.75rem; }
+        .process-step p { color: #666; }
+        
+        /* Benefits */
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .benefit-item { display: flex; gap: 1rem; align-items: flex-start; }
+        .benefit-icon { font-size: 2rem; flex-shrink: 0; }
+        .benefit-content h4 { color: #1a5f7a; margin-bottom: 0.5rem; }
+        .benefit-content p { color: #666; font-size: 0.95rem; }
+        
+        /* Stats */
+        .stats-section { background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%); color: white; padding: 4rem 1rem; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; text-align: center; }
+        .stat-item h3 { font-size: 3rem; margin-bottom: 0.5rem; }
+        .stat-item p { opacity: 0.9; }
+        
+        /* Use Cases */
+        .use-cases { background: #f8f9fa; }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .use-case-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .use-case-header { background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%); color: white; padding: 1.5rem; }
+        .use-case-header h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .use-case-header p { opacity: 0.9; font-size: 0.9rem; }
+        .use-case-body { padding: 1.5rem; }
+        .use-case-body ul { list-style: none; }
+        .use-case-body li { padding: 0.5rem 0; color: #555; display: flex; align-items: center; gap: 0.5rem; }
+        .use-case-body li:before { content: "→"; color: #e8751a; }
+        
+        /* CTA Section */
+        .cta-section { text-align: center; padding: 5rem 1rem; }
+        .cta-section h2 { font-size: 2.2rem; color: #1a5f7a; margin-bottom: 1rem; }
+        .cta-section p { color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        
+        /* FAQ */
+        .faq-section { background: #f8f9fa; }
+        .faq-item { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .faq-item h4 { color: #1a5f7a; margin-bottom: 0.75rem; font-size: 1.1rem; }
+        .faq-item p { color: #555; }
+        
+        /* Footer */
+        .footer { background: #222; color: white; padding: 3rem 1rem 2rem; }
+        .footer-content { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+        .footer-section h4 { color: #57c5b6; margin-bottom: 1rem; }
+        .footer-section a { color: #aaa; text-decoration: none; display: block; margin-bottom: 0.5rem; }
+        .footer-section a:hover { color: white; }
+        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #444; color: #888; }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1.1rem; }
+            .section-title h2 { font-size: 1.8rem; }
+            .stats-grid h3 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Ava<span>Digital</span></a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/services" class="active">Services</a>
+                <a href="/about">About</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero -->
+    <section class="hero">
+        <h1>AI Marketing Automation</h1>
+        <p>Scale your marketing without scaling your team. We build AI-powered systems that create content, optimize SEO, manage social media, and nurture leads — 24/7.</p>
+        <a href="/contact" class="btn-primary">Get Your Free AI Audit</a>
+        <div class="hero-badges">
+            <span class="hero-badge">🤖 AI-Powered</span>
+            <span class="hero-badge">⚡ 10x Faster</span>
+            <span class="hero-badge">💰 80% Cost Savings</span>
+        </div>
+    </section>
+    
+    <!-- What We Do -->
+    <section class="section">
+        <div class="section-title">
+            <h2>What Our AI Agents Do</h2>
+            <p>Intelligent automation that works while you sleep</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">✍️</div>
+                <h3>AI Content Creation</h3>
+                <p>Generate SEO-optimized blog posts, social media content, and email newsletters that sound human and rank well.</p>
+                <ul class="service-features">
+                    <li>SEO-optimized blog posts</li>
+                    <li>Social media content calendars</li>
+                    <li>Email newsletter sequences</li>
+                    <li>Ad copy variations</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>SEO Automation</h3>
+                <p>Continuous optimization that keeps your website climbing the rankings without manual effort.</p>
+                <ul class="service-features">
+                    <li>Keyword research & tracking</li>
+                    <li>On-page optimization</li>
+                    <li>Schema markup implementation</li>
+                    <li>Technical SEO audits</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Social Media Management</h3>
+                <p>Consistent, engaging social presence across all platforms without the daily grind.</p>
+                <ul class="service-features">
+                    <li>Content scheduling & posting</li>
+                    <li>Engagement monitoring</li>
+                    <li>Comment & DM responses</li>
+                    <li>Performance analytics</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">📧</div>
+                <h3>Email Marketing</h3>
+                <p>Automated email sequences that nurture leads from first contact to sale.</p>
+                <ul class="service-features">
+                    <li>Drip campaign creation</li>
+                    <li>Personalized outreach</li>
+                    <li>A/B testing automation</li>
+                    <li>List segmentation</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">💬</div>
+                <h3>AI Chatbots</h3>
+                <p>Intelligent chatbots that qualify leads, answer questions, and book appointments 24/7.</p>
+                <ul class="service-features">
+                    <li>Lead qualification</li>
+                    <li>Instant responses</li>
+                    <li>Appointment booking</li>
+                    <li>CRM integration</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Analytics & Reporting</h3>
+                <p>Automated dashboards and reports that show you what's working and what needs attention.</p>
+                <ul class="service-features">
+                    <li>Performance dashboards</li>
+                    <li>Weekly email reports</li>
+                    <li>Competitor monitoring</li>
+                    <li>ROI tracking</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>10x</h3>
+                <p>Faster Content Production</p>
+            </div>
+            <div class="stat-item">
+                <h3>80%</h3>
+                <p>Cost Reduction</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Always Working</p>
+            </div>
+            <div class="stat-item">
+                <h3>3x</h3>
+                <p>More Leads Generated</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works -->
+    <section class="section process-section">
+        <div class="section-title">
+            <h2>How It Works</h2>
+            <p>From setup to results in 4 simple steps</p>
+        </div>
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Discovery</h3>
+                <p>We analyze your current marketing, identify automation opportunities, and design your AI strategy.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Setup</h3>
+                <p>We configure your AI agents, integrate with your tools, and train them on your brand voice.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Launch</h3>
+                <p>Your AI agents go live, creating content, optimizing SEO, and engaging customers automatically.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>Optimize</h3>
+                <p>We monitor performance, refine the AI, and continuously improve results month over month.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Use Cases -->
+    <section class="section use-cases">
+        <div class="section-title">
+            <h2>Who Benefits from AI Marketing?</h2>
+            <p>Real use cases for real businesses</p>
+        </div>
+        <div class="use-case-grid">
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3>🏥 Healthcare Practices</h3>
+                    <p>Medical & dental offices</p>
+                </div>
+                <div class="use-case-body">
+                    <ul>
+                        <li>Automated appointment reminders</li>
+                        <li>Patient follow-up sequences</li>
+                        <li>Local SEO for "near me" searches</li>
+                        <li>Review request automation</li>
+                        <li>Educational content creation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3>🏠 Real Estate Agents</h3>
+                    <p>Realtors & brokerages</p>
+                </div>
+                <div class="use-case-body">
+                    <ul>
+                        <li>Property listing descriptions</li>
+                        <li>Social media property posts</li>
+                        <li>Lead nurturing sequences</li>
+                        <li>Market update newsletters</li>
+                        <li>Neighborhood landing pages</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3>⚖️ Law Firms</h3>
+                    <p>Attorneys & legal practices</p>
+                </div>
+                <div class="use-case-body">
+                    <ul>
+                        <li>Practice area content</li>
+                        <li>Client intake chatbots</li>
+                        <li>Case study creation</li>
+                        <li>Legal blog posts</li>
+                        <li>Consultation booking</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3>🏪 Local Businesses</h3>
+                    <p>Retail & service companies</p>
+                </div>
+                <div class="use-case-body">
+                    <ul>
+                        <li>Google Business Profile posts</li>
+                        <li>Local SEO optimization</li>
+                        <li>Customer review responses</li>
+                        <li>Promotional email campaigns</li>
+                        <li>Social media engagement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits -->
+    <section class="section">
+        <div class="section-title">
+            <h2>Why Choose AI Marketing?</h2>
+            <p>The advantages of intelligent automation</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="benefit-icon">⚡</div>
+                <div class="benefit-content">
+                    <h4>Work While You Sleep</h4>
+                    <p>AI agents never clock out. Your marketing continues 24/7, even on weekends and holidays.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">💰</div>
+                <div class="benefit-content">
+                    <h4>Reduce Costs</h4>
+                    <p>Get the output of a full marketing team at a fraction of the cost. No salaries, benefits, or overhead.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">📈</div>
+                <div class="benefit-content">
+                    <h4>Scale Instantly</h4>
+                    <p>Need 10 blog posts instead of 2? AI scales instantly without hiring or training new staff.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🎯</div>
+                <div class="benefit-content">
+                    <h4>Consistent Quality</h4>
+                    <p>Every piece of content follows your brand guidelines. No bad days, no inconsistencies.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🔬</div>
+                <div class="benefit-content">
+                    <h4>Data-Driven Decisions</h4>
+                    <p>AI analyzes performance data and automatically optimizes for better results.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🚀</div>
+                <div class="benefit-content">
+                    <h4>Competitive Advantage</h4>
+                    <p>Early adopters of AI marketing are dominating their markets. Don't get left behind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="section faq-section">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+            <p>Common questions about AI marketing automation</p>
+        </div>
+        <div class="faq-item">
+            <h4>Will AI-generated content sound robotic?</h4>
+            <p>No. We train AI agents on your brand voice, past content, and industry specifics. The result is content that sounds like you wrote it — just faster and more consistently.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How long does it take to see results?</h4>
+            <p>Most clients see initial improvements in 2-4 weeks. SEO results typically take 3-6 months, while email and social media show faster engagement gains.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Do I need technical skills to use this?</h4>
+            <p>Not at all. We handle all the technical setup, training, and maintenance. You get a dashboard to monitor results and approve content — that's it.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can AI really replace my marketing team?</h4>
+            <p>AI augments your team, not replaces it. Your best people can focus on strategy and creativity while AI handles repetitive tasks. Many clients actually grow their teams after seeing AI's impact.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Is my data secure with AI systems?</h4>
+            <p>Yes. We use enterprise-grade security, encrypted connections, and your data is never used to train public AI models. We can also deploy private AI instances for sensitive industries.</p>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to Automate Your Marketing?</h2>
+        <p>Get a free AI audit to see exactly how automation can transform your business. We'll analyze your current marketing and show you specific opportunities.</p>
+        <div class="cta-buttons">
+            <a href="/contact" class="btn-primary">Get Your Free AI Audit</a>
+            <a href="/services" class="btn-secondary">View All Services</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Ava Digital Agency</h4>
+                <p style="color: #aaa; font-size: 0.9rem;">A family-run AI-powered digital marketing agency in Naperville, IL.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="/services">Services</a>
+                <a href="/about">About Us</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="/services/seo">SEO Optimization</a>
+                <a href="/services/ppc">PPC Management</a>
+                <a href="/services/web-design">Web Design</a>
+                <a href="/services/ai-automation">AI Automation</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p style="color: #aaa; font-size: 0.9rem;">Naperville, IL</p>
+                <a href="mailto:glen@avadigitalagency.com">glen@avadigitalagency.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ava Digital Agency. A Family Run Business. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

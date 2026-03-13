@@ -32,6 +32,20 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Service Pages -->
+  <url>
+    <loc>https://avadigitalagency.com/services/ai-marketing-automation</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://avadigitalagency.com/services/outbound-email-marketing</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Blog Posts -->
   <url>
     <loc>https://avadigitalagency.com/blog/how-to-rank-your-naperville-business-on-google</loc>
