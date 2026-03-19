@@ -1,45 +1,71 @@
-# Ava Digital Agency — Website
+# Ava Digital Agency - Workspace Folder
 
-**Live site:** [avadigitalagency.com](https://avadigitalagency.com)  
-**Agency:** Ava Digital | AI-Powered Digital Marketing | Naperville, IL
+**Created:** March 19, 2026  
+**Purpose:** Centralized storage for all Ava Digital content, templates, and documentation
 
 ---
 
-## Structure
+## 📁 Folder Structure
 
 ```
-ava-website/
-├── index.html          # Homepage
-├── cities/             # 25 Illinois city landing pages
-│   ├── Chicago.html
-│   ├── Naperville.html
-│   └── ... (25 total)
-└── README.md
+ava-digital/
+├── templates/          # HTML templates for pages and posts
+├── pages/             # Service pages, city pages, core pages
+├── blog-posts/        # All blog post HTML files
+├── docs/              # Documentation and guides
+└── assets/            # Images, CSS, JS files
 ```
 
-## Pages
+---
 
-- **Homepage** — AI-powered marketing agency landing page
-- **25 City Pages** — Geo SEO pages for every major Illinois city
-- **6 Service Pages** — Deployed directly to WordPress (not in this repo)
+## 📄 Important Files
 
-## Tech Stack
+### Documentation (in docs/)
+- `PAGE_CREATION_GUIDE.md` - Full guide for creating pages
+- `BLOG_POST_CHECKLIST.md` - Quick checklist for blog posts
 
-- Pure HTML/CSS/JS — no framework
-- GSAP + AOS for animations
-- Deployed to WordPress via XML-RPC
-- Elementor Canvas template (strips theme header/footer)
+### Blog Posts (in blog-posts/)
+- `how-to-choose-digital-marketing-agency.html` - Published March 19, 2026
+- `ai-marketing-roi-calculator.html` - Published March 19, 2026
 
-## Deployment
+---
 
-Pages are deployed to WordPress via XML-RPC.  
-See `AVA-WEBSITE.md` in the main workspace for deployment instructions and credentials.
+## 🔗 Live Website
 
-## Services Covered
+**Main Site:** https://avadigitalagency.com  
+**Blog:** https://avadigitalagency.com/blog/
 
-1. Outbound Email Campaigns
-2. LinkedIn Lead Engine  
-3. AI Automation
-4. Geo SEO
-5. Google Ads Management
-6. Social Media & TikTok
+### Published Blog Posts:
+1. https://avadigitalagency.com/how-to-choose-digital-marketing-agency/
+2. https://avadigitalagency.com/ai-marketing-roi-calculator-2/
+
+---
+
+## 📝 WordPress Credentials
+
+- **Username:** vikmehta
+- **App Password:** Ivx0 otYS SAJO 3iLS xpVi 9KyW
+- **API Endpoint:** https://avadigitalagency.com/wp-json/wp/v2/pages
+
+---
+
+## ⚠️ CRITICAL REMINDERS
+
+1. **Always use `elementor_canvas` template**
+2. **Headings must be WHITE** (`color: white` in CSS)
+3. **Include `id="cta"`** in CTA section for nav button
+4. **Update blog index** after publishing new post
+5. **Test on mobile** before finishing
+
+---
+
+## 🚀 Next Blog Post Topics
+
+1. LinkedIn Lead Generation Playbook
+2. Naperville Local SEO Guide
+3. Outbound Email Strategy Framework
+4. AI Agent Use Cases for Small Business
+
+---
+
+**DO NOT DELETE THIS FOLDER** - All Ava Digital work is stored here.
