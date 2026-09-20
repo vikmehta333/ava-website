@@ -1,0 +1,478 @@
+- generic [active] [ref=f13e1]:
+  - banner [ref=f13e2]:
+    - generic [ref=f13e6]:
+      - generic [ref=f13e7]:
+        - link [ref=f13e8] [cursor=pointer]:
+          - /url: tel:8002288198
+          - img "Call Icon" [ref=f13e9]
+        - link [ref=f13e10] [cursor=pointer]:
+          - /url: mailto:support@sunstone.com
+          - img "email Icon" [ref=f13e11]
+      - generic [ref=f13e12]:
+        - button "Search here..." [ref=f13e13] [cursor=pointer]
+        - button "Live Chat" [ref=f13e18] [cursor=pointer]
+    - generic [ref=f13e24]:
+      - generic [ref=f13e25]:
+        - button "Open navigation menu" [ref=f13e26] [cursor=pointer]
+        - link [ref=f13e28] [cursor=pointer]:
+          - /url: /
+          - img "ASC Sunstone" [ref=f13e29]
+      - navigation
+  - generic [ref=f13e31]:
+    - textbox "Search pages, blogs, technologies..." [ref=f13e35]
+    - button [ref=f13e36] [cursor=pointer]
+  - generic [ref=f13e39]:
+    - generic [ref=f13e40]:
+      - generic [ref=f13e41]:
+        - generic [ref=f13e42]: Menu
+        - button [ref=f13e43] [cursor=pointer]
+      - generic [ref=f13e46]:
+        - generic [ref=f13e47]:
+          - link "PCB Products" [ref=f13e48] [cursor=pointer]:
+            - /url: /pcb-products
+          - button "Open PCB Products submenu" [ref=f13e51] [cursor=pointer]
+        - generic [ref=f13e54]:
+          - link "Capabilities" [ref=f13e55] [cursor=pointer]:
+            - /url: /capabilities
+          - button "Open Capabilities submenu" [ref=f13e58] [cursor=pointer]
+        - generic [ref=f13e61]:
+          - link "Resources" [ref=f13e62] [cursor=pointer]:
+            - /url: /resources
+          - button "Open Resources submenu" [ref=f13e65] [cursor=pointer]
+        - generic [ref=f13e68]:
+          - link "Support" [ref=f13e69] [cursor=pointer]:
+            - /url: /support
+          - button "Open Support submenu" [ref=f13e72] [cursor=pointer]
+        - generic [ref=f13e75]:
+          - link "About Us" [ref=f13e76] [cursor=pointer]:
+            - /url: /about
+          - button "Open About Us submenu" [ref=f13e79] [cursor=pointer]
+      - link "Login Now" [ref=f13e84] [cursor=pointer]:
+        - /url: https://onequote.sunstone.com/my-account/login/
+    - button [ref=f13e87] [cursor=pointer]
+  - main [ref=f13e91]:
+    - generic [ref=f13e92]:
+      - generic [ref=f13e96]:
+        - generic [ref=f13e97]:
+          - generic [ref=f13e98]:
+            - generic [ref=f13e99]: Manufacturing PCBs in the USA
+            - img "Verified" [ref=f13e100]
+          - heading "Collaborate to Win" [level=1] [ref=f13e101]:
+            - text: Collaborate to Win
+            - emphasis
+          - heading "Trusted by 50,000+ Engineers" [level=4] [ref=f13e102]
+          - link "Get Instant Quote" [ref=f13e104] [cursor=pointer]:
+            - /url: https://onequote.sunstone.com/onequote-form/
+        - generic [ref=f13e106]:
+          - heading "Get Instant Quote" [level=2] [ref=f13e107]
+          - separator [ref=f13e108]
+          - generic [ref=f13e109]:
+            - generic [ref=f13e110]:
+              - generic [ref=f13e112]:
+                - generic [ref=f13e113]: Quantity
+                - textbox "Quantity" [ref=f13e114]
+              - generic [ref=f13e115]:
+                - generic [ref=f13e116]: Build Time
+                - combobox [ref=f13e118] [cursor=pointer]:
+                  - option "1 Days"
+                  - option "2 Days" [selected]
+                  - option "3 Days"
+                  - option "4 Days"
+                  - option "1 Week"
+                  - option "2 Week"
+                  - option "3 Week"
+            - generic [ref=f13e119]:
+              - generic [ref=f13e120]: Dimensions
+              - generic [ref=f13e121]:
+                - textbox [ref=f13e123]
+                - generic [ref=f13e124]: x
+                - textbox [ref=f13e126]
+                - generic [ref=f13e127]: in.
+            - generic [ref=f13e128]:
+              - generic [ref=f13e129]:
+                - generic [ref=f13e130]: Layer
+                - combobox [ref=f13e132] [cursor=pointer]:
+                  - option "1"
+                  - option "2" [selected]
+                  - option "3"
+                  - option "4"
+                  - option "5"
+                  - option "6"
+                  - option "7"
+                  - option "8"
+              - generic [ref=f13e133]:
+                - generic [ref=f13e134]: Type
+                - combobox [ref=f13e136] [cursor=pointer]:
+                  - option "Standard" [selected]
+                  - option "Flex"
+            - generic [ref=f13e137]:
+              - generic [ref=f13e138]: Email ID (Optional)
+              - textbox "Email ID (Optional)" [ref=f13e139]:
+                - /placeholder: Enter Your Email ID
+            - button "Submit Quote" [ref=f13e141] [cursor=pointer]
+      - generic [ref=f13e143]:
+        - generic [ref=f13e145]:
+          - paragraph [ref=f13e146]: Technology Driven PCB Manufacturing
+          - heading "Engineered with Purpose, Built with Precision." [level=2] [ref=f13e147]
+          - paragraph [ref=f13e148]: At ASC Sunstone, we combine precision engineering and industry-leading expertise to manufacture high-performance printed circuit boards.
+        - generic [ref=f13e149]:
+          - article [ref=f13e150]:
+            - img "Our Capabilities" [ref=f13e152]
+            - generic [ref=f13e153]:
+              - heading "Our Capabilities" [level=3] [ref=f13e154]
+              - paragraph [ref=f13e155]: Everything from 2-layer prototypes to complex multilayer builds, manufactured to spec at our USA facility.
+              - generic [ref=f13e156]:
+                - separator [ref=f13e157]
+                - link "Learn More..." [ref=f13e158] [cursor=pointer]:
+                  - /url: /capabilities
+          - article [ref=f13e159]:
+            - img "Advanced Technology" [ref=f13e161]
+            - generic [ref=f13e162]:
+              - heading "Advanced Technology" [level=3] [ref=f13e163]
+              - paragraph [ref=f13e164]: Specialty fabrication for high-layer-count, controlled impedance, and RF microwave designs — engineered and built in-house.
+              - generic [ref=f13e165]:
+                - separator [ref=f13e166]
+                - link "Learn More..." [ref=f13e167] [cursor=pointer]:
+                  - /url: /pcb-products/uhdi-pcbs
+          - article [ref=f13e168]:
+            - img "Precision Manufacturing" [ref=f13e170]
+            - generic [ref=f13e171]:
+              - heading "Precision Manufacturing" [level=3] [ref=f13e172]
+              - paragraph [ref=f13e173]: Built to your specs. Inspected at every stage. Backed by a 100% quality guarantee.
+              - generic [ref=f13e174]:
+                - separator [ref=f13e175]
+                - link "Learn More..." [ref=f13e176] [cursor=pointer]:
+                  - /url: /
+      - generic [ref=f13e178]:
+        - generic [ref=f13e180]:
+          - paragraph [ref=f13e181]: MADE IN THE USA
+          - heading "Built Here. Backed Here." [level=2] [ref=f13e182]
+          - paragraph [ref=f13e184]: Two US facilities. Two engineering teams. Technology Experts. Live Customer Support. Quality Guarantee. Every board fabricated and reviewed on American soil.
+        - generic [ref=f13e185]:
+          - img "Partner Logo 1" [ref=f13e187]
+          - img "Partner Logo 2" [ref=f13e189]
+          - img "Partner Logo 3" [ref=f13e191]
+          - img "Partner Logo 4" [ref=f13e193]
+          - img "Partner Logo 5" [ref=f13e195]
+      - generic [ref=f13e196]:
+        - generic [ref=f13e199]:
+          - paragraph [ref=f13e200]: OUR CORE SOLUTIONS
+          - heading "Precision builds. Every time." [level=2] [ref=f13e201]
+          - paragraph [ref=f13e202]: We build boards that perform. From quickturn prototypes to high-reliability production runs, ASC Sunstone delivers precision PCB fabrication backed by over 55 years of combined expertise and the certifications your program demands.
+        - generic [ref=f13e203]:
+          - generic [ref=f13e204]:
+            - article [ref=f13e205]:
+              - img "Quickturn PCBS" [ref=f13e207]
+              - generic [ref=f13e208]:
+                - heading "Quickturn PCBS" [level=3] [ref=f13e209]
+                - paragraph [ref=f13e210]: Instant online quoting - prototype & quickturn PCBs, built to spec in the USA.
+                - generic [ref=f13e211]:
+                  - separator [ref=f13e212]
+                  - link "Learn More..." [ref=f13e213] [cursor=pointer]:
+                    - /url: /pcb-products/quickturn-pcbs
+            - article [ref=f13e214]:
+              - img "Standard PCBs" [ref=f13e216]
+              - generic [ref=f13e217]:
+                - heading "Standard PCBs" [level=3] [ref=f13e218]
+                - paragraph [ref=f13e219]: Tighter traces, smaller vias, more layers in less space - precision HDI fabrication for your most complex designs.
+                - generic [ref=f13e220]:
+                  - separator [ref=f13e221]
+                  - link "Learn More..." [ref=f13e222] [cursor=pointer]:
+                    - /url: /pcb-products/standard-pcbs
+            - article [ref=f13e223]:
+              - img "Flex/Rigid Flex" [ref=f13e225]
+              - generic [ref=f13e226]:
+                - heading "Flex/Rigid Flex" [level=3] [ref=f13e227]
+                - paragraph [ref=f13e228]: When your design needs to move or fit a tight form factor,
+                - generic [ref=f13e229]:
+                  - separator [ref=f13e230]
+                  - link "Learn More..." [ref=f13e231] [cursor=pointer]:
+                    - /url: /pcb-products/flex-rigid-flex
+            - article [ref=f13e232]:
+              - img "PCB Assembly" [ref=f13e234]
+              - generic [ref=f13e235]:
+                - heading "PCB Assembly" [level=3] [ref=f13e236]
+                - paragraph [ref=f13e237]: Affordable Prototypes Made in the USA with Rapid Dynamic Online Quoting
+                - generic [ref=f13e238]:
+                  - separator [ref=f13e239]
+                  - link "Learn More..." [ref=f13e240] [cursor=pointer]:
+                    - /url: /pcb-products/pcb-assembly
+          - link "View More" [ref=f13e242] [cursor=pointer]:
+            - /url: /capabilities
+      - generic [ref=f13e247]:
+        - generic [ref=f13e249]:
+          - paragraph [ref=f13e250]: Let’s Build Better Electronics
+          - heading "Collaborate to Win" [level=2] [ref=f13e251]
+          - paragraph [ref=f13e253]: Great products begin with great collaboration. Our engineering team works closely with clients to refine PCB designs, optimize performance, and ensure manufacturability from concept to production.
+        - generic [ref=f13e254]:
+          - generic [ref=f13e255]:
+            - generic [ref=f13e256]:
+              - img "Idea & Design Support" [ref=f13e258]
+              - heading "Idea & Design Support" [level=3] [ref=f13e259]
+              - paragraph [ref=f13e260]: Work with our experts to refine your PCB layout
+            - generic [ref=f13e261]:
+              - img "Rapid Prototyping" [ref=f13e263]
+              - heading "Rapid Prototyping" [level=3] [ref=f13e264]
+              - paragraph [ref=f13e265]: Quick Turnaround prototypes for testing and validation
+          - img "Layer" [ref=f13e266]
+          - generic [ref=f13e267]:
+            - generic [ref=f13e268]:
+              - img "Scalable Production" [ref=f13e270]
+              - heading "Scalable Production" [level=3] [ref=f13e271]
+              - paragraph [ref=f13e272]: Reliable manufacturing for growing product demand
+            - generic [ref=f13e273]:
+              - img "Assembly & Integration" [ref=f13e275]
+              - heading "Assembly & Integration" [level=3] [ref=f13e276]
+              - paragraph [ref=f13e277]: High-precision SMT and through-hole assembly.
+      - generic [ref=f13e278]:
+        - generic [ref=f13e279]:
+          - generic [ref=f13e282]:
+            - generic [ref=f13e283]:
+              - paragraph [ref=f13e284]: Performance Metrics
+              - heading "The Stats" [level=2] [ref=f13e285]
+              - paragraph [ref=f13e287]: Our manufacturing excellence is reflected in the performance, reliability, and satisfaction delivered to customers worldwide.
+            - generic [ref=f13e288]:
+              - generic [ref=f13e290]:
+                - paragraph [ref=f13e291]: "7216"
+                - paragraph [ref=f13e292]: Orders Shipped - 2026
+              - generic [ref=f13e295]:
+                - paragraph [ref=f13e296]: "55"
+                - paragraph [ref=f13e297]: Years in Business
+              - generic [ref=f13e300]:
+                - paragraph [ref=f13e301]: 800+
+                - paragraph [ref=f13e302]: Annual New Customers
+            - generic [ref=f13e303]:
+              - paragraph
+          - generic [ref=f13e304]:
+            - img "stats section image" [ref=f13e305]
+            - generic:
+              - generic:
+                - paragraph: Worldwide Customers
+                - generic:
+                  - paragraph: 1000+
+              - generic:
+                - paragraph: Countries Covered
+                - generic:
+                  - paragraph: 16+
+        - generic [ref=f13e307]:
+          - generic [ref=f13e309]:
+            - paragraph [ref=f13e310]: INDUSTRIES POWERED BY ASC
+            - heading "Industries We Serve" [level=2] [ref=f13e311]
+            - paragraph [ref=f13e313]: Our PCB solutions power innovation across a wide range of industries where reliability, precision, and performance are critical.
+          - generic [ref=f13e314]:
+            - generic [ref=f13e315]:
+              - img "Aerospace" [ref=f13e316]
+              - heading "Aerospace" [level=4] [ref=f13e317]
+              - paragraph [ref=f13e318]: Flight-critical PCBs engineered to withstand extreme conditions and meet the highest reliability standards.
+            - generic [ref=f13e319]:
+              - img "Defense" [ref=f13e320]
+              - heading "Defense" [level=4] [ref=f13e321]
+              - paragraph [ref=f13e322]: Mission-ready boards built to rigorous defense specifications for security, durability, and performance.
+            - generic [ref=f13e323]:
+              - img "Medical" [ref=f13e324]
+              - heading "Medical" [level=4] [ref=f13e325]
+              - paragraph [ref=f13e326]: Precision-manufactured PCBs supporting life-saving devices where failure isn't an option.
+            - generic [ref=f13e327]:
+              - img "Automotive" [ref=f13e328]
+              - heading "Automotive" [level=4] [ref=f13e329]
+              - paragraph [ref=f13e330]: Rugged, high-reliability boards designed for the demands of modern vehicle electronics.
+            - generic [ref=f13e331]:
+              - img "Telecom" [ref=f13e332]
+              - heading "Telecom" [level=4] [ref=f13e333]
+              - paragraph [ref=f13e334]: High-speed, dependable PCBs that keep networks connected and data flowing.
+            - generic [ref=f13e335]:
+              - img "Transportation" [ref=f13e336]
+              - heading "Transportation" [level=4] [ref=f13e337]
+              - paragraph [ref=f13e338]: Durable boards built to perform reliably across rail, fleet, and logistics systems.
+            - generic [ref=f13e339]:
+              - img "Commercial" [ref=f13e340]
+              - heading "Commercial" [level=4] [ref=f13e341]
+              - paragraph [ref=f13e342]: Cost-effective, quality-driven PCBs tailored to a wide range of business applications.
+            - generic [ref=f13e343]:
+              - img "Radar" [ref=f13e344]
+              - heading "Radar" [level=4] [ref=f13e345]
+              - paragraph [ref=f13e346]: High-frequency PCBs engineered for the precision and signal integrity radar systems demand.
+      - generic [ref=f13e347]:
+        - generic [ref=f13e350]:
+          - paragraph [ref=f13e351]: INDUSTRY NEWS
+          - heading "News & Resources" [level=2] [ref=f13e352]
+          - paragraph [ref=f13e354]: Stay informed with the latest insights, innovations, and industry updates from the world of PCB manufacturing and electronics technology.
+        - generic [ref=f13e355]:
+          - region "Industry news and resources" [ref=f13e356]:
+            - article [ref=f13e357]:
+              - generic [ref=f13e358]:
+                - img "Examining The Value of Manufacturing Quality During Prototype" [ref=f13e359]
+                - generic [ref=f13e360]: WHITE PAPER
+              - generic [ref=f13e362]:
+                - generic [ref=f13e363]:
+                  - paragraph [ref=f13e364]: Jun 27, 2026
+                  - paragraph [ref=f13e366]: ASC Sunstone
+                - heading "Examining The Value of Manufacturing Quality During Prototype" [level=3] [ref=f13e367]
+                - paragraph [ref=f13e368]: A smoother electronic product development cycle means getting to market faster and more profitably. Minimizing PCB design iterations is key...
+                - generic [ref=f13e369]:
+                  - separator [ref=f13e370]
+                  - link "Learn More..." [ref=f13e371] [cursor=pointer]:
+                    - /url: /resources/whitepapers/examining-the-value-of-manufacturing-quality-during-prototyping
+            - article [ref=f13e372]:
+              - generic [ref=f13e373]:
+                - img "Vance & Hines Case Study" [ref=f13e374]
+                - generic [ref=f13e375]: CASE STUDY
+              - generic [ref=f13e377]:
+                - generic [ref=f13e378]:
+                  - paragraph [ref=f13e379]: Jun 27, 2026
+                  - paragraph [ref=f13e381]: ASC Sunstone
+                - heading "Vance & Hines Case Study" [level=3] [ref=f13e382]
+                - paragraph [ref=f13e383]: Pushing the Performance Envelope Since 1979 Vance & Hines has represented the gold standard for aftermarket motorcycle parts and accessories...
+                - generic [ref=f13e384]:
+                  - separator [ref=f13e385]
+                  - link "Learn More..." [ref=f13e386] [cursor=pointer]:
+                    - /url: /resources/case-studies/vance-and-hines-case-study
+            - article [ref=f13e387]:
+              - generic [ref=f13e388]:
+                - 'img "Connect the Dots: What Designers Should Know About Non-conductive Via Fill" [ref=f13e389]'
+                - generic [ref=f13e390]: ARTICLE
+              - generic [ref=f13e392]:
+                - generic [ref=f13e393]:
+                  - paragraph [ref=f13e394]: Jul 28, 2026
+                  - paragraph [ref=f13e396]: Matt Stevenson
+                - 'heading "Connect the Dots: What Designers Should Know About Non-conductive Via Fill" [level=3] [ref=f13e397]'
+                - paragraph [ref=f13e398]: The rapid advance of technology is driving changes in electronics that require increasingly smaller boards capable of handling higher signal...
+                - generic [ref=f13e399]:
+                  - separator [ref=f13e400]
+                  - link "Learn More..." [ref=f13e401] [cursor=pointer]:
+                    - /url: /resources/articles/connect-the-dots-what-designers-should-know-about-non-conductive-via-fill
+            - article [ref=f13e402]:
+              - generic [ref=f13e403]:
+                - img "Micro Vias Are Costing You More Than You Think" [ref=f13e404]
+                - generic [ref=f13e405]: BLOG
+              - generic [ref=f13e407]:
+                - generic [ref=f13e408]:
+                  - paragraph [ref=f13e409]: Jun 28, 2026
+                  - paragraph [ref=f13e411]: Mike Meisch
+                - heading "Micro Vias Are Costing You More Than You Think" [level=3] [ref=f13e412]
+                - paragraph [ref=f13e413]: Micro vias, blind vias, buried vias - they're impressive engineering tools. They're also some of the fastest ways to double...
+                - generic [ref=f13e414]:
+                  - separator [ref=f13e415]
+                  - link "Learn More..." [ref=f13e416] [cursor=pointer]:
+                    - /url: /resources/sme-blogs/mic-drop-mikes-blog/micro-vias-are-costing-you-more-than-you-think
+            - article [ref=f13e417]:
+              - generic [ref=f13e418]:
+                - img "Drill-to-Copper Clearance Is Not Optional" [ref=f13e419]
+                - generic [ref=f13e420]: BLOG
+              - generic [ref=f13e422]:
+                - generic [ref=f13e423]:
+                  - paragraph [ref=f13e424]: Jun 28, 2026
+                  - paragraph [ref=f13e426]: Mike Meisch
+                - heading "Drill-to-Copper Clearance Is Not Optional" [level=3] [ref=f13e427]
+                - paragraph [ref=f13e428]: Most designers know to watch their annular rings. Fewer pay attention to drill-to-copper clearance - and that gap (pun intended)...
+                - generic [ref=f13e429]:
+                  - separator [ref=f13e430]
+                  - link "Learn More..." [ref=f13e431] [cursor=pointer]:
+                    - /url: /resources/sme-blogs/mic-drop-mikes-blog/drill-to-copper-clearance-is-not-optional
+          - link "View More" [ref=f13e433] [cursor=pointer]:
+            - /url: /resources
+  - generic [ref=f13e439]:
+    - generic [ref=f13e440]:
+      - paragraph [ref=f13e441]: QUALITY STANDARDS
+      - heading "Certifications & Conformance" [level=3] [ref=f13e442]
+      - generic [ref=f13e443]:
+        - button "Previous certificate" [disabled] [ref=f13e444]
+        - generic [ref=f13e448]:
+          - img "badge" [ref=f13e450]
+          - img "badge" [ref=f13e452]
+          - img "badge" [ref=f13e454]
+          - img "badge" [ref=f13e456]
+          - img "badge" [ref=f13e458]
+          - img "badge" [ref=f13e460]
+          - img "badge" [ref=f13e462]
+          - img "badge" [ref=f13e464]
+        - button "Next certificate" [ref=f13e465]
+    - generic [ref=f13e469]:
+      - paragraph [ref=f13e470]: STAY UPDATED
+      - heading "Subscribe to Our Newsletter" [level=3] [ref=f13e471]
+      - generic [ref=f13e472]:
+        - generic [ref=f13e473]:
+          - generic [ref=f13e474]: Enter your Email ID
+          - textbox "Enter your Email ID" [ref=f13e475]:
+            - /placeholder: alex@gmail.com
+        - button "Submit" [ref=f13e476] [cursor=pointer]
+  - contentinfo [ref=f13e477]:
+    - generic [ref=f13e479]:
+      - generic [ref=f13e480]:
+        - generic [ref=f13e481]: PCB Products
+        - link "Quickturn PCBs" [ref=f13e484] [cursor=pointer]:
+          - /url: /pcb-products/pcb-products-services/quickturn-pcbs
+        - link "Standard PCBs" [ref=f13e485] [cursor=pointer]:
+          - /url: /pcb-products/pcb-products-services/standard-pcbs
+        - link "Flex/Rigid Flex" [ref=f13e486] [cursor=pointer]:
+          - /url: /pcb-products/pcb-products-services/flex-rigid-flex
+        - link "RF PCBs" [ref=f13e487] [cursor=pointer]:
+          - /url: /pcb-products/pcb-products-services/rf-pcbs
+        - link "+2 More..." [ref=f13e488] [cursor=pointer]:
+          - /url: /pcb-products
+      - generic [ref=f13e489]:
+        - generic [ref=f13e490]: Capabilities
+        - link "Controlled Impedance" [ref=f13e493] [cursor=pointer]:
+          - /url: /capabilities/controlled-impedance
+        - link "Blind & Buried Vias" [ref=f13e494] [cursor=pointer]:
+          - /url: /capabilities/blind-and-buried-vias
+      - generic [ref=f13e495]:
+        - generic [ref=f13e496]: Resources
+        - link "Whitepapers" [ref=f13e499] [cursor=pointer]:
+          - /url: /resources/whitepapers
+        - link "Case Studies" [ref=f13e500] [cursor=pointer]:
+          - /url: /resources/case-studies
+        - link "Articles" [ref=f13e501] [cursor=pointer]:
+          - /url: /resources/articles
+        - link "SME Blogs" [ref=f13e502] [cursor=pointer]:
+          - /url: /resources/sme-blogs/boards-and-banter-eric
+        - link "PCB Order Checklist" [ref=f13e503] [cursor=pointer]:
+          - /url: /resources/pcb-order-checklist
+      - generic [ref=f13e504]:
+        - generic [ref=f13e505]: About Us
+        - link "Our History" [ref=f13e508] [cursor=pointer]:
+          - /url: /about/our-history
+        - link "Where we’re Located" [ref=f13e509] [cursor=pointer]:
+          - /url: /about/where-were-located
+        - link "Career" [ref=f13e510] [cursor=pointer]:
+          - /url: /about/career
+      - generic [ref=f13e511]:
+        - generic [ref=f13e512]: Support
+        - link "Lead Times" [ref=f13e515] [cursor=pointer]:
+          - /url: /support/lead-times
+        - link "Avoiding Delays" [ref=f13e516] [cursor=pointer]:
+          - /url: /support/avoiding-delays
+        - link "Holiday Schedule" [ref=f13e517] [cursor=pointer]:
+          - /url: /support/holiday-schedule
+        - link "Contact Support" [ref=f13e518] [cursor=pointer]:
+          - /url: /support/contact-support
+        - link "RMA Support" [ref=f13e519] [cursor=pointer]:
+          - /url: /support/rma-support
+      - generic [ref=f13e520]:
+        - generic [ref=f13e521]: Get In Touch
+        - link "+1 800.228.8198" [ref=f13e528] [cursor=pointer]:
+          - /url: tel:18002288198
+        - link "support@sunstone.com" [ref=f13e533] [cursor=pointer]:
+          - /url: mailto:support@sunstone.com
+        - separator [ref=f13e534]
+        - paragraph [ref=f13e535]:
+          - text: ASC Sunstone 13626 S. Freeman Rd
+          - generic [ref=f13e536]: Mulino, OR 97042 USA
+    - paragraph [ref=f13e540]: ASC Sunstone Circuits delivers end-to-end PCB solutions backed by over 50 years of combined expertise. From quick-turn prototypes to advanced, high-performance builds, we provide reliable quality and dedicated support-from design through full scale production.
+    - generic [ref=f13e541]:
+      - separator [ref=f13e542]
+      - generic [ref=f13e543]:
+        - generic [ref=f13e544]: © 2026 ASC Sunstone Circuits. All Rights Reserved.
+        - link "Privacy Policy" [ref=f13e546] [cursor=pointer]:
+          - /url: /privacy-policy
+  - generic [ref=f13e547]:
+    - link "Get Quote" [ref=f13e548] [cursor=pointer]:
+      - /url: https://onequote.sunstone.com/onequote-form/
+    - button "Live Chat" [ref=f13e551] [cursor=pointer]
+  - alert [ref=f13e554]
+  - generic:
+    - generic:
+      - generic:
+        - generic "Unread messages indicator": "0"
+      - generic:
+        - generic "Unread messages indicator": "0"
