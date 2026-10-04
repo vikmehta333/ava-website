@@ -1,7 +1,9 @@
 # Ava Digital Website — Playbook / Operating Manual
 
-**Last updated:** 2026-09-12
+**Last updated:** 2026-09-21
 **Purpose:** The single source of truth for working on avadigitalagency.com so context isn't lost between sessions. Read this first.
+
+> **Active migration (2026-09):** the site is moving from the old **dark** design to a new **light "Bright C"** design. **Done:** homepage + all **6 service pages**. **Remaining:** ~30 city pages, guides, Marketing Answers, case studies. See §4a and §10.
 
 ---
 
@@ -28,6 +30,14 @@ The site has **two kinds of pages**:
 6. **Canonical domain** — `www` → non-www 301 is already in place; **non-www is canonical**. Don't "fix" it.
 7. **Always visually verify** (Playwright render + screenshot) after publishing. HTML/API checks alone miss the theme-overlay class of bugs — this is how the 48-hour guide shipped broken.
 
+## 4a. Light "Bright C" design system (the new standard)
+- **Source of truth:** the **live homepage** (page id **23409**) — pull its raw content via REST (`?context=edit`) to copy the exact `<style>`, `<nav>`, `<footer>`, and Ask-Ava launcher. The old local `scratchpad/ava-home-C.html` does not survive across sessions; the live page does.
+- **Tokens:** `--ink:#101828; --mut:#5b6472; --mut2:#6b7280; --bg:#f7f8fc; --panel:#fff; --line:#e6e8f0; --violet:#7c3aed; --cyan:#22d3ee; --pink:#ec4899`. Fonts: **Hanken Grotesk** (display h1/h2/h3) + **Public Sans** (body), via Google Fonts.
+- **Anatomy:** sticky blur nav w/ CSS-only hamburger (`#nvt` checkbox + `.burger` label) · gradient-mesh hero (`.blob` b1/b2/b3) · `.pill` eyebrow · `.proof` stat strip · `.card`/`.grid3` feature cards w/ stroke-SVG `.ic` icons · `.steps` 01/02/03 · `.faq` native `<details>` accordion · dark `.ctaband` rhythm-break · shared `<footer>`.
+- **CTA text is standardized site-wide to exactly "Get a free audit"** (→ `/contact/` or on-page `#cta`). Don't reintroduce "Book a Call" / "Get Started" / "Get Your Free Audit" variants.
+- **Gotcha caught:** dark-band headings need an **explicit** `color:#fff` — inherited white loses to the theme's `h2` color rule (that's why the homepage CTA heading was once invisible).
+- **Service-page template + generator:** `scratchpad/gen_services.py` (template + icon lib) driven by `scratchpad/deploy_services.py` (per-page data → build → REST PUT → purge). Clone this pattern for city/guide/answer migration. Each page also ships **Service + FAQPage JSON-LD**.
+
 ## 4. Templates & conventions
 - **Guide/playbook template** (the good one): dark navy full-HTML, `<nav id="navbar">` full site nav + hamburger, `.article-hero` → `.article-body` → `.cta-box` → FAQ section → footer, plus BlogPosting + FAQPage JSON-LD. Clone from a live guide (e.g. `outbound-email-strategy-framework`, `48-hour-follow-up-sequence`).
 - **City page template:** dark navy, slug `/[city]-digital-marketing-agency/`.
@@ -41,7 +51,9 @@ The site has **two kinds of pages**:
 - **Marketing Answers hub** (`/marketing-answers/`) + **10 Q&A answer pages** (SEO answer-engine, everythingRF model). Hub has a client-side search box.
 - **City pages:** ~28. **5 core:** Glen Ellyn, Naperville, Downers Grove, Oak Brook, Lombard. Naperville, Downers Grove, Arlington Heights, Orland Park optimized (striking-distance).
 - **Guides/playbooks:** outbound-email-strategy-framework, linkedin-lead-generation-playbook, ai-agent-use-cases-small-business, naperville-local-seo-guide, ai-seo-guide-2026, **48-hour-follow-up-sequence** (newest).
-- **Homepage:** custom dark — hero, services, 3-step process, results/case studies (Fuel Me, a health practice, a plumbing agency), city grid, CTA. (Typewriter animation removed; chatbot widget still present.)
+- **Homepage:** migrated to **light "Bright C"** (page 23409) — hero, industries strip, 6 services, 3-step process, results (Fuel Me / health practice / plumbing agency), 28-city grid, dark CTA band, Ask-Ava launcher.
+- **Service pages (all 6):** migrated to **light** on 2026-09-21 — outbound-email-marketing, linkedin-lead-generation, ai-automation-services, geo-seo-services, google-ads-management, social-media-tiktok-marketing. Each has hero + 4 stats + 6 "what's included" cards + 3-step process + 3 outcomes + 5-Q FAQ + dark CTA + Service/FAQPage schema.
+- **City pages / guides / Marketing Answers / case studies:** still **dark** — migration pending (§10).
 
 ## 6. SEO strategy
 - **Striking distance (highest ROI):** push keywords already ranking page 2 (pos ~8–20) into top 5. Done: Downers Grove, Arlington Heights, Orland Park. **Wave 2 TODO:** Joliet, Schaumburg, Springfield, Evanston, Rockford.
@@ -72,5 +84,8 @@ The site has **two kinds of pages**:
 - [ ] Run **`impeccable` + `apple-design`** review pass on homepage + guides.
 - [ ] Enable **Figma Dev Mode MCP**.
 - [ ] Instagram bio link → `/48-hour-follow-up-sequence/` (Vik's manual step).
-- [ ] Decide homepage direction (currently dark; a white redesign was mocked but not shipped).
+- [x] Homepage direction decided + shipped: **light "Bright C"** (2026-09-21).
+- [x] CTA wording standardized site-wide → "Get a free audit" (65 pages, 91 buttons).
+- [x] Service pages (6) migrated to light (2026-09-21).
+- [ ] **Migrate remaining pages to light** (§4a generator pattern): ~30 city pages → guides → Marketing Answers → case studies (Fuel Me, healthcare).
 - [ ] Build service pages for the demand-gap keywords (§6).
