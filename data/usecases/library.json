@@ -1,0 +1,187 @@
+{
+ "generated_at": "2026-10-12",
+ "hub_page_id": 24305,
+ "count": 18,
+ "items": [
+  {
+   "id": 24352,
+   "slug": "after-hours-receptionist",
+   "title": "The after-hours receptionist",
+   "one_liner": "An AI voice agent answers after-hours calls, books the appointment on your real calendar, and texts you the details — urgent calls flagged for a callback now.",
+   "category": "Customer Service",
+   "has_reel": true,
+   "url": "https://avadigitalagency.com/ai-use-cases/after-hours-receptionist/",
+   "status": "published"
+  },
+  {
+   "id": 24353,
+   "slug": "ask-for-a-review-at-the-perfect-moment",
+   "title": "Ask for a review at the perfect moment",
+   "one_liner": "AI triggers a review request right after a happy customer interaction, then drafts a thoughtful reply to every review that comes in.",
+   "category": "Marketing",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/ask-for-a-review-at-the-perfect-moment/",
+   "status": "published"
+  },
+  {
+   "id": 24355,
+   "slug": "build-a-30-day-content-calendar-in-one-click",
+   "title": "Build a 30-day content calendar in one click",
+   "one_liner": "AI plans a full month of posts — hooks, captions, hashtags — ready for you to approve and schedule.",
+   "category": "Content",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/build-a-30-day-content-calendar-in-one-click/",
+   "status": "published"
+  },
+  {
+   "id": 24356,
+   "slug": "deflect-common-faqs-with-an-ai-chat-widget",
+   "title": "Deflect common FAQs with an AI chat widget",
+   "one_liner": "Trained on your own docs and pricing, it answers instantly and only escalates the genuinely hard questions to a human.",
+   "category": "Customer Service",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/deflect-common-faqs-with-an-ai-chat-widget/",
+   "status": "published"
+  },
+  {
+   "id": 24357,
+   "slug": "draft-a-reply-to-every-inbound-message",
+   "title": "Draft a reply to every inbound message",
+   "one_liner": "AI suggests an on-brand response to each email, DM, and review so your team approves in one click instead of writing from scratch.",
+   "category": "Customer Service",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/draft-a-reply-to-every-inbound-message/",
+   "status": "published"
+  },
+  {
+   "id": 24358,
+   "slug": "enrich-every-new-lead-automatically",
+   "title": "Enrich every new lead automatically",
+   "one_liner": "AI looks up company size, industry, and tech stack the moment a lead comes in, so reps walk into every call informed.",
+   "category": "Sales",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/enrich-every-new-lead-automatically/",
+   "status": "published"
+  },
+  {
+   "id": 24359,
+   "slug": "generate-a-page-for-every-city-you-serve",
+   "title": "Generate a page for every city you serve",
+   "one_liner": "AI drafts location pages with local keywords, FAQs, and schema so you rank in neighboring towns you've been invisible in.",
+   "category": "Local SEO",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/generate-a-page-for-every-city-you-serve/",
+   "status": "published"
+  },
+  {
+   "id": 24360,
+   "slug": "get-a-monday-morning-performance-digest",
+   "title": "Get a Monday-morning performance digest",
+   "one_liner": "AI pulls your ad, analytics, and CRM numbers into a plain-English summary in your inbox every week — zero spreadsheets.",
+   "category": "Operations",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/get-a-monday-morning-performance-digest/",
+   "status": "published"
+  },
+  {
+   "id": 24361,
+   "slug": "inbox-triage",
+   "title": "Inbox triage",
+   "one_liner": "Tags every incoming email, pulls the customer’s history, and drafts ready-to-send replies to the routine ones — while complaints and billing come straight to you.",
+   "category": "Operations",
+   "has_reel": true,
+   "url": "https://avadigitalagency.com/ai-use-cases/inbox-triage/",
+   "status": "published"
+  },
+  {
+   "id": 24363,
+   "slug": "keep-your-google-business-profile-fresh",
+   "title": "Keep your Google Business Profile fresh",
+   "one_liner": "AI drafts weekly GBP posts and Q&A answers that nudge your local-pack ranking up without you lifting a finger.",
+   "category": "Local SEO",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/keep-your-google-business-profile-fresh/",
+   "status": "published"
+  },
+  {
+   "id": 24364,
+   "slug": "lead-chaser",
+   "title": "The lead chaser",
+   "one_liner": "Watches your inbox or CRM for quotes that went quiet and drafts one short, personal follow-up that offers two times to talk — then stops the moment they reply.",
+   "category": "Sales",
+   "has_reel": true,
+   "url": "https://avadigitalagency.com/ai-use-cases/lead-chaser/",
+   "status": "published"
+  },
+  {
+   "id": 24365,
+   "slug": "localize-one-offer-for-20-towns",
+   "title": "Localize one offer for 20 towns",
+   "one_liner": "AI rewrites a single landing page for each market you serve, with the right city and neighborhood language.",
+   "category": "Marketing",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/localize-one-offer-for-20-towns/",
+   "status": "published"
+  },
+  {
+   "id": 24366,
+   "slug": "monday-expense-report",
+   "title": "The Monday expense report",
+   "one_liner": "Forward every receipt to one address; each Monday you get a one-page report — spend by category, unmatched items, and anything unusual — clean data for your bookkeeper.",
+   "category": "Operations",
+   "has_reel": true,
+   "url": "https://avadigitalagency.com/ai-use-cases/monday-expense-report/",
+   "status": "published"
+  },
+  {
+   "id": 24367,
+   "slug": "qualify-leads-while-you-sleep",
+   "title": "Qualify leads while you sleep",
+   "one_liner": "A website chat agent talks to after-hours visitors, scores them, and drops the hot ones straight onto your calendar.",
+   "category": "Lead Response",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/qualify-leads-while-you-sleep/",
+   "status": "published"
+  },
+  {
+   "id": 24369,
+   "slug": "spin-up-an-ad-campaign-from-your-website",
+   "title": "Spin up an ad campaign from your website",
+   "one_liner": "AI reads your site and drafts Google and Meta ad copy, target audiences, and a starting budget plan.",
+   "category": "Marketing",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/spin-up-an-ad-campaign-from-your-website/",
+   "status": "published"
+  },
+  {
+   "id": 24370,
+   "slug": "turn-one-blog-post-into-10-social-posts",
+   "title": "Turn one blog post into 10 social posts",
+   "one_liner": "AI repurposes a single article into a week of captions, carousels, and short-form video scripts in your brand voice.",
+   "category": "Content",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/turn-one-blog-post-into-10-social-posts/",
+   "status": "published"
+  },
+  {
+   "id": 24371,
+   "slug": "turn-voicemails-into-tasks",
+   "title": "Turn voicemails into tasks",
+   "one_liner": "AI transcribes each voicemail, summarizes what the caller needs, and creates a follow-up task automatically.",
+   "category": "Operations",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/turn-voicemails-into-tasks/",
+   "status": "published"
+  },
+  {
+   "id": 24372,
+   "slug": "write-first-draft-proposals-in-minutes",
+   "title": "Write first-draft proposals in minutes",
+   "one_liner": "AI assembles a tailored proposal from your templates plus the prospect's details, so you edit instead of start from zero.",
+   "category": "Content",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/write-first-draft-proposals-in-minutes/",
+   "status": "published"
+  }
+ ]
+}

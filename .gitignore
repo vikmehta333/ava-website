@@ -10,5 +10,9 @@ Thumbs.db
 *token*
 *secret*
 
+# Exception: use-case library index (dedup state, no secrets — read by the
+# nightly harvest routine, which runs in the cloud from this repo)
+!data/usecases/*.json
+
 # Logs
 *.log
