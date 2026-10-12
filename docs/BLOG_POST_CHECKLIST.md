@@ -100,7 +100,8 @@ https://avadigitalagency.com/blog/
 
 ### WordPress Credentials:
 - Username: `vikmehta`
-- App Password: `Ivx0 otYS SAJO 3iLS xpVi 9KyW`
+- App Password: **never stored in this repo** — this repo is **public**. Read it from a local `.env` / GCP Secret Manager at runtime.
+  > ⚠️ A previous app password was committed here in plaintext and has been **revoked**. Never paste an app password into any file in this repo.
 - API Endpoint: `https://avadigitalagency.com/wp-json/wp/v2/pages`
 
 ---

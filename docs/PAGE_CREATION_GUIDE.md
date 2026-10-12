@@ -151,7 +151,8 @@ Authorization: Basic [username]:[app_password]
 
 ### WordPress Credentials
 - **Username:** vikmehta
-- **App Password:** Ivx0 otYS SAJO 3iLS xpVi 9KyW
+- **App Password:** **never stored in this repo** — this repo is **public**. Load it at runtime from a local `.env` or GCP Secret Manager.
+  > ⚠️ A previous app password was committed here in plaintext and has been **revoked**. Never paste an app password into any file in this repo.
 - **Site:** https://avadigitalagency.com
 
 ### Common Mistakes to Avoid
