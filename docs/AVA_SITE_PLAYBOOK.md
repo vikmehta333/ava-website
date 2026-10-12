@@ -3,7 +3,9 @@
 **Last updated:** 2026-09-21
 **Purpose:** The single source of truth for working on avadigitalagency.com so context isn't lost between sessions. Read this first.
 
-> **Active migration (2026-09):** the site is moving from the old **dark** design to a new **light "Bright C"** design. **Done:** homepage + all **6 service pages**. **Remaining:** ~30 city pages, guides, Marketing Answers, case studies. See §4a and §10.
+> **Active migration:** the site is moving from the old **dark** design to a new **light "Bright C"** design. **Done:** homepage, all **6 service pages**, **Contact** (light + working HubSpot form), and **Naperville** (city-template proof). **Remaining:** 30 more city pages, guides, Marketing Answers, case studies, misc (About/Blog/etc). See §4a and §10.
+>
+> **QA is codified:** every migrated page must clear [MIGRATION_QA.md](MIGRATION_QA.md) — an automated checker (light tokens, no-wpautop, canonical, title/meta, CTA→/contact/, **CSS-class coverage**, schema, footer) **plus** a Playwright desktop+mobile visual pass. The CSS-class-coverage rule exists because the Naperville proof first shipped with giant black triangles (CTA-band SVGs used classes missing from the stylesheet it inherited).
 
 ---
 
@@ -36,6 +38,9 @@ The site has **two kinds of pages**:
 - **Anatomy:** sticky blur nav w/ CSS-only hamburger (`#nvt` checkbox + `.burger` label) · gradient-mesh hero (`.blob` b1/b2/b3) · `.pill` eyebrow · `.proof` stat strip · `.card`/`.grid3` feature cards w/ stroke-SVG `.ic` icons · `.steps` 01/02/03 · `.faq` native `<details>` accordion · dark `.ctaband` rhythm-break · shared `<footer>`.
 - **CTA text is standardized site-wide to exactly "Get a free audit"** (→ `/contact/` or on-page `#cta`). Don't reintroduce "Book a Call" / "Get Started" / "Get Your Free Audit" variants.
 - **Gotcha caught:** dark-band headings need an **explicit** `color:#fff` — inherited white loses to the theme's `h2` color rule (that's why the homepage CTA heading was once invisible).
+- **Gotcha caught (media upload = multipart only):** uploading to `/wp/v2/media` with a **raw binary body** is blocked by **ModSecurity → HTTP 406 "Not Acceptable"**. Upload as **`multipart/form-data`** (a `file` field with filename + content-type) the way wp-admin does — that passes. (Used to put the 4 Reels in the media library.)
+- **Gotcha caught (orphaned Elementor data):** creating a page via REST can land on a **recycled post ID that still carries another page's `_elementor_data`** (we hit this creating `/ai-use-cases/` — the ID had a dead "Fuel Me 340%" case-study layout). Elementor then renders its stale/empty builder and **discards your `wp:html` the_content** (symptoms: live page is ~140KB+, shows theme chrome, no light tokens — the QA checker flags it as `1:not-light`/`5:no-navcta`). **Fix:** clear the flags via REST (they ARE writable here): `POST /pages/<id> {"meta":{"_elementor_edit_mode":"","_elementor_data":"","_elementor_template_type":""}}`, purge, re-check. Always QA a newly-created page.
+- **Gotcha caught (template):** a migrated page MUST have WP `template = elementor_canvas`. On the default template (`''`), the theme wraps your custom HTML in its header/menu/footer chrome (page balloons to ~200KB, menu injects `<a href="#">`). Fix via REST: `POST /pages/<id> {"template":"elementor_canvas"}`. The light template no longer carries the §3.2 chrome-hide rule because canvas needs none — but if you ever use a non-canvas template, add the hide rule back.
 - **Service-page template + generator:** `scratchpad/gen_services.py` (template + icon lib) driven by `scratchpad/deploy_services.py` (per-page data → build → REST PUT → purge). Clone this pattern for city/guide/answer migration. Each page also ships **Service + FAQPage JSON-LD**.
 
 ## 4. Templates & conventions
@@ -53,7 +58,10 @@ The site has **two kinds of pages**:
 - **Guides/playbooks:** outbound-email-strategy-framework, linkedin-lead-generation-playbook, ai-agent-use-cases-small-business, naperville-local-seo-guide, ai-seo-guide-2026, **48-hour-follow-up-sequence** (newest).
 - **Homepage:** migrated to **light "Bright C"** (page 23409) — hero, industries strip, 6 services, 3-step process, results (Fuel Me / health practice / plumbing agency), 28-city grid, dark CTA band, Ask-Ava launcher.
 - **Service pages (all 6):** migrated to **light** on 2026-09-21 — outbound-email-marketing, linkedin-lead-generation, ai-automation-services, geo-seo-services, google-ads-management, social-media-tiktok-marketing. Each has hero + 4 stats + 6 "what's included" cards + 3-step process + 3 outcomes + 5-Q FAQ + dark CTA + Service/FAQPage schema.
-- **City pages / guides / Marketing Answers / case studies:** still **dark** — migration pending (§10).
+- **Contact page** (`/contact-us/`, id 23950): migrated to **light** — gradient hero "Let's talk.", white form card, the existing **HubSpot embed** (portalId 23976882, formId ab597dec-2f39-43fd-9fb2-194e4e8080ae) preserved + a mailto fallback. Note: `/contact/` (id 12) is just a meta-refresh redirect to `/contact-us/`.
+- **City pages (ALL 30 done):** migrated to light via the **city generator** (`scratchpad/gen_city.py` — templated by city name + each city's real stats + FAQ, extracted from the old dark pages; emits LocalBusiness + FAQPage schema). Includes the 28 standard `*-digital-marketing-agency` pages + 2 legacy-slug pages (`digital-marketing-agency-in-aurora-il-ava-digital` → canonical points to the standard Aurora page to kill the duplicate; `...-wheaton-il-...` self-canonical, unique city). All pass [MIGRATION_QA.md](MIGRATION_QA.md).
+- **New AI-concierge pages (light, built 2026-10-12):** **`/ai-concierge/`** (id 24303) — landing page for the AI-implementation service ("we help companies put AI to work"; proof cards from existing wins); **`/ai-use-cases/`** (id 24305) — a searchable/filterable directory of 18 curated AI use cases (vanilla-JS search + category chips), modeled on agentusecases.ai. **Teach-to-sell.** Each card now **links to its own detail page** at `/ai-use-cases/[slug]/` (child pages of 24305) — the card's "See how it works →" opens the page, not a toggle. 20 detail pages live (ids 24352–24372): each shows numbered **steps**, a **guardrail**, **tools**, the **full starter prompt with a Copy button**, and a **Get a free audit** button (HowTo schema). The **4 featured** ones (after-hours-receptionist, lead-chaser, inbox-triage, monday-expense-report) embed their **Instagram Reel** (autoplay/muted/loop, media ids 24348–24351) at the top. Source copy came from the client's `Use Cases Page.html` prototype. The main page marks these 4 "Featured · with video". (The old inline-`<details>` model is replaced.) Both footer-link each other; **not yet linked from the homepage/service/city footers** (TODO).
+- **Guides / Marketing Answers / case studies / misc:** still **dark** — migration pending (§10).
 
 ## 6. SEO strategy
 - **Striking distance (highest ROI):** push keywords already ranking page 2 (pos ~8–20) into top 5. Done: Downers Grove, Arlington Heights, Orland Park. **Wave 2 TODO:** Joliet, Schaumburg, Springfield, Evanston, Rockford.
@@ -87,5 +95,17 @@ The site has **two kinds of pages**:
 - [x] Homepage direction decided + shipped: **light "Bright C"** (2026-09-21).
 - [x] CTA wording standardized site-wide → "Get a free audit" (65 pages, 91 buttons).
 - [x] Service pages (6) migrated to light (2026-09-21).
-- [ ] **Migrate remaining pages to light** (§4a generator pattern): ~30 city pages → guides → Marketing Answers → case studies (Fuel Me, healthcare).
+- [x] Top CTAs repointed to `/contact/` (nav + hero + footer) across homepage + 6 services.
+- [x] Contact page migrated to light + HubSpot form preserved (2026-10-12).
+- [x] City-template proof: **Naperville** migrated to light (2026-10-12); QA codified in [MIGRATION_QA.md](MIGRATION_QA.md).
+- [x] **All 30 city pages migrated to light** (2026-10-12) via `gen_city.py`; all pass the QA checker + visual spot-check. Aurora legacy-slug page canonicalized to the standard Aurora page.
+- [ ] Then migrate → guides → Marketing Answers → case studies → misc (About/Blog/web-dev/mobile-app pages).
+- [x] **New builds:** `/ai-concierge/` landing + `/ai-use-cases/` directory shipped light + QA-passed (2026-10-12).
+- [x] **Wired the 2 new pages site-wide** (2026-10-12): added "AI Concierge" to the nav on all 38 migrated pages, swapped in a canonical footer (Services col leads with AI Concierge; an "Explore" col with AI Use Cases), and added a featured AI-Concierge band to the homepage (between industries strip and services grid). Script: `scratchpad/wire_ai.py`.
+- [ ] **⏰ Instagram bio link → `avadigitalagency.com/ai-use-cases/`** — Vik's manual step, **needed before the first Reel goes out Oct 18, 2026.**
+- [ ] Add *"Full prompt on our site: avadigitalagency.com/ai-use-cases/[slug]"* to the 4 scheduled Reel captions (Zernio).
+- [ ] **AI use-cases ↔ Instagram:** add per-card "See it on Instagram" links once post URLs are supplied (data model already supports it).
+- [ ] **Email magnet needs a dedicated HubSpot form:** the sidebar capture on `/ai-use-cases/` posts to the Forms API using the *existing consultation* form (portal 23976882 / `ab597dec…`), which requires company+phone — so email-only submits fall back to redirecting to `/contact/`. Create a 1-field "Weekly AI Playbook" form in HubSpot and send the GUID to make it a true email-only capture.
+- [ ] Get specific **AI-implementation success stories** from Vik to strengthen the concierge proof section (currently reuses the public Fuel Me / healthcare / plumbing wins).
+- [ ] Harden Contact HubSpot form: exclude `js.hsforms.net` from WP-Fastest-Cache JS minification (wp-admin — avoids the intermittent `Cannot redefine property: src` race).
 - [ ] Build service pages for the demand-gap keywords (§6).
