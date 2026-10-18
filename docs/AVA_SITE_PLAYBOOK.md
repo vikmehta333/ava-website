@@ -105,7 +105,12 @@ The site has **two kinds of pages**:
 - [ ] **⏰ Instagram bio link → `avadigitalagency.com/ai-use-cases/`** — Vik's manual step, **needed before the first Reel goes out Oct 18, 2026.**
 - [ ] Add *"Full prompt on our site: avadigitalagency.com/ai-use-cases/[slug]"* to the 4 scheduled Reel captions (Zernio).
 - [ ] **AI use-cases ↔ Instagram:** add per-card "See it on Instagram" links once post URLs are supplied (data model already supports it).
-- [ ] **Email magnet needs a dedicated HubSpot form:** the sidebar capture on `/ai-use-cases/` posts to the Forms API using the *existing consultation* form (portal 23976882 / `ab597dec…`), which requires company+phone — so email-only submits fall back to redirecting to `/contact/`. Create a 1-field "Weekly AI Playbook" form in HubSpot and send the GUID to make it a true email-only capture.
+- [x] **Email magnet is now a real inline form** on `/ai-use-cases/` (no more redirect). HubSpot's existing
+  consultation form (portal `23976882` / form `ab597dec…`) **requires email + company + phone**, so the sidebar
+  form collects those three and POSTs to the HubSpot Forms API with consent, showing an inline success state.
+  Verified in-browser: handler attached, correct endpoint, all 3 fields sent.
+- [ ] *Optional:* for a true 1-field email capture, create a "Weekly AI Playbook" form in HubSpot (email only)
+  and send the GUID — or grant the HubSpot connector `content` permissions so forms can be listed/created from here.
 - [ ] Get specific **AI-implementation success stories** from Vik to strengthen the concierge proof section (currently reuses the public Fuel Me / healthcare / plumbing wins).
 - [ ] Harden Contact HubSpot form: exclude `js.hsforms.net` from WP-Fastest-Cache JS minification (wp-admin — avoids the intermittent `Cannot redefine property: src` race).
 - [ ] Build service pages for the demand-gap keywords (§6).
