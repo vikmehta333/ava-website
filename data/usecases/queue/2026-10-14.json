@@ -1,114 +1,118 @@
 [
-  {
-    "slug": "text-back-every-missed-call",
-    "category": "lead",
-    "title": "Text back every missed call within a minute",
-    "one_liner": "When a call goes unanswered, the caller gets a friendly text right away asking what they need, and you get the reply with a suggested next step.",
-    "steps": [
-      "Your phone system flags a missed call and sends the caller's number to the workflow.",
-      "The AI writes a short, human-sounding text that names your business and asks what they need and when.",
-      "The reply lands in your CRM or inbox with a summary and a suggested booking time.",
-      "You or your front desk take it from there; the AI never quotes prices or promises availability."
-    ],
-    "guardrail": "A person reviews every reply and makes all pricing and scheduling commitments; the AI only opens the conversation and stops after one message unless the customer replies.",
-    "tools": "Twilio or your existing business phone (OpenPhone, RingCentral), n8n or Make, an LLM (Claude or OpenAI), your CRM (HubSpot, GoHighLevel, Jobber)",
-    "prompt": "You write text messages for [business name], a [type of business] in [city]. A caller just missed us at [time]. Write one friendly SMS under 300 characters that: says sorry we missed the call, asks what they need help with, and offers to find a time that works. Do not quote prices, promise availability, or mention AI. Sound like a real person at the front desk. Return only the message text.",
-    "source_name": "vantaige.io n8n blueprints / Contra portfolio (missed-call SMS pattern)",
-    "source_url": "https://vantaige.io/blog/10-n8n-blueprints-smb-save-hours-2026",
-    "scores": {
-      "icp": 0.95,
-      "buildable": 0.95,
-      "specific": 0.85,
-      "original": 0.85,
-      "safety": 0.9,
-      "prompt_quality": 0.85,
-      "weighted": 0.897
-    },
-    "verify_note": "Expected: a single warm SMS under 300 chars, asking what they need, no prices or promises.",
-    "status": "queued"
+ {
+  "slug": "text-back-every-missed-call",
+  "category": "lead",
+  "title": "Text back every missed call within a minute",
+  "one_liner": "When a call goes unanswered, the caller gets a friendly text right away asking what they need, and you get the reply with a suggested next step.",
+  "steps": [
+   "Your phone system flags a missed call and sends the caller's number to the workflow.",
+   "The AI writes a short, human-sounding text that names your business and asks what they need and when.",
+   "The reply lands in your CRM or inbox with a summary and a suggested booking time.",
+   "You or your front desk take it from there; the AI never quotes prices or promises availability."
+  ],
+  "guardrail": "A person reviews every reply and makes all pricing and scheduling commitments; the AI only opens the conversation and stops after one message unless the customer replies.",
+  "tools": "Twilio or your existing business phone (OpenPhone, RingCentral), n8n or Make, an LLM (Claude or OpenAI), your CRM (HubSpot, GoHighLevel, Jobber)",
+  "prompt": "You write text messages for [business name], a [type of business] in [city]. A caller just missed us at [time]. Write one friendly SMS under 300 characters that: says sorry we missed the call, asks what they need help with, and offers to find a time that works. Do not quote prices, promise availability, or mention AI. Sound like a real person at the front desk. Return only the message text.",
+  "source_name": "vantaige.io n8n blueprints / Contra portfolio (missed-call SMS pattern)",
+  "source_url": "https://vantaige.io/blog/10-n8n-blueprints-smb-save-hours-2026",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.95,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.85,
+   "weighted": 0.897
   },
-  {
-    "slug": "before-and-after-job-messages",
-    "category": "cs",
-    "title": "Remind customers before the job, rebook them after",
-    "one_liner": "Each scheduled job triggers a reminder with prep details the day before, then a thank-you and a rebooking nudge a few days after.",
-    "steps": [
-      "A job is scheduled in your field-service or booking tool.",
-      "The AI drafts a reminder using the job type, date, and prep instructions you provide.",
-      "After the job is marked complete, a thank-you goes out with a simple way to book the next visit.",
-      "Customers who reply with a question or complaint are routed to a person, not answered by the AI."
-    ],
-    "guardrail": "Templates are approved by you once up front, and any reply that isn't a simple confirmation goes to a human.",
-    "tools": "Jobber, Housecall Pro or Calendly, Zapier or Make, an LLM (Claude or OpenAI), SMS or email",
-    "prompt": "You write customer messages for [business name], a [type of service] company. Write two short messages for a [job type] scheduled on [date] at [time]. Message 1 is a reminder for the day before: confirm the time, list this prep: [prep steps], and say how to reschedule: [reschedule method]. Message 2 is sent [number] days after the job: thank them, ask if everything went well, and offer to book their next [recommended repeat service]. Tone: friendly and plain. No discounts, prices, or guarantees. Return both messages labeled.",
-    "source_name": "Housecall Pro help center (automated job reminders and follow-ups)",
-    "source_url": "https://help.housecallpro.com/en/articles/362406-how-to-setup-email-marketing",
-    "scores": {
-      "icp": 0.95,
-      "buildable": 0.95,
-      "specific": 0.85,
-      "original": 0.85,
-      "safety": 0.9,
-      "prompt_quality": 0.85,
-      "weighted": 0.897
-    },
-    "verify_note": "Expected: two labeled, short messages with the placeholders filled in, no invented offers.",
-    "status": "queued"
+  "verify_note": "Expected: a single warm SMS under 300 chars, asking what they need, no prices or promises.",
+  "status": "published",
+  "published_at": "2026-10-19"
+ },
+ {
+  "slug": "before-and-after-job-messages",
+  "category": "cs",
+  "title": "Remind customers before the job, rebook them after",
+  "one_liner": "Each scheduled job triggers a reminder with prep details the day before, then a thank-you and a rebooking nudge a few days after.",
+  "steps": [
+   "A job is scheduled in your field-service or booking tool.",
+   "The AI drafts a reminder using the job type, date, and prep instructions you provide.",
+   "After the job is marked complete, a thank-you goes out with a simple way to book the next visit.",
+   "Customers who reply with a question or complaint are routed to a person, not answered by the AI."
+  ],
+  "guardrail": "Templates are approved by you once up front, and any reply that isn't a simple confirmation goes to a human.",
+  "tools": "Jobber, Housecall Pro or Calendly, Zapier or Make, an LLM (Claude or OpenAI), SMS or email",
+  "prompt": "You write customer messages for [business name], a [type of service] company. Write two short messages for a [job type] scheduled on [date] at [time]. Message 1 is a reminder for the day before: confirm the time, list this prep: [prep steps], and say how to reschedule: [reschedule method]. Message 2 is sent [number] days after the job: thank them, ask if everything went well, and offer to book their next [recommended repeat service]. Tone: friendly and plain. No discounts, prices, or guarantees. Return both messages labeled.",
+  "source_name": "Housecall Pro help center (automated job reminders and follow-ups)",
+  "source_url": "https://help.housecallpro.com/en/articles/362406-how-to-setup-email-marketing",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.95,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.85,
+   "weighted": 0.897
   },
-  {
-    "slug": "win-back-customers-who-went-quiet",
-    "category": "marketing",
-    "title": "Win back customers who haven't booked in a while",
-    "one_liner": "AI finds customers whose last service was long enough ago to be due again and drafts a personal check-in for each segment.",
-    "steps": [
-      "Export customers with their last service type and date from your CRM or scheduling tool.",
-      "Group them by service type and how long it has been since the last visit.",
-      "The AI drafts one short message per group that references the service they had and when it is typically due.",
-      "You approve the drafts, then they send by email or text to people who opted in."
-    ],
-    "guardrail": "You approve every draft and the list before anything sends, and only customers who agreed to hear from you are included.",
-    "tools": "Jobber, Housecall Pro or your CRM, Google Sheets, Make or Zapier, an LLM (Claude or OpenAI), Mailchimp or Klaviyo or SMS",
-    "prompt": "You write marketing messages for [business name], a [type of business] in [city]. Write a short email (under 90 words) for customers whose last [service type] was about [time since last service] ago. Mention that [service type] is usually due every [interval], invite them to book at [booking link], and sound like a neighbor, not an ad. Do not invent discounts, deadlines, or claims. Use [first name] as a placeholder. Return a subject line and the body.",
-    "source_name": "Housecall Pro Campaigns (service-history-based messaging)",
-    "source_url": "https://www.housecallpro.com/features/campaigns/",
-    "scores": {
-      "icp": 0.95,
-      "buildable": 0.9,
-      "specific": 0.8,
-      "original": 0.85,
-      "safety": 0.9,
-      "prompt_quality": 0.85,
-      "weighted": 0.88
-    },
-    "verify_note": "Expected: subject plus an under-90-word email with the placeholders intact and no invented offers.",
-    "status": "queued"
+  "verify_note": "Expected: two labeled, short messages with the placeholders filled in, no invented offers.",
+  "status": "published",
+  "published_at": "2026-10-19"
+ },
+ {
+  "slug": "win-back-customers-who-went-quiet",
+  "category": "marketing",
+  "title": "Win back customers who haven't booked in a while",
+  "one_liner": "AI finds customers whose last service was long enough ago to be due again and drafts a personal check-in for each segment.",
+  "steps": [
+   "Export customers with their last service type and date from your CRM or scheduling tool.",
+   "Group them by service type and how long it has been since the last visit.",
+   "The AI drafts one short message per group that references the service they had and when it is typically due.",
+   "You approve the drafts, then they send by email or text to people who opted in."
+  ],
+  "guardrail": "You approve every draft and the list before anything sends, and only customers who agreed to hear from you are included.",
+  "tools": "Jobber, Housecall Pro or your CRM, Google Sheets, Make or Zapier, an LLM (Claude or OpenAI), Mailchimp or Klaviyo or SMS",
+  "prompt": "You write marketing messages for [business name], a [type of business] in [city]. Write a short email (under 90 words) for customers whose last [service type] was about [time since last service] ago. Mention that [service type] is usually due every [interval], invite them to book at [booking link], and sound like a neighbor, not an ad. Do not invent discounts, deadlines, or claims. Use [first name] as a placeholder. Return a subject line and the body.",
+  "source_name": "Housecall Pro Campaigns (service-history-based messaging)",
+  "source_url": "https://www.housecallpro.com/features/campaigns/",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.9,
+   "specific": 0.8,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.85,
+   "weighted": 0.88
   },
-  {
-    "slug": "finished-job-photos-to-posts",
-    "category": "content",
-    "title": "Turn finished-job photos into ready-to-review posts",
-    "one_liner": "Drop in photos and a two-line job note, and AI drafts a local-flavored post for your Google profile and social pages for you to approve.",
-    "steps": [
-      "After a job, the crew uploads photos and a short note to a shared form or Drive folder.",
-      "The AI drafts a caption that names the service and neighborhood from the note.",
-      "The draft is sent to you for approval.",
-      "Approved posts are published, or posted by hand if your tool can't post directly."
-    ],
-    "guardrail": "Nothing posts without approval, and customers' names, addresses, and faces are never included unless they've given permission.",
-    "tools": "Google Forms or Drive, n8n or Make, an LLM (Claude or OpenAI), Google Business Profile, Facebook/Instagram via Zernio or Buffer",
-    "prompt": "You write social posts for [business name], a [type of business] in [city]. Using this job note: [job note, no customer names or addresses], write (1) a Google Business Profile post under 120 words and (2) an Instagram caption under 60 words. Mention the service and the general area [neighborhood or town] only. Include a plain call to action: [call to action]. Do not invent results, numbers, or reviews. Return both, labeled.",
-    "source_name": "n8n social automation templates and freelancer briefs (photo + caption + approval pattern)",
-    "source_url": "https://growwstacks.com/blog/automate-social-media-posts-n8n/",
-    "scores": {
-      "icp": 0.9,
-      "buildable": 0.8,
-      "specific": 0.8,
-      "original": 0.85,
-      "safety": 0.9,
-      "prompt_quality": 0.85,
-      "weighted": 0.85
-    },
-    "verify_note": "Expected: two labeled posts with the service and town mentioned, a CTA, and no fabricated results.",
-    "status": "queued"
-  }
+  "verify_note": "Expected: subject plus an under-90-word email with the placeholders intact and no invented offers.",
+  "status": "published",
+  "published_at": "2026-10-19"
+ },
+ {
+  "slug": "finished-job-photos-to-posts",
+  "category": "content",
+  "title": "Turn finished-job photos into ready-to-review posts",
+  "one_liner": "Drop in photos and a two-line job note, and AI drafts a local-flavored post for your Google profile and social pages for you to approve.",
+  "steps": [
+   "After a job, the crew uploads photos and a short note to a shared form or Drive folder.",
+   "The AI drafts a caption that names the service and neighborhood from the note.",
+   "The draft is sent to you for approval.",
+   "Approved posts are published, or posted by hand if your tool can't post directly."
+  ],
+  "guardrail": "Nothing posts without approval, and customers' names, addresses, and faces are never included unless they've given permission.",
+  "tools": "Google Forms or Drive, n8n or Make, an LLM (Claude or OpenAI), Google Business Profile, Facebook/Instagram via Zernio or Buffer",
+  "prompt": "You write social posts for [business name], a [type of business] in [city]. Using this job note: [job note, no customer names or addresses], write (1) a Google Business Profile post under 120 words and (2) an Instagram caption under 60 words. Mention the service and the general area [neighborhood or town] only. Include a plain call to action: [call to action]. Do not invent results, numbers, or reviews. Return both, labeled.",
+  "source_name": "n8n social automation templates and freelancer briefs (photo + caption + approval pattern)",
+  "source_url": "https://growwstacks.com/blog/automate-social-media-posts-n8n/",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.8,
+   "specific": 0.8,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.85,
+   "weighted": 0.85
+  },
+  "verify_note": "Expected: two labeled posts with the service and town mentioned, a CTA, and no fabricated results.",
+  "status": "published",
+  "published_at": "2026-10-19"
+ }
 ]

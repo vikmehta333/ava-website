@@ -5,6 +5,8 @@
 
 > **Active migration:** the site is moving from the old **dark** design to a new **light "Bright C"** design. **Done:** homepage, all **6 service pages**, **Contact** (light + working HubSpot form), and **Naperville** (city-template proof). **Remaining:** 30 more city pages, guides, Marketing Answers, case studies, misc (About/Blog/etc). See §4a and §10.
 >
+> **Use-case pipeline:** nightly harvest → queue → publish is documented in [AI_USECASE_PUBLISH_RUNBOOK.md](AI_USECASE_PUBLISH_RUNBOOK.md) (how to publish, state files, and the failure modes — including the `.gitignore` trap that silently ate four nights of queued work).
+>
 > **QA is codified:** every migrated page must clear [MIGRATION_QA.md](MIGRATION_QA.md) — an automated checker (light tokens, no-wpautop, canonical, title/meta, CTA→/contact/, **CSS-class coverage**, schema, footer) **plus** a Playwright desktop+mobile visual pass. The CSS-class-coverage rule exists because the Naperville proof first shipped with giant black triangles (CTA-band SVGs used classes missing from the stylesheet it inherited).
 
 ---
