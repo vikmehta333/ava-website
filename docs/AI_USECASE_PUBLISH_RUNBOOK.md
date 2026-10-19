@@ -19,7 +19,27 @@ How a harvested use case becomes a live page, who does which step, and the check
 ```
 
 - **The routine cannot publish.** It runs in Anthropic's cloud from a **public** repo, so it has no WordPress credential. It only queues.
-- **Publishing is a separate, credentialed step** — today run by hand (below); the automated version is the open GCP task in the playbook.
+- **Publishing is a separate, credentialed step.** It now runs **automatically in GCP**:
+
+| | |
+|---|---|
+| Cloud Function | `ava-usecase-publisher` (gen2, python311, us-central1) |
+| Scheduler job | `ava-usecase-publish-daily` — **3:00 AM America/Chicago**, one hour after the harvest |
+| Credential | WordPress app password in **Secret Manager** as `ava-wp-app-password` (never in the repo) |
+| Project | `plasma-crossbar-486516-r8` · billing account `01B35E-F90F08-FA6046` |
+| Source | versioned at `cloud-functions/ava-usecase-publisher/` |
+
+It needs **no GitHub write access**: it reads the queue from the public repo, and decides what's "already published" by querying WordPress for the hub's child pages. The nightly routine refreshes `library.json` from the live site (its STEP 0b), so the dedup index stays accurate without the publisher committing anything.
+
+Manual run / redeploy:
+```bash
+gcloud functions call ava-usecase-publisher --project=plasma-crossbar-486516-r8 --region=us-central1
+cd cloud-functions/ava-usecase-publisher && gcloud functions deploy ava-usecase-publisher \
+  --project=plasma-crossbar-486516-r8 --region=us-central1 --gen2 --runtime=python311 \
+  --source=. --entry-point=publish_usecases --trigger-http --no-allow-unauthenticated \
+  --set-env-vars=WP_USER=vikmehta
+```
+The local `scripts/publish_usecases.py` below remains the manual fallback.
 
 ## State files (source of truth)
 | File | Purpose |
