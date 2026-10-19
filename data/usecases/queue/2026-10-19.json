@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "quote-request-to-draft-estimate",
+    "category": "sales",
+    "title": "Turn every quote request into a draft estimate by morning",
+    "one_liner": "A quote form comes in, the AI checks it against your price list and drafts the estimate and cover email, and you review and send it.",
+    "steps": [
+      "A customer submits your quote form or emails a request; the details land in a sheet or CRM.",
+      "The AI reads the request and your price list, then fills in line items, flags anything missing (address, scope, timing) and notes any assumptions.",
+      "It writes a short cover email and saves the estimate and email as a draft in Gmail or your CRM.",
+      "You review the numbers, adjust, and send. If details are missing, the AI drafts a clarifying question instead of guessing."
+    ],
+    "guardrail": "A person approves every number and sends every estimate; the AI only prices from your written price list and never invents a rate.",
+    "tools": "Tally, Typeform or Jotform, Make or n8n, Google Sheets (price list), an LLM (Claude or OpenAI), Gmail or your CRM (HubSpot, Jobber)",
+    "prompt": "You are an estimating assistant for [business name], a [type of business] in [city]. Using ONLY the price list below, draft an estimate for this request.\n\nPrice list:\n[paste price list]\n\nCustomer request:\n[paste form answers]\n\nReturn: 1) line items with quantity, rate and subtotal, 2) a list of missing details we must confirm, 3) any assumptions you made, 4) a friendly 90-word cover email from [owner name]. If a service is not on the price list, write 'NEEDS MANUAL PRICE' for that line instead of guessing. Do not promise dates or discounts.",
+    "verification_note": "Expected: a tidy itemized draft priced only from the pasted list, explicit NEEDS MANUAL PRICE flags, a missing-details list, and a short cover email.",
+    "source_name": "Make.com quote-automation guide and Zapier quote-management templates (via web search)",
+    "source_url": "https://growwstacks.com/blog/automate-lead-capture-quotes-make-com/",
+    "scores": {
+      "icp": 0.95,
+      "buildable": 0.9,
+      "specific": 0.85,
+      "original": 0.9,
+      "safety": 0.9,
+      "prompt_quality": 0.9,
+      "weighted": 0.903
+    },
+    "status": "queued"
+  },
+  {
+    "slug": "monthly-customer-email-from-your-notes",
+    "category": "content",
+    "title": "Write your monthly customer email from a few bullet notes",
+    "one_liner": "Jot down what happened this month, and the AI turns it into a short, on-brand email draft that's waiting in your inbox to review and send.",
+    "steps": [
+      "On the first of the month, a scheduled workflow asks you for 3-6 bullets: a recent job, an offer, a seasonal tip, a team update.",
+      "The AI turns your bullets into a short email with a subject line, a friendly body and one clear call to action.",
+      "The draft is saved in Gmail or your email platform (Mailchimp, Klaviyo) as a draft, not scheduled.",
+      "You edit, check any offer details, and send."
+    ],
+    "guardrail": "Nothing is sent automatically; you confirm every offer, date and claim before the email goes to your list.",
+    "tools": "Google Forms or Sheets, n8n or Make (scheduler), an LLM (Claude or OpenAI), Gmail, Mailchimp or Klaviyo",
+    "prompt": "Write a monthly customer email for [business name], a [type of business] in [city]. Voice: [warm / straightforward / playful], like a neighbor, no hype.\n\nThis month's notes:\n[3-6 bullets]\n\nReturn: 3 subject line options under 50 characters, then one email body of 120-160 words with a single call to action: [book / call / reply]. Use only the facts in the notes; do not invent offers, prices, dates or customer names. End with a sign-off from [owner name].",
+    "verification_note": "Expected: three short subject lines and a ~140-word email using only the supplied bullets with one CTA.",
+    "source_name": "n8n and Activepieces newsletter-automation guides (via web search)",
+    "source_url": "https://growwstacks.com/blog/ai-newsletter-automation-n8n-chatgpt-gmail/",
+    "scores": {
+      "icp": 0.9,
+      "buildable": 0.95,
+      "specific": 0.8,
+      "original": 0.9,
+      "safety": 0.95,
+      "prompt_quality": 0.9,
+      "weighted": 0.902
+    },
+    "status": "queued"
+  }
+]
