@@ -1,0 +1,86 @@
+[
+ {
+  "slug": "monthly-review-themes-digest",
+  "category": "marketing",
+  "title": "Find out what customers keep saying in your reviews",
+  "one_liner": "Once a month the AI reads your new Google reviews, pulls out the repeat praise and repeat complaints, and sends you a one-page summary with three things to act on.",
+  "steps": [
+   "On the first of the month, your automation pulls the last 30 days of Google reviews into a sheet.",
+   "The AI groups them into themes (staff, speed, price, quality, scheduling) and quotes short phrases customers actually used.",
+   "It writes a one-page summary: what to keep doing, what to fix, and three suggested actions.",
+   "The summary lands in your email or Slack for you and your team to read."
+  ],
+  "guardrail": "The AI only summarizes reviews you give it and never replies to customers or changes your listing; you decide what to act on.",
+  "tools": "Google Business Profile, Zapier or Make, Google Sheets, an LLM (Claude or OpenAI), Gmail or Slack",
+  "prompt": "You are a customer-feedback analyst for [business name], a [type of business] in [city]. Below are the Google reviews from [month]. Use only what is in them.\n\nReviews:\n[paste reviews with star ratings]\n\nReturn: 1) the top 3 things customers praise, each with a short quoted phrase, 2) the top 3 complaints or friction points, each with a short quoted phrase, 3) how many reviews mention each theme, 4) three specific actions for the owner to consider this month. If there are fewer than 5 reviews, say the sample is too small to draw conclusions. Do not invent reviews or reply to customers.",
+  "verification_note": "Expected: a short themed summary with real quoted phrases, counts per theme, three concrete actions, and a small-sample warning when few reviews are pasted.",
+  "source_name": "Zapier blog: summarize Google Business Profile reviews in Slack; Zapier Review Tracker template",
+  "source_url": "https://www.zapier.com/blog/summarize-google-my-business-reviews-in-slack",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.95,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.91
+  },
+  "status": "queued"
+ },
+ {
+  "slug": "competitor-page-change-alerts",
+  "category": "marketing",
+  "title": "Get a heads-up when a competitor changes their pricing or offers",
+  "one_liner": "Your automation checks a few competitor pages each week, and the AI tells you in plain English what changed and whether it matters to you.",
+  "steps": [
+   "You list three to five competitor pages to watch: pricing, services, or promotions.",
+   "Each week the automation fetches the page text and compares it to last week's saved copy.",
+   "If something changed, the AI summarizes the change and rates how relevant it is to your business.",
+   "You get a short alert by email or Slack, and nothing if nothing changed."
+  ],
+  "guardrail": "A person decides whether to respond; the AI only reports what changed on public pages and never recommends copying or undercutting a price on its own.",
+  "tools": "n8n or Make, an HTTP request or page-monitor step, Google Sheets or Airtable (saved copies), an LLM (Claude or OpenAI), Slack or Gmail",
+  "prompt": "You monitor public competitor web pages for [business name], a [type of business] in [city]. Compare the OLD and NEW text of this page and describe only differences that are really there.\n\nCompetitor: [competitor name]\nPage: [page URL]\nOLD text:\n[paste old text]\nNEW text:\n[paste new text]\n\nReturn: 1) a plain-English list of what changed (prices, services, promotions, wording), 2) whether each change matters to us (high, medium or low) with one sentence of reasoning, 3) one question the owner should think about. If the texts are effectively identical, reply 'No meaningful change.' Do not guess at changes you cannot see.",
+  "verification_note": "Expected: an accurate diff-style summary limited to visible changes, relevance ratings, one reflective question, and 'No meaningful change' when texts match.",
+  "source_name": "n8n competitor-monitoring workflow templates and Gumloop automation examples (via web search)",
+  "source_url": "https://www.gumloop.com/blog/business-process-automation-examples",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.85,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.9,
+   "prompt_quality": 0.9,
+   "weighted": 0.873
+  },
+  "status": "queued"
+ },
+ {
+  "slug": "polite-overdue-invoice-nudges",
+  "category": "ops",
+  "title": "Chase overdue invoices without the awkward emails",
+  "one_liner": "When an invoice passes its due date, the AI drafts a friendly, firm reminder that fits how late it is, and you approve it before it goes out.",
+  "steps": [
+   "Your accounting tool flags an invoice as unpaid a few days past its due date.",
+   "The automation sends the invoice details and the customer's history to the AI.",
+   "The AI drafts a reminder whose tone matches the stage: gentle at first, clearer and firmer later.",
+   "The draft waits in Gmail or Slack for you to approve; once approved, it sends and the follow-up date is logged."
+  ],
+  "guardrail": "A person approves every reminder, and the AI never threatens, mentions fees or collections, or contacts anyone unless you have set that policy.",
+  "tools": "QuickBooks, Xero or FreshBooks, Zapier or Make, an LLM (Claude or OpenAI), Gmail drafts or Slack approval",
+  "prompt": "You write payment reminder emails for [business name], a [type of business] in [city]. Draft a reminder for this invoice.\n\nCustomer first name: [first name]\nInvoice number: [invoice number]\nAmount due: [amount]\nDue date: [due date]\nDays overdue: [number]\nReminder number so far: [1, 2 or 3]\nPayment link: [payment link]\n\nWrite under 100 words, in the voice of [owner name]. Reminder 1: warm and assume it was missed. Reminder 2: clear about the date and amount. Reminder 3: polite but direct and ask for a reply by [date]. Do not mention late fees, legal action or collections, and do not invent details not listed above. Include the payment link and a subject line.",
+  "verification_note": "Expected: a short subject line and email under 100 words whose tone matches the reminder number, with the payment link and no threats or invented fees.",
+  "source_name": "Small-business AI automation guides listing invoice follow-up as a top workflow (via web search)",
+  "source_url": "https://www.lowcode.agency/blog/how-to-build-an-ai-automation-builder-tailored-for-small-businesses",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.9,
+   "prompt_quality": 0.9,
+   "weighted": 0.893
+  },
+  "status": "queued"
+ }
+]
