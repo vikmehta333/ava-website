@@ -1,0 +1,86 @@
+[
+ {
+  "slug": "weekly-page-two-keyword-shortlist",
+  "category": "seo",
+  "title": "Find the searches you almost rank for, every Monday",
+  "one_liner": "Each week your Search Console data is sorted for searches where you sit just off page one, and an AI turns them into a short list of page tweaks worth making.",
+  "steps": [
+   "Every Monday, pull last week's queries from Google Search Console: query, page, impressions, clicks and average position.",
+   "Keep only queries averaging position 8 to 20 with a meaningful number of impressions.",
+   "Send that shortlist to an AI step that names the page each query belongs on and suggests one specific edit per page.",
+   "Email the top five to you as a plain checklist."
+  ],
+  "guardrail": "You choose which edits to make; the AI never changes your site or your content on its own.",
+  "tools": "Google Search Console, n8n or Make, an AI model (Claude or ChatGPT), Gmail",
+  "prompt": "You are an SEO assistant for [business name], a [type of local business] serving [city/area]. Below is last week's Search Console export for queries averaging position 8-20: [paste rows: query | page URL | impressions | clicks | avg position]. Pick the five with the best chance of reaching page one. For each, give: the query, the page it should rank on, why it's close, and ONE concrete edit (a heading change, a missing section, an internal link or a title tweak). Only use the data provided; do not guess at search volumes. Keep each item under 60 words and end with a one-line priority order.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.9,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.85,
+   "weighted": 0.893
+  },
+  "source_name": "n8n weekly Search Console keyword report template",
+  "source_url": "https://n8n.io/workflows/14892-send-weekly-seo-keyword-email-reports-with-google-search-console-gpt-4o-mini-and-gmail/",
+  "verification_note": "Expected: five short, data-grounded items (query, page, one edit) plus a priority line; no invented volumes.",
+  "status": "queued"
+ },
+ {
+  "slug": "phone-call-notes-into-crm",
+  "category": "ops",
+  "title": "Log every phone call in your CRM without typing a word",
+  "one_liner": "After each call, the recording is transcribed and an AI writes a short note with who called, what they need and the next step, filed on the right customer record.",
+  "steps": [
+   "Your phone system sends the call recording or transcript when a call ends.",
+   "An AI step writes a three-part note: reason for the call, what was promised, next action and who owns it.",
+   "The workflow matches the caller's number to a contact and adds the note to their CRM timeline.",
+   "Unmatched numbers go to a short review list instead of being guessed."
+  ],
+  "guardrail": "A team member can edit any note, and unmatched callers are reviewed by a person before a contact is created.",
+  "tools": "Your phone system with call recording, Zapier or Make, an AI model, your CRM (HubSpot, Housecall Pro, etc.)",
+  "prompt": "Summarize this phone call for the customer record at [business name]. Transcript: [paste transcript]. Write exactly three labeled lines: REASON (one sentence), PROMISED (anything our team said we would do, with any date mentioned, or 'nothing'), NEXT STEP (one action, who should do it, and by when if stated). Use only what is in the transcript. If something is unclear, write 'unclear' rather than guessing. Do not include card numbers, passwords or health details.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.9,
+   "weighted": 0.885
+  },
+  "source_name": "Zapier call-transcript summary templates",
+  "source_url": "https://zapier.com/apps/",
+  "verification_note": "Expected: three tight labeled lines from a sample transcript, 'unclear' where info is missing, sensitive details omitted.",
+  "status": "queued"
+ },
+ {
+  "slug": "customer-questions-into-faq-drafts",
+  "category": "content",
+  "title": "Turn the questions customers keep asking into FAQ drafts",
+  "one_liner": "Questions from your inbox and call notes are collected monthly, grouped, and answered in draft form for the right service page.",
+  "steps": [
+   "Once a month, collect customer questions from tagged emails, form messages and call notes.",
+   "An AI step groups near-duplicates and ranks them by how often they came up.",
+   "It drafts a short answer to each top question in your voice, flagging anything it can't answer from your own info.",
+   "You approve, edit and add the answers to the matching service page."
+  ],
+  "guardrail": "Every answer is reviewed by you before publishing, especially pricing, timing and warranty details.",
+  "tools": "Gmail or your helpdesk, Google Sheets, Make or Zapier, an AI model, your website CMS",
+  "prompt": "You are writing FAQ drafts for [business name], a [type of business] in [city]. Here are customer questions from the last month, with personal details removed: [paste questions]. Group similar ones, rank groups by how often they appear, and for the top [number] write a 2-3 sentence answer in a friendly, plain tone. Base answers only on these facts about us: [paste hours, service area, process, policies]. If a question needs information not given, write 'NEEDS OWNER INPUT' instead of answering. Suggest which service page each FAQ belongs on.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.85,
+   "specific": 0.8,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.865
+  },
+  "source_name": "Ava synthesis from small-business AI guides (Rework, Botpress)",
+  "source_url": "https://resources.rework.com/libraries/ai-agents/ai-agents-for-small-business",
+  "verification_note": "Expected: grouped ranked questions, short answers using only supplied facts, NEEDS OWNER INPUT markers where gaps exist.",
+  "status": "queued"
+ }
+]
