@@ -10,7 +10,7 @@ harvest routine refreshes data/usecases/library.json from the live site.
 
 Triggered by Cloud Scheduler (~3 AM America/Chicago, after the 2 AM harvest).
 """
-import base64, html, json, os, re
+import base64, datetime, html, json, os, re
 import requests
 import functions_framework
 from google.cloud import secretmanager
@@ -44,23 +44,42 @@ def wp_headers(pw):
 def esc(t): return html.escape(t, quote=False)
 
 
-def fetch_queued():
-    """All status=queued items from data/usecases/queue/*.json on the public repo."""
-    idx = requests.get(f"https://api.github.com/repos/{REPO}/contents/data/usecases/queue",
-                       headers={"User-Agent": UA}, timeout=60)
-    if idx.status_code != 200:
-        return [], f"queue listing failed: HTTP {idx.status_code}"
-    items = []
-    for entry in idx.json():
-        if not entry["name"].endswith(".json"):
+def fetch_queued(days_back=10):
+    """
+    status=queued items from data/usecases/queue/<date>.json on the public repo.
+
+    Deliberately uses raw.githubusercontent.com by DATE rather than the GitHub
+    contents API: the API is rate-limited to 60 req/hour for unauthenticated
+    callers on a shared Cloud Run egress IP, which produced a silent HTTP 500
+    on 2026-10-22. Raw URLs have no such limit.
+    """
+    items, checked, found = [], 0, []
+    today = datetime.date.today()
+    for d in range(days_back):
+        day = today - datetime.timedelta(days=d)
+        url = f"https://raw.githubusercontent.com/{REPO}/main/data/usecases/queue/{day}.json"
+        try:
+            r = requests.get(url, headers={"User-Agent": UA}, timeout=45)
+        except Exception as e:
+            print(f"fetch_queued: {day} request failed: {e}")
             continue
-        r = requests.get(entry["download_url"], headers={"User-Agent": UA}, timeout=60)
+        checked += 1
+        if r.status_code == 404:
+            continue
         if r.status_code != 200:
+            print(f"fetch_queued: {day} HTTP {r.status_code}")
             continue
-        data = r.json()
+        try:
+            data = r.json()
+        except Exception as e:
+            print(f"fetch_queued: {day} bad JSON: {e}")
+            continue
+        found.append(str(day))
         for it in (data if isinstance(data, list) else [data]):
             if it.get("status") == "queued":
                 items.append(it)
+    print(f"fetch_queued: checked {checked} day(s), queue files found: {found or 'none'}, "
+          f"queued items: {len(items)}")
     return items, None
 
 
@@ -183,6 +202,7 @@ def publish_usecases(request):
             else:
                 todo.append(it)
 
+        print(f"live slugs: {len(live)}; queued: {len(queued)}; to publish: {len(todo)}")
         if not todo:
             result["message"] = "nothing new to publish"
             return (json.dumps(result), 200, {"Content-Type":"application/json"})
@@ -228,5 +248,8 @@ def publish_usecases(request):
                     result["verified"].append({it["slug"]: f"ERROR {e}"})
         return (json.dumps(result), 200, {"Content-Type":"application/json"})
     except Exception as e:
+        import traceback
+        print("FATAL:", e)
+        traceback.print_exc()
         result["errors"].append(str(e))
         return (json.dumps(result), 500, {"Content-Type":"application/json"})
