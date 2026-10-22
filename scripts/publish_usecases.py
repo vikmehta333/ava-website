@@ -62,7 +62,19 @@ if not items:
     sys.exit("Nothing queued. (Did the nightly queue file get committed? See docs/AI_USECASE_PUBLISH_RUNBOOK.md)")
 
 library = json.load(open(os.path.join(REPO,"data/usecases/library.json"), encoding="utf-8"))
-live_slugs = {i["slug"] for i in library["items"]}
+
+# Dedup against the LIVE site, not library.json — the index can be stale
+# (the cloud publisher doesn't write to this repo). The live hub is authoritative.
+def _live_slugs():
+    slugs, page = set(), 1
+    while page < 5:
+        r = req(f"{BASE}/pages?parent={HUB_ID}&per_page=100&page={page}&status=publish&_fields=slug")
+        if not r: break
+        slugs |= {p["slug"] for p in r}
+        if len(r) < 100: break
+        page += 1
+    return slugs
+live_slugs = _live_slugs()
 items = [i for i in items if i["slug"] not in live_slugs]
 print(f"queued and not yet live: {len(items)}")
 for i in items: print("  •", i["slug"], "|", i["category"])

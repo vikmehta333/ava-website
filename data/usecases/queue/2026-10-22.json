@@ -25,7 +25,8 @@
    "prompt_quality": 0.88,
    "weighted": 0.9
   },
-  "status": "queued"
+  "status": "published",
+  "published_at": "2026-10-22"
  },
  {
   "slug": "happy-customer-notes-into-case-study-drafts",
@@ -53,6 +54,7 @@
    "prompt_quality": 0.9,
    "weighted": 0.896
   },
-  "status": "queued"
+  "status": "published",
+  "published_at": "2026-10-22"
  }
 ]

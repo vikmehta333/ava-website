@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-19",
+ "generated_at": "2026-10-22",
  "hub_page_id": 24305,
- "count": 24,
+ "count": 32,
  "items": [
   {
    "id": 24352,
@@ -31,8 +31,7 @@
    "category": "Customer Service",
    "has_reel": false,
    "url": "https://avadigitalagency.com/ai-use-cases/before-and-after-job-messages/",
-   "status": "published",
-   "published_at": "2026-10-19"
+   "status": "published"
   },
   {
    "id": 24355,
@@ -42,6 +41,26 @@
    "category": "Content",
    "has_reel": false,
    "url": "https://avadigitalagency.com/ai-use-cases/build-a-30-day-content-calendar-in-one-click/",
+   "status": "published"
+  },
+  {
+   "id": 24410,
+   "slug": "competitor-page-change-alerts",
+   "title": "Get a heads-up when a competitor changes their pricing or offers",
+   "one_liner": "Your automation checks a few competitor pages each week, and the AI tells you in plain English what changed and whether it matters to you.",
+   "category": "Marketing",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/competitor-page-change-alerts/",
+   "status": "published"
+  },
+  {
+   "id": 24415,
+   "slug": "customer-questions-into-faq-drafts",
+   "title": "Turn the questions customers keep asking into FAQ drafts",
+   "one_liner": "Questions from your inbox and call notes are collected monthly, grouped, and answered in draft form for the right service page.",
+   "category": "Content",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/customer-questions-into-faq-drafts/",
    "status": "published"
   },
   {
@@ -75,6 +94,16 @@
    "status": "published"
   },
   {
+   "id": 24417,
+   "slug": "fill-tomorrows-empty-slots",
+   "title": "Fill tomorrow’s empty appointment slots before they go to waste",
+   "one_liner": "Each afternoon your calendar is checked for open slots in the next two days, and an AI drafts a short, friendly offer for past customers who are due, ready for you to approve and send.",
+   "category": "Marketing",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/fill-tomorrows-empty-slots/",
+   "status": "published"
+  },
+  {
    "id": 24405,
    "slug": "finished-job-photos-to-posts",
    "title": "Turn finished-job photos into ready-to-review posts",
@@ -82,8 +111,7 @@
    "category": "Content",
    "has_reel": false,
    "url": "https://avadigitalagency.com/ai-use-cases/finished-job-photos-to-posts/",
-   "status": "published",
-   "published_at": "2026-10-19"
+   "status": "published"
   },
   {
    "id": 24359,
@@ -103,6 +131,16 @@
    "category": "Operations",
    "has_reel": false,
    "url": "https://avadigitalagency.com/ai-use-cases/get-a-monday-morning-performance-digest/",
+   "status": "published"
+  },
+  {
+   "id": 24418,
+   "slug": "happy-customer-notes-into-case-study-drafts",
+   "title": "Turn happy customer replies into case study drafts you can approve",
+   "one_liner": "When a customer sends a glowing reply or survey answer, an AI drafts a short before-and-after story from it and asks for the customer's permission before anything is shared.",
+   "category": "Content",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/happy-customer-notes-into-case-study-drafts/",
    "status": "published"
   },
   {
@@ -163,8 +201,37 @@
    "category": "Content",
    "has_reel": false,
    "url": "https://avadigitalagency.com/ai-use-cases/monthly-customer-email-from-your-notes/",
-   "status": "published",
-   "published_at": "2026-10-19"
+   "status": "published"
+  },
+  {
+   "id": 24409,
+   "slug": "monthly-review-themes-digest",
+   "title": "Find out what customers keep saying in your reviews",
+   "one_liner": "Once a month the AI reads your new Google reviews, pulls out the repeat praise and repeat complaints, and sends you a one-page summary with three things to act on.",
+   "category": "Marketing",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/monthly-review-themes-digest/",
+   "status": "published"
+  },
+  {
+   "id": 24414,
+   "slug": "phone-call-notes-into-crm",
+   "title": "Log every phone call in your CRM without typing a word",
+   "one_liner": "After each call, the recording is transcribed and an AI writes a short note with who called, what they need and the next step, filed on the right customer record.",
+   "category": "Operations",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/phone-call-notes-into-crm/",
+   "status": "published"
+  },
+  {
+   "id": 24411,
+   "slug": "polite-overdue-invoice-nudges",
+   "title": "Chase overdue invoices without the awkward emails",
+   "one_liner": "When an invoice passes its due date, the AI drafts a friendly, firm reminder that fits how late it is, and you approve it before it goes out.",
+   "category": "Operations",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/polite-overdue-invoice-nudges/",
+   "status": "published"
   },
   {
    "id": 24367,
@@ -184,8 +251,7 @@
    "category": "Sales",
    "has_reel": false,
    "url": "https://avadigitalagency.com/ai-use-cases/quote-request-to-draft-estimate/",
-   "status": "published",
-   "published_at": "2026-10-19"
+   "status": "published"
   },
   {
    "id": 24369,
@@ -205,8 +271,7 @@
    "category": "Lead Response",
    "has_reel": false,
    "url": "https://avadigitalagency.com/ai-use-cases/text-back-every-missed-call/",
-   "status": "published",
-   "published_at": "2026-10-19"
+   "status": "published"
   },
   {
    "id": 24370,
@@ -229,15 +294,24 @@
    "status": "published"
   },
   {
+   "id": 24413,
+   "slug": "weekly-page-two-keyword-shortlist",
+   "title": "Find the searches you almost rank for, every Monday",
+   "one_liner": "Each week your Search Console data is sorted for searches where you sit just off page one, and an AI turns them into a short list of page tweaks worth making.",
+   "category": "Local SEO",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/weekly-page-two-keyword-shortlist/",
+   "status": "published"
+  },
+  {
    "id": 24404,
    "slug": "win-back-customers-who-went-quiet",
-   "title": "Win back customers who haven't booked in a while",
+   "title": "Win back customers who haven’t booked in a while",
    "one_liner": "AI finds customers whose last service was long enough ago to be due again and drafts a personal check-in for each segment.",
    "category": "Marketing",
    "has_reel": false,
    "url": "https://avadigitalagency.com/ai-use-cases/win-back-customers-who-went-quiet/",
-   "status": "published",
-   "published_at": "2026-10-19"
+   "status": "published"
   },
   {
    "id": 24372,
