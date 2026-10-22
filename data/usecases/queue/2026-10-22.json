@@ -1,0 +1,58 @@
+[
+ {
+  "slug": "fill-tomorrows-empty-slots",
+  "category": "marketing",
+  "title": "Fill tomorrow's empty appointment slots before they go to waste",
+  "one_liner": "Each afternoon your calendar is checked for open slots in the next two days, and an AI drafts a short, friendly offer for past customers who are due, ready for you to approve and send.",
+  "steps": [
+   "Every afternoon, read your booking calendar and list open slots in the next 48 hours.",
+   "Pull past customers who are due for a repeat visit and have agreed to receive texts or emails.",
+   "An AI step drafts one short message per customer naming the open time and a simple way to book.",
+   "You get the batch in one email or Slack message; approve it and the messages go out, or skip the day."
+  ],
+  "guardrail": "You approve every batch and decide whether any discount is offered; only customers who opted in are ever messaged.",
+  "tools": "Google Calendar (or your booking tool), Google Sheets or your CRM, n8n or Make, an AI model (Claude or ChatGPT), Twilio or Gmail",
+  "prompt": "You write short customer messages for [business name], a [type of local business] in [city]. Open appointment times in the next two days: [list of open slots]. For each customer below, write one text of under 40 words offering the soonest slot that fits their usual service. Customer details: [first name | last service | date of last visit]. Tone: warm and plain, like a note from the owner. Include [booking link or phone number]. Offer a discount only if I have written one here: [discount or 'none']. Do not invent availability, prices, or urgency, and end each text with 'Reply STOP to opt out.' Output a numbered list, one message per customer.",
+  "source_name": "Mindbody and Boulevard vendor guides on automated campaigns for open appointments (pattern only)",
+  "source_url": "https://www.mindbodyonline.com/business/education/blog/4-automated-campaigns-fill-open-appointments-your-appointment-based",
+  "verification_note": "Expected: a numbered list of short personalised texts naming only the supplied slots, with no invented discount and an opt-out line.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.9,
+   "prompt_quality": 0.88,
+   "weighted": 0.9
+  },
+  "status": "queued"
+ },
+ {
+  "slug": "happy-customer-notes-into-case-study-drafts",
+  "category": "content",
+  "title": "Turn happy customer replies into case study drafts you can approve",
+  "one_liner": "When a customer sends a glowing reply or survey answer, an AI drafts a short before-and-after story from it and asks for the customer's permission before anything is shared.",
+  "steps": [
+   "Flag positive replies or survey answers as they arrive in your inbox or form tool.",
+   "An AI step pulls out the problem, what you did, and the outcome, using only what the customer actually said.",
+   "It drafts a 150-word story and a one-line pull quote, and a permission email to the customer.",
+   "You edit the draft, send the permission request, and publish only after the customer says yes."
+  ],
+  "guardrail": "Nothing is published or even quoted until the customer has agreed in writing and you have approved the final wording.",
+  "tools": "Gmail or Typeform/Google Forms, n8n or Make, an AI model (Claude or ChatGPT), Google Docs",
+  "prompt": "You are helping [business name], a [type of local business], turn customer feedback into a short case study. Customer feedback, exactly as written: [paste reply or survey answers]. Job details I know: [service performed | month | any facts you want included]. Write: (1) a 150-word story with three parts: the problem, what we did, how it went; (2) one pull quote copied word for word from the feedback; (3) a polite 3-sentence email asking the customer if we may share their story, and whether to use their first name only. Use only facts in the text above. Do not invent numbers, results, names, or timelines. If something is missing, write [needs detail] instead of guessing.",
+  "source_name": "Growwstacks n8n feedback collector and job-completion follow-up templates (pattern only)",
+  "source_url": "https://www.growwstacks.com/workflows/client-feedback-collector-and-analyzer-form-ai-summary-email-social-draft",
+  "verification_note": "Expected: a grounded 150-word story, a verbatim pull quote, a permission email, and [needs detail] markers where facts are missing.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.92,
+   "prompt_quality": 0.9,
+   "weighted": 0.896
+  },
+  "status": "queued"
+ }
+]
