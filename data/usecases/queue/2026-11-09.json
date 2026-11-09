@@ -82,5 +82,61 @@
    "weighted": 0.892
   },
   "status": "queued"
+ },
+ {
+  "slug": "bad-review-alert-with-recovery-draft",
+  "category": "cs",
+  "title": "Hear about a bad review in minutes, with a recovery plan ready",
+  "one_liner": "When a 1\u20133 star Google review lands, you get a text right away with the review, a calm draft public reply, and a suggested call-back note, so the fix starts the same day.",
+  "steps": [
+   "A new Google Business Profile review triggers the workflow; only 1\u20133 star reviews you have not replied to continue.",
+   "An AI step reads the review and drafts a short, non-defensive public reply plus two lines for you to say when you call the customer.",
+   "You get a text or Slack message with the review, the draft reply and the customer's name.",
+   "You edit and post the reply yourself, then log what you did so the issue can be fixed at the source."
+  ],
+  "guardrail": "Nothing is posted to Google automatically; the owner or manager edits and posts every reply and makes every call-back.",
+  "tools": "Google Business Profile (via Zapier or n8n trigger), an AI model (Claude or ChatGPT), Twilio or Slack, Google Sheets for a review log",
+  "prompt": "You help the owner of [business name], a [type of local business] in [city], respond to a critical review. Review ({rating} stars) from [reviewer first name]: \"[review text]\". Our tone: [warm, plain-spoken, 2 adjectives].\n\n1. Write a public reply under 70 words that thanks them, acknowledges the specific issue they raised, and invites them to contact us at [phone or email]. Do not argue, blame the customer, offer refunds or compensation, or reveal any private details.\n2. Write two sentences the owner can say when calling the customer.\n3. In one line, name the likely root cause to check internally (e.g. wait time, pricing, communication).\n\nIf the review mentions health, safety, discrimination or legal action, output only: 'ESCALATE TO OWNER' and one sentence on why. Output the three parts labelled.",
+  "source_name": "n8n and Zapier negative-review triage templates (web search results)",
+  "source_url": "https://n8n.io/workflows/18035-triage-negative-google-reviews-with-zapier-twilio-anthropic-and-email/",
+  "verification_note": "Given a sample 2-star review about a late arrival, the prompt yields a short non-defensive reply, a call-back script and a root-cause line; legal or safety wording forces an escalate-only output.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.91
+  },
+  "status": "queued"
+ },
+ {
+  "slug": "intake-form-to-appointment-brief",
+  "category": "ops",
+  "title": "Walk into every appointment already knowing the customer's story",
+  "one_liner": "When someone submits your intake or booking form, an AI condenses their answers into a short prep brief and attaches it to the calendar event.",
+  "steps": [
+   "A new intake form submission (Tally, Jotform or your website form) triggers the workflow.",
+   "An AI step turns the raw answers into a brief: what they want, anything unclear, and the questions to ask first.",
+   "The workflow creates or updates the calendar event and pastes the brief into its description.",
+   "The team opens the event before the visit instead of re-reading the form."
+  ],
+  "guardrail": "The brief only restates what the customer wrote and flags gaps; a person confirms details with the customer and makes every judgment call.",
+  "tools": "Tally or Jotform, Make or n8n, Google Calendar, an AI model (Claude or ChatGPT)",
+  "prompt": "You prepare a one-page appointment brief for [business name], a [type of local business]. The customer submitted this form: [paste form answers]. Service requested: [service]. Appointment time: [date and time].\n\nWrite: (1) What they want, in two sentences using only their words and facts. (2) Details that are missing or unclear, as a bullet list. (3) Three questions to ask at the start of the visit. (4) Anything marked urgent or time-sensitive, or 'None stated'.\n\nDo not guess at diagnoses, budgets, or needs the customer did not state. Do not include sensitive data beyond what is needed for the visit, such as full payment or ID numbers. Keep it under 150 words.",
+  "source_name": "Make.com intake-to-calendar scenarios and agency write-ups (web search results)",
+  "source_url": "https://www.make.com/en/how-to-guides/how-to-cut-manual-work-with-automated-ai-project-intake-workflow",
+  "verification_note": "With a sample form, the prompt yields a sub-150-word brief with stated facts, gaps and opening questions, and avoids inventing needs.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.91
+  },
+  "status": "queued"
  }
 ]
