@@ -1,0 +1,182 @@
+[
+ {
+  "slug": "cold-email-deliverability-setup",
+  "category": "sales",
+  "title": "Set up cold email so it lands in the inbox, not spam",
+  "one_liner": "Dedicated sending domains, authentication records and a warm-up schedule — the infrastructure that decides whether anyone ever sees your outreach.",
+  "steps": [
+   "Buy sending domains separate from your main one, so a deliverability problem can never hurt your real company email.",
+   "Set SPF, DKIM and DMARC records on each sending domain, then verify each one passes before a single campaign email goes out.",
+   "Warm each inbox for 2–3 weeks with gradually increasing volume before real sending begins.",
+   "Cap each inbox at 30–50 emails a day and add inboxes to scale volume, rather than pushing one inbox harder.",
+   "Watch bounce and spam-complaint rates weekly; pause and repair a domain the moment either climbs."
+  ],
+  "guardrail": "Never send from your primary company domain, and never skip the warm-up to launch faster — a burned domain takes months to recover and can affect your real email.",
+  "tools": "Dedicated sending domains · Google Workspace or Microsoft 365 inboxes · Instantly.ai or Lemlist (sequencing + warm-up) · your DNS host for SPF/DKIM/DMARC",
+  "prompt": "You are helping [business name] prepare cold email infrastructure. Current setup: [list sending domains, inbox provider, and any existing DNS records].\n\n1. Tell me which of SPF, DKIM and DMARC are missing or misconfigured, and give the exact DNS record to add for each.\n2. Propose a 3-week warm-up ramp: emails per inbox per day, week by week.\n3. Given a target of [N] emails per day, tell me how many inboxes and domains I need at a 30–50/day/inbox cap.\n4. List the deliverability metrics to check weekly and the threshold at which I should pause sending.\n\nDo not recommend sending from the primary company domain. Do not suggest shortcuts that skip warm-up.",
+  "verification_note": "Expected: named missing DNS records with copy-ready values, a week-by-week ramp, an inbox-count calculation, and explicit pause thresholds.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.9,
+   "specific": 0.95,
+   "original": 0.95,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.933
+  },
+  "status": "published",
+  "source_name": "Ava Digital's own delivered client systems (service pages, playbooks and guides on avadigitalagency.com)",
+  "source_url": "https://avadigitalagency.com/ai-concierge/",
+  "published_at": "2026-11-08"
+ },
+ {
+  "slug": "build-a-verified-icp-list",
+  "category": "sales",
+  "title": "Build a prospect list that's actually your buyer — and actually deliverable",
+  "one_liner": "Define the ideal customer precisely, pull a targeted list, then verify every address so bounces don't wreck your sender reputation.",
+  "steps": [
+   "Write the ICP down as filters, not adjectives: industry, employee count, geography, job titles, and any disqualifiers.",
+   "Pull a list against those exact filters rather than buying a generic list.",
+   "Run every address through verification and drop anything risky or catch-all before it reaches a sequence.",
+   "Spot-check 20 rows by hand — if more than a couple are off-target, the filters are wrong, not the tool.",
+   "Record list size against your filters so you know the real addressable market before committing budget."
+  ],
+  "guardrail": "Verify before you send, every time. A list that skips verification will bounce, and bounces damage the sending domain far longer than the campaign lasts.",
+  "tools": "Apollo or Clay (list building) · ZeroBounce (email verification) · a spreadsheet or CRM for the final list",
+  "prompt": "Help me define a precise ICP for [business name], which sells [offer] to [type of customer].\n\n1. Turn this into concrete list filters: industry, employee-count range, geography, job titles to include, and titles or company types to EXCLUDE.\n2. Flag any filter that is too broad to be useful and tighten it.\n3. Estimate what a realistic addressable market looks like at these filters, and say clearly that the real number must come from the list tool, not from you.\n4. Give me a 20-row manual spot-check checklist to confirm the list matches the ICP.\n\nDo not invent market-size statistics.",
+  "verification_note": "Expected: filter-level ICP definition with explicit exclusions, tightened broad filters, and a refusal to fabricate market-size numbers.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.9,
+   "specific": 0.95,
+   "original": 0.95,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.933
+  },
+  "status": "published",
+  "source_name": "Ava Digital's own delivered client systems (service pages, playbooks and guides on avadigitalagency.com)",
+  "source_url": "https://avadigitalagency.com/ai-concierge/",
+  "published_at": "2026-11-08"
+ },
+ {
+  "slug": "sort-outbound-replies-automatically",
+  "category": "sales",
+  "title": "Sort every cold-email reply before it reaches you",
+  "one_liner": "Replies get tagged interested, not interested, out-of-office or wrong-person, so you only read the ones worth your time — and nobody gets a follow-up they already answered.",
+  "steps": [
+   "Every reply to a sequence is read and tagged: interested, not interested, out of office, wrong person, or unsubscribe.",
+   "Interested replies stop the sequence immediately and get flagged for a human to answer.",
+   "Out-of-office replies pause that contact until the return date, then resume where the sequence left off.",
+   "Wrong-person replies are checked for a referred name, which goes into the list as a new contact.",
+   "Unsubscribes are honoured instantly and suppressed everywhere, not just in that campaign."
+  ],
+  "guardrail": "An interested reply always goes to a person — the AI classifies and routes, it never answers a live prospect on your behalf.",
+  "tools": "Instantly.ai or Lemlist (reply capture) · an LLM step via Make, Zapier or n8n · your CRM for routing",
+  "prompt": "Classify this reply to a cold outreach email.\n\nReply:\n[paste reply text]\n\nReturn JSON only:\n{\"category\": one of [interested, not_interested, out_of_office, wrong_person, unsubscribe, unclear],\n \"stop_sequence\": true or false,\n \"return_date\": ISO date or null (only for out_of_office),\n \"referred_name\": string or null (only for wrong_person),\n \"one_line_summary\": string}\n\nRules: any hint of unsubscribe or legal objection is \"unsubscribe\" with stop_sequence true. If you are not confident, use \"unclear\" and set stop_sequence true so a human reviews it. Never draft a reply.",
+  "verification_note": "Expected: strict JSON with a conservative bias — ambiguity routes to a human and always halts the sequence.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.9,
+   "specific": 0.95,
+   "original": 0.95,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.933
+  },
+  "status": "published",
+  "source_name": "Ava Digital's own delivered client systems (service pages, playbooks and guides on avadigitalagency.com)",
+  "source_url": "https://avadigitalagency.com/ai-concierge/",
+  "published_at": "2026-11-08"
+ },
+ {
+  "slug": "linkedin-profile-audit-before-outreach",
+  "category": "sales",
+  "title": "Fix your LinkedIn profile before you send a single connection request",
+  "one_liner": "Your profile is the landing page for every request you send — auditing it first lifts acceptance rates on everything that follows.",
+  "steps": [
+   "Read the profile the way a cold prospect would: headline, photo, banner, and the first two lines of About.",
+   "Rewrite the headline to say who you help and what changes, not your job title.",
+   "Make the About opening address the prospect's problem, not your career history.",
+   "Check the experience section supports the claim in the headline, and that the featured section shows proof.",
+   "Only after the profile is fixed do you start sending connection requests."
+  ],
+  "guardrail": "This is about clarity, not invention — never add a credential, result or client you can't substantiate.",
+  "tools": "LinkedIn · LinkedIn Sales Navigator (for the targeting that follows) · an LLM for the rewrite",
+  "prompt": "You are reviewing a LinkedIn profile that will be the first thing cold prospects see.\n\nProfile:\nHeadline: [paste]\nAbout: [paste]\nExperience highlights: [paste]\nTarget buyer: [who you want to reach]\n\n1. Say in one line what a cold prospect would conclude in five seconds.\n2. Rewrite the headline so it names who you help and the change you create — under 220 characters, no buzzwords.\n3. Rewrite the first two lines of About to open on the buyer's problem.\n4. List anything that weakens credibility with this buyer.\n\nUse only facts present above. Never invent results, clients, numbers or credentials.",
+  "verification_note": "Expected: a blunt five-second read, a benefit-led headline within the limit, a buyer-focused About opening, and no fabricated credentials.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.9,
+   "specific": 0.95,
+   "original": 0.95,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.933
+  },
+  "status": "published",
+  "source_name": "Ava Digital's own delivered client systems (service pages, playbooks and guides on avadigitalagency.com)",
+  "source_url": "https://avadigitalagency.com/ai-concierge/",
+  "published_at": "2026-11-08"
+ },
+ {
+  "slug": "fix-your-nap-citations",
+  "category": "seo",
+  "title": "Make your name, address and phone identical everywhere online",
+  "one_liner": "Inconsistent business listings quietly suppress local ranking — this finds every mismatch across the major directories and gives you one correct record to apply.",
+  "steps": [
+   "Write down the single correct version of your name, address and phone, exactly as it should appear everywhere.",
+   "Check the major directories — Google Business Profile, Apple Maps, Bing Places, Yelp, Yellow Pages and your industry's own listings.",
+   "Log every mismatch: abbreviations, old suites, former phone numbers, and duplicate listings.",
+   "Fix the highest-authority listings first, then work down the list.",
+   "Re-check quarterly, because listings drift as data aggregators re-sync old records."
+  ],
+  "guardrail": "Duplicate listings get claimed and merged, never simply deleted — deleting one can take its reviews with it.",
+  "tools": "Google Business Profile · Apple Maps · Bing Places · Yelp · industry directories · a spreadsheet to track each listing's state",
+  "prompt": "I am auditing local listings for [business name] in [city, state].\n\nCanonical record:\nName: [exact name]\nAddress: [exact address]\nPhone: [exact phone]\n\nHere is what each directory currently shows:\n[paste directory name + the listing details it shows, one per line]\n\n1. For each directory, say MATCH or MISMATCH and name the exact difference.\n2. Order the mismatches by likely ranking impact, highest first.\n3. Flag any possible duplicate listings and note that duplicates must be claimed and merged, not deleted.\n4. Give me the exact text to paste into each field that needs changing.\n\nOnly use the directories I pasted. Do not guess at listings you cannot see.",
+  "verification_note": "Expected: per-directory match/mismatch with the precise difference, impact ordering, duplicate-merge warning, and no invented listings.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.9,
+   "specific": 0.95,
+   "original": 0.95,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.933
+  },
+  "status": "published",
+  "source_name": "Ava Digital's own delivered client systems (service pages, playbooks and guides on avadigitalagency.com)",
+  "source_url": "https://avadigitalagency.com/ai-concierge/",
+  "published_at": "2026-11-08"
+ },
+ {
+  "slug": "weekly-negative-keyword-review",
+  "category": "marketing",
+  "title": "Cut the Google Ads searches that waste your budget, every week",
+  "one_liner": "Each week the search-terms report is read for queries that spent money without intent, and turned into a negative-keyword list for you to approve.",
+  "steps": [
+   "Export last week's search-terms report with cost, clicks and conversions for each query.",
+   "Separate queries that spent real money and converted nothing from ones that are simply new.",
+   "Group the waste into themes — job seekers, DIY/free intent, wrong service, wrong location, competitor research.",
+   "Produce a negative-keyword list by theme, marking each as exact or phrase match.",
+   "You approve the list before anything is added, then re-check next week to confirm spend moved."
+  ],
+  "guardrail": "You approve every negative before it goes live — an over-broad negative can silently switch off your best-performing searches.",
+  "tools": "Google Ads search-terms report · a spreadsheet or Looker Studio · an LLM for the grouping",
+  "prompt": "You are reviewing Google Ads search terms for [business name], which sells [service] in [city/area].\n\nLast week's search terms (query | cost | clicks | conversions):\n[paste rows]\n\n1. List queries that spent over [$ amount] with zero conversions.\n2. Group them into waste themes: job seekers, DIY/free intent, wrong service, wrong location, competitor research, other.\n3. For each theme, propose negative keywords and say whether each should be exact or phrase match.\n4. Flag any query that looks like waste but might be a real buyer, and explain the risk of excluding it.\n\nUse only the rows provided. Do not estimate volumes or invent queries. Output a list for human approval — do not present it as already applied.",
+  "verification_note": "Expected: cost-filtered waste list, themed negatives with match types, and explicit flags where a negative could block real buyers.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.9,
+   "specific": 0.95,
+   "original": 0.95,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.933
+  },
+  "status": "published",
+  "source_name": "Ava Digital's own delivered client systems (service pages, playbooks and guides on avadigitalagency.com)",
+  "source_url": "https://avadigitalagency.com/ai-concierge/",
+  "published_at": "2026-11-08"
+ }
+]

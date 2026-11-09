@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-22",
+ "generated_at": "2026-11-08",
  "hub_page_id": 24305,
- "count": 32,
+ "count": 38,
  "items": [
   {
    "id": 24352,
@@ -42,6 +42,28 @@
    "has_reel": false,
    "url": "https://avadigitalagency.com/ai-use-cases/build-a-30-day-content-calendar-in-one-click/",
    "status": "published"
+  },
+  {
+   "id": 24424,
+   "slug": "build-a-verified-icp-list",
+   "title": "Build a prospect list that's actually your buyer — and actually deliverable",
+   "one_liner": "Define the ideal customer precisely, pull a targeted list, then verify every address so bounces don't wreck your sender reputation.",
+   "category": "Sales",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/build-a-verified-icp-list/",
+   "status": "published",
+   "published_at": "2026-11-08"
+  },
+  {
+   "id": 24423,
+   "slug": "cold-email-deliverability-setup",
+   "title": "Set up cold email so it lands in the inbox, not spam",
+   "one_liner": "Dedicated sending domains, authentication records and a warm-up schedule — the infrastructure that decides whether anyone ever sees your outreach.",
+   "category": "Sales",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/cold-email-deliverability-setup/",
+   "status": "published",
+   "published_at": "2026-11-08"
   },
   {
    "id": 24410,
@@ -114,6 +136,17 @@
    "status": "published"
   },
   {
+   "id": 24427,
+   "slug": "fix-your-nap-citations",
+   "title": "Make your name, address and phone identical everywhere online",
+   "one_liner": "Inconsistent business listings quietly suppress local ranking — this finds every mismatch across the major directories and gives you one correct record to apply.",
+   "category": "Local SEO",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/fix-your-nap-citations/",
+   "status": "published",
+   "published_at": "2026-11-08"
+  },
+  {
    "id": 24359,
    "slug": "generate-a-page-for-every-city-you-serve",
    "title": "Generate a page for every city you serve",
@@ -172,6 +205,17 @@
    "has_reel": true,
    "url": "https://avadigitalagency.com/ai-use-cases/lead-chaser/",
    "status": "published"
+  },
+  {
+   "id": 24426,
+   "slug": "linkedin-profile-audit-before-outreach",
+   "title": "Fix your LinkedIn profile before you send a single connection request",
+   "one_liner": "Your profile is the landing page for every request you send — auditing it first lifts acceptance rates on everything that follows.",
+   "category": "Sales",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/linkedin-profile-audit-before-outreach/",
+   "status": "published",
+   "published_at": "2026-11-08"
   },
   {
    "id": 24365,
@@ -254,6 +298,17 @@
    "status": "published"
   },
   {
+   "id": 24425,
+   "slug": "sort-outbound-replies-automatically",
+   "title": "Sort every cold-email reply before it reaches you",
+   "one_liner": "Replies get tagged interested, not interested, out-of-office or wrong-person, so you only read the ones worth your time — and nobody gets a follow-up they already answered.",
+   "category": "Sales",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/sort-outbound-replies-automatically/",
+   "status": "published",
+   "published_at": "2026-11-08"
+  },
+  {
    "id": 24369,
    "slug": "spin-up-an-ad-campaign-from-your-website",
    "title": "Spin up an ad campaign from your website",
@@ -292,6 +347,17 @@
    "has_reel": false,
    "url": "https://avadigitalagency.com/ai-use-cases/turn-voicemails-into-tasks/",
    "status": "published"
+  },
+  {
+   "id": 24428,
+   "slug": "weekly-negative-keyword-review",
+   "title": "Cut the Google Ads searches that waste your budget, every week",
+   "one_liner": "Each week the search-terms report is read for queries that spent money without intent, and turned into a negative-keyword list for you to approve.",
+   "category": "Marketing",
+   "has_reel": false,
+   "url": "https://avadigitalagency.com/ai-use-cases/weekly-negative-keyword-review/",
+   "status": "published",
+   "published_at": "2026-11-08"
   },
   {
    "id": 24413,
