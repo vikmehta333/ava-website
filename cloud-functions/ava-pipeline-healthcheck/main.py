@@ -88,11 +88,20 @@ def healthcheck(request):
     today = datetime.date.today()
     problems, notes = [], []
 
+    # C1 — tolerate the pre-harvest window: this can be invoked before the 2 AM
+    # harvest has run, and a false alarm every morning would train you to ignore it.
+    # Only a missing digest for BOTH today and yesterday is a real failure.
     digest = gh_file(f"data/usecases/digest/{today}.md")
-    if not digest:
-        problems.append(f"C1 HARVEST DID NOT RUN — no digest for {today}.")
-    else:
+    yesterday = today - datetime.timedelta(days=1)
+    digest_yday = None if digest else gh_file(f"data/usecases/digest/{yesterday}.md")
+    if digest:
         notes.append(f"harvest ran ({today} digest present)")
+    elif digest_yday:
+        notes.append(f"no {today} digest yet (pre-harvest window); {yesterday} digest present")
+        digest = digest_yday
+    else:
+        problems.append(
+            f"C1 HARVEST DID NOT RUN — no digest for {today} or {yesterday}.")
 
     queue_raw = gh_file(f"data/usecases/queue/{today}.json")
     passed = re.findall(r'^- \*\*([a-z0-9-]+)\*\*', digest or "", re.M)
@@ -110,7 +119,23 @@ def healthcheck(request):
         except Exception as e:
             problems.append(f"C3 queue file unreadable: {e}")
     elif not passed:
-        notes.append("nothing passed the gates last night (valid outcome)")
+        notes.append("nothing passed the gates last night (valid on its own; see C6 for streaks)")
+
+    # C6 DROUGHT — consecutive nights producing nothing. A single empty night is a
+    # valid outcome, but a STREAK means the pipeline is broken (this is exactly how
+    # 17 nights of zero output went unnoticed: every night looked individually fine).
+    streak, DROUGHT_LIMIT = 0, 3
+    for d in range(0, 14):
+        day = today - datetime.timedelta(days=d)
+        if gh_file(f"data/usecases/queue/{day}.json"):
+            break
+        streak += 1
+    if streak >= DROUGHT_LIMIT:
+        problems.append(
+            f"C6 DROUGHT — {streak} consecutive night(s) with no queue file. The harvest is "
+            f"running but producing nothing; check the latest digest's 'Source health' section.")
+    elif streak:
+        notes.append(f"{streak} night(s) since the last queued batch (under the {DROUGHT_LIMIT}-night limit)")
 
     try:
         live = live_slugs()
