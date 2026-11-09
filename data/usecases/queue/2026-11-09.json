@@ -1,0 +1,86 @@
+[
+ {
+  "slug": "no-show-rescue-texts",
+  "category": "ops",
+  "title": "Rescue a no-show before the slot is lost for good",
+  "one_liner": "When a customer misses an appointment, an AI drafts a kind, no-guilt message offering the next open times, so you can approve it and rebook the visit the same day.",
+  "steps": [
+   "Mark an appointment as a no-show in your booking tool, or let a 15-minute-after-start check flag it.",
+   "Pull the next three open slots from your calendar for that service.",
+   "An AI step drafts one short message that acknowledges the miss without blame and offers those times.",
+   "You approve it in one tap; it sends by text or email, and a reply or booking stops any further messages."
+  ],
+  "guardrail": "A person approves every message, and no fee, penalty or policy is mentioned unless you wrote it into the prompt.",
+  "tools": "Google Calendar (or your booking tool), Google Sheets or your CRM, n8n or Make, an AI model (Claude or ChatGPT), Twilio or Gmail",
+  "prompt": "You write short rebooking messages for [business name], a [type of local business] in [city]. A customer named [first name] missed their [service] appointment on [date and time]. Open times we can offer: [three open slots]. Write one text under 45 words that: acknowledges the missed visit in a warm, no-blame way, offers the open times, and gives [booking link or phone number] to reply. Do not mention fees or penalties unless written here: [cancellation policy or 'none']. Do not guess why they missed it, invent availability, or add urgency. For health-related businesses, never reference the reason for the visit. End with 'Reply STOP to opt out.' Output only the message.",
+  "source_name": "n8n community templates for no-show recovery (web search results)",
+  "source_url": "https://n8n.io/workflows/15108",
+  "verification_note": "Given sample slots and a name, the prompt yields a short non-blaming text with the slots and opt-out; fee and urgency are blocked unless supplied.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.95,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.917
+  },
+  "status": "queued"
+ },
+ {
+  "slug": "flag-urgent-requests-first",
+  "category": "lead",
+  "title": "Flag the urgent requests so they get answered first",
+  "one_liner": "Each new form or email request is read by an AI that tags it urgent, normal or low and writes a two-line summary, so a burst pipe or toothache never waits behind routine questions.",
+  "steps": [
+   "A new request arrives from your website form or contact inbox.",
+   "An AI step reads the message and labels it urgent, normal or low using the keywords you define.",
+   "Urgent items trigger an immediate text or Slack alert to the on-call person, with a two-line summary.",
+   "Everything lands in your CRM or sheet with its label, and a human replies to every request."
+  ],
+  "guardrail": "The AI only sorts and summarizes; a person makes every reply, and for clinics any clinical or emergency judgment stays with staff.",
+  "tools": "Your website form (Gravity Forms, Typeform), Zapier or Make, an AI model (Claude or ChatGPT), Google Sheets or your CRM, Slack or Twilio for alerts",
+  "prompt": "You triage inbound requests for [business name], a [type of local business]. Read the message below and return exactly this: Label: urgent, normal or low. Reason: one short sentence. Summary: two lines with the customer's need, location and preferred timing if stated. Treat as urgent only if it matches: [your urgent keywords, e.g. 'no heat', 'leak', 'flooding', 'severe pain']. If unsure, choose the more urgent label. Do not give advice, diagnoses, prices or promises. Message: [paste request text]. Contact name: [name].",
+  "source_name": "Zapier and third-party intake guides for home services and dental (web search results)",
+  "source_url": "https://www.layer3labs.io/templates/ai-lead-intake-workflow-for-dental-offices",
+  "verification_note": "For a sample 'basement flooding' message the prompt returns an urgent label with a short reason and summary and no advice; unclear input defaults to the more urgent label.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.91
+  },
+  "status": "queued"
+ },
+ {
+  "slug": "team-prompt-playbook",
+  "category": "ops",
+  "title": "Build a small playbook of tested prompts your whole team reuses",
+  "one_liner": "Collect the five or six writing and research tasks your team repeats, test one prompt for each, and keep them in a shared doc so everyone gets the same quality.",
+  "steps": [
+   "List the tasks your team repeats every week, such as quote replies, review replies and customer summaries.",
+   "Write one prompt per task with [bracketed] blanks for the details that change.",
+   "Test each prompt on three real past examples and edit it until the output needs only light changes.",
+   "Save the winners in one shared doc with an owner and a review date, and retire prompts nobody uses."
+  ],
+  "guardrail": "Staff review every output before it reaches a customer, and no customer personal details go into a prompt that isn't approved for it.",
+  "tools": "Google Docs or Notion, an AI model (Claude or ChatGPT)",
+  "prompt": "Help me turn a repeated task at [business name], a [type of local business] in [city], into a reusable prompt. The task is: [describe the task]. Here are two real examples of past good outputs, with names removed: [example 1] and [example 2]. Write a prompt with [bracketed] placeholders for the details that change each time. State the tone, the length and what to avoid. Then list the three facts a teammate must supply every time. Do not include customer names, prices or promises in the prompt itself.",
+  "source_name": "Small-business AI threads on Reddit (via web search)",
+  "source_url": "https://reddit.sentinel-team.org/posts/1rqw37o/snapshots/2026-03-13T21%3A16%3A19.822924Z",
+  "verification_note": "Given a task and two examples the prompt produces a reusable template with placeholders and a fact checklist; it avoids embedding names or prices.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.85,
+   "specific": 0.8,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.892
+  },
+  "status": "queued"
+ }
+]
