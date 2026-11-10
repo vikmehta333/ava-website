@@ -1,0 +1,86 @@
+[
+ {
+  "slug": "catch-invoice-mistakes-before-they-send",
+  "category": "ops",
+  "title": "Catch invoice mistakes before they reach the customer",
+  "one_liner": "When you finish an invoice draft, an AI compares it to the job notes and quote, then flags missing line items, wrong totals or blank fields so you fix them before it goes out.",
+  "steps": [
+   "Mark a job complete in your field tool or sheet; the draft invoice and the job notes are pulled together.",
+   "An AI step compares the invoice to the approved quote and the technician's notes and lists anything that does not match.",
+   "The list lands in your inbox or Slack as a short checklist, such as 'quote included a permit fee, invoice does not'.",
+   "You correct the draft, then send it yourself; nothing is sent automatically."
+  ],
+  "guardrail": "The AI only flags differences; a person edits and sends every invoice and decides what is actually owed.",
+  "tools": "QuickBooks or Jobber (draft invoices), Google Sheets or your job tool, n8n or Zapier, an AI model (Claude or ChatGPT), Slack or Gmail",
+  "prompt": "You are a careful bookkeeping assistant for [business name], a [type of local business]. Compare the draft invoice with the approved quote and the job notes below. Do not change anything; only report differences.\n\nQUOTE:\n[quote line items and amounts]\n\nJOB NOTES:\n[technician or crew notes, including extra work or materials]\n\nDRAFT INVOICE:\n[invoice line items, tax, total, customer name, service address, due date]\n\nReturn a checklist with three headings: 'Missing or blank fields' (customer name, address, date, terms), 'Differences from the quote' (items added, removed or priced differently), and 'Work in the notes that is not on the invoice'. For each item give one plain sentence. If a heading has nothing, write 'None found'. Do not guess prices, do not calculate new totals, and do not suggest discounts. End with one line: 'Ready to send' only if all three headings say None found, otherwise 'Review before sending'.",
+  "source_name": "n8n and DEV Community invoice-workflow guides (web search results)",
+  "source_url": "https://dev.to/tm_gunderson_9cff63a7ba/i-built-a-working-invoice-follow-up-agent-in-n8n-heres-the-full-workflow-json-4kki",
+  "verification_note": "With a sample quote, notes and invoice, the prompt yields a three-heading discrepancy checklist, refuses to compute prices, and ends with a clear send/review line.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.9
+  },
+  "status": "queued"
+ },
+ {
+  "slug": "thank-you-first-referral-ask-next-day",
+  "category": "sales",
+  "title": "Thank them first, then ask for a referral the next day",
+  "one_liner": "After a finished job, an AI drafts a no-ask thank-you today and a specific, low-pressure referral ask for tomorrow, so word of mouth stops depending on you remembering.",
+  "steps": [
+   "A job marked complete or an invoice marked paid starts the sequence.",
+   "An AI drafts a short thank-you that asks for nothing and mentions the actual work done.",
+   "The next day a second draft asks for one specific kind of introduction, such as a neighbor or a landlord, not 'anyone you know'.",
+   "You approve both drafts; any reply or referral stops the sequence and logs the name for you to thank."
+  ],
+  "guardrail": "You approve each message, and no discount or reward is mentioned unless you wrote the offer into the prompt.",
+  "tools": "Jobber, Square or your invoicing tool, Google Sheets or CRM, Zapier or Make (with a one-day delay), an AI model (Claude or ChatGPT), Gmail or Twilio",
+  "prompt": "You write brief, warm customer messages for [business name], a [type of local business] in [city]. A customer named [first name] just had [job description] completed on [date]. Details worth mentioning: [one or two specifics from the job notes].\n\nWrite TWO messages.\nMESSAGE 1 (send today): a thank-you under 50 words. It must not ask for a review, referral or anything else.\nMESSAGE 2 (send tomorrow): under 60 words. Ask for a referral to one specific kind of person: [ideal referral, e.g. a neighbor with an older furnace]. Make it easy to say no. Include how to reach us: [phone or link]. Mention a reward only if one is written here: [offer or 'none'].\n\nRules: sound like a real person, no exclamation-mark pileups, no pressure or urgency, do not invent details about the job, and do not claim anything about results. Output the two messages labeled MESSAGE 1 and MESSAGE 2 and nothing else.",
+  "source_name": "Boomp referral-ask guidance and Zapier thank-you templates (web search results)",
+  "source_url": "https://boomp.net/marketing-with-ai/referral-asks",
+  "verification_note": "Given a sample job, the prompt yields two labeled messages: an ask-free thank-you and a specific, easy-to-decline referral ask, with rewards blocked unless supplied.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.91
+  },
+  "status": "queued"
+ },
+ {
+  "slug": "seasonal-tune-up-reminders-by-last-service-date",
+  "category": "marketing",
+  "title": "Remind customers when their yearly service is due",
+  "one_liner": "A sheet tracks each customer's last service date and equipment, and a few weeks before the season turns an AI drafts a personal 'time for your tune-up' note with your booking link.",
+  "steps": [
+   "Keep a simple sheet or CRM list with customer, last service date, equipment and season it relates to.",
+   "Each week a check finds customers whose service anniversary or season falls in the next 30 to 45 days.",
+   "An AI drafts one short reminder per customer using their last visit and equipment, with your booking link.",
+   "You approve the batch; a booking or reply removes that customer from the reminder run."
+  ],
+  "guardrail": "You approve each batch, and the AI only uses fields from your sheet, never inventing equipment issues or urgency.",
+  "tools": "Google Sheets or your CRM, n8n or Make, an AI model (Claude or ChatGPT), Gmail or Twilio, your booking link",
+  "prompt": "You write maintenance reminders for [business name], a [type of local business, e.g. HVAC company] in [city]. Customer: [first name]. Last service: [service type] on [date]. Equipment on file: [equipment or 'not recorded']. Upcoming season: [e.g. heating season]. Booking link or phone: [link or number].\n\nWrite one friendly email under 90 words with a subject line under 8 words. Mention the last visit date and the equipment only if provided. Say a seasonal check is a good idea before [season starts], and invite them to book. Do not claim the equipment is failing, do not use fear or false urgency, do not quote prices or percentages, and do not promise savings. If equipment is 'not recorded', do not mention it. End with our business name and phone. Output the subject line and the email body only.",
+  "source_name": "HVAC maintenance-reminder workflow blueprints (web search results)",
+  "source_url": "https://www.fieldproxy.ai/automations/hvac-seasonal-tune-up-reminder",
+  "verification_note": "With sample fields, the prompt yields a short personalised reminder that cites only supplied facts and skips fear, pricing and unsupported savings claims.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.892
+  },
+  "status": "queued"
+ }
+]
