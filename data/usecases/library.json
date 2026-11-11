@@ -1,7 +1,7 @@
 {
  "generated_at": "2026-11-08",
  "hub_page_id": 24305,
- "count": 38,
+ "count": 48,
  "items": [
   {
    "id": 24352,
@@ -388,6 +388,87 @@
    "has_reel": false,
    "url": "https://avadigitalagency.com/ai-use-cases/write-first-draft-proposals-in-minutes/",
    "status": "published"
+  },
+  {
+   "slug": "bad-review-alert-with-recovery-draft",
+   "title": "Hear about a bad review in minutes, with a recovery plan ready",
+   "category": "cs",
+   "page_id": 24430,
+   "published_at": "2026-11-09T09:00:37",
+   "source_name": "n8n and Zapier negative-review triage templates (web search results)"
+  },
+  {
+   "slug": "catch-invoice-mistakes-before-they-send",
+   "title": "Catch invoice mistakes before they reach the customer",
+   "category": "ops",
+   "page_id": 24433,
+   "published_at": "2026-11-10T09:00:24",
+   "source_name": "n8n and DEV Community invoice-workflow guides (web search results)"
+  },
+  {
+   "slug": "flag-urgent-requests-first",
+   "title": "Flag the urgent requests so they get answered first",
+   "category": "lead",
+   "page_id": 24420,
+   "published_at": "2026-11-09T04:20:12",
+   "source_name": "Zapier and third-party intake guides for home services and dental (web search results)"
+  },
+  {
+   "slug": "holiday-hours-pack-from-one-sheet",
+   "title": "Get your holiday hours right everywhere from one sheet",
+   "category": "seo",
+   "page_id": 24438,
+   "published_at": "2026-11-11T09:00:41",
+   "source_name": "Search Engine Land / Google Business Profile special-hours guidance (via WebSearch)"
+  },
+  {
+   "slug": "intake-form-to-appointment-brief",
+   "title": "Walk into every appointment already knowing the customer's story",
+   "category": "ops",
+   "page_id": 24431,
+   "published_at": "2026-11-09T09:00:38",
+   "source_name": "Make.com intake-to-calendar scenarios and agency write-ups (web search results)"
+  },
+  {
+   "slug": "no-show-rescue-texts",
+   "title": "Rescue a no-show before the slot is lost for good",
+   "category": "ops",
+   "page_id": 24419,
+   "published_at": "2026-11-09T04:20:09",
+   "source_name": "n8n community templates for no-show recovery (web search results)"
+  },
+  {
+   "slug": "seasonal-tune-up-reminders-by-last-service-date",
+   "title": "Remind customers when their yearly service is due",
+   "category": "marketing",
+   "page_id": 24435,
+   "published_at": "2026-11-10T09:00:32",
+   "source_name": "HVAC maintenance-reminder workflow blueprints (web search results)"
+  },
+  {
+   "slug": "team-prompt-playbook",
+   "title": "Build a small playbook of tested prompts your whole team reuses",
+   "category": "ops",
+   "page_id": 24421,
+   "published_at": "2026-11-09T04:20:13",
+   "source_name": "Small-business AI threads on Reddit (via web search)"
+  },
+  {
+   "slug": "thank-you-first-referral-ask-next-day",
+   "title": "Thank them first, then ask for a referral the next day",
+   "category": "sales",
+   "page_id": 24434,
+   "published_at": "2026-11-10T09:00:26",
+   "source_name": "Boomp referral-ask guidance and Zapier thank-you templates (web search results)"
+  },
+  {
+   "slug": "welcome-packet-the-day-a-customer-says-yes",
+   "title": "Send a clear welcome packet the day a customer says yes",
+   "category": "ops",
+   "page_id": 24437,
+   "published_at": "2026-11-11T09:00:40",
+   "source_name": "Zapier client-onboarding templates (via WebSearch)"
   }
- ]
+ ],
+ "refreshed_from_live_at": "2026-11-11T08:34:43"
 }

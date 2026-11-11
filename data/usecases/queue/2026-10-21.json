@@ -25,7 +25,8 @@
   "source_name": "n8n weekly Search Console keyword report template",
   "source_url": "https://n8n.io/workflows/14892-send-weekly-seo-keyword-email-reports-with-google-search-console-gpt-4o-mini-and-gmail/",
   "verification_note": "Expected: five short, data-grounded items (query, page, one edit) plus a priority line; no invented volumes.",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24413
  },
  {
   "slug": "phone-call-notes-into-crm",
@@ -53,7 +54,8 @@
   "source_name": "Zapier call-transcript summary templates",
   "source_url": "https://zapier.com/apps/",
   "verification_note": "Expected: three tight labeled lines from a sample transcript, 'unclear' where info is missing, sensitive details omitted.",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24414
  },
  {
   "slug": "customer-questions-into-faq-drafts",
@@ -81,6 +83,7 @@
   "source_name": "Ava synthesis from small-business AI guides (Rework, Botpress)",
   "source_url": "https://resources.rework.com/libraries/ai-agents/ai-agents-for-small-business",
   "verification_note": "Expected: grouped ranked questions, short answers using only supplied facts, NEEDS OWNER INPUT markers where gaps exist.",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24415
  }
 ]

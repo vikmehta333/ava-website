@@ -25,7 +25,8 @@
    "prompt_quality": 0.9,
    "weighted": 0.9
   },
-  "status": "queued"
+  "status": "published",
+  "page_id": 24433
  },
  {
   "slug": "thank-you-first-referral-ask-next-day",
@@ -53,7 +54,8 @@
    "prompt_quality": 0.9,
    "weighted": 0.91
   },
-  "status": "queued"
+  "status": "published",
+  "page_id": 24434
  },
  {
   "slug": "seasonal-tune-up-reminders-by-last-service-date",
@@ -81,6 +83,7 @@
    "prompt_quality": 0.9,
    "weighted": 0.892
   },
-  "status": "queued"
+  "status": "published",
+  "page_id": 24435
  }
 ]

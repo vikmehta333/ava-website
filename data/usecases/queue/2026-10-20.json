@@ -25,7 +25,8 @@
    "prompt_quality": 0.9,
    "weighted": 0.91
   },
-  "status": "queued"
+  "status": "published",
+  "page_id": 24409
  },
  {
   "slug": "competitor-page-change-alerts",
@@ -53,7 +54,8 @@
    "prompt_quality": 0.9,
    "weighted": 0.873
   },
-  "status": "queued"
+  "status": "published",
+  "page_id": 24410
  },
  {
   "slug": "polite-overdue-invoice-nudges",
@@ -81,6 +83,7 @@
    "prompt_quality": 0.9,
    "weighted": 0.893
   },
-  "status": "queued"
+  "status": "published",
+  "page_id": 24411
  }
 ]

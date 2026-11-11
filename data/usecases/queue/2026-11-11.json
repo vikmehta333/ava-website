@@ -25,7 +25,8 @@
   },
   "source_name": "Zapier client-onboarding templates (via WebSearch)",
   "source_url": "https://zapier.com/automations/customer-service-success/customer-onboarding/customer-welcome-sequences/create-welcome-email-draft-for-new-client-records",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24437
  },
  {
   "slug": "holiday-hours-pack-from-one-sheet",
@@ -53,6 +54,7 @@
   },
   "source_name": "Search Engine Land / Google Business Profile special-hours guidance (via WebSearch)",
   "source_url": "https://searchengineland.com/google-may-update-your-business-hours-in-local-listings-with-ai-383452",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24438
  }
 ]

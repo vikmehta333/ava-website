@@ -11,6 +11,8 @@ Checks:
   C3  Digest/queue reconcile        -> every "passed" item is in the queue file
   C4  Everything queued is live     -> no item queued in the last 3 days is missing
   C5  Hub is healthy                -> /ai-use-cases/ renders, card count >= live pages
+  C6  No harvest drought           -> not N consecutive nights with an empty queue
+  C7  Dedup index is current       -> library.json has not drifted behind the live site
 
 Triggered by Cloud Scheduler ~7:00 AM America/Chicago (after harvest + publish).
 """
@@ -154,6 +156,33 @@ def healthcheck(request):
                             + "\n    - ".join(unpublished))
     except Exception as e:
         problems.append(f"C4 could not verify published state: {e}")
+
+    # C7 DEDUP-INDEX DRIFT — data/usecases/library.json is the only dedup index the
+    # nightly harvest agent can read (its sandbox has no route to the live site). The
+    # 3 AM publisher is a Cloud Function with no GitHub write access, so anything it
+    # publishes never makes it back into library.json. The index therefore drifts
+    # behind the live site, and the harvest starts re-proposing work that is already
+    # published. Nothing bad reaches the site -- the publisher dedups against live --
+    # but the harvest wastes runs, so flag the drift while it is small.
+    DRIFT_LIMIT = 5
+    try:
+        raw = gh_file("data/usecases/library.json")
+        if raw:
+            lib = json.loads(raw)
+            indexed = {i["slug"] for i in (lib.get("items") if isinstance(lib, dict) else lib)}
+            drift = sorted(live - indexed)
+            if len(drift) >= DRIFT_LIMIT:
+                problems.append(
+                    f"C7 DEDUP INDEX {len(drift)} BEHIND — these are live but missing from "
+                    f"library.json, so the harvest may re-propose them:\n    - "
+                    + "\n    - ".join(drift)
+                    + "\n    Fix: run scripts/refresh_library.py and commit.")
+            elif drift:
+                notes.append(f"dedup index {len(drift)} behind live (under the {DRIFT_LIMIT} limit)")
+            else:
+                notes.append("dedup index matches the live site")
+    except Exception as e:
+        notes.append(f"C7 could not check the dedup index: {e}")
 
     try:
         hub = requests.get(f"{WP_URL}/ai-use-cases/", headers={"User-Agent": UA}, timeout=60).text
