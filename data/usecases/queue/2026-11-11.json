@@ -1,0 +1,58 @@
+[
+ {
+  "slug": "welcome-packet-the-day-a-customer-says-yes",
+  "category": "ops",
+  "title": "Send a clear welcome packet the day a customer says yes",
+  "one_liner": "When a quote is accepted or a contract is signed, an AI drafts a plain-language welcome email and a kickoff checklist so the customer knows what happens next and your team starts with everything in one place.",
+  "steps": [
+   "A deal moves to 'Won' in your CRM, or a signed-agreement notice arrives; the customer record and scope notes are pulled together.",
+   "An AI step drafts a welcome email covering what happens next, what you need from them, and who their contact is.",
+   "The same step builds an internal kickoff checklist (items to collect, people to assign, dates to confirm) and creates the tasks in your task tool.",
+   "Whoever owns the account reviews the draft email, fills any gaps, and sends it; the tasks go live once they approve."
+  ],
+  "guardrail": "The welcome email is saved as a draft and a person reads, edits and sends it; the AI never promises dates, prices or scope that are not in your signed agreement.",
+  "tools": "Your CRM (HubSpot, Jobber, Housecall Pro or a Google Sheet), n8n or Zapier, an AI model (Claude or ChatGPT), Gmail drafts, Asana, Trello or Google Tasks",
+  "prompt": "You are an onboarding coordinator for [business name], a [type of local business]. A customer just agreed to the work below. Write (1) a warm, plain-language welcome email draft and (2) an internal kickoff checklist. Use only the facts provided; if something is missing, write 'TO CONFIRM: [what]' instead of guessing. Do not invent dates, prices or promises.\n\nCUSTOMER FIRST NAME: [first name]\nSERVICE / SCOPE AGREED: [scope from the signed quote or contract]\nSTART TARGET (if agreed): [date or 'not set']\nWHAT WE NEED FROM THEM: [access, documents, photos, deposit, decisions]\nTHEIR MAIN CONTACT AT OUR TEAM: [staff name and phone/email]\nTONE: [friendly and direct / more formal]\n\nOUTPUT FORMAT:\nEMAIL SUBJECT: ...\nEMAIL BODY: under 150 words; thank them, say what happens next in 3 short bullets, list what we need from them, name their contact.\nKICKOFF CHECKLIST: 5-8 items, each with an owner role ([office / technician / owner]) and a 'TO CONFIRM' flag where needed.",
+  "verification_note": "Reasoned through the prompt with a sample scope (kitchen faucet replacement, deposit needed, start date not set): the output would be a short email with 'TO CONFIRM: start date' flagged and a role-assigned checklist; the explicit no-guessing rule prevents invented dates or prices. Placeholders only; no PII.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.92,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.914
+  },
+  "source_name": "Zapier client-onboarding templates (via WebSearch)",
+  "source_url": "https://zapier.com/automations/customer-service-success/customer-onboarding/customer-welcome-sequences/create-welcome-email-draft-for-new-client-records",
+  "status": "queued"
+ },
+ {
+  "slug": "holiday-hours-pack-from-one-sheet",
+  "category": "seo",
+  "title": "Get your holiday hours right everywhere from one sheet",
+  "one_liner": "List your closures and special hours once, and an AI drafts the Google Business Profile special hours, website banner text, a customer post and a phone greeting line, ready for you to approve before the holiday rush.",
+  "steps": [
+   "Keep one sheet of upcoming closures and altered hours (date, open time, close time, reason, on-call or emergency details if any).",
+   "Two weeks before each date, an automation reads the row and sends it to an AI model.",
+   "The AI drafts the profile special-hours entry, a short website banner, a social or email post and a voicemail greeting line, all using exactly the hours in the sheet.",
+   "You get the drafts in one email, check each against the sheet, then enter or publish them yourself."
+  ],
+  "guardrail": "Nothing is published or changed automatically; a person confirms every hour against the sheet and enters the Google Business Profile special hours themselves.",
+  "tools": "Google Sheets, n8n or Zapier, an AI model (Claude or ChatGPT), Gmail, Google Business Profile",
+  "prompt": "You are the marketing coordinator for [business name] in [city]. Using ONLY the schedule below, draft customer-facing holiday hours messages. Do not add, change or assume any hours, services or promotions. If the sheet row is incomplete, reply with 'MISSING INFO: [what]' and stop.\n\nHOLIDAY / EVENT: [holiday name]\nDATES AFFECTED: [dates]\nHOURS ON THOSE DATES: [open time to close time, or 'closed']\nNORMAL HOURS RESUME: [date and time]\nEMERGENCY OR AFTER-HOURS OPTION (if any): [phone or 'none']\nTONE: [friendly / professional]\n\nWrite:\n1. GOOGLE PROFILE SPECIAL HOURS: one line per date in the format 'Date: open - close' or 'Date: Closed'.\n2. WEBSITE BANNER: under 20 words.\n3. CUSTOMER POST (email or social): under 60 words, with the hours and a short thank-you.\n4. VOICEMAIL GREETING LINE: one sentence under 25 words.\nEnd with a one-line checklist of where to update: profile, website, social, phone greeting, booking page.",
+  "verification_note": "Reasoned through the prompt with a sample (closed Thanksgiving Day, 9-1 the day before, normal hours resume Monday 8 a.m.): output would be four short items that repeat only the supplied hours, and the 'MISSING INFO' rule stops it guessing when a field is blank. Placeholders only; no PII.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.9
+  },
+  "source_name": "Search Engine Land / Google Business Profile special-hours guidance (via WebSearch)",
+  "source_url": "https://searchengineland.com/google-may-update-your-business-hours-in-local-listings-with-ai-383452",
+  "status": "queued"
+ }
+]
