@@ -1,0 +1,114 @@
+[
+ {
+  "slug": "social-comment-reply-drafts-for-approval",
+  "category": "marketing",
+  "title": "Answer every Facebook and Instagram comment without living on social media",
+  "one_liner": "New comments on your posts are sorted by type, and a short on-brand reply is drafted for each one, so people who ask a question get an answer the same day and you only tap approve.",
+  "steps": [
+   "A new comment lands on a Facebook or Instagram post, and the comment text, the post caption and the commenter's first name are captured.",
+   "An AI step labels it (question, praise, complaint, spam, or buying signal) and drafts a one- or two-sentence reply in your voice.",
+   "Drafts go to a review sheet or a Slack/Telegram message with the comment beside the draft; questions about price, booking or a bad experience are flagged for you to answer yourself.",
+   "You approve or edit a draft and it is posted; buying-signal comments also get a follow-up task to message the person."
+  ],
+  "guardrail": "Nothing is posted until a person approves it, and complaints, pricing questions and anything about safety or refunds are routed to the owner instead of being answered by the AI.",
+  "tools": "Facebook and Instagram (Meta) comments, n8n or Make, an AI model (Claude or ChatGPT), Google Sheets or Slack for the approval queue",
+  "prompt": "You manage social media replies for [business name], a [type of local business] in [city]. Our voice: [e.g. friendly, plain, a little humor, no emojis overload].\n\nRead the comment below and the post it was left on. Do two things: (1) label the comment as one of QUESTION, PRAISE, COMPLAINT, SPAM, BUYING_SIGNAL; (2) write a reply draft of at most 2 sentences.\n\nRules: use only facts listed under BUSINESS FACTS; if the answer is not there, write 'OWNER: needs a human answer' instead of a reply. Never quote prices, promise dates, discuss refunds, or give medical, legal or safety advice. For COMPLAINT, write only a short apology and invite them to message us, and mark OWNER: review first. For SPAM, write 'NO REPLY'.\n\nBUSINESS FACTS: [hours, service area, how to book, phone/DM instructions]\nPOST CAPTION: [caption text]\nCOMMENTER FIRST NAME: [first name]\nCOMMENT: [comment text]\n\nOUTPUT FORMAT:\nLABEL: ...\nREPLY DRAFT: ...\nNEEDS OWNER: yes/no",
+  "verification_note": "Reasoned through a sample comment ('Do you do weekend appointments?') with hours listed in BUSINESS FACTS: output would be QUESTION plus a short reply quoting the listed hours; with hours missing it would return 'OWNER: needs a human answer'. A complaint sample yields apology-only plus owner flag. No prices or promises possible under the rules.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.9
+  },
+  "source_name": "n8n Instagram comment-reply templates (via WebSearch)",
+  "source_url": "https://n8n.io/workflows/15465-auto-reply-to-instagram-comments-with-gemini-and-google-sheets-tracking/",
+  "status": "queued"
+ },
+ {
+  "slug": "next-day-crew-brief-the-night-before",
+  "category": "ops",
+  "title": "Give every crew member a clear brief for tomorrow's jobs the night before",
+  "one_liner": "Each evening, tomorrow's calendar is turned into a short brief per technician: the stops in order, what to bring, and anything to know about each customer, so the morning starts with fewer phone calls.",
+  "steps": [
+   "At a set time each evening, tomorrow's jobs are pulled from your scheduling tool or shared calendar, grouped by technician.",
+   "An AI step turns each job's notes into a plain stop-by-stop brief: arrival window, address, job summary, parts or tools to bring, and any flagged notes such as gate codes or pets.",
+   "The step lists missing details (no phone number, unclear scope, no parts noted) as 'CHECK BEFORE LEAVING'.",
+   "The office manager skims the briefs, fixes any gaps, then they go out by text or team chat."
+  ],
+  "guardrail": "The office reviews each brief before it is sent, and the AI only restates what is in the job notes; it never invents arrival times, parts or customer details.",
+  "tools": "Your scheduling tool (Jobber, Housecall Pro, Google Calendar), n8n or Zapier, an AI model (Claude or ChatGPT), Slack, WhatsApp or SMS for delivery",
+  "prompt": "You are the dispatcher's assistant at [business name], a [type of field-service business]. Write tomorrow's brief for one technician from the job records below. Use only the information given. If something a technician would need is missing, list it under CHECK BEFORE LEAVING instead of guessing.\n\nTECHNICIAN: [first name]\nDATE: [date]\nJOBS (in scheduled order, one per block):\n- Arrival window: [time range]\n- Customer first name and address: [first name, street address]\n- Job notes: [scope, access notes, equipment on site]\n- Parts/tools noted: [list or 'none noted']\n\nOUTPUT FORMAT:\nHEADER: one line with the technician name, date and number of stops.\nFor each stop: STOP #, TIME WINDOW, ADDRESS, JOB IN ONE LINE, BRING, WATCH FOR.\nCHECK BEFORE LEAVING: bullet list of missing details, or 'Nothing missing'.\nKeep the whole brief under 200 words and do not add advice that is not in the notes.",
+  "verification_note": "Reasoned through three sample stops where one has no parts listed and one has no access note: output would be a compact numbered list and a CHECK BEFORE LEAVING section naming exactly those gaps; the no-guessing rule blocks invented parts or times. Only first names and street addresses as placeholders.",
+  "scores": {
+   "icp": 0.92,
+   "buildable": 0.9,
+   "specific": 0.88,
+   "original": 0.88,
+   "safety": 0.92,
+   "prompt_quality": 0.9,
+   "weighted": 0.901
+  },
+  "source_name": "Zapier next-day task digest and technician schedule templates (via WebSearch)",
+  "source_url": "https://zapier.com/templates/details/send-next-day-task-digest-to-tech-team-chat",
+  "status": "queued"
+ },
+ {
+  "slug": "reply-to-marketplace-leads-with-one-good-question",
+  "category": "lead",
+  "title": "Reply to Thumbtack, Angi and Yelp leads in minutes with a real scoping question",
+  "one_liner": "When a marketplace lead arrives, you get a draft reply that thanks them, answers what you can from their request, and asks the one question you need to quote, so you can respond while they are still comparing pros.",
+  "steps": [
+   "A new lead notification arrives from Thumbtack, Angi, Yelp or a similar service and the request details are parsed out of the email.",
+   "An AI step drafts a short first reply that references their actual request, confirms your service area, and asks the single most useful question for quoting (size, photos, timing, or access).",
+   "The draft is sent to your phone or inbox together with a one-line lead summary and a flag if the request is outside your services or area.",
+   "You tap to send, or edit and send; leads you are not going to take are logged with a reason."
+  ],
+  "guardrail": "You send every reply yourself after a quick read, and the draft never states a price, a start date or a guarantee because those are yours to decide.",
+  "tools": "Marketplace lead emails (Thumbtack, Angi, Yelp), Gmail, n8n or Zapier, an AI model (Claude or ChatGPT), Google Sheets for a lead log",
+  "prompt": "You help [owner first name] at [business name], a [type of home-service business] serving [service area], reply to a new marketplace lead. Write a first reply draft and a one-line summary.\n\nRules: 60 words or fewer. Greet by first name. Mention one specific detail from their request so it does not read like a template. Ask exactly ONE question that you most need answered to give a quote. Do not state any price, discount, start date, or guarantee. If the job is outside the SERVICES WE DO or SERVICE AREA, write 'OUT OF SCOPE' and a polite one-sentence decline instead.\n\nSERVICES WE DO: [list]\nSERVICE AREA: [towns or zip codes]\nLEAD SOURCE: [Thumbtack / Angi / Yelp]\nCUSTOMER FIRST NAME: [first name]\nTHEIR REQUEST: [pasted request text]\nSIGN-OFF: [owner name, phone]\n\nOUTPUT FORMAT:\nSUMMARY: one line (job type, town, urgency if stated)\nSCOPE CHECK: in scope / OUT OF SCOPE\nREPLY DRAFT: ...",
+  "verification_note": "Reasoned through a sample request (replace a water heater, town inside the service area): output would be a short reply naming the water heater, one question (e.g. gas or electric), no price; a request for roofing against a plumbing-only list would return OUT OF SCOPE with a decline. Placeholders only, no PII.",
+  "scores": {
+   "icp": 0.92,
+   "buildable": 0.88,
+   "specific": 0.82,
+   "original": 0.85,
+   "safety": 0.93,
+   "prompt_quality": 0.9,
+   "weighted": 0.885
+  },
+  "source_name": "Marketplace lead-response tools roundup (via WebSearch)",
+  "source_url": "https://sameday.ai/integration/thumbtack",
+  "status": "queued"
+ },
+ {
+  "slug": "applicant-summaries-against-your-must-haves",
+  "category": "ops",
+  "title": "Read job applications faster without letting software decide who gets hired",
+  "one_liner": "Each application is condensed into a one-page summary matched against the must-haves you wrote for the role, with gaps and questions to ask, so you spend your time on conversations instead of sorting an inbox.",
+  "steps": [
+   "You write the role's must-haves and nice-to-haves once, in plain terms tied to the job (license, availability, years on a specific task).",
+   "When an application or resume arrives, an AI step extracts the facts it states and lines them up against each must-have as 'stated', 'not stated' or 'unclear'.",
+   "It drafts three interview questions to close the gaps and saves the summary to a shared sheet; it does not score, rank or reject anyone.",
+   "You read every application's summary, decide who to call, and send the replies yourself."
+  ],
+  "guardrail": "A person reads every application and makes every decision; the AI never ranks, scores or rejects candidates and ignores age, gender, race, family status, disability and similar traits. Check your state's rules on AI in hiring (Illinois has them) before using it.",
+  "tools": "Your job board email or application form, Google Sheets, n8n or Zapier, an AI model (Claude or ChatGPT) on a business plan that does not train on your data",
+  "prompt": "You are an assistant to the hiring manager at [business name], a [type of local business]. Summarize the application below against the role's requirements. Do not score, rank, rate or recommend for or against the candidate. Use only what the application states; if something is not mentioned, say 'not stated'. Ignore and do not mention age, gender, race, religion, family status, disability, name origin, photos or anything else unrelated to the requirements.\n\nROLE: [job title]\nMUST-HAVES: [e.g. valid driver's license; weekend availability; 2+ years doing X]\nNICE-TO-HAVES: [list]\nAPPLICATION TEXT: [pasted application or resume text]\n\nOUTPUT FORMAT:\nSUMMARY: 3 sentences on the work history that relates to this role.\nMUST-HAVE CHECK: one line per must-have: STATED / NOT STATED / UNCLEAR, with the exact phrase from the application if stated.\nNICE-TO-HAVES MENTIONED: list.\nQUESTIONS TO ASK: three interview questions that close the NOT STATED or UNCLEAR items.",
+  "verification_note": "Reasoned through a sample resume for a delivery-driver role that mentions weekends but not a license: output would mark weekend availability STATED with the quote, license NOT STATED, and ask a license question; with no scoring or recommendation field, there is nothing to rank on. Placeholder text only.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.88,
+   "specific": 0.85,
+   "original": 0.88,
+   "safety": 0.9,
+   "prompt_quality": 0.9,
+   "weighted": 0.876
+  },
+  "source_name": "n8n resume-screening templates (via WebSearch)",
+  "source_url": "https://n8n.io/workflows/2757-ai-powered-candidate-shortlisting-automation-for-erpnext/",
+  "status": "queued"
+ }
+]
