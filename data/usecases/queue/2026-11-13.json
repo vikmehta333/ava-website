@@ -1,0 +1,60 @@
+[
+ {
+  "slug": "approved-but-unbooked-work-follow-up",
+  "category": "ops",
+  "title": "Get approved-but-unbooked work onto the calendar",
+  "one_liner": "When a customer says yes to a treatment plan or recommended repair but never picks a date, a short, friendly nudge goes to your front desk for approval a few days later, so accepted work stops sitting in a folder.",
+  "steps": [
+   "Each week, pull a list from your scheduling or practice software of work marked accepted or recommended with no appointment booked.",
+   "Add the first name, the plain-language description of the work, the date it was recommended and your open slots for the next two weeks.",
+   "An AI step drafts a two-to-three sentence text or email that mentions the specific work and offers two real times.",
+   "Your front desk reviews each draft in a shared sheet, edits or approves it, and sends it from your normal number or inbox.",
+   "Mark the record as nudged and pause for 14 days; stop entirely when the customer books or says no."
+  ],
+  "guardrail": "Staff approve every message, and the AI never describes medical or safety risk, quotes a price, or implies urgency beyond what the provider wrote in the recommendation.",
+  "tools": "Scheduling/practice software export or CSV, Google Sheets, n8n or Make, an AI model (Claude or ChatGPT), your normal SMS or email tool",
+  "prompt": "You write follow-up messages for the front desk at [business name], a [type of business, e.g. dental practice or auto repair shop] in [city]. Tone: warm, calm, never pushy.\n\nWrite one message (max 3 sentences) to a customer who agreed to work but has not booked it. Use only the facts below.\n\nRules: mention the work in plain words exactly as listed; offer the two times given; do not quote prices, do not say anything about health, safety or what happens if they wait, and do not use urgency words like 'urgent' or 'last chance'. End with an easy way to reply or call. If WORK DESCRIPTION is empty, output 'SKIP: needs staff review'.\n\nCUSTOMER FIRST NAME: [first name]\nWORK DESCRIPTION: [e.g. the crown on your lower left molar / the brake pad replacement]\nDATE RECOMMENDED: [date]\nTWO OPEN TIMES: [time 1], [time 2]\nSENDER NAME AND PHONE: [name, phone]\nCHANNEL: [text or email]\n\nOUTPUT: MESSAGE: ...",
+  "verification_note": "Reasoned with sample inputs (first name, 'brake pad replacement', two times): output would be a 2-3 sentence friendly message naming the work and offering both times, with no price, risk or urgency language. With empty work description it returns the SKIP line.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.89
+  },
+  "source_name": "dev.to ClawGear dental office manager prompt pack (via WebSearch)",
+  "source_url": "https://dev.to/clawgear/35-chatgpt-prompts-for-dental-office-managers-run-a-smoother-practice-every-day-28if",
+  "status": "queued"
+ },
+ {
+  "slug": "post-consultation-recap-and-follow-up-draft",
+  "category": "sales",
+  "title": "Follow up after every consultation without giving advice you shouldn't",
+  "one_liner": "After a consultation, your notes become a plain-language recap and one follow-up email that restates next steps and what you need from them, so prospects don't go cold while you move to the next meeting.",
+  "steps": [
+   "After the call, the attorney or advisor fills a short form: topics discussed, next steps agreed, documents needed, any fee terms already stated.",
+   "An AI step turns the form into a recap email that restates only those items, plus a one-line next-step request.",
+   "The draft lands in the owner's drafts folder (not sent) with a flag if the notes contain anything that reads like legal, tax or medical advice.",
+   "The professional edits and sends it, and a reminder task is created for three business days later.",
+   "If no reply arrives by the reminder, a second short draft is prepared for review; after that the prospect is left alone."
+  ],
+  "guardrail": "The AI only restates what the professional wrote in the form; it never adds advice, predictions or fee promises, and nothing is sent without the professional's review.",
+  "tools": "Google Forms or Typeform, Gmail or Outlook drafts, Google Calendar or a task tool, n8n or Zapier, an AI model (Claude or ChatGPT)",
+  "prompt": "You draft follow-up emails for [professional name] at [firm name], a [type of practice, e.g. family law firm or accounting practice] in [city]. Voice: professional, plain English, courteous.\n\nWrite a recap email (max 150 words) using ONLY the consultation notes below. Do not add advice, opinions on outcomes, deadlines, legal or tax conclusions, or fees not listed. Structure: one-line thanks; 'What we discussed' as 2-4 bullets; 'Next steps' as bullets with who does what; 'What we need from you' (omit if empty); one sentence inviting questions.\n\nAfter the draft, add a line 'REVIEW FLAG:' stating yes/no and why if the notes appear to contain advice or anything you were unsure how to phrase.\n\nPROSPECT FIRST NAME: [first name]\nTOPICS DISCUSSED: [bulleted notes]\nNEXT STEPS AGREED: [notes]\nDOCUMENTS NEEDED: [list or none]\nFEES STATED ON THE CALL: [exact terms or none]\n\nOUTPUT:\nSUBJECT: ...\nBODY: ...\nREVIEW FLAG: ...",
+  "verification_note": "Reasoned with sample notes (topics: lease dispute; next step: send documents): output would be a short recap restating those bullets with no outcome predictions; if notes included 'you'll probably win', the flag line would mark yes. Fee line omitted when none stated.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.9,
+   "weighted": 0.88
+  },
+  "source_name": "Cleverly guide on ChatGPT follow-up sequences for law practices (via WebSearch)",
+  "source_url": "https://www.cleverly.co/blog/chatgpt-for-lawyers",
+  "status": "queued"
+ }
+]
