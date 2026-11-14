@@ -1,0 +1,31 @@
+[
+ {
+  "slug": "weekly-reorder-list-from-your-stock-sheet",
+  "category": "ops",
+  "title": "Get a plain-English reorder list every Monday from your stock sheet",
+  "one_liner": "Your shop's stock counts and reorder points turn into a short, supplier-by-supplier list of what to order this week, so running out of your best sellers stops being a surprise.",
+  "steps": [
+   "Keep one Google Sheet with a row per product: current count, reorder point, typical weekly sales, supplier name and lead time in days.",
+   "Add a formula column that marks each row OK, LOW or ORDER NOW by comparing count to reorder point and lead time.",
+   "Every Monday morning, n8n or Zapier sends only the LOW and ORDER NOW rows to an AI step that groups them by supplier and writes a short summary.",
+   "The summary lands in the owner's or buyer's inbox with the flagged rows attached; a person decides what to order and places the orders.",
+   "After ordering, update the counts in the sheet so next week's list starts from reality."
+  ],
+  "guardrail": "The AI only summarizes rows your sheet already flagged; it never places orders, picks quantities beyond the figures you supply, or changes the sheet.",
+  "tools": "Google Sheets (or a POS stock export), n8n or Zapier on a weekly schedule, an AI model (Claude or ChatGPT), Gmail",
+  "prompt": "You prepare the weekly reorder summary for [business name], a [type of shop, e.g. garden center or bike shop] in [city]. Use ONLY the rows below; do not invent products, quantities, prices or suppliers.\n\nEach row has: PRODUCT, CURRENT COUNT, REORDER POINT, AVG WEEKLY SALES, SUPPLIER, LEAD TIME DAYS, STATUS (LOW or ORDER NOW).\n\nRules: group items by SUPPLIER; list ORDER NOW items before LOW items within each group; for each item give one line: product, count vs. reorder point, and 'about X weeks of stock left' calculated as CURRENT COUNT divided by AVG WEEKLY SALES (say 'unknown' if sales is 0 or blank); flag any item where weeks of stock left is less than LEAD TIME DAYS divided by 7. Do not recommend order quantities. If no rows are provided, output 'Nothing to reorder this week.' End with one sentence reminding the reader to update counts after ordering.\n\nROWS:\n[paste flagged rows from the sheet]\n\nOUTPUT: A short email body under 200 words, plain text, no hype.",
+  "verification_note": "Reasoned with 4 sample rows across two suppliers: output would group by supplier, order ORDER NOW first, compute weeks-of-stock from the given numbers, flag items whose stock won't outlast lead time, and make no quantity or price claims. Empty input returns the fixed 'Nothing to reorder' line.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.95,
+   "specific": 0.9,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.91
+  },
+  "source_name": "DEV Community / Zapier & n8n low-stock alert templates (via WebSearch)",
+  "source_url": "https://dev.to/alex_wu_anythoughts_ai/how-we-automated-a-local-retailers-weekly-inventory-report-in-under-2-hours-595j",
+  "status": "queued"
+ }
+]
