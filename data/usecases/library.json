@@ -1,7 +1,7 @@
 {
  "generated_at": "2026-11-08",
  "hub_page_id": 24305,
- "count": 48,
+ "count": 74,
  "items": [
   {
    "id": 24352,
@@ -468,7 +468,215 @@
    "page_id": 24437,
    "published_at": "2026-11-11T09:00:40",
    "source_name": "Zapier client-onboarding templates (via WebSearch)"
+  },
+  {
+   "slug": "applicant-summaries-against-your-must-haves",
+   "title": "Read job applications faster without letting software decide who gets hired",
+   "category": "ops",
+   "page_id": 24443,
+   "published_at": "2026-11-12T09:00:34",
+   "source_name": "n8n resume-screening templates (via WebSearch)"
+  },
+  {
+   "slug": "appointment-confirmation-replies-to-calendar-updates",
+   "title": "Turn \"C\" and \"can't make it\" text replies into calendar updates",
+   "category": "ops",
+   "page_id": 24465,
+   "published_at": "2026-11-18T09:00:33",
+   "source_name": "n8n appointment follow-up template (workflows/17123) and community discussion"
+  },
+  {
+   "slug": "approved-but-unbooked-work-follow-up",
+   "title": "Get approved-but-unbooked work onto the calendar",
+   "category": "ops",
+   "page_id": 24445,
+   "published_at": "2026-11-13T09:00:43",
+   "source_name": "dev.to ClawGear dental office manager prompt pack (via WebSearch)"
+  },
+  {
+   "slug": "automation-failure-alerts-to-your-phone",
+   "title": "Get told the moment one of your automations breaks",
+   "category": "ops",
+   "page_id": 24464,
+   "published_at": "2026-11-18T09:00:30",
+   "source_name": "n8n community: instant error alert system"
+  },
+  {
+   "slug": "booking-deposit-reminder-drafts",
+   "title": "Chase unpaid booking deposits before the slot goes cold",
+   "category": "ops",
+   "page_id": 24454,
+   "published_at": "2026-11-16T09:00:29",
+   "source_name": "Zapier booking deposit follow-up template pattern (via WebSearch)"
+  },
+  {
+   "slug": "duplicate-customer-record-cleanup",
+   "title": "Clean up duplicate customer records before you automate anything",
+   "category": "ops",
+   "page_id": 24469,
+   "published_at": "2026-11-19T09:00:36",
+   "source_name": "Service-business automation guides (duplicate client records as top prep task)"
+  },
+  {
+   "slug": "expiring-gift-card-and-membership-reminders",
+   "title": "Remind customers before their gift card or membership expires",
+   "category": "marketing",
+   "page_id": 24450,
+   "published_at": "2026-11-15T09:00:08",
+   "source_name": "Make/Zapier expiry-reminder patterns (via WebSearch)"
+  },
+  {
+   "slug": "license-and-insurance-expiry-register",
+   "title": "Never miss a license, permit or insurance renewal again",
+   "category": "ops",
+   "page_id": 24471,
+   "published_at": "2026-11-20T09:00:31",
+   "source_name": "n8n license/insurance renewal reminder templates and Google Sheets expiry-alert templates (search results)"
+  },
+  {
+   "slug": "local-search-questions-into-blog-drafts",
+   "title": "Turn the questions people search in your town into blog drafts",
+   "category": "seo",
+   "page_id": 24456,
+   "published_at": "2026-11-16T09:00:39",
+   "source_name": "n8n question-driven SEO blog draft templates (via WebSearch)"
+  },
+  {
+   "slug": "low-click-page-title-rewrites-for-approval",
+   "title": "Rewrite the page titles that get seen but not clicked",
+   "category": "seo",
+   "page_id": 24463,
+   "published_at": "2026-11-18T09:00:24",
+   "source_name": "n8n workflow templates (Search Console + OpenAI title rewrites)"
+  },
+  {
+   "slug": "maintenance-plan-offer-after-repair",
+   "title": "Offer your maintenance plan to repair customers within 48 hours",
+   "category": "sales",
+   "page_id": 24467,
+   "published_at": "2026-11-19T09:00:32",
+   "source_name": "HVAC maintenance-plan upsell guides (search results)"
+  },
+  {
+   "slug": "missing-document-chaser-for-new-clients",
+   "title": "Chase missing onboarding documents without nagging",
+   "category": "cs",
+   "page_id": 24472,
+   "published_at": "2026-11-20T09:00:53",
+   "source_name": "ChatGPT onboarding / missing-document follow-up prompt guides for law firms and agencies (search results)"
+  },
+  {
+   "slug": "new-inquiry-conflict-screen-prep-and-neutral-reply",
+   "title": "Prep a conflict-check list and a careful first reply for every new legal inquiry",
+   "category": "lead",
+   "page_id": 24452,
+   "published_at": "2026-11-15T09:00:10",
+   "source_name": "Law-firm n8n intake patterns (via WebSearch)"
+  },
+  {
+   "slug": "next-day-crew-brief-the-night-before",
+   "title": "Give every crew member a clear brief for tomorrow's jobs the night before",
+   "category": "ops",
+   "page_id": 24441,
+   "published_at": "2026-11-12T09:00:32",
+   "source_name": "Zapier next-day task digest and technician schedule templates (via WebSearch)"
+  },
+  {
+   "slug": "one-message-at-a-time-contact-limit",
+   "title": "Stop your automations from texting the same customer three times in a day",
+   "category": "ops",
+   "page_id": 24468,
+   "published_at": "2026-11-19T09:00:35",
+   "source_name": "n8n Twilio + Cal.com follow-up template (logs interactions to avoid over-messaging)"
+  },
+  {
+   "slug": "post-consultation-recap-and-follow-up-draft",
+   "title": "Follow up after every consultation without giving advice you shouldn't",
+   "category": "sales",
+   "page_id": 24446,
+   "published_at": "2026-11-13T09:00:43",
+   "source_name": "Cleverly guide on ChatGPT follow-up sequences for law practices (via WebSearch)"
+  },
+  {
+   "slug": "quiet-estimate-follow-up-drafts",
+   "title": "Follow up on estimates that went quiet, in your own voice",
+   "category": "sales",
+   "page_id": 24459,
+   "published_at": "2026-11-17T09:00:35",
+   "source_name": "Zapier home-services examples / Contractor ToolStack estimate follow-up workflows (via WebSearch)"
+  },
+  {
+   "slug": "receipt-photo-to-expense-row",
+   "title": "Snap a receipt, get a clean expense row for your bookkeeper",
+   "category": "ops",
+   "page_id": 24455,
+   "published_at": "2026-11-16T09:00:31",
+   "source_name": "Receipt-to-Google-Sheets AI workflow patterns (via WebSearch)"
+  },
+  {
+   "slug": "reply-to-marketplace-leads-with-one-good-question",
+   "title": "Reply to Thumbtack, Angi and Yelp leads in minutes with a real scoping question",
+   "category": "lead",
+   "page_id": 24442,
+   "published_at": "2026-11-12T09:00:33",
+   "source_name": "Marketplace lead-response tools roundup (via WebSearch)"
+  },
+  {
+   "slug": "social-comment-reply-drafts-for-approval",
+   "title": "Answer every Facebook and Instagram comment without living on social media",
+   "category": "marketing",
+   "page_id": 24440,
+   "published_at": "2026-11-12T09:00:31",
+   "source_name": "n8n Instagram comment-reply templates (via WebSearch)"
+  },
+  {
+   "slug": "technician-notes-to-customer-service-summary",
+   "title": "Turn a technician's rough job notes into a clear customer summary",
+   "category": "cs",
+   "page_id": 24451,
+   "published_at": "2026-11-15T09:00:09",
+   "source_name": "Tech note translator and field-service summary prompts (via WebSearch)"
+  },
+  {
+   "slug": "texted-scope-change-to-change-order-draft",
+   "title": "Turn a texted scope change into a change-order draft the customer can approve",
+   "category": "ops",
+   "page_id": 24461,
+   "published_at": "2026-11-17T09:00:43",
+   "source_name": "Contractor ToolStack: n8n workflows for contractors incl. change-order documentation (via WebSearch)"
+  },
+  {
+   "slug": "unanswered-lead-escalation-with-after-hours-path",
+   "title": "Make sure no new lead sits unanswered past 15 minutes",
+   "category": "lead",
+   "page_id": 24458,
+   "published_at": "2026-11-17T09:00:32",
+   "source_name": "Zapier Community: 15-minute escalation zap for small service businesses (via WebSearch)"
+  },
+  {
+   "slug": "vendor-bill-emails-to-approval-queue",
+   "title": "Turn vendor bills in your inbox into a ready-to-approve list",
+   "category": "ops",
+   "page_id": 24473,
+   "published_at": "2026-11-20T09:01:19",
+   "source_name": "AI accounts-payable and bookkeeping automation guides for small businesses (search results)"
+  },
+  {
+   "slug": "warranty-callback-triage-from-customer-messages",
+   "title": "Catch warranty and callback complaints before they get treated as sales leads",
+   "category": "cs",
+   "page_id": 24460,
+   "published_at": "2026-11-17T09:00:37",
+   "source_name": "Ciela AI contractor reactivation agents: warranty concerns routed to coordinator (via WebSearch)"
+  },
+  {
+   "slug": "weekly-reorder-list-from-your-stock-sheet",
+   "title": "Get a plain-English reorder list every Monday from your stock sheet",
+   "category": "ops",
+   "page_id": 24448,
+   "published_at": "2026-11-14T09:00:35",
+   "source_name": "DEV Community / Zapier & n8n low-stock alert templates (via WebSearch)"
   }
  ],
- "refreshed_from_live_at": "2026-11-11T08:34:43"
+ "refreshed_from_live_at": "2026-11-20T09:00:59"
 }

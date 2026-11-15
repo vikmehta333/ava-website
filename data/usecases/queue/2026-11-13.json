@@ -26,7 +26,8 @@
   },
   "source_name": "dev.to ClawGear dental office manager prompt pack (via WebSearch)",
   "source_url": "https://dev.to/clawgear/35-chatgpt-prompts-for-dental-office-managers-run-a-smoother-practice-every-day-28if",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24445
  },
  {
   "slug": "post-consultation-recap-and-follow-up-draft",
@@ -55,6 +56,7 @@
   },
   "source_name": "Cleverly guide on ChatGPT follow-up sequences for law practices (via WebSearch)",
   "source_url": "https://www.cleverly.co/blog/chatgpt-for-lawyers",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24446
  }
 ]

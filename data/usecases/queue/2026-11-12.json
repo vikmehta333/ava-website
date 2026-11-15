@@ -25,7 +25,8 @@
   },
   "source_name": "n8n Instagram comment-reply templates (via WebSearch)",
   "source_url": "https://n8n.io/workflows/15465-auto-reply-to-instagram-comments-with-gemini-and-google-sheets-tracking/",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24440
  },
  {
   "slug": "next-day-crew-brief-the-night-before",
@@ -53,7 +54,8 @@
   },
   "source_name": "Zapier next-day task digest and technician schedule templates (via WebSearch)",
   "source_url": "https://zapier.com/templates/details/send-next-day-task-digest-to-tech-team-chat",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24441
  },
  {
   "slug": "reply-to-marketplace-leads-with-one-good-question",
@@ -81,7 +83,8 @@
   },
   "source_name": "Marketplace lead-response tools roundup (via WebSearch)",
   "source_url": "https://sameday.ai/integration/thumbtack",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24442
  },
  {
   "slug": "applicant-summaries-against-your-must-haves",
@@ -109,6 +112,7 @@
   },
   "source_name": "n8n resume-screening templates (via WebSearch)",
   "source_url": "https://n8n.io/workflows/2757-ai-powered-candidate-shortlisting-automation-for-erpnext/",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24443
  }
 ]

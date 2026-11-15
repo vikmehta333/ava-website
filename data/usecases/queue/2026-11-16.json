@@ -26,7 +26,8 @@
   },
   "source_name": "Zapier booking deposit follow-up template pattern (via WebSearch)",
   "source_url": "https://zapier.com/automations/business-owners/hospitality-operations/booking-confirmation-workflows/send-follow-up-and-deposit-reminders-to-new-bookings",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24454
  },
  {
   "slug": "receipt-photo-to-expense-row",
@@ -55,7 +56,8 @@
   },
   "source_name": "Receipt-to-Google-Sheets AI workflow patterns (via WebSearch)",
   "source_url": "https://workspace.google.com/marketplace/app/ai_sheetflow_invoice_receipt_to_google_s/246258883507",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24455
  },
  {
   "slug": "local-search-questions-into-blog-drafts",
@@ -84,6 +86,7 @@
   },
   "source_name": "n8n question-driven SEO blog draft templates (via WebSearch)",
   "source_url": "https://n8n.io/workflows/6283-generate-seo-optimized-blog-posts-with-google-autocomplete-and-gpt-4/",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24456
  }
 ]

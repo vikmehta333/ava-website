@@ -1,0 +1,93 @@
+- generic [active] [ref=f1e1]:
+  - region "We value your privacy" [ref=f1e2]:
+    - generic [ref=f1e4]:
+      - heading "We value your privacy" [level=2] [ref=f1e5]
+      - generic [ref=f1e6]:
+        - paragraph [ref=f1e8]: We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking "Accept All", you consent to our use of cookies.
+        - generic [ref=f1e9]:
+          - button "Customise" [ref=f1e10] [cursor=pointer]
+          - button "Reject All" [ref=f1e11] [cursor=pointer]
+          - button "Accept All" [ref=f1e12] [cursor=pointer]
+  - navigation [ref=f1e13]:
+    - generic [ref=f1e14]:
+      - link "ava digital" [ref=f1e15] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f1e16]:
+        - link "Services" [ref=f1e17] [cursor=pointer]:
+          - /url: /#services
+        - link "AI Concierge" [ref=f1e18] [cursor=pointer]:
+          - /url: /ai-concierge/
+        - link "AI Use Cases" [ref=f1e19] [cursor=pointer]:
+          - /url: /ai-use-cases/
+        - link "Cities" [ref=f1e20] [cursor=pointer]:
+          - /url: /#cities
+        - link "Get a free audit" [ref=f1e21] [cursor=pointer]:
+          - /url: /contact/
+  - generic [ref=f1e24]:
+    - link "← All AI use cases" [ref=f1e25] [cursor=pointer]:
+      - /url: /ai-use-cases/
+    - generic [ref=f1e26]: AI Use Case · Sales
+    - heading "Set up cold email so it lands in the inbox, not spam" [level=1] [ref=f1e27]
+    - paragraph [ref=f1e28]: Dedicated sending domains, authentication records and a warm-up schedule — the infrastructure that decides whether anyone ever sees your outreach.
+    - generic [ref=f1e29]:
+      - generic [ref=f1e30]:
+        - heading "How it works" [level=3] [ref=f1e31]
+        - list [ref=f1e32]:
+          - listitem [ref=f1e33]: Buy sending domains separate from your main one, so a deliverability problem can never hurt your real company email.
+          - listitem [ref=f1e34]: Set SPF, DKIM and DMARC records on each sending domain, then verify each one passes before a single campaign email goes out.
+          - listitem [ref=f1e35]: Warm each inbox for 2–3 weeks with gradually increasing volume before real sending begins.
+          - listitem [ref=f1e36]: Cap each inbox at 30–50 emails a day and add inboxes to scale volume, rather than pushing one inbox harder.
+          - listitem [ref=f1e37]: Watch bounce and spam-complaint rates weekly; pause and repair a domain the moment either climbs.
+      - generic [ref=f1e38]:
+        - heading "The guardrail" [level=3] [ref=f1e39]
+        - generic [ref=f1e40]: Never send from your primary company domain, and never skip the warm-up to launch faster — a burned domain takes months to recover and can affect your real email.
+        - paragraph [ref=f1e41]: "Tools that do this: Dedicated sending domains · Google Workspace or Microsoft 365 inboxes · Instantly.ai or Lemlist (sequencing + warm-up) · your DNS host for SPF/DKIM/DMARC"
+    - generic [ref=f1e42]:
+      - generic [ref=f1e43]:
+        - generic [ref=f1e44]: Prompt to start with
+        - button "Copy prompt" [ref=f1e45] [cursor=pointer]
+      - generic [ref=f1e46]: "You are helping [business name] prepare cold email infrastructure. Current setup: [list sending domains, inbox provider, and any existing DNS records]. 1. Tell me which of SPF, DKIM and DMARC are missing or misconfigured, and give the exact DNS record to add for each. 2. Propose a 3-week warm-up ramp: emails per inbox per day, week by week. 3. Given a target of [N] emails per day, tell me how many inboxes and domains I need at a 30–50/day/inbox cap. 4. List the deliverability metrics to check weekly and the threshold at which I should pause sending. Do not recommend sending from the primary company domain. Do not suggest shortcuts that skip warm-up."
+    - generic [ref=f1e47]:
+      - link "Get a free audit" [ref=f1e48] [cursor=pointer]:
+        - /url: /contact/
+      - generic [ref=f1e51]: We’ll set this up for your business, end to end.
+  - contentinfo [ref=f1e52]:
+    - generic [ref=f1e53]:
+      - generic [ref=f1e54]:
+        - generic [ref=f1e55]:
+          - link "ava digital" [ref=f1e56] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f1e57]: AI-powered digital marketing for Illinois businesses. We help small and mid-size companies compete and win online.
+        - generic [ref=f1e58]:
+          - heading "Services" [level=4] [ref=f1e59]
+          - link "AI Concierge" [ref=f1e60] [cursor=pointer]:
+            - /url: /ai-concierge/
+          - link "Outbound Email" [ref=f1e61] [cursor=pointer]:
+            - /url: /outbound-email-marketing/
+          - link "LinkedIn Lead Gen" [ref=f1e62] [cursor=pointer]:
+            - /url: /linkedin-lead-generation/
+          - link "AI Automation" [ref=f1e63] [cursor=pointer]:
+            - /url: /ai-automation-services/
+          - link "Geo SEO" [ref=f1e64] [cursor=pointer]:
+            - /url: /geo-seo-services/
+        - generic [ref=f1e65]:
+          - heading "Explore" [level=4] [ref=f1e66]
+          - link "AI Use Cases" [ref=f1e67] [cursor=pointer]:
+            - /url: /ai-use-cases/
+          - link "Naperville" [ref=f1e68] [cursor=pointer]:
+            - /url: /naperville-digital-marketing-agency/
+          - link "Chicago" [ref=f1e69] [cursor=pointer]:
+            - /url: /chicago-digital-marketing-agency/
+          - link "Marketing Answers" [ref=f1e70] [cursor=pointer]:
+            - /url: /marketing-answers/
+        - generic [ref=f1e71]:
+          - heading "Company" [level=4] [ref=f1e72]
+          - link "Home" [ref=f1e73] [cursor=pointer]:
+            - /url: /
+          - link "Blog" [ref=f1e74] [cursor=pointer]:
+            - /url: /blog/
+          - link "Contact" [ref=f1e75] [cursor=pointer]:
+            - /url: /contact/
+          - link "glen@avadigitalagency.com" [ref=f1e76] [cursor=pointer]:
+            - /url: mailto:glen@avadigitalagency.com
+      - generic [ref=f1e77]: © 2026 Ava Digital Agency · Naperville, Illinois · AI-Powered Digital Marketing

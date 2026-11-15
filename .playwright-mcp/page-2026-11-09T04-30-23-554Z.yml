@@ -1,0 +1,379 @@
+- generic [active] [ref=e1]:
+  - region "We value your privacy" [ref=e2]:
+    - generic [ref=e4]:
+      - heading "We value your privacy" [level=2] [ref=e5]
+      - generic [ref=e6]:
+        - paragraph [ref=e8]: We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking "Accept All", you consent to our use of cookies.
+        - generic [ref=e9]:
+          - button "Customise" [ref=e10] [cursor=pointer]
+          - button "Reject All" [ref=e11] [cursor=pointer]
+          - button "Accept All" [ref=e12] [cursor=pointer]
+  - navigation [ref=e13]:
+    - generic [ref=e14]:
+      - link "ava digital" [ref=e15] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e16]:
+        - link "Services" [ref=e17] [cursor=pointer]:
+          - /url: /#services
+        - link "AI Concierge" [ref=e18] [cursor=pointer]:
+          - /url: /ai-concierge/
+        - link "AI Use Cases" [ref=e19] [cursor=pointer]:
+          - /url: /ai-use-cases/
+        - link "Cities" [ref=e20] [cursor=pointer]:
+          - /url: /#cities
+        - link "Get a free audit" [ref=e21] [cursor=pointer]:
+          - /url: /contact/
+  - banner [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e24]: ✦ AI Use Cases
+      - heading "AI agents that do real work." [level=1] [ref=e25]
+      - paragraph [ref=e26]: Real setups for local businesses — what each agent does, how it works, where a human stays in charge, and the exact prompt to steal. New ones added every week.
+  - generic [ref=e28]:
+    - complementary [ref=e29]:
+      - generic [ref=e30]:
+        - heading "Get a new AI playbook every week" [level=4] [ref=e31]
+        - paragraph [ref=e32]: One real, build-it-today AI use case + the prompt, straight to your inbox.
+        - generic [ref=e33]:
+          - textbox "Email address" [ref=e34]:
+            - /placeholder: you@business.com
+          - textbox "Company" [ref=e35]
+          - textbox "Phone" [ref=e36]
+          - button "Send me weekly AI plays →" [ref=e37] [cursor=pointer]
+          - status [ref=e38]
+      - link "Or get a free AI audit →" [ref=e39] [cursor=pointer]:
+        - /url: /contact/
+      - generic [ref=e40]:
+        - button "All 41" [ref=e41] [cursor=pointer]:
+          - generic [ref=e42]: All
+          - generic [ref=e43]: "41"
+        - button "Customer Service 4" [ref=e44] [cursor=pointer]:
+          - generic [ref=e45]: Customer Service
+          - generic [ref=e46]: "4"
+        - button "Lead Response 3" [ref=e47] [cursor=pointer]:
+          - generic [ref=e48]: Lead Response
+          - generic [ref=e49]: "3"
+        - button "Sales 7" [ref=e50] [cursor=pointer]:
+          - generic [ref=e51]: Sales
+          - generic [ref=e52]: "7"
+        - button "Marketing 8" [ref=e53] [cursor=pointer]:
+          - generic [ref=e54]: Marketing
+          - generic [ref=e55]: "8"
+        - button "Content 7" [ref=e56] [cursor=pointer]:
+          - generic [ref=e57]: Content
+          - generic [ref=e58]: "7"
+        - button "Operations 8" [ref=e59] [cursor=pointer]:
+          - generic [ref=e60]: Operations
+          - generic [ref=e61]: "8"
+        - button "Local SEO 4" [ref=e62] [cursor=pointer]:
+          - generic [ref=e63]: Local SEO
+          - generic [ref=e64]: "4"
+    - generic [ref=e65]:
+      - searchbox "Search use cases" [ref=e70]
+      - generic [ref=e71]:
+        - generic [ref=e72]: 41 use cases
+        - generic [ref=e73]: 6 new this week
+      - generic [ref=e74]:
+        - link "Sales New Set up cold email so it lands in the inbox, not spam Dedicated sending domains, authentication records and a warm-up schedule — the infrastructure that decides whether anyone ever sees your outreach. See how it works →" [ref=e75] [cursor=pointer]:
+          - /url: /ai-use-cases/cold-email-deliverability-setup/
+          - generic [ref=e76]:
+            - generic [ref=e77]: Sales
+            - generic [ref=e78]: New
+          - heading "Set up cold email so it lands in the inbox, not spam" [level=3] [ref=e79]
+          - paragraph [ref=e80]: Dedicated sending domains, authentication records and a warm-up schedule — the infrastructure that decides whether anyone ever sees your outreach.
+          - generic [ref=e81]: See how it works →
+        - link "Sales New Build a prospect list that’s actually your buyer — and actually deliverable Define the ideal customer precisely, pull a targeted list, then verify every address so bounces don’t wreck your sender reputation. See how it works →" [ref=e82] [cursor=pointer]:
+          - /url: /ai-use-cases/build-a-verified-icp-list/
+          - generic [ref=e83]:
+            - generic [ref=e84]: Sales
+            - generic [ref=e85]: New
+          - heading "Build a prospect list that’s actually your buyer — and actually deliverable" [level=3] [ref=e86]
+          - paragraph [ref=e87]: Define the ideal customer precisely, pull a targeted list, then verify every address so bounces don’t wreck your sender reputation.
+          - generic [ref=e88]: See how it works →
+        - link "Sales New Sort every cold-email reply before it reaches you Replies get tagged interested, not interested, out-of-office or wrong-person, so you only read the ones worth your time — and nobody gets a follow-up they already answered. See how it works →" [ref=e89] [cursor=pointer]:
+          - /url: /ai-use-cases/sort-outbound-replies-automatically/
+          - generic [ref=e90]:
+            - generic [ref=e91]: Sales
+            - generic [ref=e92]: New
+          - heading "Sort every cold-email reply before it reaches you" [level=3] [ref=e93]
+          - paragraph [ref=e94]: Replies get tagged interested, not interested, out-of-office or wrong-person, so you only read the ones worth your time — and nobody gets a follow-up they already answered.
+          - generic [ref=e95]: See how it works →
+        - link "Sales New Fix your LinkedIn profile before you send a single connection request Your profile is the landing page for every request you send — auditing it first lifts acceptance rates on everything that follows. See how it works →" [ref=e96] [cursor=pointer]:
+          - /url: /ai-use-cases/linkedin-profile-audit-before-outreach/
+          - generic [ref=e97]:
+            - generic [ref=e98]: Sales
+            - generic [ref=e99]: New
+          - heading "Fix your LinkedIn profile before you send a single connection request" [level=3] [ref=e100]
+          - paragraph [ref=e101]: Your profile is the landing page for every request you send — auditing it first lifts acceptance rates on everything that follows.
+          - generic [ref=e102]: See how it works →
+        - link "Local SEO New Make your name, address and phone identical everywhere online Inconsistent business listings quietly suppress local ranking — this finds every mismatch across the major directories and gives you one correct record to apply. See how it works →" [ref=e103] [cursor=pointer]:
+          - /url: /ai-use-cases/fix-your-nap-citations/
+          - generic [ref=e104]:
+            - generic [ref=e105]: Local SEO
+            - generic [ref=e106]: New
+          - heading "Make your name, address and phone identical everywhere online" [level=3] [ref=e107]
+          - paragraph [ref=e108]: Inconsistent business listings quietly suppress local ranking — this finds every mismatch across the major directories and gives you one correct record to apply.
+          - generic [ref=e109]: See how it works →
+        - link "Marketing New Cut the Google Ads searches that waste your budget, every week Each week the search-terms report is read for queries that spent money without intent, and turned into a negative-keyword list for you to approve. See how it works →" [ref=e110] [cursor=pointer]:
+          - /url: /ai-use-cases/weekly-negative-keyword-review/
+          - generic [ref=e111]:
+            - generic [ref=e112]: Marketing
+            - generic [ref=e113]: New
+          - heading "Cut the Google Ads searches that waste your budget, every week" [level=3] [ref=e114]
+          - paragraph [ref=e115]: Each week the search-terms report is read for queries that spent money without intent, and turned into a negative-keyword list for you to approve.
+          - generic [ref=e116]: See how it works →
+        - link "Customer Service The after-hours receptionist An AI voice agent answers after-hours calls, books the appointment on your calendar, and texts you the details. See how it works →" [ref=e117] [cursor=pointer]:
+          - /url: /ai-use-cases/after-hours-receptionist/
+          - generic [ref=e118]: Customer Service
+          - heading "The after-hours receptionist" [level=3] [ref=e120]
+          - paragraph [ref=e121]: An AI voice agent answers after-hours calls, books the appointment on your calendar, and texts you the details.
+          - generic [ref=e122]: See how it works →
+        - link "Sales The lead chaser Watches your inbox for quotes that went quiet and drafts one short follow-up — then stops the moment they reply. See how it works →" [ref=e123] [cursor=pointer]:
+          - /url: /ai-use-cases/lead-chaser/
+          - generic [ref=e124]: Sales
+          - heading "The lead chaser" [level=3] [ref=e126]
+          - paragraph [ref=e127]: Watches your inbox for quotes that went quiet and drafts one short follow-up — then stops the moment they reply.
+          - generic [ref=e128]: See how it works →
+        - link "Operations Inbox triage Tags every incoming email, pulls the customer’s history, and drafts ready-to-send replies to the routine ones. See how it works →" [ref=e129] [cursor=pointer]:
+          - /url: /ai-use-cases/inbox-triage/
+          - generic [ref=e130]: Operations
+          - heading "Inbox triage" [level=3] [ref=e132]
+          - paragraph [ref=e133]: Tags every incoming email, pulls the customer’s history, and drafts ready-to-send replies to the routine ones.
+          - generic [ref=e134]: See how it works →
+        - link "Operations The Monday expense report Forward every receipt to one address; each Monday you get a clean one-page report for your bookkeeper. See how it works →" [ref=e135] [cursor=pointer]:
+          - /url: /ai-use-cases/monday-expense-report/
+          - generic [ref=e136]: Operations
+          - heading "The Monday expense report" [level=3] [ref=e138]
+          - paragraph [ref=e139]: Forward every receipt to one address; each Monday you get a clean one-page report for your bookkeeper.
+          - generic [ref=e140]: See how it works →
+        - link "Operations Rescue a no-show before the slot is lost for good When a customer misses an appointment, an AI drafts a kind, no-guilt message offering the next open times, so you can approve it and rebook the visit the same day. See how it works →" [ref=e141] [cursor=pointer]:
+          - /url: /ai-use-cases/no-show-rescue-texts/
+          - generic [ref=e142]: Operations
+          - heading "Rescue a no-show before the slot is lost for good" [level=3] [ref=e144]
+          - paragraph [ref=e145]: When a customer misses an appointment, an AI drafts a kind, no-guilt message offering the next open times, so you can approve it and rebook the visit the same day.
+          - generic [ref=e146]: See how it works →
+        - link "Lead Response Flag the urgent requests so they get answered first Each new form or email request is read by an AI that tags it urgent, normal or low and writes a two-line summary, so a burst pipe or toothache never waits behind routine questions. See how it works →" [ref=e147] [cursor=pointer]:
+          - /url: /ai-use-cases/flag-urgent-requests-first/
+          - generic [ref=e148]: Lead Response
+          - heading "Flag the urgent requests so they get answered first" [level=3] [ref=e150]
+          - paragraph [ref=e151]: Each new form or email request is read by an AI that tags it urgent, normal or low and writes a two-line summary, so a burst pipe or toothache never waits behind routine questions.
+          - generic [ref=e152]: See how it works →
+        - link "Operations Build a small playbook of tested prompts your whole team reuses Collect the five or six writing and research tasks your team repeats, test one prompt for each, and keep them in a shared doc so everyone gets the same quality. See how it works →" [ref=e153] [cursor=pointer]:
+          - /url: /ai-use-cases/team-prompt-playbook/
+          - generic [ref=e154]: Operations
+          - heading "Build a small playbook of tested prompts your whole team reuses" [level=3] [ref=e156]
+          - paragraph [ref=e157]: Collect the five or six writing and research tasks your team repeats, test one prompt for each, and keep them in a shared doc so everyone gets the same quality.
+          - generic [ref=e158]: See how it works →
+        - link "Marketing Fill tomorrow’s empty appointment slots before they go to waste Each afternoon your calendar is checked for open slots in the next two days, and an AI drafts a short, friendly offer for past customers who are due, ready for you to approve and send. See how it works →" [ref=e159] [cursor=pointer]:
+          - /url: /ai-use-cases/fill-tomorrows-empty-slots/
+          - generic [ref=e160]: Marketing
+          - heading "Fill tomorrow’s empty appointment slots before they go to waste" [level=3] [ref=e162]
+          - paragraph [ref=e163]: Each afternoon your calendar is checked for open slots in the next two days, and an AI drafts a short, friendly offer for past customers who are due, ready for you to approve and send.
+          - generic [ref=e164]: See how it works →
+        - link "Content Turn happy customer replies into case study drafts you can approve When a customer sends a glowing reply or survey answer, an AI drafts a short before-and-after story from it and asks for the customer’s permission before anything is shared. See how it works →" [ref=e165] [cursor=pointer]:
+          - /url: /ai-use-cases/happy-customer-notes-into-case-study-drafts/
+          - generic [ref=e166]: Content
+          - heading "Turn happy customer replies into case study drafts you can approve" [level=3] [ref=e168]
+          - paragraph [ref=e169]: When a customer sends a glowing reply or survey answer, an AI drafts a short before-and-after story from it and asks for the customer’s permission before anything is shared.
+          - generic [ref=e170]: See how it works →
+        - link "Local SEO Find the searches you almost rank for, every Monday Each week your Search Console data is sorted for searches where you sit just off page one, and an AI turns them into a short list of page tweaks worth making. See how it works →" [ref=e171] [cursor=pointer]:
+          - /url: /ai-use-cases/weekly-page-two-keyword-shortlist/
+          - generic [ref=e172]: Local SEO
+          - heading "Find the searches you almost rank for, every Monday" [level=3] [ref=e174]
+          - paragraph [ref=e175]: Each week your Search Console data is sorted for searches where you sit just off page one, and an AI turns them into a short list of page tweaks worth making.
+          - generic [ref=e176]: See how it works →
+        - link "Operations Log every phone call in your CRM without typing a word After each call, the recording is transcribed and an AI writes a short note with who called, what they need and the next step, filed on the right customer record. See how it works →" [ref=e177] [cursor=pointer]:
+          - /url: /ai-use-cases/phone-call-notes-into-crm/
+          - generic [ref=e178]: Operations
+          - heading "Log every phone call in your CRM without typing a word" [level=3] [ref=e180]
+          - paragraph [ref=e181]: After each call, the recording is transcribed and an AI writes a short note with who called, what they need and the next step, filed on the right customer record.
+          - generic [ref=e182]: See how it works →
+        - link "Content Turn the questions customers keep asking into FAQ drafts Questions from your inbox and call notes are collected monthly, grouped, and answered in draft form for the right service page. See how it works →" [ref=e183] [cursor=pointer]:
+          - /url: /ai-use-cases/customer-questions-into-faq-drafts/
+          - generic [ref=e184]: Content
+          - heading "Turn the questions customers keep asking into FAQ drafts" [level=3] [ref=e186]
+          - paragraph [ref=e187]: Questions from your inbox and call notes are collected monthly, grouped, and answered in draft form for the right service page.
+          - generic [ref=e188]: See how it works →
+        - link "Marketing Find out what customers keep saying in your reviews Once a month the AI reads your new Google reviews, pulls out the repeat praise and repeat complaints, and sends you a one-page summary with three things to act on. See how it works →" [ref=e189] [cursor=pointer]:
+          - /url: /ai-use-cases/monthly-review-themes-digest/
+          - generic [ref=e190]: Marketing
+          - heading "Find out what customers keep saying in your reviews" [level=3] [ref=e192]
+          - paragraph [ref=e193]: Once a month the AI reads your new Google reviews, pulls out the repeat praise and repeat complaints, and sends you a one-page summary with three things to act on.
+          - generic [ref=e194]: See how it works →
+        - link "Marketing Get a heads-up when a competitor changes their pricing or offers Your automation checks a few competitor pages each week, and the AI tells you in plain English what changed and whether it matters to you. See how it works →" [ref=e195] [cursor=pointer]:
+          - /url: /ai-use-cases/competitor-page-change-alerts/
+          - generic [ref=e196]: Marketing
+          - heading "Get a heads-up when a competitor changes their pricing or offers" [level=3] [ref=e198]
+          - paragraph [ref=e199]: Your automation checks a few competitor pages each week, and the AI tells you in plain English what changed and whether it matters to you.
+          - generic [ref=e200]: See how it works →
+        - link "Operations Chase overdue invoices without the awkward emails When an invoice passes its due date, the AI drafts a friendly, firm reminder that fits how late it is, and you approve it before it goes out. See how it works →" [ref=e201] [cursor=pointer]:
+          - /url: /ai-use-cases/polite-overdue-invoice-nudges/
+          - generic [ref=e202]: Operations
+          - heading "Chase overdue invoices without the awkward emails" [level=3] [ref=e204]
+          - paragraph [ref=e205]: When an invoice passes its due date, the AI drafts a friendly, firm reminder that fits how late it is, and you approve it before it goes out.
+          - generic [ref=e206]: See how it works →
+        - link "Lead Response Text back every missed call within a minute When a call goes unanswered, the caller gets a friendly text right away asking what they need, and you get the reply with a suggested next step. See how it works →" [ref=e207] [cursor=pointer]:
+          - /url: /ai-use-cases/text-back-every-missed-call/
+          - generic [ref=e208]: Lead Response
+          - heading "Text back every missed call within a minute" [level=3] [ref=e210]
+          - paragraph [ref=e211]: When a call goes unanswered, the caller gets a friendly text right away asking what they need, and you get the reply with a suggested next step.
+          - generic [ref=e212]: See how it works →
+        - link "Customer Service Remind customers before the job, rebook them after Each scheduled job triggers a reminder with prep details the day before, then a thank-you and a rebooking nudge a few days after. See how it works →" [ref=e213] [cursor=pointer]:
+          - /url: /ai-use-cases/before-and-after-job-messages/
+          - generic [ref=e214]: Customer Service
+          - heading "Remind customers before the job, rebook them after" [level=3] [ref=e216]
+          - paragraph [ref=e217]: Each scheduled job triggers a reminder with prep details the day before, then a thank-you and a rebooking nudge a few days after.
+          - generic [ref=e218]: See how it works →
+        - link "Marketing Win back customers who haven’t booked in a while AI finds customers whose last service was long enough ago to be due again and drafts a personal check-in for each segment. See how it works →" [ref=e219] [cursor=pointer]:
+          - /url: /ai-use-cases/win-back-customers-who-went-quiet/
+          - generic [ref=e220]: Marketing
+          - heading "Win back customers who haven’t booked in a while" [level=3] [ref=e222]
+          - paragraph [ref=e223]: AI finds customers whose last service was long enough ago to be due again and drafts a personal check-in for each segment.
+          - generic [ref=e224]: See how it works →
+        - link "Content Turn finished-job photos into ready-to-review posts Drop in photos and a two-line job note, and AI drafts a local-flavored post for your Google profile and social pages for you to approve. See how it works →" [ref=e225] [cursor=pointer]:
+          - /url: /ai-use-cases/finished-job-photos-to-posts/
+          - generic [ref=e226]: Content
+          - heading "Turn finished-job photos into ready-to-review posts" [level=3] [ref=e228]
+          - paragraph [ref=e229]: Drop in photos and a two-line job note, and AI drafts a local-flavored post for your Google profile and social pages for you to approve.
+          - generic [ref=e230]: See how it works →
+        - link "Sales Turn every quote request into a draft estimate by morning A quote form comes in, the AI checks it against your price list and drafts the estimate and cover email, and you review and send it. See how it works →" [ref=e231] [cursor=pointer]:
+          - /url: /ai-use-cases/quote-request-to-draft-estimate/
+          - generic [ref=e232]: Sales
+          - heading "Turn every quote request into a draft estimate by morning" [level=3] [ref=e234]
+          - paragraph [ref=e235]: A quote form comes in, the AI checks it against your price list and drafts the estimate and cover email, and you review and send it.
+          - generic [ref=e236]: See how it works →
+        - link "Content Write your monthly customer email from a few bullet notes Jot down what happened this month, and the AI turns it into a short, on-brand email draft that’s waiting in your inbox to review and send. See how it works →" [ref=e237] [cursor=pointer]:
+          - /url: /ai-use-cases/monthly-customer-email-from-your-notes/
+          - generic [ref=e238]: Content
+          - heading "Write your monthly customer email from a few bullet notes" [level=3] [ref=e240]
+          - paragraph [ref=e241]: Jot down what happened this month, and the AI turns it into a short, on-brand email draft that’s waiting in your inbox to review and send.
+          - generic [ref=e242]: See how it works →
+        - link "Lead Response Qualify leads while you sleep A website chat agent talks to after-hours visitors, scores them, and books the hot ones onto your calendar. See how it works →" [ref=e243] [cursor=pointer]:
+          - /url: /ai-use-cases/qualify-leads-while-you-sleep/
+          - generic [ref=e244]: Lead Response
+          - heading "Qualify leads while you sleep" [level=3] [ref=e246]
+          - paragraph [ref=e247]: A website chat agent talks to after-hours visitors, scores them, and books the hot ones onto your calendar.
+          - generic [ref=e248]: See how it works →
+        - link "Customer Service Deflect common FAQs with an AI chat widget Trained on your own docs and pricing, it answers instantly and only escalates the hard questions. See how it works →" [ref=e249] [cursor=pointer]:
+          - /url: /ai-use-cases/deflect-common-faqs-with-an-ai-chat-widget/
+          - generic [ref=e250]: Customer Service
+          - heading "Deflect common FAQs with an AI chat widget" [level=3] [ref=e252]
+          - paragraph [ref=e253]: Trained on your own docs and pricing, it answers instantly and only escalates the hard questions.
+          - generic [ref=e254]: See how it works →
+        - link "Customer Service Draft a reply to every inbound message AI drafts an on-brand response to each email, DM, and review so your team approves in one click. See how it works →" [ref=e255] [cursor=pointer]:
+          - /url: /ai-use-cases/draft-a-reply-to-every-inbound-message/
+          - generic [ref=e256]: Customer Service
+          - heading "Draft a reply to every inbound message" [level=3] [ref=e258]
+          - paragraph [ref=e259]: AI drafts an on-brand response to each email, DM, and review so your team approves in one click.
+          - generic [ref=e260]: See how it works →
+        - link "Content Turn one blog post into 10 social posts AI repurposes a single article into a week of captions, carousels, and short-form scripts. See how it works →" [ref=e261] [cursor=pointer]:
+          - /url: /ai-use-cases/turn-one-blog-post-into-10-social-posts/
+          - generic [ref=e262]: Content
+          - heading "Turn one blog post into 10 social posts" [level=3] [ref=e264]
+          - paragraph [ref=e265]: AI repurposes a single article into a week of captions, carousels, and short-form scripts.
+          - generic [ref=e266]: See how it works →
+        - link "Content Build a 30-day content calendar in one click AI plans a full month of posts — hooks, captions, hashtags — ready for you to approve. See how it works →" [ref=e267] [cursor=pointer]:
+          - /url: /ai-use-cases/build-a-30-day-content-calendar-in-one-click/
+          - generic [ref=e268]: Content
+          - heading "Build a 30-day content calendar in one click" [level=3] [ref=e270]
+          - paragraph [ref=e271]: AI plans a full month of posts — hooks, captions, hashtags — ready for you to approve.
+          - generic [ref=e272]: See how it works →
+        - link "Content Write first-draft proposals in minutes AI assembles a tailored proposal from your templates plus the prospect’s details. See how it works →" [ref=e273] [cursor=pointer]:
+          - /url: /ai-use-cases/write-first-draft-proposals-in-minutes/
+          - generic [ref=e274]: Content
+          - heading "Write first-draft proposals in minutes" [level=3] [ref=e276]
+          - paragraph [ref=e277]: AI assembles a tailored proposal from your templates plus the prospect’s details.
+          - generic [ref=e278]: See how it works →
+        - link "Marketing Spin up an ad campaign from your website AI reads your site and drafts Google and Meta ad copy, audiences, and a budget plan. See how it works →" [ref=e279] [cursor=pointer]:
+          - /url: /ai-use-cases/spin-up-an-ad-campaign-from-your-website/
+          - generic [ref=e280]: Marketing
+          - heading "Spin up an ad campaign from your website" [level=3] [ref=e282]
+          - paragraph [ref=e283]: AI reads your site and drafts Google and Meta ad copy, audiences, and a budget plan.
+          - generic [ref=e284]: See how it works →
+        - link "Marketing Localize one offer for 20 towns AI rewrites a single landing page for each market you serve, with the right local language. See how it works →" [ref=e285] [cursor=pointer]:
+          - /url: /ai-use-cases/localize-one-offer-for-20-towns/
+          - generic [ref=e286]: Marketing
+          - heading "Localize one offer for 20 towns" [level=3] [ref=e288]
+          - paragraph [ref=e289]: AI rewrites a single landing page for each market you serve, with the right local language.
+          - generic [ref=e290]: See how it works →
+        - link "Local SEO Generate a page for every city you serve AI drafts location pages with local keywords, FAQs, and schema so you rank in nearby towns. See how it works →" [ref=e291] [cursor=pointer]:
+          - /url: /ai-use-cases/generate-a-page-for-every-city-you-serve/
+          - generic [ref=e292]: Local SEO
+          - heading "Generate a page for every city you serve" [level=3] [ref=e294]
+          - paragraph [ref=e295]: AI drafts location pages with local keywords, FAQs, and schema so you rank in nearby towns.
+          - generic [ref=e296]: See how it works →
+        - link "Local SEO Keep your Google Business Profile fresh AI drafts weekly GBP posts and Q&amp;amp;amp;amp;amp;amp;A answers that nudge your local-pack ranking up. See how it works →" [ref=e297] [cursor=pointer]:
+          - /url: /ai-use-cases/keep-your-google-business-profile-fresh/
+          - generic [ref=e298]: Local SEO
+          - heading "Keep your Google Business Profile fresh" [level=3] [ref=e300]
+          - paragraph [ref=e301]: AI drafts weekly GBP posts and Q&amp;amp;amp;amp;amp;amp;A answers that nudge your local-pack ranking up.
+          - generic [ref=e302]: See how it works →
+        - link "Sales Enrich every new lead automatically AI looks up company size, industry, and tech the moment a lead comes in, so reps walk in informed. See how it works →" [ref=e303] [cursor=pointer]:
+          - /url: /ai-use-cases/enrich-every-new-lead-automatically/
+          - generic [ref=e304]: Sales
+          - heading "Enrich every new lead automatically" [level=3] [ref=e306]
+          - paragraph [ref=e307]: AI looks up company size, industry, and tech the moment a lead comes in, so reps walk in informed.
+          - generic [ref=e308]: See how it works →
+        - link "Operations Turn voicemails into tasks AI transcribes each voicemail, summarizes what the caller needs, and creates a follow-up task. See how it works →" [ref=e309] [cursor=pointer]:
+          - /url: /ai-use-cases/turn-voicemails-into-tasks/
+          - generic [ref=e310]: Operations
+          - heading "Turn voicemails into tasks" [level=3] [ref=e312]
+          - paragraph [ref=e313]: AI transcribes each voicemail, summarizes what the caller needs, and creates a follow-up task.
+          - generic [ref=e314]: See how it works →
+        - link "Operations Get a Monday-morning performance digest AI pulls your ad, analytics, and CRM numbers into a plain-English summary every week. See how it works →" [ref=e315] [cursor=pointer]:
+          - /url: /ai-use-cases/get-a-monday-morning-performance-digest/
+          - generic [ref=e316]: Operations
+          - heading "Get a Monday-morning performance digest" [level=3] [ref=e318]
+          - paragraph [ref=e319]: AI pulls your ad, analytics, and CRM numbers into a plain-English summary every week.
+          - generic [ref=e320]: See how it works →
+        - link "Marketing Ask for a review at the perfect moment AI triggers a review request after a happy interaction, then drafts a reply to every review. See how it works →" [ref=e321] [cursor=pointer]:
+          - /url: /ai-use-cases/ask-for-a-review-at-the-perfect-moment/
+          - generic [ref=e322]: Marketing
+          - heading "Ask for a review at the perfect moment" [level=3] [ref=e324]
+          - paragraph [ref=e325]: AI triggers a review request after a happy interaction, then drafts a reply to every review.
+          - generic [ref=e326]: See how it works →
+  - generic [ref=e328]:
+    - generic [ref=e329]: AI Concierge
+    - heading "Want us to build one of these?" [level=2] [ref=e330]
+    - paragraph [ref=e331]: Every use case here is something we implement for clients — wired into the tools you already use. Pick one and we’ll make it real.
+    - link "Get a free audit" [ref=e332] [cursor=pointer]:
+      - /url: /contact/
+  - contentinfo [ref=e333]:
+    - generic [ref=e334]:
+      - generic [ref=e335]:
+        - generic [ref=e336]:
+          - link "ava digital" [ref=e337] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=e338]: AI-powered digital marketing for Illinois businesses. We help small and mid-size companies compete and win online.
+        - generic [ref=e339]:
+          - heading "Services" [level=4] [ref=e340]
+          - link "AI Concierge" [ref=e341] [cursor=pointer]:
+            - /url: /ai-concierge/
+          - link "Outbound Email" [ref=e342] [cursor=pointer]:
+            - /url: /outbound-email-marketing/
+          - link "LinkedIn Lead Gen" [ref=e343] [cursor=pointer]:
+            - /url: /linkedin-lead-generation/
+          - link "AI Automation" [ref=e344] [cursor=pointer]:
+            - /url: /ai-automation-services/
+          - link "Geo SEO" [ref=e345] [cursor=pointer]:
+            - /url: /geo-seo-services/
+        - generic [ref=e346]:
+          - heading "Explore" [level=4] [ref=e347]
+          - link "AI Use Cases" [ref=e348] [cursor=pointer]:
+            - /url: /ai-use-cases/
+          - link "Naperville" [ref=e349] [cursor=pointer]:
+            - /url: /naperville-digital-marketing-agency/
+          - link "Chicago" [ref=e350] [cursor=pointer]:
+            - /url: /chicago-digital-marketing-agency/
+          - link "Marketing Answers" [ref=e351] [cursor=pointer]:
+            - /url: /marketing-answers/
+        - generic [ref=e352]:
+          - heading "Company" [level=4] [ref=e353]
+          - link "Home" [ref=e354] [cursor=pointer]:
+            - /url: /
+          - link "Blog" [ref=e355] [cursor=pointer]:
+            - /url: /blog/
+          - link "Contact" [ref=e356] [cursor=pointer]:
+            - /url: /contact/
+          - link "glen@avadigitalagency.com" [ref=e357] [cursor=pointer]:
+            - /url: mailto:glen@avadigitalagency.com
+      - generic [ref=e358]: © 2026 Ava Digital Agency · Naperville, Illinois · AI-Powered Digital Marketing

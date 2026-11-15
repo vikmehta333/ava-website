@@ -26,7 +26,8 @@
   },
   "source_name": "Zapier Community: 15-minute escalation zap for small service businesses (via WebSearch)",
   "source_url": "https://community.zapier.com/show-tell-5/the-we-never-saw-that-lead-problem-a-15-minute-escalation-zap-for-small-service-businesses-54018",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24458
  },
  {
   "slug": "quiet-estimate-follow-up-drafts",
@@ -55,7 +56,8 @@
   },
   "source_name": "Zapier home-services examples / Contractor ToolStack estimate follow-up workflows (via WebSearch)",
   "source_url": "https://www.quo.com/blog/zapier-examples-for-home-services/",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24459
  },
  {
   "slug": "warranty-callback-triage-from-customer-messages",
@@ -84,7 +86,8 @@
   },
   "source_name": "Ciela AI contractor reactivation agents: warranty concerns routed to coordinator (via WebSearch)",
   "source_url": "https://ciela.ai/agents/ai-lead-reactivation-for-flooring-contractors",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24460
  },
  {
   "slug": "texted-scope-change-to-change-order-draft",
@@ -113,6 +116,7 @@
   },
   "source_name": "Contractor ToolStack: n8n workflows for contractors incl. change-order documentation (via WebSearch)",
   "source_url": "https://contractortoolstack.com/guides/chatgpt-automation-for-contractors/",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24461
  }
 ]

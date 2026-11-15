@@ -26,7 +26,8 @@
   },
   "source_name": "Make/Zapier expiry-reminder patterns (via WebSearch)",
   "source_url": "https://zapier.com/templates/details/business-supplies-founders-prevent-membership-expirations-and-upsells",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24450
  },
  {
   "slug": "technician-notes-to-customer-service-summary",
@@ -55,7 +56,8 @@
   },
   "source_name": "Tech note translator and field-service summary prompts (via WebSearch)",
   "source_url": "https://eliteaiadvantage.com/prompts/tech-note-translator",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24451
  },
  {
   "slug": "new-inquiry-conflict-screen-prep-and-neutral-reply",
@@ -84,6 +86,7 @@
   },
   "source_name": "Law-firm n8n intake patterns (via WebSearch)",
   "source_url": "https://n8n.io/workflows/20282",
-  "status": "queued"
+  "status": "published",
+  "page_id": 24452
  }
 ]

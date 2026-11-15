@@ -26,7 +26,8 @@
    "prompt_quality": 0.9
   },
   "weighted_score": 0.9,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24463
  },
  {
   "slug": "automation-failure-alerts-to-your-phone",
@@ -55,7 +56,8 @@
    "prompt_quality": 0.9
   },
   "weighted_score": 0.9,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24464
  },
  {
   "slug": "appointment-confirmation-replies-to-calendar-updates",
@@ -84,6 +86,7 @@
    "prompt_quality": 0.9
   },
   "weighted_score": 0.892,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24465
  }
 ]
