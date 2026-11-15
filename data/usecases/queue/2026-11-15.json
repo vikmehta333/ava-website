@@ -1,0 +1,89 @@
+[
+ {
+  "slug": "expiring-gift-card-and-membership-reminders",
+  "category": "marketing",
+  "title": "Remind customers before their gift card or membership expires",
+  "one_liner": "A daily check of your expiry dates sends each customer a short, friendly nudge at 30, 14 and 3 days out, so unused balances turn into visits instead of complaints.",
+  "steps": [
+   "Keep expiry dates in one place: a Google Sheet or an export from your gift card or loyalty tool, with name, email or mobile, balance or plan, and expiry date.",
+   "Each morning, Make or Zapier finds rows expiring in exactly 30, 14 or 3 days and skips anyone already reminded at that stage.",
+   "For each match, an AI step writes a short message in your voice that states the date and balance from the row and suggests one easy way to book or visit.",
+   "A staff member skims the day's batch in a Slack message or a Gmail draft folder and approves it, then it sends.",
+   "The sheet logs the reminder stage so no one gets the same nudge twice."
+  ],
+  "guardrail": "The AI only uses the name, balance and date in the row; it never offers extensions, discounts or refunds, which stay with the owner.",
+  "tools": "Google Sheets (or your gift card/loyalty export), Make or Zapier on a daily schedule, an AI model (Claude or ChatGPT), Gmail or an SMS tool, Slack for approval",
+  "prompt": "You write short expiry reminders for [business name], a [type of business, e.g. day spa or family restaurant] in [city]. Use ONLY the details below. Do not invent balances, dates, discounts, extensions or refund offers.\n\nCUSTOMER FIRST NAME: [first name]\nITEM: [gift card or membership name]\nBALANCE OR PLAN DETAILS: [balance or plan, exactly as in the sheet]\nEXPIRY DATE: [date]\nDAYS LEFT: [30, 14 or 3]\nBOOKING LINK OR PHONE: [link or phone]\n\nWrite one [email or text] in a warm, plain tone. Mention the expiry date and what they have left. Suggest one simple next step using the booking link or phone. If DAYS LEFT is 3, be a little more direct but not pushy. Do not mention any extension or discount. Email: under 90 words with a subject line. Text: under 40 words. Sign off as [business name].",
+  "verification_note": "Reasoned with a sample spa gift card (balance and date supplied) at 14 and 3 days: output would state only the supplied balance/date, add one booking step, adjust urgency lightly, and contain no extensions or discounts. Missing fields would be left as visible blanks, not invented.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.9
+  },
+  "source_name": "Make/Zapier expiry-reminder patterns (via WebSearch)",
+  "source_url": "https://zapier.com/templates/details/business-supplies-founders-prevent-membership-expirations-and-upsells",
+  "status": "queued"
+ },
+ {
+  "slug": "technician-notes-to-customer-service-summary",
+  "category": "cs",
+  "title": "Turn a technician's rough job notes into a clear customer summary",
+  "one_liner": "Notes typed on a phone at the end of a job become a short email that tells the homeowner what was found, what was done and what to decide next, without inflated urgency.",
+  "steps": [
+   "The technician types or dictates notes at job close in your field service tool or a simple form: what was found, what was done, readings, parts, and any recommendation.",
+   "The close-out triggers a Zapier or n8n flow that sends the notes and the technician's own urgency label (routine, soon or urgent) to an AI step.",
+   "The AI writes a summary under 200 words that answers three questions: what was wrong, what got fixed, what's next.",
+   "The office reviews the draft in Gmail, fixes anything off, and sends it from your business address.",
+   "The summary is saved to the customer record so the next visit starts with history."
+  ],
+  "guardrail": "The AI may not change readings, add findings or raise urgency beyond the technician's label; a person reviews every summary before it goes out.",
+  "tools": "Your field service or job tool (ServiceTitan, Jobber, Housecall Pro or a form), Zapier or n8n, an AI model (Claude or ChatGPT), Gmail",
+  "prompt": "You turn a technician's job notes into a customer email for [business name], a [trade, e.g. HVAC or plumbing] company in [city]. Use ONLY the notes below. Do not add findings, numbers, prices, warranty promises or timelines that are not in the notes. Copy readings and part names exactly.\n\nCUSTOMER FIRST NAME: [first name]\nTECHNICIAN: [technician first name]\nSERVICE DATE: [date]\nTECHNICIAN NOTES: [paste notes]\nURGENCY LABEL SET BY TECHNICIAN: [routine, soon or urgent]\nRECOMMENDED NEXT STEP FROM NOTES: [step, or 'none']\n\nWrite a plain-language email under 200 words with three short parts headed 'What we found', 'What we did' and 'What's next'. Use the urgency label exactly as given and never stronger. If there is no recommended next step, say nothing further is needed. Avoid jargon; if a term is needed, explain it in a few words. End with [office phone] for questions. If the notes are unclear or missing something needed, reply only with 'NEEDS REVIEW:' and a one-line question for the technician.",
+  "verification_note": "Reasoned with sample furnace notes labeled 'soon': output would keep readings verbatim, use the 'soon' label without upgrading it, and give a calm what's-next. Vague notes trigger the NEEDS REVIEW line instead of a guess.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.9,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.9
+  },
+  "source_name": "Tech note translator and field-service summary prompts (via WebSearch)",
+  "source_url": "https://eliteaiadvantage.com/prompts/tech-note-translator",
+  "status": "queued"
+ },
+ {
+  "slug": "new-inquiry-conflict-screen-prep-and-neutral-reply",
+  "category": "lead",
+  "title": "Prep a conflict-check list and a careful first reply for every new legal inquiry",
+  "one_liner": "Each new web inquiry arrives at the firm with the names to screen pulled out and a neutral acknowledgment drafted, so the attorney spends time deciding rather than copying names.",
+  "steps": [
+   "The website form sends each inquiry to n8n or Zapier, which saves it to a sheet or your practice management tool.",
+   "An AI step extracts the people and organizations named, the matter type in a few words, any dates the sender mentioned, and anything that looks time-sensitive.",
+   "It also drafts a neutral acknowledgment that gives no advice and does not accept the matter.",
+   "A staff member or attorney gets both in one email, runs the actual conflict check, edits the reply and sends it.",
+   "The decision to take the matter is logged by a person in your system."
+  ],
+  "guardrail": "The AI never runs the conflict check, gives legal advice, or says the firm will take the matter; an attorney clears conflicts and approves every reply.",
+  "tools": "Website form (Jotform, Gravity Forms or similar), n8n or Zapier, Google Sheets or your practice management tool, an AI model (Claude or ChatGPT), Gmail",
+  "prompt": "You assist the intake staff at [firm name], a [practice areas] firm in [city]. Read the inquiry below and produce two things. Use ONLY what the sender wrote. Do not give legal advice, assess the merits, predict outcomes, or say the firm will or will not take the matter.\n\nINQUIRY TEXT: [paste form message]\nSENDER NAME AND CONTACT AS PROVIDED: [name, email or phone]\n\nPART 1 - SCREENING PREP for staff (bullets): every person and organization named, labeled 'sender', 'other party' or 'unclear'; matter type in under 8 words; dates mentioned; any stated deadline or court date; any sign the matter may be urgent. Mark anything uncertain with '(unclear)'.\n\nPART 2 - DRAFT REPLY under 120 words: thank them, say the message was received and will be reviewed by [attorney or team], say no attorney-client relationship exists until the firm confirms in writing, and give [office phone or next-step link]. If a deadline was mentioned, suggest they seek help promptly without telling them what to do legally. Sign as [firm name].\n\nOutput both parts clearly separated. Do not include anything the sender did not write.",
+  "verification_note": "Reasoned with a made-up landlord-tenant inquiry naming two parties and an upcoming date: output would list both names as sender/other party, flag the date, and produce a neutral reply with the no-relationship line and no advice. Merits questions in the text would be ignored, not answered.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.9,
+   "weighted": 0.88
+  },
+  "source_name": "Law-firm n8n intake patterns (via WebSearch)",
+  "source_url": "https://n8n.io/workflows/20282",
+  "status": "queued"
+ }
+]
