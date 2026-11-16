@@ -1,0 +1,89 @@
+[
+ {
+  "slug": "booking-deposit-reminder-drafts",
+  "category": "ops",
+  "title": "Chase unpaid booking deposits before the slot goes cold",
+  "one_liner": "When a booking request comes in and the deposit hasn't landed within a day, a polite reminder is drafted for you to approve, so held time slots stop sitting empty on a maybe.",
+  "steps": [
+   "Log every booking request in one Google Sheet: name, email, service, requested date, deposit amount you set, deposit status, and the date the request arrived.",
+   "Each morning, Zapier or Make finds rows where the deposit status is still 'unpaid' and the request is 1, 3 or 5 days old, skipping anyone already reminded at that stage.",
+   "For each match, an AI step drafts a short reminder that repeats the service, date, deposit amount and your payment link exactly as they appear in the row, plus when you will release the slot.",
+   "The draft lands in your Gmail drafts folder; you check it, edit if needed and send. Mark paid rows in the sheet so reminders stop.",
+   "On day 5, the draft offers to release the slot or reschedule, so the customer can say yes or no."
+  ],
+  "guardrail": "You set the deposit amount, the release date and any exceptions; the AI never changes a price, waives a deposit or confirms a booking as paid.",
+  "tools": "Google Sheets, Zapier or Make on a daily schedule, an AI model (Claude or ChatGPT), Gmail drafts, your existing payment link (Stripe, Square or PayPal)",
+  "prompt": "You draft short, courteous deposit reminders for [business name], a [type of business, e.g. photography studio or salon] in [city]. Use ONLY the details below. Do not invent prices, dates, policies, discounts or payment methods, and do not say the booking is confirmed.\n\nCUSTOMER FIRST NAME: [first name]\nSERVICE: [service requested]\nREQUESTED DATE: [date and time]\nDEPOSIT AMOUNT: [amount, exactly as in the sheet]\nPAYMENT LINK: [link]\nDAYS SINCE REQUEST: [1, 3 or 5]\nSLOT RELEASE DATE: [date the slot is released if unpaid]\n\nWrite one email under 90 words with a subject line. At 1 day, be a friendly nudge. At 3 days, mention the slot is still held until the release date. At 5 days, say you will release the slot on the release date unless they pay or want to reschedule, and invite a reply. Plain tone, no pressure language, one clear next step. Sign off as [your name], [business name].",
+  "verification_note": "Reasoned with a sample photography booking at days 1, 3 and 5: output would restate only the supplied service, date, amount and link, scale tone by stage, avoid claiming confirmation, and contain no invented policy. Blank fields would stay visible rather than being filled.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.9
+  },
+  "source_name": "Zapier booking deposit follow-up template pattern (via WebSearch)",
+  "source_url": "https://zapier.com/automations/business-owners/hospitality-operations/booking-confirmation-workflows/send-follow-up-and-deposit-reminders-to-new-bookings",
+  "status": "queued"
+ },
+ {
+  "slug": "receipt-photo-to-expense-row",
+  "category": "ops",
+  "title": "Snap a receipt, get a clean expense row for your bookkeeper",
+  "one_liner": "Anyone on the team texts or emails a receipt photo, and the key details land in a spreadsheet row with a suggested category, ready for a quick check instead of a shoebox sort at tax time.",
+  "steps": [
+   "Set up one shared email address or a Google Form with a photo upload where staff send receipts, with a note on what the purchase was for.",
+   "Make or Zapier picks up each new submission and passes the image to an AI step that reads vendor, date, total, tax and payment method.",
+   "The AI suggests a category from the list your bookkeeper uses, and flags anything it could not read clearly instead of guessing.",
+   "A new row is added to a Google Sheet with the original image link, and flagged rows are highlighted.",
+   "Once a week, you or your bookkeeper checks the flagged rows and a few random ones, then exports to QuickBooks or Xero."
+  ],
+  "guardrail": "The sheet is a staging area: your bookkeeper confirms categories and totals before anything reaches the books, and the AI never decides what is tax deductible.",
+  "tools": "Gmail or Google Forms, Make or Zapier, an AI model with image reading (Claude or ChatGPT), Google Sheets, your bookkeeping software for the final import",
+  "prompt": "You extract expense details from a receipt image for [business name], a [type of business] in [city]. Read only what is visible. If a field is unreadable or missing, write UNCLEAR rather than guessing.\n\nSubmitter's note: [what the purchase was for]\nAllowed categories: [your bookkeeper's category list, e.g. Supplies, Fuel, Meals, Software, Tools, Other]\n\nReturn exactly these fields, one per line:\nVendor: \nDate (YYYY-MM-DD): \nSubtotal: \nTax: \nTotal: \nPayment method (last four digits only if shown): \nSuggested category (one from the list): \nConfidence (high, medium or low): \nNotes (anything odd, such as handwritten totals, cut-off edges or multiple receipts in one photo): \n\nDo not give tax or deductibility advice. Do not include full card numbers or any other personal details.",
+  "verification_note": "Reasoned with a sample fuel receipt and a blurry hardware-store receipt: the first would return all fields in the fixed layout with a list category; the second would mark unreadable fields UNCLEAR with low confidence. Card digits are limited to the last four.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.85,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.9,
+   "prompt_quality": 0.9,
+   "weighted": 0.88
+  },
+  "source_name": "Receipt-to-Google-Sheets AI workflow patterns (via WebSearch)",
+  "source_url": "https://workspace.google.com/marketplace/app/ai_sheetflow_invoice_receipt_to_google_s/246258883507",
+  "status": "queued"
+ },
+ {
+  "slug": "local-search-questions-into-blog-drafts",
+  "category": "seo",
+  "title": "Turn the questions people search in your town into blog drafts",
+  "one_liner": "Keep a sheet of real questions people ask about your service, and each new row becomes a local, outline-first draft with your own facts slotted in for you to finish.",
+  "steps": [
+   "Collect questions in a Google Sheet from Google Search Console queries, the 'People also ask' box, and the questions your front desk hears. Add the city and service for each.",
+   "Add a 'your facts' column per row: pricing range you actually quote, timeline, service area, a real recent job detail.",
+   "When a row is marked 'ready', Zapier or n8n sends it to an AI step that writes a short answer-first draft with a clear outline, using only the facts in that row.",
+   "The draft is saved as a Google Doc and you get a Slack or email ping to review.",
+   "You edit for accuracy and voice, add a photo, publish, and mark the row 'live' with the URL."
+  ],
+  "guardrail": "Nothing is published without you; the AI is told to leave a visible [ADD FACT] marker wherever your sheet doesn't supply a price, timeline or claim.",
+  "tools": "Google Sheets, Google Search Console, Zapier or n8n, an AI model (Claude or ChatGPT), Google Docs, Slack or Gmail, your website CMS",
+  "prompt": "You are drafting a local blog post for [business name], a [type of business] in [city, state]. Answer one real customer question. Use ONLY the facts supplied below; where a fact is needed but missing, insert [ADD FACT: what is needed] instead of inventing it. Do not invent statistics, prices, reviews, awards or client names.\n\nQUESTION: [customer question]\nSERVICE: [service]\nSERVICE AREA: [towns served]\nOUR FACTS: [pricing range you quote, typical timeline, how you handle it, one real recent job detail]\nTONE: plain, helpful, no hype\n\nWrite: 1) a title under 60 characters that includes the service and city; 2) a 2-3 sentence direct answer at the top; 3) an outline with 3-4 H2 headings and 2-4 sentences under each; 4) a short 'what to do next' with the phone number [phone] and one call to action; 5) a meta description under 155 characters. Keep it under 500 words.",
+  "verification_note": "Reasoned with a sample question ('how long does a water heater replacement take') and supplied facts: output would lead with a direct answer, follow the fixed structure, use the supplied timeline, and place [ADD FACT] markers for any missing price instead of inventing one.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.85,
+   "specific": 0.8,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.88
+  },
+  "source_name": "n8n question-driven SEO blog draft templates (via WebSearch)",
+  "source_url": "https://n8n.io/workflows/6283-generate-seo-optimized-blog-posts-with-google-autocomplete-and-gpt-4/",
+  "status": "queued"
+ }
+]
