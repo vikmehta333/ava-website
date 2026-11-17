@@ -1,0 +1,118 @@
+[
+ {
+  "slug": "unanswered-lead-escalation-with-after-hours-path",
+  "category": "lead",
+  "title": "Make sure no new lead sits unanswered past 15 minutes",
+  "one_liner": "If a new web lead hasn't been touched within 15 minutes during business hours, the right person gets a nudge with a one-line summary; after hours, it goes on a first-thing-tomorrow call list instead of waking anyone up.",
+  "steps": [
+   "Send every web form, quote request and marketplace lead into one CRM or Google Sheet with a 'first contact' column and a timestamp for when it arrived.",
+   "Zapier or Make waits 15 minutes after each new lead, then checks whether anyone logged a first contact; if so, nothing happens.",
+   "If no one has, a branch checks your business hours: inside hours it pings the owner or dispatcher in Slack or by text, outside hours it adds the lead to a morning call list.",
+   "An AI step writes a two-line summary of what the lead wants and how urgent it sounds, so the person pinged can act without opening the record.",
+   "If the lead is still untouched after two hours of business time, re-ping once and tag it 'at risk' in the sheet."
+  ],
+  "guardrail": "The AI only summarizes and flags urgency; a person decides who calls and what gets said, and you set the business hours and who gets pinged.",
+  "tools": "Your CRM or Google Sheets, Zapier or Make (delay and branch steps), an AI model (Claude or ChatGPT), Slack or SMS for the nudge",
+  "prompt": "You write a two-line lead summary for the team at [business name], a [type of business, e.g. HVAC company or law office] in [city]. Use ONLY the lead details below. Do not guess budget, timeline or needs that are not stated, and do not draft a reply to the customer.\n\nLEAD NAME: [name]\nSOURCE: [web form / phone / marketplace name]\nSERVICE REQUESTED: [service]\nMESSAGE FROM LEAD: [full message text]\nRECEIVED AT: [date and time]\nMINUTES WITHOUT FIRST CONTACT: [number]\n\nOutput exactly three lines:\nLine 1: Who and what they want, in under 20 words.\nLine 2: Urgency: HIGH, NORMAL or UNCLEAR, plus the exact words from the message that justify it (write 'no urgency stated' if none).\nLine 3: One suggested next step for the person who picks this up (for example 'call now' or 'text to confirm details'), without promising prices or availability.",
+  "verification_note": "Reasoned with a sample 'no heat, elderly parent at home' message and a vague 'need a quote' message: output would mark the first HIGH with the quoted words, the second UNCLEAR, and never invent budget or send anything to the customer.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.902
+  },
+  "source_name": "Zapier Community: 15-minute escalation zap for small service businesses (via WebSearch)",
+  "source_url": "https://community.zapier.com/show-tell-5/the-we-never-saw-that-lead-problem-a-15-minute-escalation-zap-for-small-service-businesses-54018",
+  "status": "queued"
+ },
+ {
+  "slug": "quiet-estimate-follow-up-drafts",
+  "category": "sales",
+  "title": "Follow up on estimates that went quiet, in your own voice",
+  "one_liner": "When an estimate has been sent and the customer hasn't replied after a few days, a short check-in draft is prepared for you to approve, so good jobs stop dying in the inbox.",
+  "steps": [
+   "Keep sent estimates in one place (Jobber, Housecall Pro, ServiceTitan or a simple Google Sheet) with customer, job, amount, date sent and status.",
+   "Each morning, Zapier or Make finds estimates still marked 'sent' that are 3 and 7 days old with no reply logged, skipping any already followed up at that stage.",
+   "An AI step drafts a brief check-in that references the job and sent date, asks one easy question such as whether they want to adjust the scope, and repeats no pricing it wasn't given.",
+   "The draft lands in Gmail drafts or your texting tool's draft queue; you edit and send.",
+   "Mark each estimate won, lost or still open in the sheet so the reminders stop and you can see where jobs go."
+  ],
+  "guardrail": "You approve every message and every price; the AI never changes an estimate, offers a discount or pressures the customer.",
+  "tools": "Jobber, Housecall Pro, ServiceTitan or Google Sheets, Zapier or Make on a daily schedule, an AI model (Claude or ChatGPT), Gmail drafts",
+  "prompt": "You draft short, friendly estimate follow-ups for [business name], a [type of business, e.g. landscaping company or remodeler] in [city]. Use ONLY the details below. Do not invent prices, discounts, deadlines, scheduling availability or promises, and do not mention competitors.\n\nCUSTOMER FIRST NAME: [first name]\nJOB: [description of the job as written on the estimate]\nESTIMATE AMOUNT: [amount exactly as on the estimate, or 'leave out']\nDATE SENT: [date]\nDAYS SINCE SENT: [3 or 7]\nOWNER NAME: [your name]\n\nWrite one message under 70 words. At 3 days, a light check-in asking if they had a chance to look it over and whether they have questions. At 7 days, ask whether the timing or scope needs adjusting and make it easy to say 'not right now.' Warm, plain, no pressure, one clear question, and sign off with the owner name and [business name]. If the amount is 'leave out', do not mention money.",
+  "verification_note": "Reasoned with a sample deck-repair estimate at 3 and 7 days: output would reference only the supplied job and date, ask one question, stay under 70 words, and include no invented offers or deadlines.",
+  "scores": {
+   "icp": 0.95,
+   "buildable": 0.9,
+   "specific": 0.8,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.895
+  },
+  "source_name": "Zapier home-services examples / Contractor ToolStack estimate follow-up workflows (via WebSearch)",
+  "source_url": "https://www.quo.com/blog/zapier-examples-for-home-services/",
+  "status": "queued"
+ },
+ {
+  "slug": "warranty-callback-triage-from-customer-messages",
+  "category": "cs",
+  "title": "Catch warranty and callback complaints before they get treated as sales leads",
+  "one_liner": "When a past customer messages you, an AI step spots whether they're reporting a problem with finished work and routes it to whoever handles callbacks, with a short summary, instead of letting it fall into the sales pipeline.",
+  "steps": [
+   "Send inbound customer texts, emails and form messages into one shared inbox or Google Sheet with the customer name and the last job you did for them.",
+   "An AI step reads each message and labels it: new work, question, scheduling, or possible problem with a past job, quoting the words that led to the label.",
+   "Anything labeled 'possible problem' is posted to a Slack channel or texted to your service coordinator with a three-line summary and a link to the original job record.",
+   "A draft acknowledgment is placed in your drafts, saying you've received the concern and who will be in touch, with no admission of fault or promise of a fix.",
+   "The coordinator reviews, contacts the customer and closes the item in the sheet, so you can see open callbacks at a glance."
+  ],
+  "guardrail": "The AI never decides whether something is covered by warranty, admits fault or promises a fix; the owner or coordinator makes every call and sends every reply.",
+  "tools": "Shared inbox or Google Sheets, Zapier or Make, an AI model (Claude or ChatGPT), Slack or SMS for routing, Gmail drafts",
+  "prompt": "You triage inbound customer messages for [business name], a [type of business, e.g. flooring company or electrician] in [city]. Use ONLY the information below. Do not decide whether anything is covered by warranty, do not admit fault, and do not promise repairs, refunds or timelines.\n\nCUSTOMER NAME: [name]\nLAST JOB FOR THIS CUSTOMER: [job description and completion date, or 'none on file']\nMESSAGE: [full message text]\n\nReturn:\n1. LABEL: one of NEW WORK, QUESTION, SCHEDULING, POSSIBLE PROBLEM WITH PAST JOB.\n2. EVIDENCE: the exact words from the message that support the label.\n3. SUMMARY: three short lines for the coordinator: what happened, which job it may relate to, and anything urgent (such as water, electrical or safety issues, or write 'none stated').\n4. DRAFT REPLY (only if the label is POSSIBLE PROBLEM WITH PAST JOB): under 60 words, thanking them for letting us know, saying [coordinator name] will review and contact them, and asking for photos if helpful. No blame, no promises.\nIf the message is ambiguous, label it POSSIBLE PROBLEM WITH PAST JOB so a person looks at it.",
+  "verification_note": "Reasoned with 'the grout in the shower you finished in May is cracking' and 'can I get a quote for another room': first would be labeled a possible problem with quoted evidence and a neutral draft, second NEW WORK with no draft; ambiguity defaults to human review and no coverage claims appear.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.85,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.882
+  },
+  "source_name": "Ciela AI contractor reactivation agents: warranty concerns routed to coordinator (via WebSearch)",
+  "source_url": "https://ciela.ai/agents/ai-lead-reactivation-for-flooring-contractors",
+  "status": "queued"
+ },
+ {
+  "slug": "texted-scope-change-to-change-order-draft",
+  "category": "ops",
+  "title": "Turn a texted scope change into a change-order draft the customer can approve",
+  "one_liner": "When a customer asks for something extra mid-job, the details from your text or voice note become a clear change-order draft for you to price and send, so extras stop getting done on a handshake.",
+  "steps": [
+   "Keep a simple change-request form or a dedicated text thread where you or the crew drop a note whenever the customer asks for added or different work, along with the job name.",
+   "Make or Zapier picks up each note (transcribing voice notes first) and sends it with the original job scope from your sheet to an AI step.",
+   "The AI drafts a one-page change order: what was originally agreed, what is being added or changed, and blank fields for price and schedule impact.",
+   "You fill in the price and timing, review the wording, and send it for the customer to approve by reply or e-signature.",
+   "Approved change orders are filed in the job's Google Drive folder and logged in the sheet, so invoicing matches what was agreed."
+  ],
+  "guardrail": "The AI leaves price and schedule blank; you set both and the customer must approve in writing before the extra work starts.",
+  "tools": "Google Sheets, Google Forms or a shared text thread, Make or Zapier, an AI model (Claude or ChatGPT), Google Docs or your e-signature tool, Google Drive",
+  "prompt": "You draft change orders for [business name], a [type of business, e.g. remodeling contractor or landscaper] in [city]. Use ONLY the details below. Do not invent prices, dates, materials, warranty terms or legal language, and leave price and schedule blank for the owner to fill in.\n\nJOB NAME: [job name]\nCUSTOMER NAME: [name]\nORIGINAL SCOPE: [short description of originally agreed work]\nREQUESTED CHANGE (from the note): [text of the text or transcribed voice note]\nNOTE RECEIVED: [date]\n\nProduce a change order with these headings: Job, Date, Original scope (restated in one or two sentences), Requested change (plain bullet points of exactly what was asked), Price impact: [OWNER TO COMPLETE], Schedule impact: [OWNER TO COMPLETE], Customer approval line (name, signature, date). Then add a short list titled 'Questions to confirm with the customer' containing anything in the note that is vague, such as sizes, brands or locations. Keep it under 250 words, in plain language.",
+  "verification_note": "Reasoned with 'customer wants two extra outlets in the garage and a different tile color': output would restate the original scope, list both changes, leave price and schedule as owner-completed, and ask about outlet locations and the tile choice, without inventing costs.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.85,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9,
+   "weighted": 0.882
+  },
+  "source_name": "Contractor ToolStack: n8n workflows for contractors incl. change-order documentation (via WebSearch)",
+  "source_url": "https://contractortoolstack.com/guides/chatgpt-automation-for-contractors/",
+  "status": "queued"
+ }
+]
