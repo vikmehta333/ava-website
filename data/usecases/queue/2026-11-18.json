@@ -1,0 +1,89 @@
+[
+ {
+  "slug": "low-click-page-title-rewrites-for-approval",
+  "category": "seo",
+  "title": "Rewrite the page titles that get seen but not clicked",
+  "one_liner": "Once a month, a short list of your pages that show up in Google a lot but rarely get clicked, each with two new title and description options for you to approve. Nothing changes on your site until you say so.",
+  "steps": [
+   "Export your Google Search Console performance report by page and query once a month (or let Make or n8n pull it) into a Google Sheet.",
+   "Sort for pages with plenty of impressions but few clicks, and skip anything from the last 6 weeks so recent edits get time to work.",
+   "An AI step reads each page's current title, description and top search queries, plus a short sheet of facts you supply (towns served, license, years in business, guarantees), and drafts two title and description options.",
+   "The options land in a review column next to the current ones; you tick the ones to use and update the pages yourself.",
+   "Note the date of each change so next month you compare before and after instead of guessing."
+  ],
+  "guardrail": "You approve and publish every change; the AI may only use the facts on your fact sheet, so no claim, number or guarantee goes live unchecked.",
+  "tools": "Google Search Console, Google Sheets, Make or n8n (optional, for the monthly pull), an AI model (Claude or ChatGPT)",
+  "prompt": "You are an SEO copywriter for a local service business. Rewrite the page title and meta description for the page below so more people who already see it in Google choose to click.\n\nBusiness: [business name], serving [towns or service area]\nVerified facts you may use (and nothing else): [license, years in business, guarantees, hours, services]\nPage URL: [page URL]\nCurrent title: [current title]\nCurrent description: [current description]\nTop search queries for this page: [query 1], [query 2], [query 3]\n\nWrite 2 options. Each has a title of 60 characters or fewer and a description of 155 characters or fewer. Match the main search query naturally, say what the visitor gets, and sound like a person, not an ad. Do not invent awards, prices, numbers, guarantees or towns that are not in the verified facts. After the options, add one line saying whether low clicks might come from something other than the title (for example, a search result that already answers the question).",
+  "verification_note": "Prompt constrains output to supplied facts, hard character limits and two options; a model would return two compliant title/description pairs plus a caveat line. No fabricated claims invited.",
+  "source_name": "n8n workflow templates (Search Console + OpenAI title rewrites)",
+  "source_url": "https://n8n.io/workflows/20930",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9
+  },
+  "weighted_score": 0.9,
+  "status": "queued"
+ },
+ {
+  "slug": "automation-failure-alerts-to-your-phone",
+  "category": "ops",
+  "title": "Get told the moment one of your automations breaks",
+  "one_liner": "When a missed-call text, lead alert or invoice reminder fails, you get a plain-English message right away saying which automation stopped and what to check, instead of finding out when a customer complains.",
+  "steps": [
+   "Create one shared alert workflow (n8n Error Trigger, or Make's error handler route) that fires when any of your automations fails.",
+   "Point each important automation at it, starting with the ones that touch customers: lead alerts, reminders, review requests.",
+   "An AI step turns the raw error into two plain sentences: what stopped, which customer-facing job is affected, and the first thing to check.",
+   "Send the message to Slack or by text to whoever owns the automations, with a link to the failed run.",
+   "Test with a deliberate failure in a throwaway automation, because running the alert workflow by hand does not prove it fires."
+  ],
+  "guardrail": "The AI only explains the error; a person decides whether to retry or fix it, and it never re-runs or edits an automation on its own.",
+  "tools": "n8n (Error Trigger) or Make (error handler), an AI model (Claude or ChatGPT), Slack or SMS",
+  "prompt": "You explain automation errors to a busy small-business owner who is not technical.\n\nBusiness: [business name]\nAutomation that failed: [automation name]\nWhat this automation does for customers: [e.g. texts missed callers within a minute]\nStep that failed: [step or node name]\nError message: [error text]\nTime of failure: [timestamp]\n\nWrite a message of at most 3 short sentences: (1) what stopped, in plain words; (2) which customer-facing job is not running right now; (3) the first thing to check, such as an expired login, a changed spreadsheet column or a full usage limit. If the error text does not make the cause clear, say so and suggest opening the failed run rather than guessing. Do not include passwords, keys or customer details.",
+  "verification_note": "Prompt takes structured inputs and yields a short non-technical alert with an explicit 'cause unclear' path; no secrets or PII requested or emitted. Notes limitation that only hard failures trigger alerts.",
+  "source_name": "n8n community: instant error alert system",
+  "source_url": "https://community.n8n.io/t/stop-silent-automation-failures-set-up-an-instant-error-alert-system-in-n8n/276844",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.95,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9
+  },
+  "weighted_score": 0.9,
+  "status": "queued"
+ },
+ {
+  "slug": "appointment-confirmation-replies-to-calendar-updates",
+  "category": "ops",
+  "title": "Turn \"C\" and \"can't make it\" text replies into calendar updates",
+  "one_liner": "When customers answer your reminder text, the reply is read, the booking is marked confirmed or flagged, and anyone who can't come is sent a couple of reschedule options for you to approve.",
+  "steps": [
+   "Send reminders from a number that can receive replies and log every inbound reply to a Google Sheet or your booking tool, matched to the appointment.",
+   "An AI step labels each reply: confirm, reschedule, cancel, question, or unclear.",
+   "Confirms update the booking status automatically; everything else goes to a short review list at the top of the sheet.",
+   "For reschedule and cancel replies, the AI drafts a reply offering two open slots you listed that week, held for your approval before it sends.",
+   "Unclear replies and questions go straight to a person, never auto-answered."
+  ],
+  "guardrail": "Only plain confirmations are handled automatically; any change, cancellation or question is approved or answered by a person before the customer hears back.",
+  "tools": "Your booking tool or Google Sheets, Twilio or your texting platform, Zapier or Make, an AI model (Claude or ChatGPT)",
+  "prompt": "You sort customer replies to an appointment reminder text for [business name].\n\nReminder sent: [reminder text]\nAppointment: [date and time], [service]\nCustomer reply: [reply text]\nOpen slots this week you may offer: [slot 1], [slot 2]\n\nStep 1: Label the reply with exactly one of: CONFIRM, RESCHEDULE, CANCEL, QUESTION, UNCLEAR. Use CONFIRM only for a clear yes. If the message mixes intents, choose QUESTION or UNCLEAR.\nStep 2: If RESCHEDULE or CANCEL, write a friendly reply under 40 words offering only the open slots listed above. Do not promise anything else, mention fees, or make up times.\nOutput the label on the first line, then the draft reply (or 'none'). Do not invent policies.",
+  "verification_note": "Closed label set with conservative rule for ambiguous replies; draft restricted to supplied slots and under 40 words. Model would output a label plus a short draft or 'none'. Distinct from outbound reminders (inbound parsing job).",
+  "source_name": "n8n appointment follow-up template (workflows/17123) and community discussion",
+  "source_url": "https://community.n8n.io/t/appointment-follow-up-workflow-confirm-remind-get-reviews-automatically/301607",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9
+  },
+  "weighted_score": 0.892,
+  "status": "queued"
+ }
+]
