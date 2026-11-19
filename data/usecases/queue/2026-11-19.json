@@ -1,0 +1,89 @@
+[
+  {
+    "slug": "maintenance-plan-offer-after-repair",
+    "category": "sales",
+    "title": "Offer your maintenance plan to repair customers within 48 hours",
+    "one_liner": "When a repair job closes for a customer who isn't on a plan, a short, personal message goes out two days later explaining your yearly plan in plain terms. Your office reviews the draft before anything is sent.",
+    "steps": [
+      "When a repair job is marked complete in your field-service tool or job sheet, check whether the customer already has a plan; skip anyone who does.",
+      "Wait 48 hours, then pull the job type, what was repaired and the equipment age from the job record.",
+      "An AI step drafts a short text and email that references the actual repair and describes your plan using the plan details you supply (price, visits, what's covered).",
+      "The draft goes to a review queue; office staff approve, edit or skip it, then it sends from your normal number or email.",
+      "If the customer replies, flag it for a person to answer and book the first plan visit."
+    ],
+    "guardrail": "Staff approve every message and the AI may only quote plan details from your own sheet, so no price, discount or coverage promise goes out unchecked.",
+    "tools": "Jobber, Housecall Pro or ServiceTitan (or a job Google Sheet), Zapier, Make or n8n, Twilio or your email tool, an AI model (Claude or ChatGPT)",
+    "prompt": "You write follow-up messages for a home-service company. Draft a short, friendly text message (under 320 characters) and a short email (under 120 words) offering our maintenance plan to a customer whose repair was just completed.\n\nCompany: [business name], serving [towns or service area]\nCustomer first name: [first name]\nWhat we repaired and when: [repair description], [job date]\nEquipment and approximate age: [equipment], [age]\nPlan details you may use (and nothing else): [plan name], [price], [visits per year], [what's included], [any real member benefits]\nReply contact: [phone or email]\n\nMention the specific repair in one sentence, explain what the plan does in plain words, and end with one easy next step such as replying YES. No pressure, no fake urgency, no invented discounts, savings figures or coverage not listed above. Output: TEXT: ... then EMAIL: Subject + body.",
+    "verification_note": "Prompt restricts content to supplied plan facts, sets length limits and demands a single soft call to action; a model would return a compliant text and email referencing the repair with no invented offers.",
+    "source_name": "HVAC maintenance-plan upsell guides (search results)",
+    "source_url": "https://www.simprogroup.com/blog/sell-hvac-maintenance-agreements",
+    "scores": {
+      "icp": 0.9,
+      "buildable": 0.9,
+      "specific": 0.85,
+      "original": 0.9,
+      "safety": 0.95,
+      "prompt_quality": 0.9
+    },
+    "weighted_score": 0.9,
+    "status": "queued"
+  },
+  {
+    "slug": "one-message-at-a-time-contact-limit",
+    "category": "ops",
+    "title": "Stop your automations from texting the same customer three times in a day",
+    "one_liner": "One shared 'last contacted' sheet that every reminder, follow-up and review request checks before sending, so a customer never gets a pile-up of messages. Anything held back is queued for a later day.",
+    "steps": [
+      "Create a Google Sheet or Airtable table with one row per customer: phone, last message date, last message type.",
+      "At the end of every existing automation, log each send to the sheet with the date and type.",
+      "Before each send, add a lookup step: if the customer was contacted within your chosen window (say 3 days), hold the message instead of sending.",
+      "Held messages go to a short queue ranked by priority (appointment reminders and replies first, promotions and review asks last), and release when the window clears.",
+      "Once a week, glance at the held list and cancel anything that no longer makes sense."
+    ],
+    "guardrail": "Appointment confirmations and direct replies to a customer always bypass the limit, and a person reviews the held queue weekly so nothing time-sensitive gets stuck.",
+    "tools": "Google Sheets or Airtable, Zapier, Make or n8n, Twilio or your email tool",
+    "prompt": "You are helping a small business set a contact-frequency policy for its automated customer messages. Based on the details below, write a one-page rule set an office manager can follow and a non-developer can build in Zapier, Make or n8n.\n\nBusiness type: [business type]\nAutomations that message customers: [e.g. appointment reminders, quote follow-ups, review requests, win-back emails]\nChannels used: [text, email]\nPreferred minimum gap between marketing-type messages: [number of days]\n\nOutput: (1) a priority ranking of the message types, (2) which types are exempt from the limit and why, (3) the exact columns for a 'last contacted' table, (4) the check to run before each send in plain if-then wording, and (5) what happens to held messages. Keep it under 300 words and do not recommend contacting anyone who has opted out.",
+    "verification_note": "Prompt asks for a bounded, structured policy from supplied inputs and explicitly respects opt-outs; a model would produce a coherent priority list, exemptions, table columns and if-then check.",
+    "source_name": "n8n Twilio + Cal.com follow-up template (logs interactions to avoid over-messaging)",
+    "source_url": "https://www.neura.market/workflow/handling-appointment-leads-and-follow-up-with-twilio-calcom-and-ai",
+    "scores": {
+      "icp": 0.85,
+      "buildable": 0.9,
+      "specific": 0.85,
+      "original": 0.85,
+      "safety": 0.95,
+      "prompt_quality": 0.9
+    },
+    "weighted_score": 0.88,
+    "status": "queued"
+  },
+  {
+    "slug": "duplicate-customer-record-cleanup",
+    "category": "ops",
+    "title": "Clean up duplicate customer records before you automate anything",
+    "one_liner": "A one-time sweep that flags likely duplicate customers in your CRM or job software and proposes which records to merge. You approve each merge; nothing is deleted without a click.",
+    "steps": [
+      "Export your customer list to a Google Sheet with name, phone, email, address and last job date.",
+      "Normalize phone numbers and emails with simple formulas, then group rows that share a phone, email or address.",
+      "An AI step reviews each group and labels it as same person, same household or different people, with a one-line reason.",
+      "You review the labels in the sheet and mark the ones to merge; merge them in your CRM yourself or with an import.",
+      "Keep a short rule for new records, such as search by phone before creating a customer, so duplicates stop returning."
+    ],
+    "guardrail": "A person approves every merge and the AI never edits the CRM, since a wrong merge can mix up two customers' history.",
+    "tools": "Google Sheets, your CRM or field-service software export, an AI model (Claude or ChatGPT)",
+    "prompt": "You are helping a small business clean up its customer list. Below is a group of records that share a phone number, email or address. Decide whether they are the same person, the same household, or different people.\n\nRecords:\n[paste 2-5 rows with name, phone, email, address, last job date]\n\nFor each group return: LABEL (same person / same household / different people / unsure), CONFIDENCE (high / medium / low), a one-sentence reason using only the data shown, and which record to keep as the primary (most recent job date, most complete fields). If the data is not enough to tell, say 'unsure' rather than guessing. Do not suggest deleting any record; only recommend merges for a human to approve.",
+    "verification_note": "Prompt limits the model to the shown rows, requires an 'unsure' option and forbids deletions; a model would return labelled groups with reasons and a suggested primary, no fabricated data.",
+    "source_name": "Service-business automation guides (duplicate client records as top prep task)",
+    "source_url": "https://sagnikbhattacharya.com/blog/ai-automation-service-business-workflows",
+    "scores": {
+      "icp": 0.85,
+      "buildable": 0.9,
+      "specific": 0.85,
+      "original": 0.85,
+      "safety": 0.95,
+      "prompt_quality": 0.9
+    },
+    "weighted_score": 0.88,
+    "status": "queued"
+  }
+]
