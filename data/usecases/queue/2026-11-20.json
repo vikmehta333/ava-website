@@ -1,0 +1,89 @@
+[
+  {
+    "slug": "license-and-insurance-expiry-register",
+    "category": "ops",
+    "title": "Never miss a license, permit or insurance renewal again",
+    "one_liner": "One sheet lists every license, certificate and policy your business must keep current. A daily check sends escalating reminders to the right person well before anything lapses.",
+    "steps": [
+      "List every license, permit, certification and insurance policy in a Google Sheet or Airtable: name, owner, expiry date, renewal link and who is responsible.",
+      "Run a daily scheduled check that finds anything expiring in 90, 60, 30 or 7 days, or already overdue.",
+      "An AI step writes a short reminder that names the item, the date, what renewing involves and the link, using only what is in the sheet.",
+      "Send it by email or text to the owner; if the 30-day reminder goes unanswered, copy the office manager.",
+      "When the renewal is done, a person enters the new expiry date and the item drops off the list."
+    ],
+    "guardrail": "The AI only restates what is in your register; a person confirms each renewal and enters the new date, so nothing is marked renewed automatically.",
+    "tools": "Google Sheets or Airtable, n8n, Zapier or Make, Gmail or Twilio, an AI model (Claude or ChatGPT)",
+    "prompt": "You write renewal reminders for a small business. Using only the facts below, write a short email (under 100 words) and a text (under 240 characters) reminding the owner of this item.\n\nBusiness: [business name]\nItem: [license, permit, certification or policy name]\nIssuer or provider: [issuer]\nExpiry date: [date]\nDays remaining: [number, negative if overdue]\nResponsible person: [first name]\nRenewal link or phone: [link or phone]\nWhat renewal usually requires: [e.g. proof of insurance, fee, continuing education hours]\n\nIf days remaining is 7 or fewer, or overdue, use a plainly urgent tone; otherwise stay calm and practical. Do not invent fees, penalties, deadlines or legal consequences that are not listed above. Output: TEXT: ... then EMAIL: Subject + body.",
+    "verification_note": "Prompt is bounded to supplied facts, adjusts tone by days remaining and forbids invented penalties; a model would return a compliant short text and email.",
+    "source_name": "n8n license/insurance renewal reminder templates and Google Sheets expiry-alert templates (search results)",
+    "source_url": "https://n8n.io/workflows/20108-send-license-and-insurance-renewal-reminders-by-sms-with-twilio/",
+    "scores": {
+      "icp": 0.9,
+      "buildable": 0.95,
+      "specific": 0.9,
+      "original": 0.9,
+      "safety": 0.95,
+      "prompt_quality": 0.9
+    },
+    "weighted_score": 0.92,
+    "status": "queued"
+  },
+  {
+    "slug": "missing-document-chaser-for-new-clients",
+    "category": "cs",
+    "title": "Chase missing onboarding documents without nagging",
+    "one_liner": "After a new client or patient books, a checklist tracks what you still need from them. A polite, specific reminder asks only for the missing items, and your staff approve anything that goes out.",
+    "steps": [
+      "Keep a simple checklist per new client in a sheet or CRM: each required document or form and whether it has arrived.",
+      "Each morning, find clients with open items who are within a few days of their first appointment or deadline.",
+      "An AI step drafts a short message naming only the missing items, why each is needed and the date it is needed by.",
+      "Staff review the draft in a queue, then it sends from your normal email or text number.",
+      "When a document arrives, staff tick it off so the next reminder shrinks or stops."
+    ],
+    "guardrail": "Staff approve every message, and the prompt takes item names only, never document contents, ID numbers, medical or financial details.",
+    "tools": "Google Sheets, Airtable or your CRM, Zapier, Make or n8n, Gmail or Twilio, an AI model (Claude or ChatGPT)",
+    "prompt": "You write polite, firm follow-ups for a small [business type, e.g. law office, dental practice, accounting firm]. Draft one short email (under 110 words) and one text (under 260 characters) asking a new client for the documents still missing.\n\nBusiness name: [business name]\nClient first name: [first name]\nFirst appointment or deadline: [date]\nMissing items (names only) and why each matters: [item 1 - reason], [item 2 - reason]\nHow to send them: [secure upload link, patient portal or office address]\nOffice contact: [phone or email]\n\nList only the missing items, say the date they are needed by, and keep the tone helpful, not blaming. Do not request or mention any sensitive details such as ID numbers, diagnoses, financial figures or case facts, and never ask for documents by plain email if a secure method is given above. Output: TEXT: ... then EMAIL: Subject + body.",
+    "verification_note": "Prompt takes item names only, bans sensitive details and routes to a secure channel; a model would produce a concise, non-blaming reminder listing just the missing items.",
+    "source_name": "ChatGPT onboarding / missing-document follow-up prompt guides for law firms and agencies (search results)",
+    "source_url": "https://www.lilachbullock.com/chatgpt-prompts-for-solicitors-and-law-firms/",
+    "scores": {
+      "icp": 0.9,
+      "buildable": 0.9,
+      "specific": 0.85,
+      "original": 0.9,
+      "safety": 0.9,
+      "prompt_quality": 0.9
+    },
+    "weighted_score": 0.89,
+    "status": "queued"
+  },
+  {
+    "slug": "vendor-bill-emails-to-approval-queue",
+    "category": "ops",
+    "title": "Turn vendor bills in your inbox into a ready-to-approve list",
+    "one_liner": "Bills that arrive as email attachments get read, logged in a sheet and flagged if something looks off. You approve payment; nothing is paid automatically.",
+    "steps": [
+      "Set a rule that forwards emails with PDF bills from vendors to a dedicated address or folder.",
+      "An automation extracts vendor, invoice number, amount, due date and any PO number from each attachment into a row in a payables sheet.",
+      "An AI step compares the row to your vendor list and past bills, flagging a new vendor, a changed amount, a duplicate invoice number or changed bank details.",
+      "Each morning, you or your bookkeeper get a short list sorted by due date, with flagged rows on top.",
+      "You approve or reject each row yourself, then pay through your normal bank or accounting tool."
+    ],
+    "guardrail": "The automation never pays or changes payment details; the owner or bookkeeper approves every bill, and any flagged row must be verified with the vendor by phone.",
+    "tools": "Gmail or Outlook, Google Sheets or Airtable, Zapier, Make or n8n, a document-extraction step or AI model (Claude or ChatGPT), QuickBooks or Xero for final entry",
+    "prompt": "You review vendor bills for a small business. Compare the new bill with the history and return a short check.\n\nNew bill: vendor [vendor name], invoice number [number], amount [amount], due date [date], PO number [PO or none], payment instructions [same as on file / changed]\nVendor history (last 3 bills): [invoice numbers, amounts, dates]\nApproved vendor list note: [on list / not on list]\n\nOutput exactly: (1) STATUS: OK or REVIEW, (2) up to 3 bullet reasons if REVIEW, limited to these checks: new vendor, duplicate invoice number, amount more than [percent]% different from history, changed payment instructions, missing due date, (3) one suggested next step for a person. Use only the facts above, do not guess missing values, and never recommend paying anything.",
+    "verification_note": "Prompt restricts output to a fixed check list on supplied facts and never recommends payment; a model would return a clear OK/REVIEW status with reasons.",
+    "source_name": "AI accounts-payable and bookkeeping automation guides for small businesses (search results)",
+    "source_url": "https://www.accountingseed.com/resource/blog/ai-in-accounts-payable/",
+    "scores": {
+      "icp": 0.85,
+      "buildable": 0.85,
+      "specific": 0.85,
+      "original": 0.9,
+      "safety": 0.9,
+      "prompt_quality": 0.9
+    },
+    "weighted_score": 0.87,
+    "status": "queued"
+  }
+]
