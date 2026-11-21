@@ -1,0 +1,60 @@
+[
+ {
+  "slug": "high-value-job-thank-you-call-list",
+  "category": "cs",
+  "title": "Put a personal thank-you call on the owner's list after every big job",
+  "one_liner": "When a job above your chosen dollar amount is marked complete, a task lands on the owner's list with the customer's details and a short talking-points note, so the biggest customers get a real call instead of a template email.",
+  "steps": [
+   "Pick a threshold (for example, any job over [dollar amount]) and note where completed jobs are recorded: your field-service tool, invoicing app or a Google Sheet.",
+   "When a job is marked complete and clears the threshold, your automation tool creates a task due in 2 business days and assigns it to the owner or lead.",
+   "An AI step reads the job notes and writes 3 short talking points for the call: what was done, one thing to ask about, and any follow-up the notes mention.",
+   "Task is delivered by email or Slack with the customer's phone number and the talking points attached.",
+   "After the call the owner ticks the task and adds one line on what the customer said; tasks left open after 5 days are flagged to the owner."
+  ],
+  "guardrail": "The AI only prepares notes; a person makes the call and decides what to offer, and nothing is sent to the customer automatically.",
+  "tools": "Your job or invoicing tool (Jobber, Housecall Pro, ServiceM8, QuickBooks or a Google Sheet), Zapier, Make or n8n, Gmail or Slack, an AI model (Claude or ChatGPT)",
+  "prompt": "You prepare short talking points for a business owner who is about to phone a customer after a completed job. Use only the facts below.\n\nBusiness: [business name]\nCustomer first name: [first name]\nJob type: [e.g. full furnace replacement]\nJob date: [date]\nTechnician or crew: [name]\nJob notes: [paste notes]\nOpen items mentioned in notes: [e.g. warranty paperwork, follow-up visit, none]\n\nWrite exactly 3 bullets, each under 25 words: (1) thank them and name what was done, (2) one open question to ask about how it went, (3) one follow-up from the notes if any, otherwise a gentle check that everything is working. Then add one line: 'Do not mention price, discounts or upsells on this call unless the customer raises them.' Do not invent details that are not in the notes.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.95,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9
+  },
+  "source_name": "Zapier 'Help business owners ensure follow-up for high-value jobs' template (search results)",
+  "source_url": "https://zapier.com/templates/details/help-business-owners-ensure-follow-up-for-high-value-jobs",
+  "verification_note": "Prompt is bounded to supplied job facts, fixes output at 3 short bullets and forbids price or upsell talk; a model would return a compliant brief.",
+  "weighted_score": 0.91,
+  "status": "queued"
+ },
+ {
+  "slug": "stalled-client-onboarding-daily-digest",
+  "category": "ops",
+  "title": "See which new clients are stuck in onboarding before they go cold",
+  "one_liner": "One daily email lists every new client who is behind on onboarding, what is blocking them and who on your team should nudge them, so nobody quietly slips between 'signed' and 'started'.",
+  "steps": [
+   "Keep a Google Sheet with one row per new client: start date, the checklist steps and a done date for each (contract, payment, intake form, kickoff booked).",
+   "A daily scheduled run finds clients whose next step is past its target date, for example 3 days after signing for the intake form.",
+   "An AI step writes one line per stalled client: the blocking step, days stalled and a suggested next nudge, using only the sheet's data.",
+   "Send the digest to the owner or account manager each morning; if nothing is stalled, send a short 'all clear' so a missing email means the check failed.",
+   "A person contacts the client and updates the sheet; items stalled over 7 days are marked for the owner."
+  ],
+  "guardrail": "The digest only tells your team who to nudge; no message goes to a client unless a person sends it.",
+  "tools": "Google Sheets or Airtable, n8n, Zapier or Make, Gmail or Slack, an AI model (Claude or ChatGPT)",
+  "prompt": "You write a morning onboarding digest for a small business owner. Using only the rows below, list each client whose onboarding is behind.\n\nBusiness: [business name]\nToday's date: [date]\nClient rows (name | signed date | last completed step | next step | next step target date | owner on our team):\n[paste rows]\n\nFor each client whose next step target date is before today, write one line: client name, the blocked step, days past target, and a suggested nudge in under 15 words (e.g. 'Call to walk through the intake form'). Sort by days past target, most overdue first. Mark anyone more than 7 days past target with [ESCALATE]. If no client is behind, output only: 'All clear: no stalled onboarding today.' Do not guess reasons for delays and do not draft messages to clients.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.95,
+   "specific": 0.85,
+   "original": 0.9,
+   "safety": 0.95,
+   "prompt_quality": 0.9
+  },
+  "source_name": "n8n 'Manage client onboarding and project handoff with Google Sheets and Gmail' template (search results)",
+  "source_url": "https://n8n.io/workflows/19014-manage-client-onboarding-and-project-handoff-with-google-sheets-and-gmail/",
+  "verification_note": "Prompt is limited to supplied rows, has explicit sort, escalate and all-clear rules and bans guessed reasons; a model would return a compliant digest.",
+  "weighted_score": 0.91,
+  "status": "queued"
+ }
+]
