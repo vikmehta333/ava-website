@@ -1,0 +1,89 @@
+[
+ {
+  "slug": "private-satisfaction-check-with-low-score-alert",
+  "category": "cs",
+  "title": "Hear about an unhappy customer privately before they post a review",
+  "one_liner": "A day after each job, customers get a one-question rating by text or email. Any low score pings the owner with the customer's comment and a suggested call plan, so you can fix it before it turns into a public review.",
+  "steps": [
+   "Add a one-question check-in (1 to 5, plus an optional comment) as a Typeform, Google Form or simple link, and note where completed jobs are logged.",
+   "The day after a job is marked complete, your automation tool sends the customer the check-in by text or email.",
+   "When a reply comes in at or below your chosen score (for example 3), an AI step summarizes the comment in one sentence and drafts a call plan for the owner.",
+   "The owner gets the alert by Slack, text or email with the customer's name, phone number, score and comment.",
+   "A person calls the customer, and the result is logged in the sheet; alerts not marked handled within 1 business day are re-sent to the owner."
+  ],
+  "guardrail": "The AI only summarizes and suggests; the owner makes the call and decides any make-good, and nothing is sent to the customer automatically beyond the check-in itself.",
+  "tools": "Your job or booking tool (Jobber, Housecall Pro, Square or a Google Sheet), Typeform or Google Forms, Zapier, Make or n8n, Slack or Gmail, an AI model (Claude or ChatGPT)",
+  "prompt": "You help a small business owner respond quickly to an unhappy customer. Use only the facts below.\n\nBusiness: [business name]\nCustomer first name: [first name]\nJob type: [e.g. water heater install]\nJob date: [date]\nScore (1-5): [score]\nCustomer comment: [paste comment, or 'none']\n\nWrite:\n1. One sentence summarizing what the customer is unhappy about, in neutral words. If there is no comment, write 'No comment left; ask what went wrong.'\n2. Three short bullets for the owner's call: how to open (thank them, acknowledge the score), one question to understand what happened, and one thing to confirm before ending the call.\n3. A line: 'Do not offer refunds, credits or admit fault on this call until you have checked the job record.'\nDo not guess causes that are not in the comment and do not draft any message to the customer.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9
+  },
+  "source_name": "Zapier/n8n post-delivery CSAT and low-score alert templates (search results)",
+  "source_url": "https://n8n.io/workflows/15237-send-post-delivery-csat-surveys-and-log-responses-with-gmail-google-sheets-and-typeform/",
+  "verification_note": "Prompt is bounded to supplied facts, fixes a three-part output and bans fault admission and customer messaging; a model would return a compliant call brief.",
+  "weighted_score": 0.89,
+  "status": "queued"
+ },
+ {
+  "slug": "weekly-lead-source-tally-from-how-did-you-hear",
+  "category": "marketing",
+  "title": "Find out which marketing is really bringing in customers, every Monday",
+  "one_liner": "A weekly email counts new inquiries by the source customers told you ('Google', 'a friend', 'Facebook') and by the source your form captured, and points out where the two disagree.",
+  "steps": [
+   "Add a required 'How did you hear about us?' dropdown to your contact or booking form, and log every inquiry to a Google Sheet with the date, the self-reported answer and the page or UTM source if your form captures it.",
+   "Every Monday morning the automation pulls the last 7 days of rows from the sheet.",
+   "An AI step groups the rows by source, counts them, notes any source that jumped or dropped versus the prior week, and flags rows where the two sources disagree or the answer is blank.",
+   "The summary goes to the owner by email or Slack, with the raw counts table attached.",
+   "The owner reviews it, and once a month compares the counts to booked jobs before changing any ad or marketing spend."
+  ],
+  "guardrail": "The tally is a rough guide built on what customers remember; a person decides any budget change and checks it against booked jobs.",
+  "tools": "Google Forms or your website form, Google Sheets, n8n, Zapier or Make, Gmail or Slack, an AI model (Claude or ChatGPT)",
+  "prompt": "You write a short weekly lead-source summary for a small business owner. Use only the data below and do the counting carefully.\n\nBusiness: [business name]\nWeek: [start date] to [end date]\nThis week's inquiries (date | self-reported source | captured source or UTM | booked yes/no/unknown):\n[paste rows]\nLast week's counts by self-reported source: [paste counts, or 'none']\n\nOutput:\n1. A table of self-reported source with count this week and last week.\n2. Two or three plain sentences on what stands out (a source that rose or fell by 2 or more, or most inquiries from one source).\n3. A list of rows where self-reported and captured sources disagree or the answer is blank, with the date only.\n4. One line: 'Small numbers move a lot week to week; check against booked jobs before changing spend.'\nDo not recommend budget changes, do not guess sources for blank rows, and do not invent totals; if there are fewer than 5 inquiries, say the sample is too small to read.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9
+  },
+  "source_name": "n8n UTM marketing attribution reports with Google Sheets, GPT-4o and Gmail template (search results)",
+  "source_url": "https://n8n.io/workflows/8513-utm-marketing-attribution-reports-with-google-sheets-gpt-4o-and-gmail/",
+  "verification_note": "Prompt restricts output to supplied rows, sets a small-sample rule and bans budget advice; a model would return a compliant summary.",
+  "weighted_score": 0.89,
+  "status": "queued"
+ },
+ {
+  "slug": "weekly-owner-receivables-snapshot",
+  "category": "ops",
+  "title": "See who owes you money in one short email every Friday",
+  "one_liner": "A weekly email lists unpaid invoices grouped by how overdue they are, with the biggest balances first and a one-line note on each, so the owner knows exactly who to call before the weekend.",
+  "steps": [
+   "Export or sync your open invoices to a Google Sheet (customer, invoice number, amount, due date, last contact date) from QuickBooks, Xero, FreshBooks or your job tool.",
+   "Every Friday morning the automation reads the open invoices and works out days overdue.",
+   "An AI step groups invoices into current, 1-30, 31-60 and 60+ days overdue, totals each group and writes one line per invoice over 30 days using only the sheet's notes.",
+   "The snapshot is emailed to the owner or bookkeeper with the invoice table attached.",
+   "A person decides who to call or what to escalate and updates the last-contact date in the sheet."
+  ],
+  "guardrail": "The snapshot only reports; no reminder, late fee or collections message goes to a customer unless a person sends it.",
+  "tools": "QuickBooks, Xero or FreshBooks (or a Google Sheet), n8n, Zapier or Make, Gmail, an AI model (Claude or ChatGPT)",
+  "prompt": "You prepare a weekly unpaid-invoice snapshot for a small business owner. Use only the rows below and calculate carefully.\n\nBusiness: [business name]\nToday's date: [date]\nOpen invoices (customer | invoice number | amount | due date | last contact date | notes):\n[paste rows]\n\nOutput:\n1. A table with four buckets: not yet due, 1-30 days overdue, 31-60 days overdue, over 60 days overdue. Show the invoice count and dollar total for each.\n2. For every invoice more than 30 days overdue, one line: customer, invoice number, amount, days overdue, days since last contact, and a suggested next step in under 12 words (for example 'Owner phone call').\n3. Sort lines largest amount first.\nIf there are no overdue invoices, output only: 'Nothing overdue this week.' Do not draft messages to customers, do not suggest late fees or legal action, and do not guess reasons for non-payment.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.8,
+   "safety": 0.95,
+   "prompt_quality": 0.9
+  },
+  "source_name": "n8n invoice reminder templates with weekly digest and Reminder Log (search results)",
+  "source_url": "https://n8n.io/workflows/18797",
+  "verification_note": "Prompt is limited to supplied rows with explicit bucket, sort and empty rules and bans collections advice; a model would return a compliant snapshot.",
+  "weighted_score": 0.89,
+  "status": "queued"
+ }
+]
