@@ -1,0 +1,89 @@
+[
+ {
+  "slug": "review-reply-drafts-posted-only-after-you-approve",
+  "category": "marketing",
+  "title": "Answer every new Google review without posting anything you haven't read",
+  "one_liner": "Each new Google review lands in your Slack or inbox with a short reply already drafted in your voice. You tap approve or edit, and only then does it go live.",
+  "steps": [
+   "Create a sheet with your business name, how you sign off, and a few phrases you like and never use.",
+   "Your automation tool checks Google Business Profile for new reviews that have no owner reply yet.",
+   "An AI step drafts a short, specific reply and tags the review as praise, mixed or complaint.",
+   "The draft goes to you in Slack or email with the review text and Approve and Edit options; complaints are flagged so you read them first.",
+   "After you approve, the reply is posted and the review and reply are logged in the sheet."
+  ],
+  "guardrail": "Nothing is posted until a person approves it, and complaints are never answered by the AI alone.",
+  "tools": "Google Business Profile, Zapier, Make or n8n, Slack or Gmail, Google Sheets, an AI model (Claude or ChatGPT)",
+  "prompt": "You draft public replies to Google reviews for a small local business. Use only the facts below.\n\nBusiness: [business name]\nOwner sign-off: [e.g. 'Maria, owner']\nVoice notes: [e.g. warm, plain, no exclamation marks]\nWords or phrases to avoid: [list]\nStar rating: [1-5]\nReviewer first name: [name]\nReview text: [paste review]\n\nWrite:\n1. A reply of 2 to 4 sentences. Thank the reviewer by first name, mention one specific detail they raised, and sign off as given.\n2. If the rating is 3 or below, do not apologize for specifics you cannot confirm, do not offer refunds or credits, and invite them to call [phone] or email [email] so you can look into it.\n3. A tag on its own line: PRAISE, MIXED or COMPLAINT.\nNever invent details about the job, never mention prices, and never reveal private information beyond what the reviewer wrote.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.8,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9
+  },
+  "source_name": "n8n and Zapier Google review reply templates with Slack approval (search results)",
+  "source_url": "https://n8n.io/workflows/19885-reply-to-google-reviews-and-send-weekly-insights-with-openai-and-slack/",
+  "verification_note": "Prompt restricts output to supplied facts, fixes length and tag, and forbids invented details, refunds and specifics on low ratings; a model would return a compliant draft.",
+  "weighted_score": 0.89,
+  "status": "queued"
+ },
+ {
+  "slug": "daily-check-for-bookings-missing-key-details",
+  "category": "ops",
+  "title": "Catch bookings that are missing an address, phone or job detail before the day arrives",
+  "one_liner": "Every afternoon a check scans tomorrow's bookings for missing details and drafts a short message asking the customer for exactly what is missing, so nobody shows up to an incomplete job.",
+  "steps": [
+   "List the details every booking must have (for example phone, service address, job type, access notes) as columns in your booking sheet or tool.",
+   "Each afternoon, your automation tool pulls tomorrow's bookings and checks which required fields are empty.",
+   "For each incomplete booking, an AI step drafts a short text or email asking only for the missing items.",
+   "You or your office manager get one digest of the drafts and approve them in a batch.",
+   "Replies are added to the booking by hand or by your tool, and anything still incomplete the next morning is flagged to a person."
+  ],
+  "guardrail": "Messages go out only after a person approves the batch, and the AI never fills in a missing detail by guessing.",
+  "tools": "Your booking tool or Google Sheet, Zapier, Make or n8n, Gmail or an SMS tool, an AI model (Claude or ChatGPT)",
+  "prompt": "You draft short messages asking a customer for missing booking details. Use only the facts below.\n\nBusiness: [business name]\nCustomer first name: [first name]\nAppointment: [service] on [date] at [time]\nDetails we already have: [list]\nDetails still missing: [e.g. service address, gate code]\nChannel: [text or email]\nSender name: [name]\n\nWrite one message: friendly, under 50 words for text or under 90 words for email, ask only for the missing items as a short list, say why we need them in one clause, and ask them to reply before [deadline].\nDo not ask for anything not in the missing list, do not request payment or card details, and do not change the appointment time.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9
+  },
+  "source_name": "Zapier missing-booking-information daily check templates (search results)",
+  "source_url": "https://zapier.com/templates/details/4bc0def3b7c593f9dbcb988defc81c6d81418f06edb07d69353d24e5d28650dc",
+  "verification_note": "Prompt is scoped to the missing list, bans payment requests and schedule changes, and sets length limits; a model would return a compact on-task message.",
+  "weighted_score": 0.89,
+  "status": "queued"
+ },
+ {
+  "slug": "completed-jobs-with-no-invoice-weekly-check",
+  "category": "ops",
+  "title": "Find finished jobs that never got an invoice",
+  "one_liner": "Every Friday, a check compares completed jobs against invoices sent and lists any job that is done but not billed, so money doesn't sit uncollected because someone forgot.",
+  "steps": [
+   "Make sure your job log and your invoice list each carry a shared job or customer ID, in a sheet or your field-service and accounting tools.",
+   "Every Friday, your automation tool pulls jobs marked complete in the last 30 days and the invoices issued for the same period.",
+   "It matches them and lists completed jobs with no matching invoice.",
+   "An AI step turns the list into a short owner email with the job, customer, date and a one-line reason to check, plus a suggested note for whoever bills.",
+   "A person confirms each job (some may be warranty or no-charge) and sends or voids the invoice; the sheet records the outcome."
+  ],
+  "guardrail": "The AI only reports mismatches; a person decides whether each job should be billed, and no invoice is created or sent automatically.",
+  "tools": "Jobber, Housecall Pro or a Google Sheet job log, QuickBooks or your invoicing tool, Zapier, Make or n8n, Gmail, an AI model (Claude or ChatGPT)",
+  "prompt": "You prepare a Friday email for a small business owner about completed jobs that have no invoice. Use only the rows below.\n\nBusiness: [business name]\nToday: [date]\nCompleted jobs with no matching invoice (job ID, customer, job type, completion date, assigned to):\n[paste rows]\n\nWrite:\n1. A one-sentence opener stating how many jobs are unbilled.\n2. A table sorted oldest first with job ID, customer, job type, days since completion.\n3. For jobs older than [14] days, add the note 'Check first: older than [14] days'.\n4. A closing line: 'Confirm each job before billing; some may be warranty or no-charge.'\nDo not guess amounts, do not say a customer owes money, and if the list is empty write 'No unbilled completed jobs this week.'",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9
+  },
+  "source_name": "n8n and Zapier missing-payment and unbilled-booking alert templates (search results)",
+  "source_url": "https://zapier.com/templates/details/send-missing-payment-alert-for-booked-services-to-invoicing-de3180219a1e",
+  "verification_note": "Prompt works only from pasted rows, fixes the table and empty-list behaviour and forbids guessing amounts; a model would return a compliant summary.",
+  "weighted_score": 0.89,
+  "status": "queued"
+ }
+]
