@@ -26,7 +26,8 @@
   "source_url": "https://zapier.com/templates/details/help-business-owners-ensure-follow-up-for-high-value-jobs",
   "verification_note": "Prompt is bounded to supplied job facts, fixes output at 3 short bullets and forbids price or upsell talk; a model would return a compliant brief.",
   "weighted_score": 0.91,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24475
  },
  {
   "slug": "stalled-client-onboarding-daily-digest",
@@ -55,6 +56,7 @@
   "source_url": "https://n8n.io/workflows/19014-manage-client-onboarding-and-project-handoff-with-google-sheets-and-gmail/",
   "verification_note": "Prompt is limited to supplied rows, has explicit sort, escalate and all-clear rules and bans guessed reasons; a model would return a compliant digest.",
   "weighted_score": 0.91,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24476
  }
 ]

@@ -26,7 +26,8 @@
   "source_url": "https://n8n.io/workflows/19885-reply-to-google-reviews-and-send-weekly-insights-with-openai-and-slack/",
   "verification_note": "Prompt restricts output to supplied facts, fixes length and tag, and forbids invented details, refunds and specifics on low ratings; a model would return a compliant draft.",
   "weighted_score": 0.89,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24482
  },
  {
   "slug": "daily-check-for-bookings-missing-key-details",
@@ -55,7 +56,8 @@
   "source_url": "https://zapier.com/templates/details/4bc0def3b7c593f9dbcb988defc81c6d81418f06edb07d69353d24e5d28650dc",
   "verification_note": "Prompt is scoped to the missing list, bans payment requests and schedule changes, and sets length limits; a model would return a compact on-task message.",
   "weighted_score": 0.89,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24483
  },
  {
   "slug": "completed-jobs-with-no-invoice-weekly-check",
@@ -84,6 +86,7 @@
   "source_url": "https://zapier.com/templates/details/send-missing-payment-alert-for-booked-services-to-invoicing-de3180219a1e",
   "verification_note": "Prompt works only from pasted rows, fixes the table and empty-list behaviour and forbids guessing amounts; a model would return a compliant summary.",
   "weighted_score": 0.89,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24484
  }
 ]

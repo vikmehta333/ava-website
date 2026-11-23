@@ -26,7 +26,8 @@
   "source_url": "https://n8n.io/workflows/15237-send-post-delivery-csat-surveys-and-log-responses-with-gmail-google-sheets-and-typeform/",
   "verification_note": "Prompt is bounded to supplied facts, fixes a three-part output and bans fault admission and customer messaging; a model would return a compliant call brief.",
   "weighted_score": 0.89,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24478
  },
  {
   "slug": "weekly-lead-source-tally-from-how-did-you-hear",
@@ -55,7 +56,8 @@
   "source_url": "https://n8n.io/workflows/8513-utm-marketing-attribution-reports-with-google-sheets-gpt-4o-and-gmail/",
   "verification_note": "Prompt restricts output to supplied rows, sets a small-sample rule and bans budget advice; a model would return a compliant summary.",
   "weighted_score": 0.89,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24479
  },
  {
   "slug": "weekly-owner-receivables-snapshot",
@@ -84,6 +86,7 @@
   "source_url": "https://n8n.io/workflows/18797",
   "verification_note": "Prompt is limited to supplied rows with explicit bucket, sort and empty rules and bans collections advice; a model would return a compliant snapshot.",
   "weighted_score": 0.89,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24480
  }
 ]

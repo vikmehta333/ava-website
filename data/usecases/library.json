@@ -1,7 +1,7 @@
 {
  "generated_at": "2026-11-08",
  "hub_page_id": 24305,
- "count": 74,
+ "count": 82,
  "items": [
   {
    "id": 24352,
@@ -676,7 +676,71 @@
    "page_id": 24448,
    "published_at": "2026-11-14T09:00:35",
    "source_name": "DEV Community / Zapier & n8n low-stock alert templates (via WebSearch)"
+  },
+  {
+   "slug": "completed-jobs-with-no-invoice-weekly-check",
+   "title": "Find finished jobs that never got an invoice",
+   "category": "ops",
+   "page_id": 24484,
+   "published_at": "2026-11-23T09:00:52",
+   "source_name": "n8n and Zapier missing-payment and unbilled-booking alert templates (search results)"
+  },
+  {
+   "slug": "daily-check-for-bookings-missing-key-details",
+   "title": "Catch bookings that are missing an address, phone or job detail before the day arrives",
+   "category": "ops",
+   "page_id": 24483,
+   "published_at": "2026-11-23T09:00:30",
+   "source_name": "Zapier missing-booking-information daily check templates (search results)"
+  },
+  {
+   "slug": "high-value-job-thank-you-call-list",
+   "title": "Put a personal thank-you call on the owner's list after every big job",
+   "category": "cs",
+   "page_id": 24475,
+   "published_at": "2026-11-21T09:00:28",
+   "source_name": "Zapier 'Help business owners ensure follow-up for high-value jobs' template (search results)"
+  },
+  {
+   "slug": "private-satisfaction-check-with-low-score-alert",
+   "title": "Hear about an unhappy customer privately before they post a review",
+   "category": "cs",
+   "page_id": 24478,
+   "published_at": "2026-11-22T09:00:35",
+   "source_name": "Zapier/n8n post-delivery CSAT and low-score alert templates (search results)"
+  },
+  {
+   "slug": "review-reply-drafts-posted-only-after-you-approve",
+   "title": "Answer every new Google review without posting anything you haven't read",
+   "category": "marketing",
+   "page_id": 24482,
+   "published_at": "2026-11-23T09:00:08",
+   "source_name": "n8n and Zapier Google review reply templates with Slack approval (search results)"
+  },
+  {
+   "slug": "stalled-client-onboarding-daily-digest",
+   "title": "See which new clients are stuck in onboarding before they go cold",
+   "category": "ops",
+   "page_id": 24476,
+   "published_at": "2026-11-21T09:00:59",
+   "source_name": "n8n 'Manage client onboarding and project handoff with Google Sheets and Gmail' template (search results)"
+  },
+  {
+   "slug": "weekly-lead-source-tally-from-how-did-you-hear",
+   "title": "Find out which marketing is really bringing in customers, every Monday",
+   "category": "marketing",
+   "page_id": 24479,
+   "published_at": "2026-11-22T09:00:36",
+   "source_name": "n8n UTM marketing attribution reports with Google Sheets, GPT-4o and Gmail template (search results)"
+  },
+  {
+   "slug": "weekly-owner-receivables-snapshot",
+   "title": "See who owes you money in one short email every Friday",
+   "category": "ops",
+   "page_id": 24480,
+   "published_at": "2026-11-22T09:00:36",
+   "source_name": "n8n invoice reminder templates with weekly digest and Reminder Log (search results)"
   }
  ],
- "refreshed_from_live_at": "2026-11-20T09:00:59"
+ "refreshed_from_live_at": "2026-11-23T11:08:17"
 }
