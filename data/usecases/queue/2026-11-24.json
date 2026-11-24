@@ -1,0 +1,118 @@
+[
+ {
+  "slug": "storm-and-cold-snap-heads-up-texts-for-approval",
+  "category": "marketing",
+  "title": "Send past customers a useful heads-up when bad weather is coming, after you approve it",
+  "one_liner": "When the forecast crosses a threshold you set, a draft heads-up message is prepared for the customers in the affected area. You review the draft and the list, then send it yourself.",
+  "steps": [
+   "Decide your triggers in a sheet, such as a freeze warning for heating and plumbing work, or hail or high wind for roofing and tree work, plus the service radius.",
+   "Your automation tool checks a weather service on a schedule and stops quietly when nothing crosses your threshold.",
+   "When a threshold is hit, it filters your customer sheet to people in the area who have agreed to receive texts or email from you.",
+   "An AI step drafts one short, helpful message tied to your service, with a call or booking link and an opt-out line.",
+   "You get the draft and the recipient count for review; a person approves before anything is sent."
+  ],
+  "guardrail": "Nothing is sent without a person approving the message and the recipient list, and only customers who opted in are ever included.",
+  "tools": "Weather service (National Weather Service or OpenWeather), Zapier, Make or n8n, Google Sheets, an SMS or email tool, an AI model (Claude or ChatGPT)",
+  "prompt": "You draft a short weather heads-up message from a local service business to its past customers. Use only the facts below.\n\nBusiness: [business name]\nServices: [e.g. furnace repair, roof inspection]\nWeather event: [e.g. hard freeze expected Thursday night]\nArea: [town or neighborhoods]\nChannel: [text or email]\nHow to reach us: [phone or booking link]\nSender name: [name]\nOpt-out wording: [e.g. Reply STOP to opt out]\n\nWrite one message: under 45 words for text or under 90 for email. Start with the event and when it is expected, give one practical tip a homeowner can do themselves, then mention that we can help and how to reach us. End with the opt-out wording.\nDo not claim urgency beyond the event given, do not quote prices or discounts, do not promise same-day availability, and do not predict damage.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.85,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.9
+  },
+  "source_name": "n8n weather-alert-to-customer SMS templates (search results)",
+  "source_url": "https://n8n.io/workflows/20237-notify-you-of-hail-wind-and-weather-alerts-matched-to-past-customers-via-noaa-and-twilio/",
+  "verification_note": "Prompt is limited to supplied event and contact facts, caps length, requires opt-out and bans prices, availability promises and damage predictions; a model would return a compliant short message.",
+  "weighted_score": 0.88,
+  "status": "queued"
+ },
+ {
+  "slug": "aftercare-instructions-sent-after-every-visit",
+  "category": "cs",
+  "title": "Send the right aftercare instructions after every appointment, not just some of them",
+  "one_liner": "When a visit is marked complete, the customer gets your approved care instructions for that exact service, in a short friendly message with a number to call if something seems off.",
+  "steps": [
+   "Write your care instructions once per service in a sheet, and have the owner or practitioner approve the wording.",
+   "Add a catch-all row so every service type has instructions, including unusual or urgent visits.",
+   "When an appointment is marked complete, your automation tool looks up that service's approved instructions.",
+   "An AI step wraps them in a short personal message and does not change the instructions themselves.",
+   "Any visit with no matching row is sent to a person to handle by hand, and the message is logged."
+  ],
+  "guardrail": "The AI may only reuse your approved instruction text word for word and never gives new advice; anything unmatched goes to a person.",
+  "tools": "Your booking tool or Google Sheet, Zapier, Make or n8n, Gmail or an SMS tool, an AI model (Claude or ChatGPT)",
+  "prompt": "You write a short after-visit message for a customer. Use only the facts below.\n\nBusiness: [business name]\nCustomer first name: [first name]\nService today: [service]\nApproved instructions (copy these exactly, do not reword or add to them):\n[paste approved instructions]\nIf something seems wrong, contact: [phone or email]\nSender name: [name]\n\nWrite one message: a one-line thank-you using the first name, then the approved instructions as a short list exactly as given, then one sentence saying to contact us at the number above if anything seems off. Keep it under 120 words beyond the instructions.\nDo not add medical, safety or product advice that is not in the approved instructions, do not mention prices, and do not diagnose or reassure about symptoms.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.9
+  },
+  "source_name": "Zapier aftercare email templates for salons and clinics (search results)",
+  "source_url": "https://zapier.com/templates/details/send-aftercare-email-automatically-to-clients-after-appointments-bbb7ca239844",
+  "verification_note": "Prompt copies only pasted approved text, bans added advice and symptom reassurance, and sets length; a model would return a compliant message.",
+  "weighted_score": 0.89,
+  "status": "queued"
+ },
+ {
+  "slug": "missing-timesheet-nudges-before-payroll-day",
+  "category": "ops",
+  "title": "Chase missing timesheets before payroll day instead of on it",
+  "one_liner": "The day before payroll, a check compares your roster against submitted hours, nudges each person who is missing, and gives you one list of who is still outstanding.",
+  "steps": [
+   "Keep a roster sheet with each person's name, contact and how they submit hours (form, app or sheet).",
+   "The afternoon before payroll closes, your automation tool compares the roster to the hours submitted this period.",
+   "An AI step drafts a brief, polite reminder for each person who is missing, naming the period and how to submit.",
+   "Reminders go out after the office manager approves the batch, or automatically if you choose and the wording is fixed.",
+   "Next morning anyone still missing is listed for the owner to handle personally."
+  ],
+  "guardrail": "The AI only reminds people to submit; it never fills in, estimates or edits hours, and a person decides what to do about anyone still missing.",
+  "tools": "Google Sheets or your time-tracking tool, Zapier, Make or n8n, Slack, Gmail or SMS, an AI model (Claude or ChatGPT)",
+  "prompt": "You draft a short reminder asking a team member to submit their hours. Use only the facts below.\n\nBusiness: [business name]\nEmployee first name: [first name]\nPay period: [start date] to [end date]\nPayroll closes: [date and time]\nHow to submit: [link or instructions]\nDays missing, if known: [e.g. Thu and Fri]\nSender: [name]\n\nWrite one message under 50 words: friendly, state that hours for the period are not in yet, say the deadline and how to submit, and offer help from [contact] if they have trouble.\nDo not guess hours worked, do not mention pay amounts or discipline, and do not mention other employees.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9
+  },
+  "source_name": "Zapier missing-timesheet nudge templates (search results)",
+  "source_url": "https://zapier.com/templates/details/send-weekly-timesheet-reminders-to-missing-staff-c52f387b22c0",
+  "verification_note": "Prompt restricts output to deadline and submit instructions and bans guessed hours, pay and discipline mentions; a model would return a short neutral reminder.",
+  "weighted_score": 0.88,
+  "status": "queued"
+ },
+ {
+  "slug": "big-job-kickoff-checklist-when-an-estimate-is-approved",
+  "category": "ops",
+  "title": "Turn an approved big job into a kickoff checklist automatically",
+  "one_liner": "When a larger estimate is marked approved, a tailored task list is created for the job covering permits, materials, scheduling and customer communication, so nothing depends on memory.",
+  "steps": [
+   "Write a master kickoff checklist for your bigger job types, including who owns each task and typical lead times.",
+   "When an estimate or deal is marked approved above a size you choose, your automation tool collects the scope and customer details.",
+   "An AI step selects the tasks that apply to this scope and drafts job-specific notes, without inventing dates or costs.",
+   "Tasks are created in your project tool, each with an owner and a due date relative to the start date.",
+   "The office lead reviews the list once and adjusts before the crew sees it."
+  ],
+  "guardrail": "The AI only picks from your own master checklist and drafts notes; the office lead confirms every task, owner and date before work is scheduled.",
+  "tools": "Jobber, Housecall Pro or a CRM, Trello, ClickUp or Google Sheets, Zapier, Make or n8n, an AI model (Claude or ChatGPT)",
+  "prompt": "You prepare a kickoff task list for an approved job. Choose tasks only from the master checklist below.\n\nBusiness: [business name]\nJob type: [e.g. kitchen remodel]\nScope summary: [paste approved scope]\nTarget start date: [date or 'not set']\nMaster checklist (task | owner role | typical lead time):\n[paste checklist]\n\nOutput:\n1. A table of the tasks that apply to this scope with columns Task, Owner role, Due (relative to start, e.g. 'start minus 10 days').\n2. A list of up to 5 questions the office lead should confirm before scheduling.\n3. A line listing any checklist tasks you excluded and why in a few words.\nDo not invent tasks, costs, permit requirements or dates, and if the start date is not set write 'Due: set after start date is confirmed'.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.85,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9
+  },
+  "source_name": "Zapier Jobber and CompanyCam project checklist templates (search results)",
+  "source_url": "https://zapier.com/templates/details/6102dcbd0aefdf14fe4119cafe1e0a3fcdfe1bb248b5e048058f0471c5413ec5",
+  "verification_note": "Prompt confines selection to the supplied master checklist, fixes output format and bans invented tasks, costs and dates; a model would return a compliant table.",
+  "weighted_score": 0.87,
+  "status": "queued"
+ }
+]
