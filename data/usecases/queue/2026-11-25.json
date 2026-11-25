@@ -1,0 +1,89 @@
+[
+ {
+  "slug": "new-client-intake-form-to-clean-record-and-job-folder",
+  "category": "ops",
+  "title": "Turn a new-client intake form into a tidy record, a job folder and a one-paragraph brief",
+  "one_liner": "When someone fills out your intake form, the answers become a clean client record, a folder with your standard documents, and a short plain-English brief your team can read in ten seconds.",
+  "steps": [
+   "Build one intake form that asks only what you need to start, such as contact details, the job or service wanted, address, timing and any special notes.",
+   "When a form is submitted, your automation tool creates or updates the contact in your CRM or client sheet, checking for an existing record first.",
+   "It creates a folder for the client from your template, with your standard documents copied in.",
+   "An AI step writes a short brief from the answers: what they want, when, what is missing or unclear, and one suggested next question.",
+   "The brief is saved to the folder and sent to the person who owns the job, who checks it against the form before acting."
+  ],
+  "guardrail": "The brief only restates what the form says and flags gaps; a person reads it and decides the next step before anything goes to the client.",
+  "tools": "Typeform, Jotform or Google Forms, Zapier, Make or n8n, your CRM or Google Sheets, Google Drive, an AI model (Claude or ChatGPT)",
+  "prompt": "You write a short internal brief for a small service business from a new-client intake form. Use only the form answers below. Do not guess or fill in missing details.\n\nBusiness: [business name]\nService types we offer: [list]\nForm answers:\n[paste the form fields and answers]\n\nWrite four parts:\n1. What they want (one or two sentences).\n2. Timing and location (as stated).\n3. Missing or unclear (a short list; write 'nothing obvious' if the form is complete).\n4. Suggested first question to ask them (one question).\nKeep the whole brief under 110 words. Do not quote prices, promise availability or give advice. If the request is outside our services, say so in part 1 and suggest the owner decide.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.9
+  },
+  "source_name": "Zapier intake-form to CRM/job-folder templates (search results)",
+  "source_url": "https://zapier.com/automations/sales/proposal-management/quote-management/create-estimate-and-job-folder-from-intake-form",
+  "verification_note": "Prompt is bounded to supplied form answers, has a fixed four-part format and word cap, flags gaps instead of inventing them, and bans prices and promises; a model would return a compliant brief.",
+  "weighted_score": 0.89,
+  "status": "queued"
+ },
+ {
+  "slug": "customer-anniversary-notes-drafted-for-owner-approval",
+  "category": "marketing",
+  "title": "Send a genuine 'thanks for X years' note to loyal customers, written for you to approve",
+  "one_liner": "Each week, customers who reach a first-job anniversary get a short personal-sounding thank-you drafted from your notes. You read and edit the batch, then send.",
+  "steps": [
+   "Keep a customer sheet with first service date, the services they have used, and a column for consent to receive email or texts from you.",
+   "A weekly scheduled run finds customers whose first-job date falls in the coming week and who have consented.",
+   "An AI step drafts one short note per customer, using only the service history and a line you supply about how your business sounds.",
+   "The drafts land in a review sheet or email digest with the customer name and the facts used.",
+   "You edit or delete any draft, mark the approved ones, and only then does the tool send them."
+  ],
+  "guardrail": "No note is sent until the owner approves it, and customers without recorded consent are never included.",
+  "tools": "Google Sheets or your CRM, Zapier, Make or n8n, Gmail or an SMS tool, an AI model (Claude or ChatGPT)",
+  "prompt": "You write a short thank-you note from a local business owner to a loyal customer on the anniversary of their first job. Use only the facts below.\n\nBusiness: [business name]\nOwner first name: [name]\nCustomer first name: [name]\nFirst service date: [month and year]\nServices used so far: [e.g. furnace tune-up, drain cleaning]\nOne thing we like about working with them (optional, true only): [e.g. always friendly to our crew]\nChannel: [email or text]\nOpt-out wording: [e.g. Reply STOP to opt out]\n\nWrite one note under 60 words for email or 35 for text. Thank them warmly, mention how long they have been a customer, and say we are here when they need us. No offer, no discount, no sales pitch, and no invented details about their home or business. End with the opt-out wording.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.9,
+   "specific": 0.8,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.9
+  },
+  "source_name": "n8n birthday and anniversary email templates (search results)",
+  "source_url": "https://n8n.io/workflows/14802-send-personalized-birthday-and-anniversary-emails-with-google-sheets-gemini-and-gmail/",
+  "verification_note": "Prompt limits output to supplied facts, caps length, forbids offers and invented details, and requires opt-out; a model would produce a short warm note without fabrication.",
+  "weighted_score": 0.87,
+  "status": "queued"
+ },
+ {
+  "slug": "local-referral-partner-intro-drafts-in-a-sheet",
+  "category": "sales",
+  "title": "Draft a short intro email to every local referral partner on your list, without sending a thing",
+  "one_liner": "List the realtors, property managers, insurance agents or other local businesses that could send you work. Each row gets a short, specific intro draft in your voice for you to review.",
+  "steps": [
+   "List potential partners in a sheet: name, business, what they do, town, and one true detail from their website or listing.",
+   "Add a short description of who you serve best and what a good referral looks like.",
+   "When a row is marked ready, an AI step writes a short intro email draft that uses only the details in that row.",
+   "The draft is saved into the sheet, or as a Gmail draft, and the row is marked drafted.",
+   "You review each draft, fix anything off, send it yourself, and log the reply in the sheet."
+  ],
+  "guardrail": "Nothing is sent automatically; a person reads every draft and sends it, and you check local rules before offering anything in exchange for referrals.",
+  "tools": "Google Sheets, Zapier, Make or n8n, Gmail, an AI model (Claude or ChatGPT)",
+  "prompt": "You draft a short first email from a local business owner to a possible referral partner. Use only the facts below. Do not invent shared history, results, or compliments you cannot support.\n\nMy business: [business name, what we do]\nMy name: [first name]\nWho we serve best: [description]\nWhat a good referral looks like: [description]\nPartner name: [first name]\nPartner business: [name and what they do]\nTown: [town]\nOne true detail about them: [e.g. specializes in first-time buyers]\n\nWrite an email under 95 words with a subject line under 8 words. Open with the true detail, explain in one sentence how our work could help their clients, suggest a 15-minute coffee or phone call, and sign off with my name. Do not offer payment, gifts or commissions, do not make claims about results, and do not use hype.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.9
+  },
+  "source_name": "Zapier/Replit sheet-driven draft-only outreach patterns (search results)",
+  "source_url": "https://docs.replit.com/use-cases/find-investors.md",
+  "verification_note": "Prompt confines the email to supplied details, caps length, bans payment offers and result claims, and stays draft-only; a model would return a short on-task intro.",
+  "weighted_score": 0.88,
+  "status": "queued"
+ }
+]
