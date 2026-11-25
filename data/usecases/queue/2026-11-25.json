@@ -26,7 +26,8 @@
   "source_url": "https://zapier.com/automations/sales/proposal-management/quote-management/create-estimate-and-job-folder-from-intake-form",
   "verification_note": "Prompt is bounded to supplied form answers, has a fixed four-part format and word cap, flags gaps instead of inventing them, and bans prices and promises; a model would return a compliant brief.",
   "weighted_score": 0.89,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24491
  },
  {
   "slug": "customer-anniversary-notes-drafted-for-owner-approval",
@@ -55,7 +56,8 @@
   "source_url": "https://n8n.io/workflows/14802-send-personalized-birthday-and-anniversary-emails-with-google-sheets-gemini-and-gmail/",
   "verification_note": "Prompt limits output to supplied facts, caps length, forbids offers and invented details, and requires opt-out; a model would produce a short warm note without fabrication.",
   "weighted_score": 0.87,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24492
  },
  {
   "slug": "local-referral-partner-intro-drafts-in-a-sheet",
@@ -84,6 +86,7 @@
   "source_url": "https://docs.replit.com/use-cases/find-investors.md",
   "verification_note": "Prompt confines the email to supplied details, caps length, bans payment offers and result claims, and stays draft-only; a model would return a short on-task intro.",
   "weighted_score": 0.88,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24493
  }
 ]

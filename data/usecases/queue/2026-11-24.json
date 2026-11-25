@@ -26,7 +26,8 @@
   "source_url": "https://n8n.io/workflows/20237-notify-you-of-hail-wind-and-weather-alerts-matched-to-past-customers-via-noaa-and-twilio/",
   "verification_note": "Prompt is limited to supplied event and contact facts, caps length, requires opt-out and bans prices, availability promises and damage predictions; a model would return a compliant short message.",
   "weighted_score": 0.88,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24486
  },
  {
   "slug": "aftercare-instructions-sent-after-every-visit",
@@ -55,7 +56,8 @@
   "source_url": "https://zapier.com/templates/details/send-aftercare-email-automatically-to-clients-after-appointments-bbb7ca239844",
   "verification_note": "Prompt copies only pasted approved text, bans added advice and symptom reassurance, and sets length; a model would return a compliant message.",
   "weighted_score": 0.89,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24487
  },
  {
   "slug": "missing-timesheet-nudges-before-payroll-day",
@@ -84,7 +86,8 @@
   "source_url": "https://zapier.com/templates/details/send-weekly-timesheet-reminders-to-missing-staff-c52f387b22c0",
   "verification_note": "Prompt restricts output to deadline and submit instructions and bans guessed hours, pay and discipline mentions; a model would return a short neutral reminder.",
   "weighted_score": 0.88,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24488
  },
  {
   "slug": "big-job-kickoff-checklist-when-an-estimate-is-approved",
@@ -113,6 +116,7 @@
   "source_url": "https://zapier.com/templates/details/6102dcbd0aefdf14fe4119cafe1e0a3fcdfe1bb248b5e048058f0471c5413ec5",
   "verification_note": "Prompt confines selection to the supplied master checklist, fixes output format and bans invented tasks, costs and dates; a model would return a compliant table.",
   "weighted_score": 0.87,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24489
  }
 ]

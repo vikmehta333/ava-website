@@ -1,7 +1,7 @@
 {
  "generated_at": "2026-11-08",
  "hub_page_id": 24305,
- "count": 82,
+ "count": 89,
  "items": [
   {
    "id": 24352,
@@ -740,7 +740,63 @@
    "page_id": 24480,
    "published_at": "2026-11-22T09:00:36",
    "source_name": "n8n invoice reminder templates with weekly digest and Reminder Log (search results)"
+  },
+  {
+   "slug": "aftercare-instructions-sent-after-every-visit",
+   "title": "Send the right aftercare instructions after every appointment, not just some of them",
+   "category": "cs",
+   "page_id": 24487,
+   "published_at": "2026-11-24T09:00:38",
+   "source_name": "Zapier aftercare email templates for salons and clinics (search results)"
+  },
+  {
+   "slug": "big-job-kickoff-checklist-when-an-estimate-is-approved",
+   "title": "Turn an approved big job into a kickoff checklist automatically",
+   "category": "ops",
+   "page_id": 24489,
+   "published_at": "2026-11-24T09:00:40",
+   "source_name": "Zapier Jobber and CompanyCam project checklist templates (search results)"
+  },
+  {
+   "slug": "customer-anniversary-notes-drafted-for-owner-approval",
+   "title": "Send a genuine 'thanks for X years' note to loyal customers, written for you to approve",
+   "category": "marketing",
+   "page_id": 24492,
+   "published_at": "2026-11-25T09:00:41",
+   "source_name": "n8n birthday and anniversary email templates (search results)"
+  },
+  {
+   "slug": "local-referral-partner-intro-drafts-in-a-sheet",
+   "title": "Draft a short intro email to every local referral partner on your list, without sending a thing",
+   "category": "sales",
+   "page_id": 24493,
+   "published_at": "2026-11-25T09:00:42",
+   "source_name": "Zapier/Replit sheet-driven draft-only outreach patterns (search results)"
+  },
+  {
+   "slug": "missing-timesheet-nudges-before-payroll-day",
+   "title": "Chase missing timesheets before payroll day instead of on it",
+   "category": "ops",
+   "page_id": 24488,
+   "published_at": "2026-11-24T09:00:39",
+   "source_name": "Zapier missing-timesheet nudge templates (search results)"
+  },
+  {
+   "slug": "new-client-intake-form-to-clean-record-and-job-folder",
+   "title": "Turn a new-client intake form into a tidy record, a job folder and a one-paragraph brief",
+   "category": "ops",
+   "page_id": 24491,
+   "published_at": "2026-11-25T09:00:40",
+   "source_name": "Zapier intake-form to CRM/job-folder templates (search results)"
+  },
+  {
+   "slug": "storm-and-cold-snap-heads-up-texts-for-approval",
+   "title": "Send past customers a useful heads-up when bad weather is coming, after you approve it",
+   "category": "marketing",
+   "page_id": 24486,
+   "published_at": "2026-11-24T09:00:38",
+   "source_name": "n8n weather-alert-to-customer SMS templates (search results)"
   }
  ],
- "refreshed_from_live_at": "2026-11-23T11:08:17"
+ "refreshed_from_live_at": "2026-11-25T09:07:17"
 }
