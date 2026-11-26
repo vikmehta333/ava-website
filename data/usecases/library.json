@@ -1,7 +1,7 @@
 {
  "generated_at": "2026-11-08",
  "hub_page_id": 24305,
- "count": 89,
+ "count": 92,
  "items": [
   {
    "id": 24352,
@@ -796,7 +796,31 @@
    "page_id": 24486,
    "published_at": "2026-11-24T09:00:38",
    "source_name": "n8n weather-alert-to-customer SMS templates (search results)"
+  },
+  {
+   "slug": "ask-permission-before-sharing-a-customer-photo-or-review",
+   "title": "Ask permission before you share a customer's photo or review",
+   "category": "content",
+   "page_id": 24497,
+   "published_at": "2026-11-26T09:00:38",
+   "source_name": "Zapier social media photo release and review-sharing templates (search results)"
+  },
+  {
+   "slug": "job-permit-and-inspection-dates-to-a-weekly-watch-list",
+   "title": "Never lose track of a job permit or inspection date again",
+   "category": "ops",
+   "page_id": 24495,
+   "published_at": "2026-11-26T09:00:36",
+   "source_name": "n8n construction work permit tracker template and Zapier permit inspection tracking pages (search results)"
+  },
+  {
+   "slug": "local-recommendation-requests-to-reply-drafts-for-the-owner",
+   "title": "Spot local 'can anyone recommend…' posts and get a helpful reply drafted for you",
+   "category": "lead",
+   "page_id": 24496,
+   "published_at": "2026-11-26T09:00:37",
+   "source_name": "n8n Reddit lead monitoring templates with human-approval pattern (search results)"
   }
  ],
- "refreshed_from_live_at": "2026-11-25T09:13:53"
+ "refreshed_from_live_at": "2026-11-26T06:00:08"
 }

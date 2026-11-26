@@ -26,12 +26,13 @@
    "prompt_quality": 0.9
   },
   "weighted_score": 0.89,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24495
  },
  {
   "slug": "local-recommendation-requests-to-reply-drafts-for-the-owner",
   "category": "lead",
-  "title": "Spot local 'can anyone recommend\u2026' posts and get a helpful reply drafted for you",
+  "title": "Spot local 'can anyone recommend…' posts and get a helpful reply drafted for you",
   "one_liner": "Watch a few local forums for people asking for your kind of service, get an alert with a short, honest reply drafted, and decide whether to post it yourself.",
   "steps": [
    "List the forums or subreddits for your town and the plain-language phrases people use, such as 'looking for a plumber' or 'anyone recommend a dentist'.",
@@ -55,7 +56,8 @@
    "prompt_quality": 0.9
   },
   "weighted_score": 0.86,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24496
  },
  {
   "slug": "ask-permission-before-sharing-a-customer-photo-or-review",
@@ -84,6 +86,7 @@
    "prompt_quality": 0.9
   },
   "weighted_score": 0.86,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24497
  }
 ]
