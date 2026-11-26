@@ -1,0 +1,89 @@
+[
+ {
+  "slug": "job-permit-and-inspection-dates-to-a-weekly-watch-list",
+  "category": "ops",
+  "title": "Never lose track of a job permit or inspection date again",
+  "one_liner": "Log each permit once, and every Monday you get a short list of what is expiring, what needs an inspection booked and what is waiting on the city or village.",
+  "steps": [
+   "Keep one sheet with a row per permit: job, permit type, issuing office, date applied, date approved, expiry date and inspection status.",
+   "Add a row from a short form whenever a permit is applied for, so nothing lives only in someone's inbox.",
+   "Each Monday, your automation tool sends the open rows to an AI step along with today's date.",
+   "The AI step sorts them into three groups: expiring soon, inspection not yet booked, and waiting a long time for approval.",
+   "The list is emailed to the office manager, who makes the calls and updates the sheet."
+  ],
+  "guardrail": "The list only reorganizes dates you entered; a person confirms every date with the issuing office and does the booking and calling.",
+  "tools": "Google Sheets or Airtable, Google Forms, Zapier, Make or n8n, an AI model (Claude or ChatGPT), Gmail",
+  "prompt": "You help a small contractor's office keep track of permits. Use only the rows below and today's date. Do not guess dates or rules for any city or village.\n\nToday's date: [date]\nBusiness: [business name]\nWarning window for expiry: [number] days\nA permit counts as 'waiting long' after: [number] days since applied\nPermit rows (job | permit type | issuing office | applied | approved | expires | inspection status):\n[paste rows]\n\nReturn three short lists:\n1. Expiring within the warning window (job, permit type, expiry date, days left).\n2. Approved but no inspection booked (job, permit type, approved date).\n3. Waiting long for approval (job, permit type, days since applied).\nAfter each list, write 'None' if it is empty. If a row is missing a date you need, list it under 'Needs a date' instead of guessing. Keep it under 150 words. Do not give legal or code advice.",
+  "source_name": "n8n construction work permit tracker template and Zapier permit inspection tracking pages (search results)",
+  "source_url": "https://n8n.io/workflows/16374-manage-construction-work-permits-with-gpt-4o-google-sheets-and-gmail/",
+  "verification_note": "Prompt is bounded to supplied rows and date, has fixed lists with explicit empty and missing-date handling, and bans guessing local rules; a model would return a compliant short list.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.9
+  },
+  "weighted_score": 0.89,
+  "status": "queued"
+ },
+ {
+  "slug": "local-recommendation-requests-to-reply-drafts-for-the-owner",
+  "category": "lead",
+  "title": "Spot local 'can anyone recommend\u2026' posts and get a helpful reply drafted for you",
+  "one_liner": "Watch a few local forums for people asking for your kind of service, get an alert with a short, honest reply drafted, and decide whether to post it yourself.",
+  "steps": [
+   "List the forums or subreddits for your town and the plain-language phrases people use, such as 'looking for a plumber' or 'anyone recommend a dentist'.",
+   "Your automation tool reads those feeds on a schedule and drops posts that mention your service and your area into a sheet, skipping ones it has already seen.",
+   "An AI step checks that the post is really a request, in your service area, and then drafts a short, helpful reply that answers the question first.",
+   "The post link and draft land in a Slack message or email for the owner.",
+   "The owner edits and posts it by hand, using their own name and saying who they work for, or skips it."
+  ],
+  "guardrail": "Nothing is posted automatically; the owner reads each draft, follows the forum's rules and always discloses they own the business.",
+  "tools": "RSS feeds, n8n, Make or Zapier, Google Sheets, an AI model (Claude or ChatGPT), Slack or Gmail",
+  "prompt": "You help a local business owner reply honestly to a public post where someone asks for a recommendation. Write a draft the owner will edit and post themselves.\n\nBusiness: [business name]\nServices: [list]\nService area: [towns]\nOwner first name: [name]\nPost title and text:\n[paste post]\n\nFirst, answer 'fit': is this person asking for a service we offer, in our area? Reply 'fit: yes' or 'fit: no' plus one reason. If no, stop.\nIf yes, write a reply of 60 to 90 words that: gives one or two practical tips that answer their question, then says plainly that [name] owns [business name] and is happy to help if they want to reach out. No pricing, no guarantees, no claims about reviews or awards, no links unless I provide one: [optional link]. Keep a neighbourly tone and do not sound like an ad.",
+  "source_name": "n8n Reddit lead monitoring templates with human-approval pattern (search results)",
+  "source_url": "https://n8n.io/workflows/6337-automated-reddit-lead-generation-with-ai-analysis-and-google-sheets/",
+  "verification_note": "Prompt first gates on fit, then bounds length, forces disclosure of ownership and bans prices and unverified claims; a model would return a modest, non-promotional draft or stop on non-fit posts.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.85,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.9
+  },
+  "weighted_score": 0.86,
+  "status": "queued"
+ },
+ {
+  "slug": "ask-permission-before-sharing-a-customer-photo-or-review",
+  "category": "content",
+  "title": "Ask permission before you share a customer's photo or review",
+  "one_liner": "When a customer sends a photo or leaves a glowing review, a short consent message goes out and only approved ones reach your social queue as a draft post.",
+  "steps": [
+   "Collect customer photos and review quotes in one sheet, with columns for name, what they sent, where it came from and a consent status set to 'not asked'.",
+   "When a row is added, your automation tool sends a plain consent email or text asking if you may share it, and how they would like to be named.",
+   "A simple reply form or reply keyword updates the consent status to 'yes', 'no' or 'first name only'.",
+   "Only rows marked yes trigger an AI step that drafts a short social post using the customer's own words.",
+   "The draft goes to your social queue as a draft for the owner to approve."
+  ],
+  "guardrail": "Nothing is drafted without a recorded yes, and the owner approves every post before it is published.",
+  "tools": "Google Sheets, Google Forms or Typeform, Zapier, Make or n8n, Gmail or an SMS tool, an AI model (Claude or ChatGPT), a social scheduler such as Buffer or Meta Business Suite",
+  "prompt": "You draft a short social media post for a local business from a customer's own photo caption or review text. You may only use the text below. Do not change what the customer said or invent details.\n\nBusiness: [business name]\nPlatform: [Facebook or Instagram]\nCustomer consent status: [yes / first name only]\nName to show: [first name, or 'a customer']\nCustomer text:\n[paste review or caption]\nJob or service (if known): [service]\n\nIf consent status is not 'yes' or 'first name only', reply only with: 'No consent recorded. Do not post.'\nOtherwise write a post of up to 70 words that quotes the customer's words exactly, thanks them, and ends with one soft line inviting people to get in touch. Add no prices, results, awards or numbers. Do not add hashtags beyond two plain ones relating to [town].",
+  "source_name": "Zapier social media photo release and review-sharing templates (search results)",
+  "source_url": "https://zapier.com/templates/social-media-photo-release",
+  "verification_note": "Prompt has a hard consent gate, forbids altering the customer's words and invented figures, and caps length; a model would either refuse correctly or return a short quoted post.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.85,
+   "specific": 0.8,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9
+  },
+  "weighted_score": 0.86,
+  "status": "queued"
+ }
+]
