@@ -26,7 +26,8 @@
    "prompt_quality": 0.9
   },
   "weighted_score": 0.89,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24499
  },
  {
   "slug": "supplier-price-list-change-check-before-you-quote",
@@ -55,7 +56,8 @@
    "prompt_quality": 0.9
   },
   "weighted_score": 0.87,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24500
  },
  {
   "slug": "job-closeout-photo-and-note-check-before-invoicing",
@@ -84,7 +86,8 @@
    "prompt_quality": 0.9
   },
   "weighted_score": 0.86,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24501
  },
  {
   "slug": "side-by-side-vendor-quote-comparison-without-a-winner",
@@ -113,6 +116,7 @@
    "prompt_quality": 0.9
   },
   "weighted_score": 0.87,
-  "status": "queued"
+  "status": "published",
+  "page_id": 24502
  }
 ]

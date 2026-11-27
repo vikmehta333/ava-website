@@ -1,7 +1,7 @@
 {
  "generated_at": "2026-11-08",
  "hub_page_id": 24305,
- "count": 92,
+ "count": 96,
  "items": [
   {
    "id": 24352,
@@ -820,7 +820,39 @@
    "page_id": 24496,
    "published_at": "2026-11-26T09:00:37",
    "source_name": "n8n Reddit lead monitoring templates with human-approval pattern (search results)"
+  },
+  {
+   "slug": "job-closeout-photo-and-note-check-before-invoicing",
+   "title": "Don't let a job close without a finished photo and a crew note",
+   "category": "ops",
+   "page_id": 24501,
+   "published_at": "2026-11-27T09:00:28",
+   "source_name": "Zapier job-completion photo request templates and a landscaping job-documentation guide (search results)"
+  },
+  {
+   "slug": "side-by-side-vendor-quote-comparison-without-a-winner",
+   "title": "Line up three vendor quotes side by side, without letting software pick the winner",
+   "category": "sales",
+   "page_id": 24502,
+   "published_at": "2026-11-27T09:00:29",
+   "source_name": "n8n vendor quote comparison templates and community workflow (search results)"
+  },
+  {
+   "slug": "supplier-price-list-change-check-before-you-quote",
+   "title": "Spot supplier price changes before they quietly eat your margin",
+   "category": "ops",
+   "page_id": 24500,
+   "published_at": "2026-11-27T09:00:27",
+   "source_name": "n8n supplier price-change and menu-cost tracker templates (search results)"
+  },
+  {
+   "slug": "voicemail-to-callback-slip-with-urgency",
+   "title": "Turn every voicemail into a callback slip you can act on in ten seconds",
+   "category": "lead",
+   "page_id": 24499,
+   "published_at": "2026-11-27T09:00:26",
+   "source_name": "n8n voicemail/call-summary templates and Zapier OpenPhone voicemail templates (search results)"
   }
  ],
- "refreshed_from_live_at": "2026-11-26T06:00:08"
+ "refreshed_from_live_at": "2026-11-27T06:00:07"
 }
