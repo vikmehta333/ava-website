@@ -1,0 +1,118 @@
+[
+ {
+  "slug": "voicemail-to-callback-slip-with-urgency",
+  "category": "lead",
+  "title": "Turn every voicemail into a callback slip you can act on in ten seconds",
+  "one_liner": "Each voicemail is transcribed and boiled down to who called, what they need, how urgent it sounds and the number to call back, then sent to whoever returns calls.",
+  "steps": [
+   "Route your business line's voicemail to a service that transcribes it, such as your phone system, OpenPhone or Twilio.",
+   "When a transcript arrives, your automation tool sends it to an AI step with your business details.",
+   "The AI step fills a fixed slip: caller name, number, reason, urgency and a suggested next step.",
+   "The slip lands in a shared sheet and as a text or email to the person who returns calls.",
+   "That person calls back and marks the slip done; anything unmarked is listed again at noon."
+  ],
+  "guardrail": "The AI only summarizes what was said; a person decides who gets called first and makes every callback.",
+  "tools": "Phone system or OpenPhone/Twilio voicemail transcription, Zapier, Make or n8n, an AI model (Claude or ChatGPT), Google Sheets, SMS or Gmail",
+  "prompt": "You summarize voicemail transcripts for a small local business so staff can call people back quickly. Use only what is in the transcript. Do not guess names, numbers or details that were not said.\n\nBusiness: [business name]\nServices we offer: [list]\nWords that mean urgent for us: [for example: no heat, leak, flooding, emergency, today]\nCaller ID number (if known): [number]\nTranscript:\n[paste transcript]\n\nReturn exactly this slip:\nCaller name: [name or 'not given']\nCallback number: [number said in the message, else the caller ID, else 'not given']\nReason for call: [one sentence]\nUrgency: [Urgent / Normal / Unclear] plus a short reason quoting the words they used\nSuggested next step: [one short action for staff]\nIf the transcript is unclear or cut off, say 'Transcript unclear - listen to the recording' and nothing else. Do not give prices, diagnoses, or promises.",
+  "source_name": "n8n voicemail/call-summary templates and Zapier OpenPhone voicemail templates (search results)",
+  "source_url": "https://n8n.io/workflows/19351",
+  "verification_note": "Prompt uses a fixed slip, a number fallback order, quoted urgency evidence and an unclear-transcript exit; a model would return a short compliant slip without inventing details.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.9
+  },
+  "weighted_score": 0.89,
+  "status": "queued"
+ },
+ {
+  "slug": "supplier-price-list-change-check-before-you-quote",
+  "category": "ops",
+  "title": "Spot supplier price changes before they quietly eat your margin",
+  "one_liner": "When a supplier sends a new price list, you get a short list of what went up or down against your last accepted prices and which of your common jobs it touches.",
+  "steps": [
+   "Keep one sheet with your last accepted price for each item you buy often, plus a column for which standard jobs use it.",
+   "Save each new supplier price list (spreadsheet or CSV) to a set folder or forward it to a set inbox.",
+   "Your automation tool sends the new list and your sheet rows to an AI step.",
+   "The AI step lists items that changed, the size of the change, and which standard jobs are affected.",
+   "The owner reviews the list, updates quote prices if needed, and replaces the accepted prices in the sheet."
+  ],
+  "guardrail": "The AI only compares numbers you supplied; the owner decides whether to change quotes or switch suppliers, and updates the sheet by hand.",
+  "tools": "Google Sheets or Airtable, Gmail or Google Drive, Zapier, Make or n8n, an AI model (Claude or ChatGPT)",
+  "prompt": "You compare a supplier's new price list to a small business's last accepted prices. Use only the data below. Do the arithmetic carefully and do not guess prices or match items that are not clearly the same.\n\nBusiness: [business name]\nSupplier: [supplier name]\nChange threshold to report: [percent, for example 3]\nLast accepted prices (item | unit | price | jobs that use it):\n[paste rows]\nNew price list (item | unit | price):\n[paste rows]\n\nReturn:\n1. Changed items at or above the threshold: item, old price, new price, percent change (one decimal), jobs affected.\n2. Items in the new list not in our sheet.\n3. Items in our sheet missing from the new list.\n4. Items whose unit changed, which we must check by hand.\nWrite 'None' for any empty section. End with one sentence naming the three biggest increases. Do not recommend prices or suppliers.",
+  "source_name": "n8n supplier price-change and menu-cost tracker templates (search results)",
+  "source_url": "https://n8n.io/workflows/22449",
+  "verification_note": "Prompt is bounded to supplied tables, fixes the output sections, handles unit changes and unmatched items, and forbids recommendations; a model would return a checkable comparison.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.85,
+   "specific": 0.9,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.9
+  },
+  "weighted_score": 0.87,
+  "status": "queued"
+ },
+ {
+  "slug": "job-closeout-photo-and-note-check-before-invoicing",
+  "category": "ops",
+  "title": "Don't let a job close without a finished photo and a crew note",
+  "one_liner": "When a crew marks a job done, the system checks for an after photo and a short note, asks the crew for whatever is missing, and holds the job from invoicing until both arrive.",
+  "steps": [
+   "When a job status changes to done in your scheduling tool, your automation tool checks for an after photo and a crew note.",
+   "If either is missing, it texts the crew lead a short request naming the job and what is missing.",
+   "When the crew replies with a photo or note, an AI step tidies the note into two clean sentences for the job record.",
+   "The job moves to ready-to-invoice only once both are present.",
+   "Jobs still missing something the next morning are listed for the office manager."
+  ],
+  "guardrail": "A person approves every tidied note and invoices the job; the AI never decides a job is complete.",
+  "tools": "Jobber, Housecall Pro, ServiceTitan or a Google Sheet, Zapier, Make or n8n, Twilio or your tool's texting, an AI model (Claude or ChatGPT)",
+  "prompt": "You tidy a crew member's rough job-completion note for a small service business's job record. Use only the note below. Do not add details, causes, prices or promises that are not in it.\n\nBusiness: [business name]\nJob: [job name or address]\nCrew member: [first name]\nRough note:\n[paste note]\n\nReturn:\nTidy note: [one or two plain sentences saying what was done]\nFollow-up needed: [Yes - what, or No]\nMissing detail: [anything an office person would still need to ask, or 'None']\nIf the note is too thin to describe the work, reply only: 'Note too thin - ask the crew for what was done.'",
+  "source_name": "Zapier job-completion photo request templates and a landscaping job-documentation guide (search results)",
+  "source_url": "https://zapier.com/templates/details/send-photo-request-to-assigned-customer-after-install",
+  "verification_note": "Prompt restricts output to the supplied note, has a fixed three-field output and a too-thin exit; a model would produce a faithful short summary.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.85,
+   "specific": 0.8,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.9
+  },
+  "weighted_score": 0.86,
+  "status": "queued"
+ },
+ {
+  "slug": "side-by-side-vendor-quote-comparison-without-a-winner",
+  "category": "sales",
+  "title": "Line up three vendor quotes side by side, without letting software pick the winner",
+  "one_liner": "Quotes from subcontractors or suppliers become one comparison table with totals, inclusions, exclusions and open questions, so you decide with the facts in front of you.",
+  "steps": [
+   "Ask each vendor to send a quote by email, and save the attachments to one folder per job.",
+   "When all quotes are in, your automation tool sends the text of each to an AI step.",
+   "The AI step builds a table: vendor, total, what is included, what is excluded, timeline and payment terms.",
+   "It also lists questions to ask each vendor about anything unclear or missing.",
+   "The table is posted to a sheet and emailed to the owner, who makes the call."
+  ],
+  "guardrail": "The AI never ranks vendors or recommends one; the owner chooses, and checks every figure against the original quotes.",
+  "tools": "Gmail, Google Drive, Google Sheets, Zapier, Make or n8n, an AI model (Claude or ChatGPT)",
+  "prompt": "You compare vendor quotes for a small business owner. Use only the quote text below. Do not guess missing figures and do not recommend a vendor.\n\nBusiness: [business name]\nJob or purchase: [description]\nQuote 1 (vendor: [name]):\n[paste text]\nQuote 2 (vendor: [name]):\n[paste text]\nQuote 3 (vendor: [name]):\n[paste text]\n\nReturn:\n1. A table with one row per vendor: total price, what is included, what is excluded, timeline, payment terms, warranty. Write 'not stated' where the quote is silent.\n2. Differences that make the totals not directly comparable (for example, one quote leaves out materials).\n3. Up to three questions to ask each vendor.\nDo not rank, score or recommend. Keep it under 250 words plus the table.",
+  "source_name": "n8n vendor quote comparison templates and community workflow (search results)",
+  "source_url": "https://n8n.io/workflows/6688-compare-vendor-quotations-with-grok-ai-and-export-to-google-sheets-and-email/",
+  "verification_note": "Prompt forbids ranking, requires 'not stated' for gaps and flags non-comparable scope; a model would return a neutral comparison table.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.85,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.95,
+   "prompt_quality": 0.9
+  },
+  "weighted_score": 0.87,
+  "status": "queued"
+ }
+]
