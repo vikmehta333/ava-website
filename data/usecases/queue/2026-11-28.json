@@ -1,0 +1,118 @@
+[
+ {
+  "slug": "lost-quote-reason-capture-and-monthly-pattern",
+  "category": "sales",
+  "title": "Learn why quotes get turned down, one short answer at a time",
+  "one_liner": "When you mark an estimate as lost, you get a one-tap prompt for the reason, and each month the answers are sorted into plain patterns you can act on.",
+  "steps": [
+   "In your CRM or estimate tool, mark a quote 'lost' when the customer says no or goes silent for good.",
+   "Your automation tool texts or emails the owner or salesperson: 'Why did [customer first name] pass? Pick one or add a line.'",
+   "The reply (price, timing, went with someone else, project cancelled, other) is logged in a Google Sheet next to the quote value and job type.",
+   "On the first of the month, an AI step groups the reasons and free-text notes into themes and counts them.",
+   "You read the one-page summary and decide what, if anything, to change about pricing, response time or scope."
+  ],
+  "guardrail": "The AI only groups what your team typed in; a person decides whether a pattern means changing prices, follow-up or the offer.",
+  "tools": "Your CRM or estimating tool (HubSpot, Jobber, Housecall Pro, Pipedrive), Zapier, Make or n8n, Google Sheets, an AI model (Claude or ChatGPT), SMS or Gmail",
+  "prompt": "You summarize why a small local business lost quotes last month. Use only the rows below. Do not invent reasons, counts or customer details, and do not name customers.\n\nBusiness: [business name]\nMonth: [month and year]\nRows (job type | quote amount | reason picked | free-text note):\n[paste rows from the sheet]\n\nReturn:\n1. Count of lost quotes and total quote value lost (add up the amounts shown; if an amount is blank, say how many were blank).\n2. Reasons ranked by count, each with the number of quotes and a short quoted phrase from the notes if one exists.\n3. Any pattern by job type (only if at least 3 rows support it; otherwise say 'not enough rows').\n4. Two questions the owner could ask the team, phrased as questions, not recommendations.\nIf there are fewer than 5 rows, say 'too few rows for patterns' and just list them.",
+  "source_name": "Zapier win-loss / closed-lost reason templates (search results)",
+  "source_url": "https://zapier.com/automations/sales/pipeline-management/win-loss-analysis",
+  "verification_note": "Fixed output, no-names rule, counts only from rows, and a minimum-rows exit; a model would return a short compliant summary without inventing causes.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.88
+  },
+  "weighted_score": 0.88,
+  "status": "queued"
+ },
+ {
+  "slug": "next-day-staffing-gap-check-with-approval",
+  "category": "ops",
+  "title": "Spot tomorrow's staffing gap tonight and get a fix drafted for you to approve",
+  "one_liner": "Each evening your schedule is checked against what tomorrow's bookings need, and if you're short, you get a plain list of the gap plus a drafted message to your backup people.",
+  "steps": [
+   "Keep a simple sheet of tomorrow's jobs or appointments and who is scheduled, plus a list of backup people and their usual availability.",
+   "At 5 pm an automation reads the sheet and counts people needed versus people scheduled for each time block.",
+   "If a block is short, an AI step drafts a short message to the backup list asking who can cover, with the date, hours and place filled in.",
+   "The manager gets an email or text with the gap and the draft, and taps approve or edits it.",
+   "Only after approval does the message go out; replies are logged back in the sheet."
+  ],
+  "guardrail": "Nothing is sent to staff until the manager approves it, and the manager chooses who actually covers.",
+  "tools": "Google Sheets or your scheduling app, n8n, Make or Zapier, an AI model (Claude or ChatGPT), Gmail or SMS (Twilio)",
+  "prompt": "You help a small local business manager fill a staffing gap for tomorrow. Use only the details below. Do not promise pay, overtime or perks that are not listed, and do not choose a person; just write the ask.\n\nBusiness: [business name]\nDate: [date]\nShort block(s): [time block | role needed | people scheduled | people needed]\nLocation: [address or site name]\nWhat the shift involves: [one sentence]\nPay or terms to mention (only if provided): [terms or 'none']\nManager name: [name]\n\nWrite:\n1. A two-line summary for the manager: what is short and by how many.\n2. A text message under 320 characters to the backup list asking who can cover, ending with 'Reply YES with your name by [deadline].'\nTone: friendly, plain, no pressure. If the sheet data looks inconsistent (for example needed is less than scheduled), say 'Check the sheet' and write nothing else.",
+  "source_name": "n8n 'plan and approve standby staffing recovery' template (search results)",
+  "source_url": "https://n8n.io/workflows/22188-plan-and-approve-standby-staffing-recovery-with-gemini-google-sheets-and-gmail/",
+  "verification_note": "Prompt restricts to supplied facts, caps the SMS length, bars invented pay and has an inconsistent-data exit; a model would produce a short summary and a compliant ask.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.88
+  },
+  "weighted_score": 0.87,
+  "status": "queued"
+ },
+ {
+  "slug": "weekly-no-show-pattern-by-service-and-time-slot",
+  "category": "ops",
+  "title": "See which days, times and services your no-shows cluster on",
+  "one_liner": "Every Monday you get a short readout of last week's no-shows and cancellations grouped by service and time slot, so you can adjust reminders or booking rules with evidence.",
+  "steps": [
+   "Whenever an appointment is marked no-show or late-cancelled, log service, day, start time and lead time to a Google Sheet.",
+   "Every Monday morning the automation pulls the last four weeks of rows alongside total bookings for the same period.",
+   "An AI step writes the rates by service and by time block and flags only differences backed by enough rows.",
+   "The summary is emailed to the owner or front-desk lead.",
+   "They decide whether to change reminder timing, require deposits for a slot, or leave things alone."
+  ],
+  "guardrail": "The AI reports counts and rates only; a person decides any booking, deposit or reminder rule change, and no customer is flagged or blocked automatically.",
+  "tools": "Your booking tool (Acuity, Square Appointments, Jobber, Calendly), Zapier, Make or n8n, Google Sheets, an AI model (Claude or ChatGPT), Gmail",
+  "prompt": "You analyze appointment no-shows for a small local business. Use only the numbers below. Do not invent causes, and do not name or describe individual customers.\n\nBusiness: [business name]\nPeriod: [start date] to [end date]\nTotals by service (service | bookings | no-shows | late cancels):\n[paste]\nTotals by day and time block (day | block | bookings | no-shows | late cancels):\n[paste]\n\nReturn:\n1. Overall no-show rate (no-shows divided by bookings) and late-cancel rate, rounded to whole percent.\n2. The top 2 services and top 2 time blocks by no-show rate, but only where bookings are at least 8; otherwise say 'not enough bookings'.\n3. One sentence per finding saying what the numbers show, not why it happens.\n4. Two options the owner could test (for example an earlier reminder or a deposit for one slot), labeled as options.\nIf total bookings are under 30, say 'too few bookings for patterns' and give only item 1.",
+  "source_name": "n8n no-show reminder and weekly report templates (search results)",
+  "source_url": "https://n8n.io/workflows/21974",
+  "verification_note": "Minimum-bookings thresholds and a no-causes rule keep output factual; a model would return rates and two testable options without fabricated reasons.",
+  "scores": {
+   "icp": 0.9,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.88
+  },
+  "weighted_score": 0.88,
+  "status": "queued"
+ },
+ {
+  "slug": "review-staff-name-mentions-to-team-kudos",
+  "category": "cs",
+  "title": "Tell your team when a customer praises them by name",
+  "one_liner": "When a new review names someone on your team, a short kudos note is drafted for you to approve and share, so good work gets noticed the same week.",
+  "steps": [
+   "Your automation tool watches for new Google reviews of 4 stars or more.",
+   "An AI step checks the text against your staff list (first names and nicknames) and extracts the matching name and the exact praise.",
+   "If there is a match, it drafts a two-sentence kudos message quoting the praise.",
+   "The owner or manager gets the draft by email or Slack and approves, edits or skips it.",
+   "Approved notes are posted to the team channel and logged in a sheet for review time."
+  ],
+  "guardrail": "A person approves every kudos message, and anything ambiguous (a name shared by two staff, or a mixed review) is skipped, not guessed.",
+  "tools": "Google Business Profile review trigger via Zapier, Make or n8n, Google Sheets (staff list), an AI model (Claude or ChatGPT), Slack or Gmail",
+  "prompt": "You help a small local business recognize staff who are named in customer reviews. Use only the review text and staff list below. Do not guess who a customer meant.\n\nBusiness: [business name]\nStaff list (first name | nickname | role): [list]\nReview stars: [number]\nReview text: [paste review]\n\nIf the review names exactly one person on the staff list, return:\nStaff member: [name]\nQuoted praise: [short exact quote from the review]\nKudos draft: [two sentences, warm and plain, from [manager name], quoting the praise]\nIf the review names nobody, names someone not on the list, matches more than one staff member, or complains about anything, return only: 'Skip - needs a person to read.' Do not include the reviewer's full name or any contact details.",
+  "source_name": "Zapier Google Business Profile review-to-Slack templates (search results)",
+  "source_url": "https://zapier.com/templates/details/0b2897b7056f816e3b2fc16adfbca031611d9270f99f01f5b5fb0496fc4802bd",
+  "verification_note": "Strict single-match rule with a skip exit and exact-quote requirement; a model would either produce a clean kudos or the skip line.",
+  "scores": {
+   "icp": 0.85,
+   "buildable": 0.9,
+   "specific": 0.85,
+   "original": 0.85,
+   "safety": 0.9,
+   "prompt_quality": 0.9
+  },
+  "weighted_score": 0.88,
+  "status": "queued"
+ }
+]
